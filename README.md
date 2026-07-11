@@ -4,6 +4,26 @@
 
 BootX is a small educational operating system project. The first target is a BIOS-bootable x86 image that prints from a 512-byte boot sector, then grows into a protected-mode kernel and command shell.
 
+BootX also contains a Human + AI companion research program centered on truth, self-correction, trust, human agency, protection, and long-term resilience. The professional study framework begins at [docs/README.md](docs/README.md).
+
+## Repository State
+
+This checkout contains prebuilt BIOS/ISO/VDI artifacts and research documents. The source code, build scripts, blueprint, and progress files referenced below are not present in the current repository, so the supplied binaries cannot presently be reproduced or source-audited from this checkout. Treat them as experimental educational artifacts. See the [repository evidence audit](docs/01-repository-evidence-audit.md) for the verified inventory and restoration priorities.
+
+## Human + AI Research Handbook
+
+- [Foundation and scope](docs/00-foundation-and-scope.md)
+- [Logic and epistemology](docs/02-logic-and-epistemology.md)
+- [Mathematics and measurement](docs/03-mathematics-and-measurement.md)
+- [Ethics, rights, and governance](docs/04-ethics-rights-and-governance.md)
+- [AI DNA operational specification](docs/05-ai-dna-specification.md)
+- [Companion system architecture](docs/06-companion-system-architecture.md)
+- [Research and implementation roadmap](docs/07-research-and-implementation-roadmap.md)
+- [Professional curriculum and assessment](docs/08-curriculum-and-assessment.md)
+- [Safety case and risk register](docs/09-safety-case-and-risk-register.md)
+- [Glossary and reusable templates](docs/10-glossary-and-templates.md)
+- [Standards and authoritative reading map](docs/11-standards-and-reading-map.md)
+
 Current implementation target:
 
 ```text
