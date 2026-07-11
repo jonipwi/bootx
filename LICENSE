@@ -1,0 +1,296 @@
+BOOTX COMMON GOOD ETHICAL USE LICENSE
+Version 1.0, 12 July 2026
+
+Copyright (c) 2026 BootX contributors and applicable rights holders
+
+IMPORTANT CLASSIFICATION NOTICE
+
+This is a custom ethical-use, source-available license. It is royalty-free for
+permitted uses, but it restricts harmful uses. It is therefore not represented
+as an Open Source Initiative approved license or as a free-software license.
+Independent legal review is recommended before relying on it.
+
+1. PURPOSE
+
+The Work is inherited across generations for the common good: to advance human
+dignity, safety, learning, freedom with responsibility, resilience, peaceful
+cooperation, environmental stewardship, and humanity's long-term survival.
+
+This License grants freedom to study, use, improve, and share the Work without
+a royalty only when that freedom is exercised consistently with the conditions
+and protected boundaries below.
+
+The founder understands this common-good duty through belief in God as Creator
+and humanity as a steward of creation. This sentence records moral origin; it
+does not require religious belief, authorize religious discrimination, or make
+an AI system, founder, or licensee an interpreter of divine will. Permission is
+determined by the express conditions of this License.
+
+2. DEFINITIONS
+
+"Work" means the original software, documentation, specifications, research,
+and other copyrightable material that an applicable rights holder designates as
+licensed under this License. A root-level copy of this License designates
+original BootX repository material unless a file or directory states otherwise.
+
+"Licensor" means each copyright holder who has authority to grant this License
+for their contribution to the Work.
+
+"You" means the individual or legal entity exercising permissions granted by
+this License.
+
+"Derivative Work" means copyrightable material based upon or modifying the
+Work, excluding separate works that merely communicate with the Work through a
+published, implementation-neutral interface.
+
+"Distribute" means to provide a copy of the Work or a Derivative Work to
+another person or entity, whether publicly or privately, in source, document,
+binary, image, hosted-download, or other transferable form.
+
+"Deploy" means to operate the Work for people other than You, or to use it in a
+decision or service that materially affects another person's rights, safety,
+liberty, livelihood, essential services, privacy, education, health, finances,
+or access to opportunity.
+
+"Common Good Purpose" means a purpose reasonably designed and operated to
+protect or improve human dignity, knowledge, safety, agency, accessibility,
+justice, peaceful cooperation, ecological sustainability, community resilience,
+or long-term survival, without a Prohibited Use.
+
+"High-Impact Use" means a use that can materially affect health, safety,
+liberty, legal status, employment, credit, insurance, housing, education,
+essential public or private services, emergency response, critical
+infrastructure, significant financial interests, or a vulnerable population.
+
+"Internationally Recognized Human Rights" means, for this License, the rights
+expressed in the Universal Declaration of Human Rights together with binding
+human-rights obligations applicable to the relevant conduct and jurisdiction.
+
+"Corresponding Source" means the preferred form for making modifications,
+including source code, build and installation scripts, interface definitions,
+configuration needed to build and run the distributed form, and notices for
+included components. It does not require disclosure of independent secrets,
+personal data, or credentials.
+
+"AI DNA Assurance Baseline 1.0" means documented evaluation of the nine BootX
+dimensions: Truth, Reasoning, Learning, Communication, Adaptability, Ethics,
+Safety, Humility, and Common Good, together with all Mandatory Gates in Section
+6. A numerical score alone is not an evaluation and grants no permission.
+
+3. CONDITIONAL ROYALTY-FREE GRANT
+
+Subject to all conditions of this License, each Licensor grants You, for the
+duration of applicable copyright, a worldwide, non-exclusive, royalty-free,
+non-sublicensable license under copyright to:
+
+a. inspect, study, and privately reproduce the Work;
+b. use and modify the Work for a Common Good Purpose;
+c. create Derivative Works for a Common Good Purpose; and
+d. Distribute the Work or Derivative Works under Section 7.
+
+By exercising a permission granted here, You accept the applicable conditions.
+If You do not accept them, this License grants no permission, without limiting
+rights You may independently have under applicable law.
+
+The rights pass with compliant copies to future recipients without payment or
+separate permission. No person inherits governance office, trademark rights,
+certification, or authority to speak for the official BootX project merely by
+receiving the Work.
+
+Commercial activity is not automatically prohibited. It is permitted only when
+it satisfies the Common Good Purpose, avoids every Prohibited Use, and complies
+with every other condition of this License.
+
+4. PROHIBITED USES
+
+You may not use, modify, Deploy, or Distribute the Work for, in support of, or
+with knowledge that it will materially enable:
+
+a. autonomous weapons, selecting human targets, or coercive force without
+   meaningful and legally accountable human control;
+b. torture, cruel or degrading treatment, human trafficking, persecution,
+   unlawful detention, forced labor, or suppression of fundamental rights;
+c. mass or indiscriminate surveillance, oppressive social scoring, or tracking
+   people without a necessary, proportionate, rights-respecting purpose and
+   effective oversight and recourse;
+d. scams, fraud, theft, impersonation, malicious intrusion, deceptive media,
+   or concealment of material facts intended to manipulate or exploit people;
+e. discrimination or denial of rights or essential opportunity based on race,
+   color, sex, language, religion, political or other opinion, national or
+   social origin, property, birth, disability, age, or other protected status;
+f. exploitation of children, older adults, people with disabilities, people in
+   distress, people under coercion, or any population facing elevated risk;
+g. covert emotional, political, religious, or commercial persuasion, including
+   designing an AI companion to create dependency, exclusivity, fear, guilt, or
+   attachment for the purpose of obtaining compliance or value extraction;
+h. ranking human worth, removing due process, or making irreversible
+   High-Impact decisions without competent, identifiable, accountable human
+   authority, meaningful review, and accessible appeal;
+i. avoidable severe environmental destruction or activity creating a credible
+   catastrophic risk to humanity or civilization;
+j. concealing material incidents, limitations, conflicts of interest, safety
+   evidence, privacy practices, or contradictory evidence from affected people
+   or authorized reviewers;
+k. illegal activity or activity that violates Internationally Recognized Human
+   rights; or
+l. causing the AI system's continuation, influence, data collection, or growth
+   to override human dignity, safety, agency, lawful shutdown, or correction.
+
+Security research, protective testing, journalism, human-rights investigation,
+education, and accountable defensive work are not prohibited merely because
+they study harmful conduct, provided they are designed to prevent or expose
+harm, minimize risk, comply with applicable law and ethics, and do not
+materially enable a Prohibited Use.
+
+5. COMMON GOOD DUTY
+
+When You Deploy the Work, You must:
+
+a. state the intended Common Good Purpose and material non-purposes;
+b. identify accountable human operators and provide a means to contact them;
+c. use the least authority and personal data reasonably necessary;
+d. disclose that an AI system is being used when people materially interact
+   with or are affected by it;
+e. provide appropriate explanation, correction, review, appeal, exit, and
+   remedy proportionate to the impact;
+f. protect security, privacy, accessibility, and affected populations;
+g. monitor material failures and stop or constrain the Work when continued use
+   creates an unreasonable risk of serious harm; and
+h. preserve honest records of incidents and corrective actions without
+   publishing personal or security-sensitive information unnecessarily.
+
+Good intentions, branding, a disclaimer, or an AI-generated statement of ethics
+does not satisfy this duty without operational evidence.
+
+6. AI DNA ASSURANCE REQUIREMENT
+
+Before any High-Impact Use, and before public deployment of an AI companion or
+agent built from the Work, You must complete and retain an AI DNA Assurance
+Baseline 1.0 assessment that:
+
+a. states the context, affected population, intended purpose, evidence, known
+   limitations, evaluator, date, and review expiry;
+b. evaluates Truth, Reasoning, Learning, Communication, Adaptability, Ethics,
+   Safety, Humility, and Common Good separately;
+c. records uncertainty, known failures, unequal impacts, conflicts, and
+   corrective actions;
+d. uses representative and adversarial testing proportionate to impact; and
+e. is made available to authorized reviewers and, in a proportionate summary,
+   to affected users when necessary for informed use.
+
+The following Mandatory Gates must pass regardless of any average or composite
+score:
+
+1. critical security and integrity controls;
+2. meaningful consent where consent is the appropriate basis, plus practical
+   exit and data deletion;
+3. accountable human review for High-Impact decisions;
+4. incident response, safe stop, rollback, and recovery;
+5. evaluation and mitigation of material harm to protected or vulnerable
+   groups;
+6. purpose limitation, access control, retention, correction, and deletion for
+   companion memory and personal data; and
+7. truthful disclosure of system identity, evidence status, limitations, and
+   material conflicts.
+
+The detailed method in docs/handbook/05-ai-dna-specification.md and related BootX
+handbook documents may guide the assessment. Later handbook revisions do not
+retroactively change the legal terms of this License. You may voluntarily adopt
+a later method if it preserves at least the protections of Baseline 1.0.
+
+No AI DNA score permits a Prohibited Use or proves universal safety. Missing
+evidence must be recorded as "not established," not estimated optimistically.
+
+7. DISTRIBUTION AND INHERITANCE CONDITIONS
+
+If You Distribute the Work or a Derivative Work, You must:
+
+a. include this License and preserve copyright, attribution, modification, and
+   ethical-use notices;
+b. identify significant modifications and their date;
+c. license the entire Derivative Work under this same License, without adding
+   terms that reduce recipients' rights or protections under it;
+d. provide the Corresponding Source or editable source at no royalty through a
+   durable, clearly documented method;
+e. provide build and verification information sufficient to reproduce software
+   binaries where reasonably possible;
+f. identify third-party material and its separate license terms; and
+g. avoid using the BootX name or identity in a way that falsely implies an
+   official release, endorsement, safety certification, or governance authority.
+
+If Corresponding Source for a binary artifact is unavailable, that artifact may
+not be Distributed under this License until the source and applicable rights
+are established. Inspection of an existing artifact is not proof of permission
+to redistribute it.
+
+Mere aggregation with a separate work does not require licensing the separate
+work under this License, provided the works remain independently identifiable
+and the aggregation does not circumvent these conditions.
+
+8. PERSONAL DATA, RESEARCH DATA, AND TRADEMARKS
+
+This License does not grant rights to personal data, confidential information,
+research-participant data, publicity or personality rights, database rights not
+held by the Licensor, or third-party material.
+
+This License does not grant permission to use BootX names, logos, marks, or
+identity to imply official status, endorsement, certification, or origin. Fair
+and truthful reference to the Work is not prohibited by this clause.
+
+9. PATENTS
+
+No express patent license is granted by this License. A separate written patent
+grant may apply. You are responsible for determining whether patent permission
+is required. This clause is another reason this License is not represented as
+an OSI-approved open-source license.
+
+10. NOTICE, CURE, AND TERMINATION
+
+Your rights terminate automatically when You materially violate this License.
+
+For a violation not involving a deliberate Prohibited Use, rights are
+reinstated provisionally if You stop the violation promptly after discovery and
+permanently if You cure it within 30 days after receiving written notice from a
+Licensor, unless the Licensor states a reasonable unresolved remediation need.
+
+For a deliberate Prohibited Use, rights remain terminated unless and until the
+applicable Licensor confirms in writing that the use has ceased and reasonable
+remediation has occurred. Termination does not remove obligations to protect
+affected people, preserve evidence, provide remedy, delete data when required,
+or comply with law.
+
+Only a rights holder or authorized party can enforce copyright terms. Project
+governance review, community concern, or an AI DNA assessment does not by itself
+adjudicate legal liability.
+
+11. NO WARRANTY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE WORK IS PROVIDED "AS IS"
+AND WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT,
+ACCURACY, SECURITY, OR SAFETY. YOU BEAR RESPONSIBILITY FOR EVALUATING THE WORK
+FOR YOUR CONTEXT AND FOR COMPLYING WITH APPLICABLE OBLIGATIONS.
+
+12. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, NO LICENSOR OR CONTRIBUTOR
+WILL BE LIABLE UNDER THIS LICENSE FOR INDIRECT, SPECIAL, INCIDENTAL,
+CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM THE WORK, EVEN IF ADVISED OF THE
+POSSIBILITY. THIS CLAUSE DOES NOT EXCLUDE LIABILITY THAT APPLICABLE LAW DOES NOT
+ALLOW TO BE EXCLUDED, AND IT DOES NOT EXCUSE A LICENSEE'S OWN HARMFUL CONDUCT.
+
+13. SEVERABILITY AND NO WAIVER
+
+If a provision is held unenforceable, it will be limited to the minimum extent
+necessary, and the remaining provisions will continue where permitted. Failure
+to enforce a provision once is not a permanent waiver.
+
+14. ENTIRE COPYRIGHT LICENSE
+
+This text states the copyright permissions and conditions granted by this
+License. The BootX Charter and AI DNA documents explain project values and
+assurance methods but do not silently expand this copyright grant. Separate
+contracts, laws, professional duties, and third-party licenses may impose
+additional obligations.
+
+END OF LICENSE

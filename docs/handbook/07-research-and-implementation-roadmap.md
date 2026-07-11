@@ -1,5 +1,7 @@
 # Research and Implementation Roadmap
 
+Implementation status is tracked in the repository-level [PROGRESS.md](../../PROGRESS.md). This roadmap defines the intended sequence; a roadmap item is not complete unless the progress record links to adequate evidence.
+
 ## 1. Strategy
 
 Begin with one narrow, high-value, reversible use case: explanation and verification support for suspicious digital messages. This directly reflects the repository's family-protection and cybersecurity vision and permits meaningful testing without granting autonomous control.
@@ -12,9 +14,9 @@ Each phase is evidence-gated. A calendar date or feature count does not authoriz
 
 Deliverables:
 
-- restored BootX source, build scripts, dependencies, and licenses;
+- restored BootX source, build scripts, dependencies, ownership records, and third-party license inventory;
 - reproducible-build instructions and artifact manifest;
-- project charter, contributor rules, ethical constitution, and decision log;
+- adopted project Charter, governance, succession, contributor, licensing, ethical-constitution, and decision-log processes;
 - stakeholder map including older adults, accessibility representatives, security experts, and caregivers;
 - threat model, data map, research protocol templates, and incident process;
 - sourced review of anti-scam interventions, human factors, and relevant legal/standards obligations for target jurisdictions.
@@ -210,4 +212,3 @@ Every public study should include protocol, population, context, comparator, dat
 ## 13. Long-term horizon
 
 Only after protective companionship is demonstrably safe should the program study broader education, disaster preparedness, family continuity, infrastructure resilience, or space-habitat applications. Each domain needs its own experts, data, risk analysis, law, and validation. AI DNA is a shared assurance language, not evidence that one successful use transfers automatically to another.
-

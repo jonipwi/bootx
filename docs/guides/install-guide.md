@@ -3,6 +3,13 @@
 This guide explains how to build a BootX image and write it to a USB flash
 drive with Rufus on Windows.
 
+> **Repository-state notice:** The supplied prebuilt images are organized under
+> [`artifacts/boot/`](../../artifacts/README.md). The source and build system
+> needed to reproduce them are not present in this checkout. The `build/` paths
+> below describe intended outputs after source recovery; they are not current
+> source-built artifacts. Review [PROGRESS.md](../../PROGRESS.md) and the
+> [licensing policy](../../LICENSING.md) before using or distributing binaries.
+
 BootX currently has three boot artifacts:
 
 ```text

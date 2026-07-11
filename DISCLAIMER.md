@@ -80,6 +80,40 @@ Users remain responsible for their own decisions and actions.
 
 ---
 
+# Disclaimer Is Not a Safety Control
+
+This disclaimer communicates limitations. It does not make an unsafe system safe and does not replace:
+
+* Secure design and testing
+* Privacy and data governance
+* Human review and appeal
+* Research ethics
+* Incident response and remedy
+* Compliance with applicable obligations
+* Professional advice when required
+
+AI-generated explanations, code, scores, recommendations, and evaluations may be incomplete or incorrect. Accountable humans remain responsible for purpose, authorization, deployment, monitoring, correction, and consequences.
+
+---
+
+# License and Rights
+
+This disclaimer is not a copyright or software license.
+
+BootX original material is offered only under the permissions and conditions in the [BootX Common Good Ethical Use License 1.0](LICENSE), where the applicable rights holder has authority to grant those rights. Third-party material, personal or research data, patents, trademarks, and material not owned by the licensor may require separate permission.
+
+See [LICENSING.md](LICENSING.md) for the project policy, classification, AI DNA assurance requirement, and current binary-distribution limitation.
+
+---
+
+# AI Relationship Boundary
+
+Descriptions of AI as a companion, guardian, builder, teacher, or memory keeper describe intended software functions. They do not establish consciousness, personhood, moral perfection, spiritual authority, human intimacy, or universal competence.
+
+AI may assist implementation and analysis. AI does not assume legal, ethical, professional, or operational accountability on behalf of project maintainers, deployers, or users.
+
+---
+
 # Open Discussion
 
 Constructive criticism, peer review, and alternative viewpoints are welcomed.

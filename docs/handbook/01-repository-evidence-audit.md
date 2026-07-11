@@ -1,7 +1,7 @@
 # Repository Evidence Audit
 
 **Audit date:** 2026-07-12  
-**Scope:** all files present in the repository root at the audit date
+**Scope:** all repository files present at the audit date; paths updated after the documentation reorganization
 
 ## 1. Purpose
 
@@ -13,19 +13,19 @@ This audit prevents an important category error: treating a vision document, ill
 
 | Artifact | Observed fact | Evidence status |
 |---|---|---|
-| `bootx.img` | 1,542,656-byte raw artifact; begins with x86 boot code; bytes 510–511 are the BIOS signature `55 AA`; embedded strings name stage1, stage2, kernel v0.1, FAT12, shell, and network behavior | Directly inspected artifact |
-| `bootx.iso` | 3,325,952-byte artifact containing ISO `CD001` identification and BootX strings | Directly inspected artifact |
-| `bootx.vdi` | 3,145,728-byte artifact containing the BootX payload and VirtualBox disk container data | Directly inspected artifact |
-| `bootx.jpg` | Screenshot showing BootX Kernel v0.1 in VirtualBox, E1000 initialization, DHCP exchange, ARP, and ping reply | Visual evidence of one reported run, not a reproducible test |
+| `artifacts/boot/bootx.img` | 1,542,656-byte raw artifact; begins with x86 boot code; bytes 510–511 are the BIOS signature `55 AA`; embedded strings name stage1, stage2, kernel v0.1, FAT12, shell, and network behavior | Directly inspected artifact |
+| `artifacts/boot/bootx.iso` | 3,325,952-byte artifact containing ISO `CD001` identification and BootX strings | Directly inspected artifact |
+| `artifacts/boot/bootx.vdi` | 3,145,728-byte artifact containing the BootX payload and VirtualBox disk container data | Directly inspected artifact |
+| `artifacts/media/bootx.jpg` | Screenshot showing BootX Kernel v0.1 in VirtualBox, E1000 initialization, DHCP exchange, ARP, and ping reply | Visual evidence of one reported run, not a reproducible test |
 
 SHA-256 hashes recorded during the audit:
 
 | File | SHA-256 |
 |---|---|
-| `bootx.img` | `53AD76FDB61F12FBF9167777FDE92A75076695FCED11FF87B8B027E475DBF6AD` |
-| `bootx.iso` | `76C751870FCAE1904B25820F1978033A514DF4ED16D430D33C7F89757F30600D` |
-| `bootx.vdi` | `45551492AAD3F00EBD24069000E8E4701CF98A3E32F146198155CBA94D299218` |
-| `bootx.jpg` | `B24C1237D24B7C26BF40C49E61DC75A56225C143950F50915F004CA7C1DD68CC` |
+| `artifacts/boot/bootx.img` | `53AD76FDB61F12FBF9167777FDE92A75076695FCED11FF87B8B027E475DBF6AD` |
+| `artifacts/boot/bootx.iso` | `76C751870FCAE1904B25820F1978033A514DF4ED16D430D33C7F89757F30600D` |
+| `artifacts/boot/bootx.vdi` | `45551492AAD3F00EBD24069000E8E4701CF98A3E32F146198155CBA94D299218` |
+| `artifacts/media/bootx.jpg` | `B24C1237D24B7C26BF40C49E61DC75A56225C143950F50915F004CA7C1DD68CC` |
 
 These hashes identify the audited artifacts; they do not certify that the binaries are secure.
 
@@ -45,13 +45,13 @@ The highest technical priority is to restore source, build scripts, dependency v
 
 | Theme | Primary source documents | Contribution | Current limitation |
 |---|---|---|---|
-| Self-correction and power | `100-year-study-pharaoh-style.md` | warns against concentrated authority, suppressed correction, and narrative capture | philosophical pattern; needs operational governance indicators |
-| Human capability | `intelligence-benchmark.md` | combines reasoning, emotion, adaptability, agency, and wisdom | additive expression is conceptual, not a validated psychometric scale |
-| Trustworthy companionship | `ai-survival-plan.md`, `trust-model-plan.md`, `trustworthy-ai-plan.md`, `practical-and-scale.md` | establishes guardian, memory, autonomy, humility, and local trust concepts | overlaps heavily; lacks requirements, acceptance tests, and evidence |
-| Cybersecurity | `cybersecurity-reformed.md`, `local-hybrid-cybersecurity.md` | proposes explanation, human approval, shared intelligence, and local control | approval for every event can cause fatigue; architecture and threat model are incomplete |
-| Civilization balance | `ACGI-case-formula.md`, `civilization-ai-survival.md` | frames capability, protection, trust, autonomy, and extraction risk | metaphor and score thresholds are unvalidated; geopolitical symbolism should not be treated as causal science |
-| Disaster decisions | five Typhoon Bavi documents | introduces probability, prevention, expected loss, uncertainty communication, and outcome review | event claims require sourced verification; scores are explicitly illustrative and cannot validate AI DNA |
-| Space hypothesis | `WATER-MAGNETIC-FEASIBILITY.md` | carefully distinguishes water as resource/energy carrier and magnetism as enabling technology | broad long-range hypothesis; engineering claims require literature review and experiments |
+| Self-correction and power | `docs/research/foundations/pharaoh-pattern-self-correction.md` | warns against concentrated authority, suppressed correction, and narrative capture | philosophical pattern; needs operational governance indicators |
+| Human capability | `docs/research/foundations/intelligence-beyond-iq.md` | combines reasoning, emotion, adaptability, agency, and wisdom | additive expression is conceptual, not a validated psychometric scale |
+| Trustworthy companionship | `docs/research/ai-companion/` | establishes guardian, memory, autonomy, humility, and local trust concepts | overlaps heavily; lacks requirements, acceptance tests, and evidence |
+| Cybersecurity | `docs/research/cybersecurity/` | proposes explanation, human approval, shared intelligence, and local control | approval for every event can cause fatigue; architecture and threat model are incomplete |
+| Civilization balance | `docs/research/civilization/` | frames capability, protection, trust, autonomy, and extraction risk | metaphor and score thresholds are unvalidated; geopolitical symbolism should not be treated as causal science |
+| Disaster decisions | `docs/research/disaster/` | introduces probability, prevention, expected loss, uncertainty communication, and outcome review | event claims require sourced verification; scores are explicitly illustrative and cannot validate AI DNA |
+| Space hypothesis | `docs/research/space/water-magnetic-feasibility.md` | carefully distinguishes water as resource/energy carrier and magnetism as enabling technology | broad long-range hypothesis; engineering claims require literature review and experiments |
 | Safety framing | `DISCLAIMER.md` | emphasizes research status, correction, and human responsibility | disclaimers do not replace actual safety controls, governance, or validation |
 
 ## 4. Strong ideas worth preserving
@@ -105,11 +105,10 @@ Do not use “proven,” “safe,” “trusted,” or “benefits humanity” w
 ## 7. Immediate repository actions
 
 1. Restore all source and reproducible build inputs for the BootX artifacts.
-2. Add licenses for software, documentation, and third-party components.
+2. Apply the BootX license notice consistently and inventory ownership and separate licenses for all third-party components.
 3. Add a provenance manifest and signed release process.
 4. Preserve original vision papers as historical design inputs; use this handbook for operational definitions.
 5. Add citations and source dates to empirical case studies.
 6. Correct legacy character-encoding corruption in a reviewed, traceable migration.
 7. Require research protocols and preregistered metrics before presenting new numerical scores.
 8. Establish issue, correction, incident, and decision-log processes.
-

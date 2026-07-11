@@ -1,5 +1,7 @@
 # Foundation and Scope
 
+This research foundation implements the higher-level commitments in the [BootX Charter](../../CHARTER.md). Decision authority and amendments follow [BootX Governance](../../GOVERNANCE.md), while long-term stewardship follows the [Succession and Continuity Plan](../../SUCCESSION.md).
+
 ## 1. Research problem
 
 AI capability is advancing faster than many people and institutions can evaluate its outputs, protect personal data, or recover from automated mistakes. At the same time, digital fraud, manipulated media, information overload, and unequal access to expertise weaken human decision-making.
@@ -113,4 +115,3 @@ The core questions are:
 > The burden of proof grows with the scale, irreversibility, vulnerability, and consequence of the proposed use.
 
 Low-impact prototypes may proceed with ordinary testing. High-impact uses require stronger evidence, independent review, secure operations, explicit authority, appeal, monitoring, and a demonstrated ability to stop the system safely.
-

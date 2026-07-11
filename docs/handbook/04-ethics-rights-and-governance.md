@@ -1,5 +1,7 @@
 # Ethics, Rights, and Governance Constitution
 
+This domain constitution operates under the repository-level [BootX Charter](../../CHARTER.md) and [BootX Governance](../../GOVERNANCE.md). The Charter states the highest commitments; this document develops their ethical and operational requirements for Human + AI companion research.
+
 ## 1. Purpose
 
 This constitution defines the moral and institutional boundaries for BootX Human + AI companion research. It is not a claim that ethical disagreement has been solved. It states the project's commitments, names conflicts, and assigns authority for decisions.
@@ -161,4 +163,3 @@ When harm or a near miss occurs:
 ## 12. Ethical success criterion
 
 The companion is ethically successful when people become safer and more capable while retaining dignity, relationships, freedom, privacy, and recourse. A system that prevents one harm by creating dependency, surveillance, exclusion, or unchallengeable power has not met the mission.
-

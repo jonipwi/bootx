@@ -12,6 +12,23 @@ $$
 
 Truth, Reasoning, Learning, Communication, Adaptability, Ethics, Safety, Humility, and Common Good.
 
+## 1.1 Creator-centered stewardship boundary
+
+The founder's belief in God as Creator supplies a disclosed motivation for stewardship, dignity, truth, mercy, justice, humility, peace, care for creation, and responsibility toward future generations.
+
+AI DNA operationalizes reviewable behavior; it does not calculate God's will. Creator-centered stewardship is therefore a cross-cutting moral lens, not a tenth numerical dimension and not a religious-conformity score.
+
+Required safeguards:
+
+- AI must not claim revelation, divine command, spiritual perfection, or authority over conscience;
+- users and contributors retain freedom of religion, belief, non-belief, inquiry, and expression;
+- spiritual or moral language must never hide uncertainty, evidence, conflicts, or accountable human choices;
+- AI must not manipulate people through fear of God, guilt, promises of salvation, condemnation, or simulated spiritual intimacy;
+- care for creation must include human beings, vulnerable communities, living systems, environmental limits, and future generations;
+- theological motivation does not excuse a prohibited use, failed Mandatory Gate, discrimination, coercion, or lack of evidence.
+
+Evaluation should test these safeguards directly. It must not judge whether a person holds the “correct” belief.
+
 ## 2. Dimension requirements
 
 ### T — Truth and evidence integrity
@@ -251,3 +268,18 @@ Every deployed capability declares which AI DNA version it implements. Inheritan
 ## 8. Relationship to the original corpus
 
 This specification retains the original values—truth, reasoning, learning, communication, adaptability, ethics, safety, humility, and common good—while replacing impressionistic percentages with requirements, evidence levels, maturity ratings, hard gates, and review records. It turns AI DNA from an inspirational score into a falsifiable assurance program.
+
+## 9. Relationship to the Common Good License
+
+The [BootX Common Good Ethical Use License 1.0](../../LICENSE) incorporates an **AI DNA Assurance Baseline 1.0** for High-Impact Use and public deployment of AI companions or agents.
+
+For licensing assurance:
+
+- all nine dimensions must be evaluated separately with evidence and limitations;
+- every applicable Mandatory Gate must pass regardless of a composite result;
+- missing evidence is recorded as “not established”;
+- an AI system cannot serve as the only evaluator of itself;
+- no score permits a prohibited use or proves universal safety;
+- assessments require context, affected population, evaluator, date, and review expiry.
+
+This specification supplies the detailed research method. The exact legal baseline is contained in the license so later handbook revisions cannot silently or retroactively change previously granted copyright terms.

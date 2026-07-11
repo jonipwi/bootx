@@ -35,6 +35,7 @@ Before a real deployment, add applicable law, sector regulation, national guidan
 
 | BootX handbook area | External material to consult first | Research question |
 |---|---|---|
+| Charter, governance, and succession | UNESCO Recommendation; OECD Principles; applicable organizational law | Are authority, participation, amendment, continuity, and remedy legitimate and durable? |
 | Foundation and scope | UNESCO Recommendation; OECD Principles | Are purpose, affected rights, and lifecycle responsibilities complete? |
 | Logic and evidence | NIST AI RMF Measure; domain research methods | Are validity, reliability, calibration, and uncertainty appropriate to the use? |
 | Mathematics | NIST AI RMF; peer-reviewed statistics and human-factors work | Do measures reflect real constructs and unequal error costs? |
@@ -80,4 +81,3 @@ Until those reviews and studies are complete, BootX claims in these areas remain
 ## 6. Citation rule for future BootX work
 
 Every empirical statement that materially affects design or policy should link to a source that directly supports it. Include authoring body, title, version, publication date, access date for evolving web material, and the exact claim supported. Clearly label analogy, opinion, scenario, and illustrative mathematics.
-
