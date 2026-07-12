@@ -19,7 +19,7 @@ Deliverables:
 - adopted project Charter, governance, succession, contributor, licensing, ethical-constitution, and decision-log processes;
 - stakeholder map including older adults, accessibility representatives, security experts, and caregivers;
 - threat model, data map, research protocol templates, and incident process;
-- sourced review of anti-scam interventions, human factors, and relevant legal/standards obligations for target jurisdictions.
+- sourced review of anti-scam interventions, fake-evidence and deepfake defenses, human factors, and relevant legal/standards obligations for target jurisdictions.
 
 Exit gate:
 

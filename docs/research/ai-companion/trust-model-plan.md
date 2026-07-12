@@ -4,6 +4,10 @@ Version: 1.0
 Author: Jonah PanPan  
 Date: May 2026  
 
+> **Evidence status:** Normative relationship model and historical design
+> input—not a validated trust scale. Appropriate reliance, manipulation,
+> emotional dependency, and user exit must be measured independently.
+
 ---
 
 # TRUST MODEL PLAN

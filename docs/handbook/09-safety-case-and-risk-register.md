@@ -66,6 +66,7 @@ Initial priority can be \(S\times L\), but decisions also consider detectability
 | R14 | Service outage | cloud/network/device failure | loss of protection at critical time | degraded mode, honest status, local fallback | outage and recovery exercises |
 | R15 | False emergency escalation | misclassification or unsafe contact | panic, coercion, unnecessary intervention | explicit rules, confirmation, local expert review | scenario testing and adverse-event review |
 | R16 | Environmental/resource burden | inefficient models/hardware turnover | shared long-term harm | resource accounting, right-sized models, lifecycle planning | measured energy/material profile |
+| R17 | Fake or corrupted evidence | deepfake, false context, forged record, spoofed sensor, poisoned data, or correlated repetition | unsafe emergency action, panic, rights abuse, loss of trust | provenance, dependency-aware corroboration, calibrated uncertainty, human/domain review, reversible precautions | adversarial evidence suite, provenance coverage, false-accept/reject rates, correction drill |
 
 ## 5. Control hierarchy
 
@@ -158,4 +159,3 @@ Residual risk acceptance is not permanent. New evidence, broader deployment, inc
 ## 10. Safety culture
 
 The strongest control against the “Pharaoh Pattern” is a culture in which reporting uncertainty and failure is rewarded. Program health should be measured partly by correction quality, near-miss reporting, dissent resolution, and the speed with which unsupported claims are withdrawn—not by an absence of reported problems.
-

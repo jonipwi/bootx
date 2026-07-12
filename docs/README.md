@@ -6,6 +6,8 @@ This directory separates normative project governance, the professional implemen
 
 - [Project progress and readiness](../PROGRESS.md) — what is complete, blocked, and inherited next
 - [Professional Human + AI handbook](handbook/README.md) — ordered logic, mathematics, ethics, AI DNA, architecture, research, curriculum, and safety program
+- [Anti-Abuse and Evidence Integrity](handbook/12-anti-abuse-and-evidence-integrity.md) — fake evidence, deepfakes, source independence, emergency safeguards, and governance abuse
+- [Documentation Verification Register](handbook/13-documentation-verification-register.md) — repository-wide factual, mathematical, logical, and evidence corrections
 - [Installation guide](guides/install-guide.md) — experimental BootX image testing and installation guidance
 - [Research library](research/README.md) — original studies organized by subject
 - [Artifact inventory](../artifacts/README.md) — supplied binary images, screenshot, hashes, and limitations

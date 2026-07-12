@@ -13,8 +13,9 @@ Before a real deployment, add applicable law, sector regulation, national guidan
 
 ### AI risk management
 
-- [NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10) — voluntary lifecycle-oriented framework for managing AI risks. Use its Govern, Map, Measure, and Manage structure to cross-check BootX governance and assurance.
+- [NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10) — voluntary lifecycle-oriented framework for managing AI risks. Use its Govern, Map, Measure, and Manage structure to cross-check BootX governance and assurance. At the 2026-07-12 check, NIST's AI Resource Center stated that AI RMF 1.0 was under revision; record the exact version used.
 - [NIST Generative AI Profile (NIST AI 600-1)](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf) — generative-AI risk profile. Use it when the companion includes a generative model; do not assume a general AI risk register covers model-specific hazards.
+- [NIST AI 100-4, Reducing Risks Posed by Synthetic Content](https://www.nist.gov/publications/reducing-risks-posed-synthetic-content-overview-technical-approaches-digital-content) — provenance, watermarking, detection, labeling, testing, and research limits for synthetic-content transparency.
 - [NIST AI Resource Center](https://airc.nist.gov/) — implementation resources and playbook material. Check for revisions before each formal review because risk guidance evolves.
 
 ### Human rights and ethics
@@ -29,7 +30,18 @@ Before a real deployment, add applicable law, sector regulation, national guidan
 
 ### Privacy engineering
 
-- [NIST Privacy Framework](https://www.nist.gov/privacy-framework) — voluntary enterprise privacy-risk framework. The NIST site currently presents version 1.0 material and version 1.1 development material; record the exact version used in every BootX assessment.
+- [NIST Privacy Framework](https://www.nist.gov/privacy-framework) — voluntary enterprise privacy-risk framework. At the 2026-07-12 check, version 1.0 remained the completed framework and [Privacy Framework 1.1](https://www.nist.gov/privacy-framework/new-projects/privacy-framework-version-11) was an initial public draft with the final marked “coming soon”; record the exact version and publication state used in every assessment.
+
+### Disaster evidence and early warning
+
+- [UNDRR Early Warning System terminology](https://www.undrr.org/terminology/early-warning-system) — defines an end-to-end system that includes risk knowledge, monitoring/forecasting, communication, and preparedness to respond. It supports a systems view but does not validate a particular response.
+
+### Space-resource and energy hypothesis
+
+- [NASA In-Situ Resource Utilization](https://www.nasa.gov/mission/in-situ-resource-utilization-isru/) — official overview of research into using destination resources, including water-related compounds.
+- [NASA TechPort magnetic radiation-shield research](https://techport.nasa.gov/projects/12149) — a completed technology project evaluating high-temperature-superconducting concepts; it is research evidence, not operational flight certification.
+- [U.S. Department of Energy Hydrogen Production: Electrolysis](https://www.energy.gov/cmei/fuels/hydrogen-production-electrolysis) — supports the need for energy input and balanced water-splitting chemistry.
+- [Japan Agency for Natural Resources and Energy hydrogen-policy history](https://www.enecho.meti.go.jp/en/category/special/article/detail_203.html) — supports the 2017 strategy, 2023 revision, and 2024 act; it does not endorse a space-civilization hypothesis.
 
 ## 3. BootX crosswalk
 

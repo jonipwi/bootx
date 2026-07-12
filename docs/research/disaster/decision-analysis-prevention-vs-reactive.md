@@ -4,6 +4,10 @@
 
 **Version:** 1.0
 
+**Status:** Analytical model, not an event-outcome report<br>
+**Evidence maturity:** E1 — hypothesis and decision framework<br>
+**Known limitation:** numerical inputs must be estimated for a defined population, hazard, action, and time window
+
 > **Purpose:** Compare two policy approaches using decision theory,
 > expected-value reasoning, and public-interest principles.
 
@@ -11,11 +15,10 @@
 
 This study compares:
 
--   **Strategy A -- Reactive Response:** wait until serious harm occurs,
-    then rescue and recover.
--   **Strategy B -- Preventive Preparedness:** act before impact based
-    on credible evidence, even though some warnings will later prove
-    unnecessary.
+-   **Strategy A -- No additional advance precaution:** retain baseline
+    readiness and respond after local effects become observable.
+-   **Strategy B -- Selected preventive preparedness:** add a specified,
+    proportionate action before impact based on credible evidence.
 
 This is a policy comparison, **not** a claim that prevention should
 always override every other concern. Effective policy seeks a
@@ -26,32 +29,35 @@ disruption, and communicating uncertainty honestly.
 
 # Simplified Expected Loss Model
 
-Let:
+Let \(p\) be the probability of a severe event and \(1-p\) the probability
+of a non-severe event. Let \(L_1,L_0\) be losses without the proposed
+preparation in those states; \(R_1,R_0\) the corresponding residual losses
+with preparation; and \(C\) the preparation cost incurred regardless of the
+state.
 
--   **P** = probability of a severe event
--   **L** = expected loss if unprepared (lives, property, economic
-    damage)
--   **C** = cost of preparedness
--   **R** = residual loss after preparedness
+$$
+EL_{reactive}=pL_1+(1-p)L_0
+$$
 
-Expected cost without preparedness:
+$$
+EL_{preventive}=C+pR_1+(1-p)R_0
+$$
 
-    E_reactive = P × L
+Preparation has lower modeled expected loss when:
 
-Expected cost with preparedness:
+$$
+C<p(L_1-R_1)+(1-p)(L_0-R_0)
+$$
 
-    E_preventive = C + P × R
+The earlier expression \(C<p(L-R)\) is only the special case where losses in
+the non-severe state are assumed equal and normalized to zero. The expanded
+form matters because false alarms, evacuation injury, lost income, warning
+fatigue, privacy intrusion, and unequal burdens can occur even when the severe
+event does not.
 
-Preventive action is beneficial when:
-
-    C + P × R < P × L
-
-or equivalently,
-
-    C < P × (L − R)
-
-Meaning: preparation is justified when its cost is lower than the
-expected reduction in harm.
+All terms must use a compatible consequence scale or a documented
+multi-criteria method. Fundamental rights and prohibited actions remain
+constraints; they are not simply priced away by an expected-value result.
 
 ------------------------------------------------------------------------
 
@@ -64,9 +70,12 @@ expected reduction in harm.
   Primary objective       Recover after losses    Reduce losses before
                                                   impact
 
-  Human life              Higher risk             Lower expected risk
+  Human life              Baseline modeled risk   Lower only if the action is
+                                                  effective and does not add
+                                                  offsetting harm
 
-  Infrastructure          More damage expected    Better protection
+  Infrastructure          Baseline modeled loss   Reduced loss only for hazards
+                                                  the measure actually mitigates
 
   Economic continuity     Larger disruption after Up-front disruption,
                           disaster                potentially smaller
@@ -79,7 +88,9 @@ expected reduction in harm.
   Scientific basis        Responds after evidence Uses forecasts and risk
                           is visible              analysis
 
-  Long-term resilience    Lower                   Higher
+  Long-term resilience    Context-dependent       May improve through learning
+                                                  and capacity; may decline if
+                                                  repeated actions are harmful
 
   Trust requirement       Moderate                High (requires clear
                                                   communication of
@@ -93,9 +104,11 @@ expected reduction in harm.
   Scenario                      Reactive Risk          Preventive Risk
   ---------------------- -------------------- ------------------------
   False alarm              Low immediate cost   Moderate inconvenience
-  Missed disaster                   Very high                    Lower
-  Mass casualties          Higher probability        Lower probability
-  Long-term resilience                  Lower                   Higher
+  Missed disaster          Potentially very high   Lower only if warning and
+                                                  action are effective
+  Mass casualties          Hazard-dependent        May reduce probability or
+                                                  exposure; not guaranteed
+  Long-term resilience     Context-dependent       Context-dependent
 
 ------------------------------------------------------------------------
 
@@ -114,9 +127,9 @@ A stronger evaluation asks:
 
 ------------------------------------------------------------------------
 
-# Taiwan / Typhoon Bavi Insight
+# Typhoon Bavi research hypothesis
 
-A warning that results in limited damage can reflect several
+A warning followed by limited damage can reflect several
 possibilities:
 
 -   the storm weakened,
@@ -124,8 +137,10 @@ possibilities:
 -   preparations reduced consequences,
 -   or the highest-risk areas were spared.
 
-A smaller-than-feared impact does **not** by itself prove that
-preparedness was unnecessary.
+A smaller-than-feared impact does **not** by itself prove that preparedness
+was unnecessary, effective, or causal. Those alternatives require forecast,
+action, hazard, exposure, and outcome evidence. The 2026 event record remains
+preliminary; see [Typhoon Bavi (2026)](typhoon-bavi-aftermath-summary.md).
 
 ------------------------------------------------------------------------
 
@@ -147,8 +162,9 @@ Good governance combines:
 
 # Conclusion
 
-Preventive preparedness generally provides greater societal resilience
-when based on credible evidence and proportional decisions.
+Preventive preparedness can provide greater societal resilience when based on
+credible evidence, effective measures, proportionate decisions, and review of
+false-alarm and distributional harms.
 
 However, maintaining trust requires explaining uncertainty, reviewing
 outcomes after each event, and improving future forecasts.

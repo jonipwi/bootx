@@ -16,23 +16,31 @@ $$
 
 Choose the action with the lowest expected loss only after applying rights and safety constraints. Some actions remain forbidden even if a crude utility calculation appears favorable.
 
-For the repository's prevention example:
+For the repository's prevention example, use two states so that non-event
+costs remain visible. Let \(p\) be severe-event probability; \(L_1,L_0\) the
+losses without additional preparation in severe and non-severe states;
+\(R_1,R_0\) the corresponding residual losses with preparation; and \(C\) the
+state-independent preparation cost:
 
 $$
-EL_{reactive}=pL
+EL_{reactive}=pL_1+(1-p)L_0
 $$
 
 $$
-EL_{preventive}=C+pR
+EL_{preventive}=C+pR_1+(1-p)R_0
 $$
 
-where \(p\) is event probability, \(L\) unprepared loss, \(C\) preparation cost, and \(R\) residual loss after preparation. Prevention has lower expected loss when:
+Prevention has lower modeled expected loss when:
 
 $$
-C<p(L-R)
+C<p(L_1-R_1)+(1-p)(L_0-R_0)
 $$
 
-This equation is correct only if inputs cover all material impacts, including unequal burdens, warning fatigue, opportunity cost, privacy, and long-term trust.
+The simpler \(C<p(L-R)\) is a special case that assumes equal, normalized
+non-event losses. Inputs must cover all material impacts, including unequal
+burdens, warning fatigue, opportunity cost, privacy, evacuation injury, and
+long-term trust. They must also use compatible units or an explicit
+multi-criteria method.
 
 ## 3. Precaution and tail risk
 
@@ -74,6 +82,11 @@ Recall=\frac{TP}{TP+FN}
 $$
 
 Also report specificity, negative predictive value, prevalence, alert rate per user, time to action, and cost-weighted errors. Accuracy alone is misleading for rare scams or emergencies.
+
+State how zero denominators are handled. For example, precision is undefined
+when no positive prediction is made, and recall is undefined when the
+evaluation set contains no positive case; silently reporting either as zero or
+one changes interpretation.
 
 ## 5. Human outcome measures
 
@@ -134,7 +147,12 @@ $$
 M=\frac{\sum_i w_i d_i}{4\sum_i w_i}\times 100
 $$
 
-Publish all \(w_i\), dimension values, confidence ranges, and sensitivity analysis. Never compare unlike contexts as if they form a universal league table.
+This requires \(w_i\ge 0\), \(\sum_iw_i>0\), and ratings on the stated 0–4
+anchors. Because maturity ratings are ordinal, treating differences as equal
+intervals is a governance convenience, not a validated measurement fact.
+Publish all \(w_i\), dimension values, evidence cards, uncertainty, and
+sensitivity analysis. Never compare unlike contexts as if they form a
+universal league table.
 
 ## 7. Reframing ACGI as a research dashboard
 

@@ -34,7 +34,13 @@ They are not automatically peer-reviewed, independently verified, or operational
 - [AI DNA Evaluation](disaster/ai-dna-evaluation-typhoon-bavi-taiwan.md)
 - [Aftermath Summary](disaster/typhoon-bavi-aftermath-summary.md)
 
-The factual chronology and attribution claims in these case files remain subject to primary-source verification.
+The disaster files were corrected on 2026-07-12. The 2026 Maysak Guangxi
+flooding and Liulan/Yunbiao reservoir breaches are supported by dated reports;
+the Bavi aftermath and any claim that learning from Maysak caused better Bavi
+outcomes remain preliminary or untested. The earlier `93.3%` AI DNA evaluation
+has been withdrawn as an empirical result. See [Anti-Abuse and Evidence
+Integrity](../handbook/12-anti-abuse-and-evidence-integrity.md) and the
+[Documentation Verification Register](../handbook/13-documentation-verification-register.md).
 
 ## Space research
 
@@ -50,3 +56,7 @@ When developing these studies:
 4. avoid converting a metaphor or score into proof;
 5. preserve previous versions and visible corrections;
 6. follow the [logic](../handbook/02-logic-and-epistemology.md), [measurement](../handbook/03-mathematics-and-measurement.md), and [ethics](../handbook/04-ethics-rights-and-governance.md) requirements.
+
+Every legacy file now requires an explicit status. A status label makes the
+epistemic boundary visible; it does not prove that every sentence has received
+independent domain review.

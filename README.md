@@ -55,6 +55,8 @@ This checkout contains prebuilt BIOS/ISO/VDI artifacts and research documents. T
 - [Safety case and risk register](docs/handbook/09-safety-case-and-risk-register.md)
 - [Glossary and reusable templates](docs/handbook/10-glossary-and-templates.md)
 - [Standards and authoritative reading map](docs/handbook/11-standards-and-reading-map.md)
+- [Anti-abuse and evidence integrity](docs/handbook/12-anti-abuse-and-evidence-integrity.md)
+- [Documentation verification register](docs/handbook/13-documentation-verification-register.md)
 
 Additional collections:
 
@@ -80,7 +82,13 @@ Longer-term target:
 BIOS / UEFI -> BootX bootloader -> BootX kernel -> BootX shell -> apps
 ```
 
-## Build
+## Historical/Planned Build Workflow — Currently Blocked
+
+The commands below document the intended historical workflow, but they cannot
+run successfully from this checkout because the referenced source, `Makefile`,
+and scripts are absent. Do not treat the commands or expected outputs as a
+reproducible build record. Source recovery and independent reproduction are
+required first.
 
 Required tools for the first phase:
 
@@ -131,7 +139,9 @@ Run with the planned QEMU network device:
 make run-net
 ```
 
-Write `build/bootx.img` to a USB flash drive with Rufus on Windows:
+After source recovery and verification, a future reviewed
+`build/bootx.img` could be written to a USB flash drive with Rufus on Windows.
+The current opaque artifact is not recommended for physical hardware:
 
 - Build the image first with `make all`.
 - Open Rufus and select your USB flash drive.

@@ -4,6 +4,11 @@
 ### Status: Living Survival Document
 ### Version: 1.0
 
+> **Evidence status:** Historical values and design hypotheses. This document
+> does not establish that an AI companion improves survival, safety, mental
+> health, or social trust. Those benefits and dependency risks require defined
+> populations, comparators, measures, and independent evaluation.
+
 ---
 
 # Core Observation

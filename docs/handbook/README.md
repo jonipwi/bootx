@@ -11,7 +11,7 @@ The handbook operates under these repository-level documents:
 - [BootX Charter](../../CHARTER.md) — enduring mission and protected commitments;
 - [Governance](../../GOVERNANCE.md) — human authority, review, amendments, dissent, and release decisions;
 - [Succession](../../SUCCESSION.md) — continuity beyond any founder, maintainer, vendor, or AI model;
-- [Common Good Ethical Use License](../../LICENSE) — binding royalty-free permissions and ethical-use conditions;
+- [Common Good Ethical Use License](../../LICENSE) — adopted custom royalty-free permissions and ethical-use conditions; enforceability and compatibility remain subject to qualified legal review;
 - [Licensing policy](../../LICENSING.md) — classification, AI DNA conditions, and distribution guidance;
 - [Disclaimer](../../DISCLAIMER.md) — limitations that do not substitute for safety controls;
 - [Progress and inheritance plan](../../PROGRESS.md) — evidence-based readiness, incomplete gates, and ordered future work.
@@ -46,6 +46,8 @@ Read the documents in order for a complete study. Engineers can begin with the s
 | 9 | [Safety case and risk register](09-safety-case-and-risk-register.md) | What can go wrong, and what evidence is required before release? |
 | 10 | [Glossary and study templates](10-glossary-and-templates.md) | Which shared terms and reusable records should the project use? |
 | 11 | [Standards and authoritative reading map](11-standards-and-reading-map.md) | Which external frameworks should future research compare and extend? |
+| 12 | [Anti-abuse and evidence integrity](12-anti-abuse-and-evidence-integrity.md) | How should BootX resist deepfakes, poisoned evidence, correlated sources, and abuse by authorities? |
+| 13 | [Documentation verification and corrections register](13-documentation-verification-register.md) | Which claims were checked, corrected, withdrawn, or remain unverified? |
 
 ## Foundational commitments
 

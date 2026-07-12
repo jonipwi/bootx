@@ -4,6 +4,10 @@ Version: 1.0
 Author: Jonah PanPan  
 Date: May 2026  
 
+> **Evidence status:** Historical vision and design hypotheses. Statements
+> about large-scale psychological or civilizational effects are not established
+> outcomes. Use the professional handbook for requirements and evaluation.
+
 ---
 
 # PRACTICAL AND SCALE

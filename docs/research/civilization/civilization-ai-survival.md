@@ -1,6 +1,12 @@
 # Taiwan, Singapore, and the Protection of Civilization
 ## A Strategic & Symbolic Study for Human Civilization Resilience
 
+**Status:** Symbolic geopolitical essay and scenario, not a forecast, country ranking, or causal model<br>
+**Evidence rule:** claims about current supply chains, trade, law, conflict, or
+national performance require dated primary sources before policy use. “Earth”
+and “Heaven” are metaphors and do not assign superior moral worth to a people,
+territory, or state.
+
 ---
 
 # Executive Summary
@@ -106,7 +112,10 @@ A major disruption would impact:
 - America
 - Emerging economies
 
-This is why Taiwan is viewed by many analysts as one of the most important geopolitical flashpoints of the 21st century.
+These dependencies are one reason Taiwan appears prominently in geopolitical
+and supply-chain risk analysis. The magnitude and consequences of disruption
+must be evaluated with dated, sourced scenarios rather than this symbolic
+essay.
 
 ---
 
@@ -217,9 +226,14 @@ Civilizations remain stable when capability and trust remain balanced.
 
 ## Simplified Concept
 
-Civilization Stability
+Conceptual civilization profile:
 
-= Capability × Trust
+```text
+Capability conditions ↔ trust and cooperation conditions
+```
+
+This is not a quantitative law. Capability and trust are multi-dimensional,
+context-dependent constructs with unequal distribution and feedback effects.
 
 If either approaches zero:
 

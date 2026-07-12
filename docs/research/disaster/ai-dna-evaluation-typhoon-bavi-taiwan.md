@@ -1,123 +1,51 @@
-# AI DNA Evaluation Report
+# Withdrawn AI DNA Evaluation — Typhoon Bavi (2026)
 
-## Taiwan Government Response During Typhoon Bavi (Illustrative Assessment)
+**Status:** Withdrawn as an empirical evaluation; retained as a measurement-integrity lesson<br>
+**Version:** 2.0<br>
+**Correction date:** 2026-07-12<br>
+**Applies to:** the former `93.3%` Taiwan-government response score in this path
 
-**Version:** 1.0
+## Decision
 
-> **Disclaimer:** This score is an analytical framework based on
-> publicly reported actions and the accompanying studies. It is **not**
-> an official evaluation of the Taiwan government.
+The former **93.3% AI DNA Alignment** result is withdrawn. It must not be cited as a measured evaluation of Taiwan, its government, disaster agencies, Typhoon Bavi, or AI effectiveness.
 
-## Purpose
+The arithmetic in the original weighted sum was internally consistent:
 
-Evaluate whether the AI DNA principles provide a useful framework for
-assessing disaster-management decisions under uncertainty.
+$$
+1.425+1.425+1.275+1.350+2.000+0.900+0.950=9.325
+$$
 
-## AI DNA Scoring Framework
+and \(9.325/10=93.25\%\), which rounds to `93.3%`. Correct arithmetic does not make the inputs valid evidence.
 
-  --------------------------------------------------------------------------------
-  AI DNA                   Weight Assessment           Score (/10)        Weighted
-  Principle                                                        
-  --------------- --------------- ---------------- --------------- ---------------
-  Truth-seeking               15% Decisions                    9.5           1.425
-                                  followed the                     
-                                  best available                   
-                                  meteorological                   
-                                  evidence and                     
-                                  were updated as                  
-                                  forecasts                        
-                                  evolved.                         
+## Why the score is invalid as an evaluation
 
-  Reasoning                   15% Preparedness                 9.5           1.425
-                                  reflected                        
-                                  forecast risk                    
-                                  rather than                      
-                                  waiting for                      
-                                  confirmed                        
-                                  disaster.                        
+- ratings were assigned from narrative impressions rather than a predefined evidence protocol;
+- the event was still developing;
+- source claims and reporting cut-offs were incomplete;
+- dimensions, anchors, and weights were not validated;
+- no qualified independent raters or affected-community reviewers were identified;
+- uncertainty and inter-rater reliability were absent;
+- mandatory safety, rights, and evidence gates were not applied;
+- no comparator or causal design established what the response changed;
+- a government response is not itself an AI system and should not be labeled as AI DNA performance without a clearly defined unit of analysis.
 
-  Communication               15% Frequent                     8.5           1.275
-                                  warnings and                     
-                                  public updates,                  
-                                  though public                    
-                                  understanding of                 
-                                  uncertainty                      
-                                  could improve.                   
+## Permitted lesson
 
-  Adaptability                15% Emergency                    9.0           1.350
-                                  actions evolved                  
-                                  with changing                    
-                                  forecasts.                       
+This withdrawn score demonstrates a recurring error:
 
-  Ethics & Safety             20% Human life was              10.0           2.000
-                                  prioritized                      
-                                  through                          
-                                  evacuation and                   
-                                  preparedness.                    
+> Numerical precision can conceal evidential weakness. A percentage derived from subjective ratings remains subjective unless the constructs, anchors, evidence, raters, reliability, context, and uncertainty are established.
 
-  Humility                    10% Forecasts were               9.0           0.900
-                                  revised as new                   
-                                  observations                     
-                                  became                           
-                                  available;                       
-                                  uncertainty was                  
-                                  acknowledged.                    
+## Requirements for any future evaluation
 
-  Common Good                 10% Policies focused             9.5           0.950
-                                  on protecting                    
-                                  society as a                     
-                                  whole rather                     
-                                  than optimizing                  
-                                  only for                         
-                                  short-term                       
-                                  economics.                       
-  --------------------------------------------------------------------------------
+1. Define the evaluated object: warning system, agency process, particular AI capability, or public decision—not an ambiguous whole government.
+2. Freeze an evidence cut-off and link each rating to a claim-and-source table.
+3. Use the 0–4 evidence-maturity anchors in the [AI DNA specification](../../handbook/05-ai-dna-specification.md).
+4. Mark missing evidence `not established`.
+5. Apply mandatory gates before any composite summary.
+6. Use multiple qualified raters, record independence and conflicts, and report disagreement/reliability.
+7. Publish the complete dimension profile, not only a percentage.
+8. Separate response-process quality from storm outcome and causal benefit.
+9. Obtain relevant domain and affected-community review.
+10. Set review expiry and update after final official reports.
 
-### Overall AI DNA Alignment
-
-Weighted Score:
-
-    AI DNA Score = Σ(weight × score)
-
-    = 1.425 + 1.425 + 1.275 + 1.350 + 2.000 + 0.900 + 0.950
-
-    = 9.325 / 10
-
-    ≈ 93.3%
-
-## Interpretation
-
-**Estimated AI DNA Alignment: 93.3%**
-
-This indicates strong alignment with the proposed AI DNA principles: -
-Evidence-based decisions - Risk-aware reasoning - Ethical priority on
-protecting lives - Adaptation to new information - Focus on the common
-good
-
-The largest opportunity for improvement is communicating uncertainty so
-the public better understands why severe warnings may still be
-appropriate even when local impacts are less severe.
-
-## Lessons
-
-1.  Good preparedness may make disasters appear less severe.
-2.  Forecasts should be evaluated by expected-risk reduction, not only
-    by observed outcomes.
-3.  Public trust improves when uncertainty is explained clearly.
-4.  AI should support---not replace---human leadership and
-    accountability.
-
-## Conclusion
-
-The Typhoon Bavi case suggests that the AI DNA framework can serve as a
-structured governance tool for evaluating disaster-response quality
-beyond simple forecast accuracy.
-
-It encourages assessment of: - Truth - Reasoning - Ethics -
-Communication - Adaptability - Humility - Common Good
-
-rather than hindsight alone.
-
-> **Power without wisdom is dangerous.**
->
-> **Knowledge with humility becomes a blessing.**
+The current preliminary factual record is [Typhoon Bavi (2026)](typhoon-bavi-aftermath-summary.md). The repository-wide correction rationale is in the [verification register](../../handbook/13-documentation-verification-register.md).

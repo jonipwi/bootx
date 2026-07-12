@@ -3,6 +3,11 @@
 **Audit date:** 2026-07-12  
 **Scope:** all repository files present at the audit date; paths updated after the documentation reorganization
 
+**Correction follow-up:** the later repository-wide [Documentation Verification
+and Corrections Register](13-documentation-verification-register.md) supersedes
+this chapter wherever it records a more specific correction or newer evidence
+boundary.
+
 ## 1. Purpose
 
 This audit prevents an important category error: treating a vision document, illustrative case score, screenshot, or compiled artifact as proof of a complete and validated system. It records what the current repository actually supports and identifies what future work must verify.
@@ -77,7 +82,12 @@ Scores such as 93.3% or 96/100 are arithmetic applied to expert-like judgments, 
 
 ### Disaster case material
 
-The documents contain public-event claims without citations in the repository. They also use a counterfactual—what would have happened without preparation—that cannot be directly observed. The decision-theory lesson is valuable, but factual timelines, impacts, dates, and attributions must be source-verified before academic or policy use.
+The original documents contained public-event claims without citations and
+used an unobserved counterfactual—what would have happened without preparation.
+The 2026 Maysak breach record has since been sourced, the Bavi aftermath has
+been replaced with a dated preliminary record, and the `93.3%` evaluation has
+been withdrawn as an empirical result. Final outcomes, causal attribution, and
+independent disaster-domain review remain open.
 
 ### “Trust” and “common good”
 

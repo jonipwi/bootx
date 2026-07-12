@@ -1,4 +1,9 @@
-# BootX USB Install Guide
+# BootX Image Testing and Historical USB Install Guide
+
+**Status:** Blocked for source builds and trusted physical installation<br>
+**Verified through:** 2026-07-12<br>
+**Reason:** source code, build scripts, dependency provenance, and reproducible
+build evidence are absent from this checkout
 
 This guide explains how to build a BootX image and write it to a USB flash
 drive with Rufus on Windows.
@@ -10,7 +15,14 @@ drive with Rufus on Windows.
 > source-built artifacts. Review [PROGRESS.md](../../PROGRESS.md) and the
 > [licensing policy](../../LICENSING.md) before using or distributing binaries.
 
-BootX currently has three boot artifacts:
+> **Current safety posture:** do not place the supplied opaque image on a
+> production computer or a USB device intended for trusted use. If preservation
+> or research requires execution, use an isolated emulator/virtual machine with
+> no personal data, credentials, shared folders, clipboard integration, or
+> trusted network access. The physical-install steps below are retained as a
+> historical/planned procedure and are not current authorization to deploy.
+
+The historical build design describes these intended outputs:
 
 ```text
 build/bootx.img                    BIOS / legacy raw disk image
@@ -35,7 +47,7 @@ writing.
 
 ---
 
-## Step 1: Install Build Tools
+## Historical Step 1: Install Build Tools
 
 Recommended build environment is WSL/Ubuntu.
 
@@ -54,7 +66,7 @@ sudo apt-get install -y qemu-system-x86
 
 ---
 
-## Step 2: Build the BIOS USB Image
+## Historical Step 2: Build the BIOS USB Image
 
 From WSL, go to the project root:
 
@@ -87,7 +99,8 @@ The same file from WSL is:
 /mnt/c/Job/bootx/build/bootx.img
 ```
 
-Current image layout:
+Historically documented image layout (not reproduced from source in this
+checkout):
 
 ```text
 sector 0      BIOS stage1 boot sector
@@ -98,7 +111,7 @@ sector 133+   FAT12 C: volume with README.TXT
 
 ---
 
-## Step 3: Test in QEMU First
+## Historical Step 3: Test in QEMU First
 
 Before writing a USB drive, test the image in QEMU:
 
@@ -127,7 +140,7 @@ cat C:\README.TXT
 
 ---
 
-## Step 4: Write with Rufus
+## Historical Step 4: Write with Rufus
 
 1. Plug in the USB flash drive.
 2. Open Rufus.
@@ -154,7 +167,7 @@ Do not choose ISO mode. BootX is a raw disk image, not an ISO installer.
 
 ---
 
-## Step 5: Boot the USB Drive
+## Historical Step 5: Boot the USB Drive
 
 BootX currently requires BIOS or legacy CSM boot for the kernel path.
 
@@ -241,9 +254,11 @@ Replace `/dev/sdX` with the real USB disk, for example `/dev/sdb`.
 
 ---
 
-## Current Hardware Limitations
+## Historically Reported Hardware Limitations
 
-BootX is still experimental.
+BootX is experimental. The limitations below were carried forward from the
+historical build description and screenshot; they have not been independently
+confirmed against source in this checkout.
 
 Known limitations:
 

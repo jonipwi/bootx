@@ -1,15 +1,20 @@
 # Humanity + AI During Typhoon Bavi
-## An Official Study on Trustworthy AI, Disaster Preparedness, and the Common Good
+## A Research Perspective on Trustworthy AI, Disaster Preparedness, and the Common Good
 
 **Version:** 1.0<br>
 **Date:** July 2026<br>
 **Author:** Human + AI Collaborative Study
 
+**Status:** Values-led research essay, not an official agency report or completed event evaluation<br>
+**Evidence cut-off:** 2026-07-12<br>
+**Event facts:** use the corrected [preliminary Bavi record](typhoon-bavi-aftermath-summary.md) and [documentation verification register](../../handbook/13-documentation-verification-register.md)<br>
+**Limitation:** general preparedness principles in this essay must not be read as proof that AI caused any 2026 outcome
+
 ---
 
 # Executive Summary
 
-Typhoon Bavi demonstrates that natural disasters are among the clearest examples of why humanity benefits from cooperation between science, governments, emergency responders, and Artificial Intelligence.
+Typhoon Bavi provides a live case through which to study why disaster risk reduction may benefit from cooperation among science, governments, emergency responders, communities, and carefully governed computational tools, including AI. The event alone does not demonstrate the size or causal contribution of any AI benefit.
 
 The storm is not merely a meteorological event.
 
@@ -29,7 +34,8 @@ Its greatest lesson is that disasters do not recognize political borders.
 
 # Observation
 
-Countries potentially affected include:
+Regional stakeholders potentially affected by western North Pacific typhoons
+can include:
 
 - Taiwan
 - Philippines
@@ -63,14 +69,16 @@ The result is a continuously updated digital representation of global weather.
 
 # Why AI Matters
 
-AI provides value by helping humanity:
+Properly validated computational and AI systems may support people by helping
+to:
 
 - forecast storms earlier
 - estimate rainfall
 - predict flood risk
-- optimize evacuation
+- analyze evacuation options under accountable emergency authority
 - improve emergency logistics
-- reduce casualties
+- support actions intended to reduce casualties, without claiming causal
+  benefit until evaluated
 - coordinate rescue operations
 
 AI becomes most valuable not after disaster occurs,
@@ -80,7 +88,7 @@ but before it happens.
 
 # Shared Responsibility
 
-Typhoon Bavi is not:
+A major transboundary typhoon is not solely:
 
 - Taiwan's problem
 - China's problem

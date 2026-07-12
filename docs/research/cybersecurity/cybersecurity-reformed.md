@@ -1,8 +1,15 @@
-Cybersecurity Reform
+# Cybersecurity Reform
 
 Explain First. Protect Always. Human Decides.
 
 A Vision for Human-Centered Cybersecurity
+
+> **Status:** Concept architecture, not an implemented or security-tested
+> Cisco/OpenAI integration. Product names are illustrative and imply no
+> affiliation. Asking users to approve every connection is unsafe at scale
+> because it creates alert fatigue; routine low-risk enforcement should follow
+> reviewed policy while consequential exceptions receive understandable human
+> review.
 
 For decades, cybersecurity has focused on blocking threats through increasingly sophisticated technologies:
 
@@ -32,7 +39,10 @@ Humans bear the consequences.»
 
 The Dream
 
-Imagine a new generation of cybersecurity where every network activity is translated into human language before action is taken.
+Imagine a new generation of cybersecurity where material or unusual network
+activity can be translated into human language before consequential action is
+taken, while routine policy enforcement remains quiet, testable, and
+reviewable.
 
 Instead of silently allowing or blocking traffic, the system explains:
 
@@ -45,12 +55,13 @@ Destination: Your Device
 Protocol: HTTPS
 Port: 443
 
-The AI explains:
+An evidence-bounded explanation might say:
 
-«A website you are visiting is requesting a secure connection.
-This is normal web browsing activity.
-
-Risk Level: Low»
+«An application requested a TLS connection to the displayed destination on
+port 443. Port and encryption metadata alone do not prove who controls the
+destination, what encrypted content contains, or whether the activity is safe.
+Verify domain identity, certificate status, initiating process, reputation,
+and user intent before assigning a risk level.»
 
 Then asks:
 
@@ -70,12 +81,13 @@ Application: Browser
 Destination: api.company.com
 Purpose: Data Synchronization
 
-The AI explains:
+The explanation must be conditional on verified application, destination,
+account, and policy context. It must not infer purpose from port 443 alone:
 
-«Your browser is sending data to the service you signed into.
-This is required for synchronization of your account.
-
-Risk Level: Low»
+«The identified application is connecting to the displayed service. Available
+metadata is consistent with synchronization, but encrypted payload purpose is
+not directly established. Confirm that the destination is allowlisted and the
+connection matches an action or approved background policy.»
 
 Then asks:
 
@@ -144,13 +156,14 @@ The OS provides understanding.
 
 ---
 
-OpenAI
+Explanation model (vendor-neutral)
 
 Acts as a cybersecurity translator.
 
 Responsibilities:
 
-- Explain packet purpose
+- Explain observable metadata and bounded inferences without claiming to know
+  encrypted packet purpose
 - Explain risk in plain language
 - Translate technical terminology
 - Summarize intent

@@ -6,6 +6,10 @@
 **Topic:** Disaster Preparedness, AI Forecasting, Leadership, and Public
 Trust
 
+**Status:** Conceptual decision lesson; not a verified Bavi outcome study<br>
+**Correction date:** 2026-07-12<br>
+**Event record:** [Preliminary Typhoon Bavi (2026) facts](typhoon-bavi-aftermath-summary.md)
+
 ------------------------------------------------------------------------
 
 # Executive Summary
@@ -92,12 +96,18 @@ Preparation itself may be one reason fewer people are harmed.
 
 ------------------------------------------------------------------------
 
-# The Prevention Paradox
+# The Preparedness Counterfactual-Visibility Problem
 
-Public health calls this the **prevention paradox**.
+When preparation succeeds—or when the hazard weakens independently—the
+worst outcome may not be observed. Outcome alone cannot reveal which cause
+produced the result. BootX calls this the **preparedness
+counterfactual-visibility problem**.
 
-When prevention succeeds, people often believe it was unnecessary
-because the disaster they feared did not occur.
+This should not be presented as the standard epidemiological “prevention
+paradox,” which ordinarily concerns a population measure producing large
+aggregate benefit while offering only small benefit to each participating
+individual. The concepts can overlap, but they are not definitions of the
+same problem.
 
 Examples include:
 
@@ -174,22 +184,18 @@ The objective is to balance these risks wisely.
 
 ------------------------------------------------------------------------
 
-# Lessons from Taiwan During Typhoon Bavi
+# Applying the lesson to Bavi
 
-Taiwan's experience illustrates several important points:
+The 2026 Bavi record supports that warnings and precautions occurred, but a
+final Taiwan outcome and a causal preparedness evaluation were not available
+at this document's 12 July evidence cut-off. Therefore, the case may be used
+to formulate questions—not to declare preparedness a success or failure.
 
--   Forecasts guided early warnings and preparedness.
--   Some citizens later questioned the warnings because damage was less
-    severe than expected in their area.
--   Weather impacts varied across different parts of the island.
--   A less severe local outcome does not necessarily mean the overall
-    warning was unjustified.
-
-This highlights a communication challenge:
-
-People naturally compare the forecast with what happened where they
-live, while emergency managers must plan for risks across an entire
-region.
+People often compare a warning with what happened where they live, while
+emergency managers plan across a probability distribution and a wider region.
+A professional study should compare issued probabilities, forecast lead
+times, local observations, actions, false-alarm costs, missed-event costs, and
+distributional outcomes.
 
 ------------------------------------------------------------------------
 
@@ -214,9 +220,9 @@ The purpose of forecasting is **not** to prove AI is correct.
 
 The purpose is to **reduce harm**.
 
-A forecast that prompts timely preparation and helps prevent deaths can
-still be valuable even if the final damage is less than initially
-feared.
+A forecast that prompts timely, proportionate preparation may be valuable
+even if final damage is less than initially feared. Whether it actually
+prevented deaths in a particular event is a causal claim requiring evidence.
 
 ------------------------------------------------------------------------
 

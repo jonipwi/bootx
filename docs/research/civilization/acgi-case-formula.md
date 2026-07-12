@@ -3,6 +3,13 @@ Version: 0.1
 Author: Jonah PanPan + AI Collaboration
 Date: 2026-05-24
 
+> **Verification status — historical conceptual model:** The multiplicative
+> ACGI formula, its 0–10 inputs, and the `0.7`, `1.0`, and `1.5` bands have not
+> been empirically or psychometrically validated. They must not be used for
+> release authorization, country ranking, prediction, or claims of
+> civilization safety. The corrected research treatment is in
+> [Mathematics and Measurement](../../handbook/03-mathematics-and-measurement.md).
+
 ---
 
 # Vision
@@ -52,6 +59,8 @@ Therefore:
 ---
 
 # ACGI Formula
+
+**Historical formula—non-operational:**
 
 ACGI = (P_h × T × S × A) / (C_a × R × E)
 
@@ -155,6 +164,9 @@ Range:
 ---
 
 # Stability Interpretation
+
+The bands below preserve the original hypothesis only. They are not measured
+thresholds and do not imply the listed social outcomes.
 
 ## ACGI > 1.5
 Healthy civilization balance.

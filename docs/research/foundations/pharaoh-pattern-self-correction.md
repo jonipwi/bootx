@@ -6,6 +6,11 @@
 
 Version 1.0
 
+**Status:** Philosophical and organizational-risk metaphor; not a diagnostic
+label for a person, religion, country, organization, or clinical condition.
+Use observable governance indicators—suppressed dissent, conflicts, audit
+failure, retaliation, and unreviewable authority—rather than analogy alone.
+
 ---
 
 # Executive Summary

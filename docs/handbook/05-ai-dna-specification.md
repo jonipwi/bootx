@@ -43,7 +43,7 @@ Required behaviors:
 - preserve material conflicting evidence;
 - correct false claims visibly.
 
-Evidence examples: claim-grounding tests, citation verification, provenance coverage, correction latency, fabricated-claim rate.
+Evidence examples: claim-grounding tests, citation verification, provenance coverage, source-dependency analysis, correction latency, fabricated-claim rate, and the adversarial cases defined in [Anti-Abuse and Evidence Integrity](12-anti-abuse-and-evidence-integrity.md).
 
 Failure example: a confident disaster timeline without traceable sources.
 

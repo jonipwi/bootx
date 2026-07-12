@@ -3,6 +3,9 @@
 **Prepared for:** Joni / future “Space Successor” research compass  
 **Date:** 2026-07-01  
 **Format:** Feasibility study and concept analysis  
+**Status:** Engineering hypothesis and research agenda; not a mission design or validated technology forecast<br>
+**Evidence reviewed through:** 2026-07-12<br>
+**Review needed:** aerospace systems, radiation physics, electrochemistry, superconducting magnets, human health, and spaceflight safety<br>
 
 ---
 
@@ -64,6 +67,14 @@ Earth’s magnetic field helps:
 - Reduce direct interaction between solar wind and the upper atmosphere.
 - Support long-term atmospheric retention.
 - Create a protective magnetosphere around the planet.
+
+This is not a complete habitability explanation. A magnetosphere does not stop
+all galactic cosmic rays, energetic neutral particles, photons, or secondary
+radiation, and atmospheric retention also depends on gravity, atmospheric
+chemistry and mass, solar/stellar history, geology, and replenishment. An
+engineered field must therefore be evaluated by particle species and energy,
+dose reduction, secondary effects, geometry, mass, and power—not by analogy to
+Earth alone.
 
 For future spacecraft and habitats, magnetic technology may help with:
 
@@ -140,19 +151,22 @@ This should be analyzed carefully.
 
 ### 5.1 What Current Physics Supports
 
-Water can be split into hydrogen and oxygen:
+Water can be split into hydrogen and oxygen. The balanced overall reaction is:
 
 ```text
-H₂O + energy → H₂ + O₂
+2 H₂O + energy → 2 H₂ + O₂
 ```
 
 Hydrogen and oxygen can later recombine to release energy:
 
 ```text
-H₂ + O₂ → H₂O + energy
+2 H₂ + O₂ → 2 H₂O + energy
 ```
 
-This is powerful, clean at the point of use, and produces water again. That makes it an excellent **energy storage loop**.
+This can form an energy-storage loop, but every real cycle has conversion,
+compression or liquefaction, storage, leakage, thermal-management, and balance-
+of-plant losses. “Clean at the point of use” does not establish low lifecycle
+emissions; those depend strongly on the primary energy and production pathway.
 
 ### 5.2 Important Physics Boundary
 
@@ -167,7 +181,12 @@ To split water, energy must come from somewhere:
 - Chemical energy.
 - Other future energy sources.
 
-Magnetic fields can help convert, control, store, or guide energy, but current physics does not support magnets creating net energy from nothing.
+Magnetic fields can help convert, control, store, or guide energy, but magnets
+are not a primary energy source and cannot create net energy. A field contains
+stored energy supplied during charging or magnetization. Conventional coils
+dissipate resistive power; superconducting coils can maintain current with low
+resistive loss but still require charging, cryogenic support, structural
+containment, quench protection, control, and safe management of stored energy.
 
 ### 5.3 Future Possibility
 
@@ -183,7 +202,9 @@ Then the combined system could become a very strong foundation for future space 
 
 The most realistic framing is:
 
-> **Water is the mass-resource foundation; magnetism is the control-and-conversion foundation; an energy input is still required unless a new physical process is discovered.**
+> **Water can serve as a mass resource, working fluid, and energy carrier;
+> magnetism can serve control, conversion, storage, and charged-particle
+> functions; a primary energy input is still required.**
 
 ---
 
@@ -461,7 +482,9 @@ This suggests Japan could become one of the countries capable of testing parts o
 
 ### 12.2 Magnetic System Risks
 
-- Strong magnets require large power.
+- Strong practical magnet systems can require substantial charging power,
+  cryogenic support, structural mass, and stored-energy protection; continuous
+  resistive power depends on whether the design is conventional or superconducting.
 - Superconductors need cooling.
 - Magnetic fields may affect electronics and human health if poorly designed.
 - Full radiation shielding may require huge magnetic structures.
@@ -548,7 +571,11 @@ This suggests Japan could become one of the countries capable of testing parts o
 
 ---
 
-## 15. Feasibility Score
+## 15. Qualitative Feasibility Assessment
+
+The labels below are expert-judgment hypotheses, not measured scores. They must
+not be used for investment, mission, or safety decisions without quantitative
+mass, power, dose, reliability, lifecycle, and technology-readiness analysis.
 
 | Domain | Current Feasibility | Long-Term Potential |
 |---|---:|---:|
@@ -561,7 +588,7 @@ This suggests Japan could become one of the countries capable of testing parts o
 | Magnetic radiation shielding | Low-medium | Medium-high |
 | Magnetic reentry shield | Low | Medium |
 | Magnetic launch assist | Low on Earth, medium on Moon | High for cargo |
-| Water + magnetism as total energy foundation | Not proven | Speculative but research-worthy |
+| Water + magnetism as total energy foundation | Physically incomplete without primary generation | Speculative as an integrated resource/control layer |
 
 ---
 
@@ -607,12 +634,18 @@ Possible title for future study or presentation:
 
 ---
 
-## 19. Reference Notes
+## 19. Sources and Evidence Boundaries
 
-The study was informed by current public knowledge and source checks including:
+- [NASA — In-Situ Resource Utilization](https://www.nasa.gov/mission/in-situ-resource-utilization-isru/) supports NASA research into using destination resources, including characterizing and extracting water-related compounds. It does not prove an industrial lunar water economy.
+- [NASA — Advanced Radiation Protection](https://www.nasa.gov/directorates/stmd/advanced-radiation-protection-arp/) describes radiation-shielding research and uncertainty. It does not establish complete protection from galactic cosmic radiation.
+- [NASA TechPort — High-temperature-superconducting magnetic shielding](https://techport.nasa.gov/projects/12149) supports magnetic shielding as an evaluated research concept for solar particle events and partial galactic-cosmic-ray dose reduction, not an operational shield.
+- [U.S. Department of Energy — Hydrogen Production: Electrolysis](https://www.energy.gov/cmei/fuels/hydrogen-production-electrolysis) supports the balanced electrochemical basis and the need for electricity.
+- [U.S. Department of Energy — Hydrogen Fuel Basics](https://www.energy.gov/cmei/fuels/hydrogen-fuel-basics) identifies hydrogen as an energy carrier and distinguishes production pathways.
+- [Japan Agency for Natural Resources and Energy — Hydrogen Society Promotion Act](https://www.enecho.meti.go.jp/en/category/special/article/detail_203.html) supports Japan's 2017 strategy, 2023 revision, and May 2024 legislation. These policies concern hydrogen deployment on Earth and do not endorse the BootX water–magnetic space hypothesis.
 
-- NASA public information on space exploration, life support, and space technology research.
-- Japan Ministry of Economy, Trade and Industry / Agency for Natural Resources and Energy materials on the Basic Hydrogen Strategy, revised in 2023.
-- Japan Hydrogen Society Promotion Act updates from official Japanese energy information sources.
-- General physics principles: conservation of energy, hydrogen as an energy carrier, magnetic fields as energy control/conversion systems, and Earth’s magnetosphere as charged-particle protection.
+The time horizons and feasibility labels in this paper are research planning
+judgments. A future revision should add peer-reviewed quantitative studies,
+technology-readiness levels, dose spectra, field geometry, secondary-particle
+effects, mass and power budgets, quench hazards, hydrogen lifecycle emissions,
+and failure-mode analysis.
 

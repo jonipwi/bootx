@@ -1,5 +1,11 @@
 # Intelligence Beyond IQ: The Power of Adaptation
 
+**Status:** Philosophical capability model, not a validated theory of intelligence or psychometric instrument<br>
+**Correction:** IQ has established standardized test traditions; “EQ” and
+especially “AQ” are used with varying definitions and should not be assumed to
+be equivalent standardized quotients. Agency and wisdom are distinct
+constructs, not interchangeable test scores.
+
 Traditional measures of intelligence often focus on:
 
 - **IQ (Intelligence Quotient)** — analytical thinking, reasoning, and problem-solving.
@@ -200,12 +206,20 @@ Finally, we learn to live for something greater than ourselves.
 
 Instead of measuring only IQ:
 
-## Human Capability
+## Human Capability Profile
 
-Human Capability =
-**IQ + EQ + AQ + Agency + Wisdom**
+Represent the idea as a conceptual profile rather than an additive equation:
 
-Where:
+$$
+H=(I,E,A_d,A_g,W)
+$$
+
+where the components denote analytical/cognitive capability, emotional and
+social capability, adaptability, agency, and wisdom. The vector does not imply
+that the components share units, can be added, or have validated universal
+weights.
+
+Conceptually:
 
 - IQ helps us understand.
 - EQ helps us connect.

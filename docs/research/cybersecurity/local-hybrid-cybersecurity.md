@@ -8,6 +8,12 @@ However, the emergence of Artificial Intelligence (AI) introduces a new possibil
 
 This paper explores the concept of **Local Trust + Ownership**, a hybrid cybersecurity model that combines global threat intelligence with user-controlled security policies.
 
+> **Evidence status:** Architectural hypothesis. Local processing can improve
+> privacy, latency, offline operation, and user control in some designs, but it
+> can also create patching, key-management, device-compromise, usability, and
+> inconsistent-policy risks. “Local” and “decentralized” do not automatically
+> mean secure or trustworthy.
+
 ---
 
 # The Traditional Model: Centralized Trust
@@ -77,9 +83,11 @@ Historically, advanced cybersecurity capabilities required:
 - Dedicated security teams
 - Specialized expertise
 
-AI significantly lowers these barriers.
+AI can lower some explanation and analysis barriers, while also introducing
+model error, prompt injection, data leakage, automation bias, supply-chain
+risk, and new operating costs.
 
-For the first time, individuals and small organizations can access:
+Individuals and small organizations increasingly can access:
 
 - Intelligent threat analysis
 - Security automation

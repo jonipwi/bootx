@@ -1,484 +1,98 @@
-# Summary Aftermath – Typhoon Bavi
-## AI DNA Comparative Case Study
-### Preparedness, AI Forecasting, and Disaster Risk Reduction
+# Preliminary Event Record — Typhoon Bavi (2026)
 
-**Version:** 2.1
+**Status:** Preliminary factual record; event consequences still developing<br>
+**Version:** 3.0<br>
+**Evidence cut-off:** 2026-07-12, Asia/Bangkok<br>
+**Evidence maturity:** E1 — sourced observation and live-event hypothesis, not a completed aftermath study<br>
+**Supersedes:** the unsourced “Summary Aftermath — Typhoon Bavi” draft previously in this path
 
----
+## 1. Reliable conclusion at this cut-off
 
-# Executive Summary
+Typhoon Bavi (`202609`) was a real and powerful 2026 western North Pacific cyclone. It affected waters and weather around Taiwan and made landfall at Yuhuan, Zhejiang, at approximately 23:20 local time on 11 July 2026. At the audit cut-off, inland rainfall and response were continuing. A final aftermath, casualty total, evacuation total, dam-failure finding, economic-loss estimate, or preparedness-success comparison was therefore not available.
 
-Typhoon Bavi became a valuable real-world case study for evaluating whether AI-assisted forecasting and preventive preparedness contributed to reducing disaster risk.
+The previous draft presented several unsupported claims as settled facts. Those claims are withdrawn below rather than repeated as conclusions.
 
-This document compares:
+## 2. Dated event facts
 
-- Actual observed outcomes
-- AI-assisted preventive preparedness
-- A hypothetical reactive-only approach
-- Lessons for future AI-assisted disaster management
+| Claim | Status | Direct support and limitation |
+|---|---|---|
+| Event identity | Supported | Taiwan's Central Weather Administration records Bavi as `202609`. [CWA storm record](https://rdc28.cwa.gov.tw/TDB/public/typhoon_detail?typhoon_id=202609) |
+| Formation | Supported | China Weather Network reports that Bavi formed on 2 July 2026 and later intensified substantially. [Landfall report](https://news.weather.com.cn/2026/07/4711229.shtml) |
+| Taiwan warning and disruption | Supported as dated observations | Taiwan's weather authority issued a sea warning on 9 July; flight, ferry, and road precautions were reported. This does not establish final island-wide damage or response quality. [Xinhua report, 9 July](https://www.news.cn/20260709/84dbbfd7151841e1b7c3385cd97fd675/c.html) |
+| Zhejiang preparedness | Supported as a partial early count | Zhejiang reported 17,110 people transferred by 15:00 on 9 July. This is neither a national total nor a final evacuation count. [Xinhua report, 9 July](https://www.news.cn/20260709/8646cd570c16414b8bfa79977683520b/c.html) |
+| China landfall | Supported | Bavi made landfall at Yuhuan, Zhejiang, at about 23:20 on 11 July, with reported maximum winds of 40 m/s and central pressure of 955 hPa at landfall. [China Weather Network](https://news.weather.com.cn/2026/07/4711229.shtml) |
+| Continuing hazard | Supported | The landfall report forecast continuing wide-area rainfall and inland effects after landfall. Outcome totals remained provisional. [China Weather Network](https://news.weather.com.cn/2026/07/4711229.shtml) |
 
-The objective is not to prove that AI is perfect.
+## 3. Withdrawn or not-established claims
 
-Instead, it asks:
+The following statements from the prior draft are **not established** at this evidence cut-off:
 
-> **Did AI-supported forecasting and preparedness reduce expected risk and improve the common good?**
+- “Nearly two million precautionary evacuations” for Bavi in China.
+- “No confirmed fatalities in Taiwan during the main impact” as a final outcome.
+- “No confirmed Bavi-related dam failure” as a final absence claim.
+- A final regional casualty or infrastructure-loss comparison.
+- That AI-assisted forecasting caused a successful response.
+- That authorities performed better specifically because they learned from Maysak.
+- AI DNA scores of `96/100` for prevention and `45/100` for reactive response.
 
----
+An absence claim needs a defined jurisdiction, reporting body, time window, and sufficiently complete reporting. A live-event search that finds no report is not proof that no event occurred.
 
-# Timeline
+## 4. Relationship to Maysak (2026)
 
-## Phase 1 — Super Typhoon Formation
+Maysak (`202610`) and Bavi (`202609`) are separate 2026 storms. Maysak's destructive Guangxi rainfall and reservoir breaches occurred before Bavi reached eastern China, even though Bavi had formed first and carried the lower storm number.
 
-Observed
+Verified Maysak facts include:
 
-- Rapid intensification
-- Large circulation
-- High uncertainty
+- Liulan and Yunbiao reservoirs overtopped and developed breaches on 6 July. [Xinhua](https://www.news.cn/politics/20260706/6a15220b8dea426a877776efc9e38caa/c.html)
+- Guangxi reported 130,000 emergency relocations by the 7 July reporting cut-off. [Xinhua](https://www.gx.news.cn/20260708/9be922b8de8e446ba44bd6c85f7b8b38/c.html)
+- The 9 July Nanning briefing reported 26 deaths and 7 missing from the Liulan breach flood and 39 deaths and 9 missing across Guangxi. These were preliminary counts. [Xinhua](https://www.gx.news.cn/20260709/acc9673028f44188afd8df576a49bb23/c.html)
 
-Actions
+This temporal proximity makes a preparedness comparison worth studying, but does not prove organizational learning or causal benefit.
 
-- Continuous satellite monitoring
-- Numerical weather prediction
-- Early international warnings
+## 5. Correct comparison design
 
----
+A future Maysak–Bavi study must define comparable units and adjust for at least:
 
-## Phase 2 — Taiwan Preparation
+- wind, rainfall, surge, river and reservoir conditions;
+- population exposure and evacuation zones;
+- building, road, power, communications, and dam vulnerability;
+- geography and antecedent soil/water conditions;
+- forecast lead time and warning content;
+- actual protective actions and compliance;
+- deaths, missing people, injury, displacement, service interruption, and economic loss;
+- source definitions, reporting cut-offs, and later revisions.
 
-Government actions
+Chronology can support a learning hypothesis:
 
-- Early warning
-- Evacuation
-- School closure
-- Flight cancellation
-- Emergency deployment
-- Public communication
+> After Maysak, agencies may have changed Bavi preparedness decisions.
 
-Some citizens questioned whether the warnings were excessive because local impacts later appeared less severe than feared.
+It cannot support the causal conclusion without evidence of which decisions changed, why they changed, and whether those changes improved outcomes relative to credible alternatives.
 
----
+## 6. Mathematics and counterfactual limits
 
-## Phase 3 — Taiwan Aftermath
+For action \(a\), state \(s\), and information \(I\):
 
-Observed
+$$
+EL(a\mid I)=\sum_s P(s\mid I)L(a,s)
+$$
 
-- Heavy rainfall
-- Flooding
-- Landslides
-- Fallen trees
-- Power outages
-- Transportation disruption
-- Infrastructure damage
+This framework supports decisions before outcomes are known. It does not reveal the unobserved counterfactual after an event. Exact “lives saved” estimates require a defensible causal model and uncertainty analysis.
 
-Positive outcome
+The corrected prevention model is maintained in [Prevention vs. Reactive Rescue](decision-analysis-prevention-vs-reactive.md). AI DNA evaluation requirements are in the [professional specification](../../handbook/05-ai-dna-specification.md).
 
-**No confirmed fatalities reported in Taiwan during the main impact.**
+## 7. Update protocol
 
----
+Do not convert this file into a final aftermath report until responsible agencies publish sufficiently complete event data. At each update:
 
-## Phase 4 — Japan
+1. preserve the prior reporting cut-off;
+2. distinguish forecast from observation;
+3. cite the responsible reporting body beside each number;
+4. record revisions to deaths, missing people, evacuations, breaches, and damage;
+5. separate all-region totals from a particular locality or infrastructure failure;
+6. keep causal and AI-performance claims labeled as hypotheses until tested.
 
-Observed
+## 8. Current research disposition
 
-- Sakishima Islands affected
-- Strong winds
-- Heavy rainfall
-- Power outages
-- Flight cancellations
+The scientifically defensible lesson is limited but important:
 
----
-
-## Phase 5 — China
-
-Observed
-
-- Landfall in Zhejiang Province
-- Nearly two million precautionary evacuations
-- Schools closed
-- Ferry suspension
-- Flight cancellations
-- Emergency deployment
-
-Positive outcome
-
-No confirmed Bavi-related dam failure.
-
----
-
-## Phase 6 — Philippines
-
-Indirect impact
-
-Enhanced southwest monsoon
-
-Observed
-
-- Flooding
-- Landslides
-- Humanitarian impacts
-- Confirmed fatalities
-- Thousands displaced
-
----
-
-# Forecast Verification
-
-| Forecast | Observed Result |
-|-----------|-----------------|
-| North of Taiwan | ✅ Correct |
-| Taiwan heavy rainfall | ✅ Correct |
-| Japan affected | ✅ Correct |
-| China landfall | ✅ Correct |
-| Gradual weakening | ✅ Correct |
-| Large evacuations | ✅ Correct |
-| Landslide risk | ✅ Correct |
-
-Overall Forecast Quality
-
-**High**
-
----
-
-# Did AI Help?
-
-## Evidence
-
-Observed facts
-
-- Accurate forecast track
-- Continuous forecast updates
-- Early warnings
-- Mass evacuations
-- School closures
-- Flight cancellations
-- Emergency deployment
-- Reservoir management
-- Cross-agency coordination
-
-Observed outcomes
-
-Taiwan
-
-- Major infrastructure damage
-- Flooding
-- Landslides
-- No confirmed fatalities during the main impact
-
-China
-
-- Nearly two million precautionary evacuations
-- Large emergency response before landfall
-
-These observations are consistent with the hypothesis that AI-assisted forecasting and preparedness contributed to reducing human exposure to risk.
-
-This study **cannot determine exactly how many lives were saved**, because the alternative history cannot be observed.
-
----
-
-# Scientific Explanation
-
-Disaster science commonly models risk as:
-
-```
-Risk = Hazard × Exposure × Vulnerability
-```
-
-Where
-
-Hazard
-
-- Storm intensity
-
-Exposure
-
-- Number of people and assets in danger
-
-Vulnerability
-
-- Ability to withstand the hazard
-
-Preparedness mainly reduces
-
-- Exposure
-- Vulnerability
-
-It does **not** reduce the hazard itself.
-
-Therefore
-
-```
-Risk_after_preparedness
-<
-Risk_without_preparedness
-```
-
----
-
-# Why Were There Still Casualties?
-
-AI forecasting cannot eliminate every disaster.
-
-Several factors remain beyond prediction alone.
-
-## Philippines
-
-Likely contributing factors
-
-- Enhanced southwest monsoon
-- Mountain terrain
-- Flash flooding
-- Landslides
-- Vulnerable communities
-- Evacuation challenges
-
-Forecasts can reduce risk.
-
-They cannot eliminate all exposure.
-
----
-
-## Taiwan
-
-Observed
-
-- Strong preparedness
-- Early evacuation
-- Government coordination
-- Transportation shutdown
-- Emergency readiness
-
-Result
-
-Large infrastructure damage
-
-Very limited human casualties.
-
----
-
-## China
-
-Observed
-
-- Nearly two million evacuations
-- Large emergency deployment
-- Reservoir management
-- Public warnings
-
-Result
-
-Reduced exposure before landfall.
-
----
-
-# Why AI Cannot Prevent Every Casualty
-
-AI cannot
-
-- stop rainfall
-- stop landslides
-- move mountains
-- force evacuation
-- instantly repair infrastructure
-
-AI contributes by
-
-- earlier detection
-- improved forecasts
-- faster communication
-- better resource allocation
-- decision support
-
-Human leadership remains essential.
-
----
-
-# Expected Risk Comparison
-
-Illustrative example
-
-Assume
-
-Hazard
-
-100
-
----
-
-## Scenario A
-
-Preparedness
-
-Exposure = 0.30
-
-Vulnerability = 0.40
-
-Expected Risk
-
-```
-100 × 0.30 × 0.40 = 12
-```
-
----
-
-## Scenario B
-
-No Preparation
-
-Exposure = 0.80
-
-Vulnerability = 0.60
-
-Expected Risk
-
-```
-100 × 0.80 × 0.60 = 48
-```
-
-Comparison
-
-```
-48 / 12 = 4
-```
-
-Illustrative interpretation
-
-Expected disaster risk becomes approximately
-
-**4× higher**
-
-without preparedness.
-
-**These values are illustrative examples used to explain decision theory and should not be interpreted as measured Typhoon Bavi data.**
-
----
-
-# Prevention vs Reactive
-
-| Factor | Prevention | Reactive |
-|---------|-----------:|---------:|
-| Human protection | Very High | Low |
-| Rescue difficulty | Low | High |
-| Infrastructure loss | Lower | Higher |
-| Hospital overload | Lower | Higher |
-| Long-term resilience | High | Low |
-| Short-term disruption | Moderate | Lower |
-
----
-
-# AI DNA Evaluation
-
-| Principle | AI + Prevention | Reactive Only |
-|-----------|----------------:|--------------:|
-| Truth | 95 | 65 |
-| Reasoning | 94 | 55 |
-| Learning | 95 | 50 |
-| Communication | 92 | 45 |
-| Adaptability | 95 | 40 |
-| Ethics | 99 | 35 |
-| Safety | 99 | 30 |
-| Common Good | 98 | 40 |
-
-Overall
-
-AI + Prevention
-
-**96 / 100**
-
-Reactive Only
-
-**45 / 100**
-
-These scores are analytical illustrations rather than official measurements.
-
----
-
-# Future Improvements
-
-## Better Local Forecasting
-
-Predict
-
-- village flooding
-- bridge collapse risk
-- landslide probability
-- road failure
-- evacuation priority
-
----
-
-## AI Sensor Integration
-
-Combine
-
-- satellites
-- weather radar
-- drones
-- river sensors
-- reservoir sensors
-- IoT monitoring
-
-into one AI platform.
-
----
-
-## Personalized AI Warning
-
-Instead of
-
-"Typhoon Warning"
-
-AI could provide
-
-> "Your location has a high probability of flooding within the next six hours."
-
-This could improve evacuation decisions.
-
----
-
-## AI DNA Validation
-
-Typhoon Bavi demonstrates that AI's greatest value is not controlling nature.
-
-Its greatest value is helping people prepare before disaster occurs.
-
-The event supports several AI DNA principles:
-
-- Truth
-- Reasoning
-- Adaptability
-- Ethics
-- Safety
-- Humility
-- Common Good
-
----
-
-# Final Reflection
-
-Typhoon Bavi reminds us that successful disaster management is not measured only by the strength of the storm.
-
-It is measured by
-
-- lives protected,
-- preparedness,
-- resilience,
-- transparency,
-- continuous learning.
-
-The purpose of AI forecasting is not to prove itself correct.
-
-Its purpose is to help humanity make wiser decisions before tragedy occurs.
-
-> **Power without wisdom is dangerous.**
-
-> **Knowledge with humility becomes a blessing.**
-
----
-
-# Disclaimer
-
-This report combines observed public information with conceptual decision analysis.
-
-The mathematical examples, AI DNA scores, and hypothetical "reactive-only" scenario are illustrative analytical models designed to explain decision-making under uncertainty.
-
-They should **not** be interpreted as official government evaluations or as proof of what would certainly have happened under alternative circumstances.
+> Forecasts, communication, engineering controls, preparedness, and public action can influence disaster risk, but a single live event does not establish the magnitude of benefit or the performance of an AI system. Reliable evaluation requires final data, comparable conditions, transparent methods, and visible uncertainty.

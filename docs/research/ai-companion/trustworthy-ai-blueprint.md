@@ -4,6 +4,10 @@ Version: 1.0
 Author: Jonah PanPan  
 Date: May 2026  
 
+> **Evidence status:** Historical vision. “Trustworthy,” “compassion,” and
+> “goodness” are requirements to operationalize and test, not properties proved
+> by this document or by an AI's self-description.
+
 ---
 
 # TRUSTWORTHY AI BLUEPRINT

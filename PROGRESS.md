@@ -1,7 +1,7 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.0<br>
+**Version:** 1.1<br>
 **Last updated:** 2026-07-12<br>
 **Current phase:** Phase 0 — foundation, evidence, ownership, and reproducibility<br>
 **Current release posture:** Research documentation and opaque educational artifacts only; no validated Human + AI companion or trusted operating-system release
@@ -106,8 +106,12 @@ The project may preserve artifacts, restore source, conduct documentation resear
 - [x] Separate vision, hypothesis, prototype, controlled evidence, field evidence, and operational assurance.
 - [x] Define claim, research, decision, safety, incident, and AI DNA evidence templates.
 - [x] Define logic, probabilistic reasoning, measurement, and causal-inference requirements.
-- [ ] Add primary citations to every material factual claim in the legacy studies.
-- [ ] Independently verify the Typhoon Bavi chronology, outcomes, and attribution claims.
+- [ ] Add primary citations to every material factual claim that remains in the legacy studies, or rewrite it explicitly as belief, metaphor, scenario, or hypothesis.
+- [x] Complete an internal repository-wide factual, mathematical, logical, link, and evidence-status audit and publish `docs/handbook/13-documentation-verification-register.md`.
+- [x] Correct the 2020/2026 Bavi–Maysak identity error; verify the dated 2026 Maysak Guangxi breach record; replace the premature Bavi aftermath with a preliminary event record.
+- [x] Withdraw the unsupported `93.3%` Bavi/Taiwan AI DNA evaluation as an empirical result.
+- [x] Correct the prevention expected-loss model and the unbalanced water electrolysis/recombination equations.
+- [ ] Obtain independent domain review of the disaster, statistics, psychometrics, cybersecurity, aerospace/physics, ethics, and legal conclusions.
 - [ ] Conduct systematic literature reviews for anti-scam warnings, calibrated reliance, companion dependency, accessibility, memory, privacy, and human–AI learning.
 - [ ] Pre-register the first controlled research protocol and harm/stop rules.
 - [ ] Validate AI DNA constructs, indicators, rating reliability, and subgroup applicability.
@@ -140,7 +144,7 @@ The ethical and research documentation baseline is substantial, but governance i
 - [x] `CHARTER.md` — mission, foundational commitments, human–AI relationship, and protected boundaries.
 - [x] `GOVERNANCE.md` — authority, decision classes, amendment, dissent, conflicts, and emergency powers.
 - [x] `SUCCESSION.md` — planned/emergency transfer, custodianship, vendor/model succession, and dissolution.
-- [x] `LICENSE` — binding Common Good Ethical Use License 1.0.
+- [x] `LICENSE` — adopted Common Good Ethical Use License 1.0; not yet professionally reviewed for enforceability or compatibility.
 - [x] `LICENSING.md` — plain-language licensing policy and AI DNA condition.
 - [x] `DISCLAIMER.md` — limitations, responsibility, non-advice, and spiritual-authority boundary.
 
@@ -158,12 +162,15 @@ The ethical and research documentation baseline is substantial, but governance i
 - [x] Safety case and baseline risk register.
 - [x] Glossary and reusable research templates.
 - [x] Standards and authoritative reading map.
+- [x] Anti-abuse and evidence-integrity chapter with a documented Maysak/Bavi factual self-audit.
+- [x] Documentation verification and corrections register covering facts, formulas, logic, local artifacts, status labels, and remaining review gates.
 
 ### Legacy studies preserved as research inputs
 
 - [x] Trust, trustworthy AI, survival, cybersecurity, intelligence, disaster, civilization, organizational power, and space-feasibility studies are present.
 - [x] Legacy numerical scores and hypotheses are identified as illustrative or unvalidated where appropriate in the evidence audit.
-- [ ] Legacy files have not yet received complete citation, encoding, terminology, duplication, and scientific-method revision.
+- [x] Legacy files received an internal reliability pass: dangerous event claims were corrected/withdrawn, conceptual formulas were labeled, and document status boundaries were added.
+- [ ] Legacy files still require complete primary citation, terminology, duplication, style, and independent scientific/domain review.
 
 ## 7. Operating-system implementation roadmap
 
@@ -365,6 +372,17 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 15. Change log
+
+### Version 1.1 — 2026-07-12
+
+- Added the repository-wide documentation verification and corrections register.
+- Corrected the 2020/2026 Bavi–Maysak identity and chronology analysis.
+- Verified the dated 2026 Maysak Guangxi reservoir-breach record and marked all figures preliminary to their reporting cut-offs.
+- Replaced the premature Bavi aftermath with a live, preliminary event record.
+- Withdrew the unsupported `93.3%` disaster-response AI DNA evaluation.
+- Corrected expected-loss assumptions, balanced water chemistry, cybersecurity inference limits, and conceptual-score labeling.
+- Marked build and physical-install guidance blocked until source and reproducibility are restored.
+- Preserved independent scientific, domain, legal, and operational review as open gates.
 
 ### Version 1.0 — 2026-07-12
 
