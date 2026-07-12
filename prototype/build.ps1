@@ -106,6 +106,11 @@ function New-BootXBuild {
     }
     $hash = (Get-FileHash -LiteralPath $binaryPath -Algorithm SHA256).Hash.ToLowerInvariant()
     $goVersion = (& go version).Trim()
+    $moduleList = @(& go list -m all)
+    if ($LASTEXITCODE -ne 0) {
+        throw 'Unable to enumerate Go module dependencies.'
+    }
+    $externalModuleCount = [Math]::Max(0, $moduleList.Count - 1)
 
     $manifest = [ordered]@{
         project = 'BootX Personal Companion MVP'
@@ -118,7 +123,7 @@ function New-BootXBuild {
         binary = $binaryName
         sha256 = $hash
         tests_skipped = [bool]$SkipTests
-        external_modules = 0
+        external_modules = $externalModuleCount
         safety_status = 'DEV-1 deterministic prototype; not deployed or safety certified'
     }
 
@@ -145,6 +150,7 @@ function Test-Fixtures {
         'suspicious-message.json' = @{ Class = 'D2'; Mode = 'VERIFY'; Warning = $null }
         'warning-prepare.json' = @{ Class = 'D2'; Mode = 'PREPARE'; Warning = 'W2' }
         'warning-urgent.json' = @{ Class = 'D4'; Mode = 'URGENT_GUIDANCE'; Warning = 'W4' }
+        'typhoon-bavi-exercise.json' = @{ Class = 'D2'; Mode = 'PREPARE'; Warning = 'W2' }
     }
 
     foreach ($name in $expected.Keys) {

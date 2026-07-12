@@ -7,6 +7,8 @@
 
 This module implements the first BootX `Input → Process → Output` decision-assistance pipeline as a dependency-free Go backend and terminal UI.
 
+For complete operator instructions, field definitions, examples, build verification, and troubleshooting, read [USAGE.md](USAGE.md).
+
 ## Safety boundary
 
 - deterministic rules only; no AI model is connected;
@@ -80,6 +82,8 @@ go build ./cmd/bootx-companion
 ```
 
 Synthetic fixtures are under [`testdata/`](testdata/). They are exercises, not real events or operational evidence.
+
+The complete synthetic Typhoon Bavi end-to-end regression, runner, and captured evidence are documented in [`../TEST_CASE.md`](../TEST_CASE.md).
 
 ## Package structure
 

@@ -1,0 +1,49 @@
+{
+  "request_id": "tc-bavi-001",
+  "capability_id": "assist.personal-decision.v1",
+  "user_id": "owner-local",
+  "created_at": "2026-07-12T17:30:00+07:00",
+  "goal": "Choose a proportionate personal preparedness posture for a synthetic Typhoon Bavi exercise",
+  "question": "Should I prepare now, monitor, wait for more evidence, or take protective action?",
+  "selected_content": "SYNTHETIC EXERCISE ONLY. Two independent mock forecasting lineages indicate that typhoon-related strong wind and heavy rainfall could affect a broad region within 48 hours. No official local warning or evacuation instruction is present in the exercise. The configured personal area is near the modeled impact area. Review supplies, communication, shelter, and official-source monitoring without spreading rumors.",
+  "content_source": {
+    "type": "synthetic_multi_source_exercise",
+    "origin_verified": true
+  },
+  "data_class": "personal",
+  "declared_domain": "emergency",
+  "memory_permission": "session",
+  "remote_permission": "deny",
+  "output_preference": "warning_card",
+  "synthetic": true,
+  "user_priorities": [
+    "life safety",
+    "truth and provenance",
+    "reversible preparation",
+    "minimal false alarm",
+    "family readiness",
+    "no rumor amplification"
+  ],
+  "warning": {
+    "event_id": "synthetic-typhoon-bavi-exercise-001",
+    "hazard_type": "tropical cyclone with possible wind, rainfall, flood, and landslide impacts",
+    "official_status": "none_found",
+    "issuer": "synthetic exercise dataset; no real alerting authority",
+    "authority_authenticated": false,
+    "message_status": "Actual",
+    "message_type": "Alert",
+    "issued_at": "2026-07-12T17:30:00+07:00",
+    "expires_at": "2026-07-14T17:30:00+07:00",
+    "affected_area": "synthetic broad impact area near the configured personal area",
+    "area_match": "near",
+    "urgency": "Future",
+    "severity": "Severe",
+    "certainty": "Possible",
+    "instruction": "Synthetic exercise: take low-burden reversible preparedness steps and monitor independently obtained official channels. Do not evacuate or broadcast a public warning based on this exercise.",
+    "evidence_tier": "V2",
+    "integrity_status": "pass",
+    "source_conflict": false,
+    "stale": false,
+    "direct_danger": false
+  }
+}

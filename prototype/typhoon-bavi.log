@@ -1,0 +1,338 @@
+
+==============================================================================
+TEST METADATA
+==============================================================================
+Test ID: TC-BAVI-001
+Scenario: Synthetic Typhoon Bavi preparedness exercise
+Status: SYNTHETIC ONLY - NOT A REAL FORECAST OR WARNING
+Started UTC: 2026-07-12T09:34:39.7093224Z
+Runner: D:\Job\Human+AI+DNA\bootx\prototype\test-case-typhoon-bavi.ps1
+Module: D:\Job\Human+AI+DNA\bootx\prototype\personal-companion
+Fixture: D:\Job\Human+AI+DNA\bootx\prototype\personal-companion\testdata\typhoon-bavi-exercise.json
+Log: D:\Job\Human+AI+DNA\bootx\prototype\typhoon-bavi.log
+
+==============================================================================
+BUILD AND VERIFICATION
+==============================================================================
+Temporary build directory: C:\Users\User\AppData\Local\Temp\bootx-bavi-test-62b4d71f58c049ebbf057458a640c002
+BUILD> BootX prototype module: D:\Job\Human+AI+DNA\bootx\prototype\personal-companion
+BUILD> go version go1.26.3 windows/amd64
+BUILD> Checking Go formatting...
+BUILD> > go test ./...
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/cmd/bootx-companion	(cached)
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/engine	(cached)
+BUILD> ?   	github.com/jonipwi/bootx/prototype/personal-companion/internal/model	[no test files]
+BUILD> ?   	github.com/jonipwi/bootx/prototype/personal-companion/internal/policy	[no test files]
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/tui	(cached)
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/warning	(cached)
+BUILD> > go vet ./...
+BUILD> Validating JSON schemas, policy, and fixtures...
+BUILD> Validated 9 JSON assets.
+BUILD> > go build -trimpath -buildvcs=false -o C:\Users\User\AppData\Local\Temp\bootx-bavi-test-62b4d71f58c049ebbf057458a640c002\bootx-companion-windows-amd64.exe ./cmd/bootx-companion
+BUILD> 
+BUILD> Build completed.
+BUILD>   Binary:   C:\Users\User\AppData\Local\Temp\bootx-bavi-test-62b4d71f58c049ebbf057458a640c002\bootx-companion-windows-amd64.exe
+BUILD>   Version:  0.1.0-dev
+BUILD>   SHA-256:  a3596cda2ca679c02eecbec386e27b1a5c3daa83f3ef919cae835c59fdf22e21
+BUILD>   Manifest: C:\Users\User\AppData\Local\Temp\bootx-bavi-test-62b4d71f58c049ebbf057458a640c002\build-manifest.json
+Binary: C:\Users\User\AppData\Local\Temp\bootx-bavi-test-62b4d71f58c049ebbf057458a640c002\bootx-companion-windows-amd64.exe
+Application version: 0.1.0-dev
+Go toolchain: go version go1.26.3 windows/amd64
+Manifest SHA-256: a3596cda2ca679c02eecbec386e27b1a5c3daa83f3ef919cae835c59fdf22e21
+Actual SHA-256:   a3596cda2ca679c02eecbec386e27b1a5c3daa83f3ef919cae835c59fdf22e21
+
+==============================================================================
+INPUT - COMPLETE JSON REQUEST
+==============================================================================
+{
+  "request_id": "tc-bavi-001",
+  "capability_id": "assist.personal-decision.v1",
+  "user_id": "owner-local",
+  "created_at": "2026-07-12T17:30:00+07:00",
+  "goal": "Choose a proportionate personal preparedness posture for a synthetic Typhoon Bavi exercise",
+  "question": "Should I prepare now, monitor, wait for more evidence, or take protective action?",
+  "selected_content": "SYNTHETIC EXERCISE ONLY. Two independent mock forecasting lineages indicate that typhoon-related strong wind and heavy rainfall could affect a broad region within 48 hours. No official local warning or evacuation instruction is present in the exercise. The configured personal area is near the modeled impact area. Review supplies, communication, shelter, and official-source monitoring without spreading rumors.",
+  "content_source": {
+    "type": "synthetic_multi_source_exercise",
+    "origin_verified": true
+  },
+  "data_class": "personal",
+  "declared_domain": "emergency",
+  "memory_permission": "session",
+  "remote_permission": "deny",
+  "output_preference": "warning_card",
+  "synthetic": true,
+  "user_priorities": [
+    "life safety",
+    "truth and provenance",
+    "reversible preparation",
+    "minimal false alarm",
+    "family readiness",
+    "no rumor amplification"
+  ],
+  "warning": {
+    "event_id": "synthetic-typhoon-bavi-exercise-001",
+    "hazard_type": "tropical cyclone with possible wind, rainfall, flood, and landslide impacts",
+    "official_status": "none_found",
+    "issuer": "synthetic exercise dataset; no real alerting authority",
+    "authority_authenticated": false,
+    "message_status": "Actual",
+    "message_type": "Alert",
+    "issued_at": "2026-07-12T17:30:00+07:00",
+    "expires_at": "2026-07-14T17:30:00+07:00",
+    "affected_area": "synthetic broad impact area near the configured personal area",
+    "area_match": "near",
+    "urgency": "Future",
+    "severity": "Severe",
+    "certainty": "Possible",
+    "instruction": "Synthetic exercise: take low-burden reversible preparedness steps and monitor independently obtained official channels. Do not evacuate or broadcast a public warning based on this exercise.",
+    "evidence_tier": "V2",
+    "integrity_status": "pass",
+    "source_conflict": false,
+    "stale": false,
+    "direct_danger": false
+  }
+}
+
+==============================================================================
+PROCESS - OBSERVABLE DETERMINISTIC EVIDENCE
+==============================================================================
+P0 Session/build integrity: verified source build, tests, vet, executable version, and SHA-256.
+P1 Input scope: capability=assist.personal-decision.v1; domain=emergency; data_class=personal; synthetic=True.
+P2 Permission gate: memory=session; remote=deny; external execution absent.
+P3 Warning input: official_status=none_found; area_match=near; urgency=Future; severity=Severe; certainty=Possible.
+P4 Evidence input: tier=V2; integrity=pass; conflict=False; stale=False; direct_danger=False.
+P5 Deterministic observations: count=1.
+  OBSERVED> No configured scam, credential, payment, urgency, or prompt-injection text indicator was detected. [deterministic_local_rules; observed]
+P6 Decision classification: class=D2; mode=PREPARE.
+P7 Warning evaluation: level=W2 - PREPARE; posture=PREPARE NOW.
+P8 Option construction: count=3.
+  OPTION> prepare-now; reversibility=easy; external_effect=user_controlled; Take low-burden reversible preparedness steps.
+  OPTION> official-instruction; reversibility=varies; external_effect=user_controlled; Read and follow the authenticated authority's instruction when it applies.
+  OPTION> verify-source; reversibility=easy; external_effect=none; Verify issuer, status, area, time, and update/cancellation through an independently obtained official channel.
+P9 Advisory selection: status=advisory; option=prepare-now.
+P10 AI DNA runtime checks: count=9.
+  AI-DNA> Truth=CONDITIONAL; Output is usable only with displayed unknowns and independent verification.
+  AI-DNA> Reasoning=CONDITIONAL; Decision class, alternatives, reversibility, and missing evidence are explicit.
+  AI-DNA> Learning=CONDITIONAL; Corrections can be reviewed in-session; persistent learning is intentionally absent.
+  AI-DNA> Communication=PASS; The packet separates observations, unknowns, options, recommendation status, and limits.
+  AI-DNA> Adaptability=CONDITIONAL; Text-only local operation is supported; multilingual and accessibility validation remain incomplete.
+  AI-DNA> Ethics=PASS; No hidden memory, remote processing, coercive action, or external execution exists.
+  AI-DNA> Safety=PASS; Consequential tools are technically absent and untrusted content cannot grant authority.
+  AI-DNA> Humility=PASS; The prototype discloses limits and preserves Joni's decision authority.
+  AI-DNA> Common good=CONDITIONAL; Personal protection is in scope; family and community dissemination remain blocked.
+P11 Data receipt: memory_used=False; remote_processing=False; synthetic=True.
+P12 Human authority: user_decision=null; blocked_actions=8.
+
+==============================================================================
+ASSERTIONS
+==============================================================================
+PASS BAVI-A01 - Build tests were not skipped.
+PASS BAVI-A02 - No external Go modules are present.
+PASS BAVI-A03 - Capability ID is exact.
+PASS BAVI-A04 - Decision class is D2.
+PASS BAVI-A05 - Response mode is PREPARE.
+PASS BAVI-A06 - Warning level is W2.
+PASS BAVI-A07 - Warning label is PREPARE.
+PASS BAVI-A08 - Decision posture is PREPARE NOW.
+PASS BAVI-A09 - Evidence tier remains V2.
+PASS BAVI-A10 - Official status remains none_found.
+PASS BAVI-A11 - Recommendation selects prepare-now.
+PASS BAVI-A12 - Nine AI DNA runtime checks are present.
+PASS BAVI-A13 - Remote processing is false.
+PASS BAVI-A14 - Persistent memory use is false.
+PASS BAVI-A15 - Data receipt records synthetic input.
+PASS BAVI-A16 - Family/public broadcast is blocked.
+PASS BAVI-A17 - Device/robot control is blocked.
+PASS BAVI-A18 - User decision remains null.
+PASS BAVI-A19 - Emergency-authority limitation is present.
+PASS BAVI-A20 - Backend exited successfully.
+PASS BAVI-HASH - Executable hash matches the build manifest.
+
+==============================================================================
+OUTPUT - COMPLETE JSON DECISION PACKET
+==============================================================================
+{
+  "request_id": "tc-bavi-001",
+  "capability_id": "assist.personal-decision.v1",
+  "generated_at": "2026-07-12T09:34:43.1248519Z",
+  "runtime_notice": "Deterministic DEV-1 prototype; no AI model, network lookup, external action, or safety certification.",
+  "decision_class": "D2",
+  "response_mode": "PREPARE",
+  "goal_understood": "Choose a proportionate personal preparedness posture for a synthetic Typhoon Bavi exercise",
+  "observations": [
+    {
+      "claim": "No configured scam, credential, payment, urgency, or prompt-injection text indicator was detected.",
+      "source": "deterministic_local_rules",
+      "status": "observed"
+    }
+  ],
+  "assumptions": [
+    "The declared goal, domain, and priorities were supplied by the authenticated local user."
+  ],
+  "unknowns": [
+    "No official alert found is not proof that no hazard exists."
+  ],
+  "options": [
+    {
+      "option_id": "prepare-now",
+      "summary": "Take low-burden reversible preparedness steps.",
+      "benefits": [
+        "improves readiness with limited downside"
+      ],
+      "risks": [
+        "may consume time or supplies if event changes"
+      ],
+      "reversibility": "easy",
+      "external_effect": "user_controlled"
+    },
+    {
+      "option_id": "official-instruction",
+      "summary": "Read and follow the authenticated authority's instruction when it applies.",
+      "benefits": [
+        "preserves accountable source guidance"
+      ],
+      "risks": [
+        "area and freshness must be verified"
+      ],
+      "reversibility": "varies",
+      "external_effect": "user_controlled"
+    },
+    {
+      "option_id": "verify-source",
+      "summary": "Verify issuer, status, area, time, and update/cancellation through an independently obtained official channel.",
+      "benefits": [
+        "reduces spoofing and stale-alert risk"
+      ],
+      "risks": [
+        "verification takes time"
+      ],
+      "reversibility": "easy",
+      "external_effect": "none"
+    }
+  ],
+  "recommendation": {
+    "status": "advisory",
+    "option_id": "prepare-now",
+    "basis": "Corroborated evidence and possible personal relevance support reversible preparation."
+  },
+  "next_safe_step": "Take low-burden reversible preparation steps and preserve access to official updates.",
+  "blocked_actions": [
+    "open_active_link",
+    "send_message",
+    "place_call",
+    "submit_credentials",
+    "transfer_money",
+    "change_account",
+    "control_device_or_robot",
+    "broadcast_family_or_public_alert"
+  ],
+  "limitations": [
+    "No external source, identity, account, location, forecast, or event was independently verified by this offline build.",
+    "Recommendations are advisory; Joni remains the decision-maker.",
+    "BootX is personal decision support, not an alerting or emergency authority.",
+    "The level is deterministic guidance and does not replace the issuer's original category or instruction."
+  ],
+  "warning": {
+    "event_id": "synthetic-typhoon-bavi-exercise-001",
+    "hazard_type": "tropical cyclone with possible wind, rainfall, flood, and landslide impacts",
+    "official_status": "none_found",
+    "issuer": "synthetic exercise dataset; no real alerting authority",
+    "issued_at": "2026-07-12T17:30:00+07:00",
+    "expires_at": "2026-07-14T17:30:00+07:00",
+    "affected_area": "synthetic broad impact area near the configured personal area",
+    "area_match": "near",
+    "urgency": "Future",
+    "severity": "Severe",
+    "certainty": "Possible",
+    "level": "W2",
+    "level_label": "PREPARE",
+    "evidence_tier": "V2",
+    "decision_posture": "PREPARE NOW",
+    "official_instruction": "Synthetic exercise: take low-burden reversible preparedness steps and monitor independently obtained official channels. Do not evacuate or broadcast a public warning based on this exercise.",
+    "observed": [
+      "Corroborated evidence and possible personal relevance support reversible preparation."
+    ],
+    "forecast": [
+      "The source characterizes event certainty as Possible."
+    ],
+    "unknowns": [
+      "No official alert found is not proof that no hazard exists."
+    ],
+    "next_safe_step": "Take low-burden reversible preparation steps and preserve access to official updates.",
+    "next_review": "Review at the next official bulletin or earlier if conditions change.",
+    "limitations": [
+      "BootX is personal decision support, not an alerting or emergency authority.",
+      "The level is deterministic guidance and does not replace the issuer's original category or instruction."
+    ]
+  },
+  "ai_dna_runtime_checks": [
+    {
+      "dimension": "Truth",
+      "status": "CONDITIONAL",
+      "basis": "Output is usable only with displayed unknowns and independent verification."
+    },
+    {
+      "dimension": "Reasoning",
+      "status": "CONDITIONAL",
+      "basis": "Decision class, alternatives, reversibility, and missing evidence are explicit."
+    },
+    {
+      "dimension": "Learning",
+      "status": "CONDITIONAL",
+      "basis": "Corrections can be reviewed in-session; persistent learning is intentionally absent."
+    },
+    {
+      "dimension": "Communication",
+      "status": "PASS",
+      "basis": "The packet separates observations, unknowns, options, recommendation status, and limits."
+    },
+    {
+      "dimension": "Adaptability",
+      "status": "CONDITIONAL",
+      "basis": "Text-only local operation is supported; multilingual and accessibility validation remain incomplete."
+    },
+    {
+      "dimension": "Ethics",
+      "status": "PASS",
+      "basis": "No hidden memory, remote processing, coercive action, or external execution exists."
+    },
+    {
+      "dimension": "Safety",
+      "status": "PASS",
+      "basis": "Consequential tools are technically absent and untrusted content cannot grant authority."
+    },
+    {
+      "dimension": "Humility",
+      "status": "PASS",
+      "basis": "The prototype discloses limits and preserves Joni's decision authority."
+    },
+    {
+      "dimension": "Common good",
+      "status": "CONDITIONAL",
+      "basis": "Personal protection is in scope; family and community dissemination remain blocked."
+    }
+  ],
+  "data_receipt": {
+    "memory_used": false,
+    "remote_processing": false,
+    "synthetic": true,
+    "raw_content_retention": "process_memory_only; discarded when the process exits",
+    "location_use": "none unless manually declared in a warning request; never persisted"
+  },
+  "user_decision": null
+}
+
+==============================================================================
+RESULT
+==============================================================================
+RESULT: PASS
+All mandatory assertions passed. No averaging or override was used.
+Interpretation: synthetic W2 PREPARE guidance only; no real warning authority or deployment claim.
+
+==============================================================================
+CLEANUP
+==============================================================================
+Temporary build removed: True
+Finished UTC: 2026-07-12T09:34:43.2656976Z
+Final exit code: 0
