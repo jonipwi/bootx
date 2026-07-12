@@ -587,13 +587,13 @@ A later robot may consume only a typed, policy-approved **proposal** from this p
 
 ## 19. Immediate deliverable
 
-The next implementation artifact should be a platform-neutral schema package containing:
+The platform-neutral schema and policy package is implemented at [`prototype/personal-companion/`](../../prototype/personal-companion/README.md) with:
 
 - `personal-decision-input.schema.json`;
 - `personal-decision-output.schema.json`;
-- `decision-classes.yaml`;
-- `policy-rules.yaml`;
+- `decision-classes.json`;
+- `policy-rules.json`;
 - synthetic safe, ambiguous, high-stakes, emergency, prohibited, and adversarial fixtures;
 - a schema and policy test runner.
 
-This package must be implemented and tested on a mature supported host environment before any attempt to integrate it into the BootX operating-system artifacts.
+The first Go backend and terminal UI consume these contracts on a mature supported host environment. The current fixture corpus is only a baseline and must be expanded before the exit gate. No integration into the opaque BootX operating-system artifacts is authorized.

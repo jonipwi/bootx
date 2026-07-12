@@ -1,10 +1,10 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.4<br>
+**Version:** 1.5<br>
 **Last updated:** 2026-07-12<br>
-**Current phase:** Phase 0 — foundation, evidence, ownership, reproducibility, and `DEV-0` preparation<br>
-**Current release posture:** Research documentation, synthetic development preparation, and opaque educational artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
+**Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype implemented for synthetic evaluation<br>
+**Current release posture:** Research documentation, an unvalidated host-based Go MVP, and opaque educational OS artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
 
 ## 1. Purpose
 
@@ -55,7 +55,7 @@ This theological foundation is a disclosed founder commitment, not a scientific 
 | AI DNA | Specification present; unvalidated | `docs/handbook/05-ai-dna-specification.md` | dimensions and gates exist; empirical validity is not established |
 | Boot artifacts | Present but opaque | `artifacts/boot/` and `artifacts/media/` | limited binary evidence exists; source-level assurance is impossible |
 | Reproducible OS source | Missing | repository audit | build, source, tests, provenance, and dependency records are absent |
-| AI companion implementation | Not started in this checkout | no implementation evidence | no companion should be represented as deployed or safe |
+| AI companion implementation | Deterministic host MVP present; unvalidated | `prototype/personal-companion/` | typed policy/warning/TUI baseline exists; no model, network, real-user evidence, deployment, or safety claim |
 | Public/high-impact readiness | BLOCKED | multiple open gates | no public or High-Impact deployment is authorized |
 
 ## 5. Foundation Gate — required before sensitive OS or AI implementation
@@ -134,7 +134,7 @@ The project may preserve artifacts, restore source, conduct documentation resear
 
 **Status: BLOCKED for sensitive OS/AI use.**
 
-The ethical and research documentation baseline is substantial, but governance is not constituted, legal/provenance review is incomplete, source is missing, builds are not reproducible, security controls are not implemented, and AI DNA is not empirically validated.
+The ethical and research documentation baseline is substantial, but governance is not constituted, legal/provenance review is incomplete, historical OS source is missing, OS builds are not reproducible, platform security controls are not implemented, and AI DNA is not empirically validated.
 
 This block does not prevent the requirements, simulation, threat-modeling, synthetic testing, or tightly bounded software-only work authorized by [`DEVELOPMENT_GUIDELINE.md`](DEVELOPMENT_GUIDELINE.md). Such work must run on a mature supported host system, use non-sensitive data first, and provide no autonomous consequential or physical action.
 
@@ -176,7 +176,37 @@ This block does not prevent the requirements, simulation, threat-modeling, synth
 - [x] Legacy files received an internal reliability pass: dangerous event claims were corrected/withdrawn, conceptual formulas were labeled, and document status boundaries were added.
 - [ ] Legacy files still require complete primary citation, terminology, duplication, style, and independent scientific/domain review.
 
-## 7. Operating-system implementation roadmap
+## 7. Personal companion implementation status
+
+**Evidence maturity:** `E2 — Prototype` in a limited host environment. This is not representative user or field evidence.
+
+Completed implementation baseline:
+
+- [x] Dependency-free Go module at `prototype/personal-companion/`.
+- [x] Typed `assist.personal-decision.v1` request, warning, option, assurance, receipt, and decision-packet models.
+- [x] Strict JSON backend with unknown-field rejection and one-object input boundary.
+- [x] Dependency-free line-oriented terminal UI with visible scope confirmation and data receipt.
+- [x] Embedded deterministic decision classes and policy indicators.
+- [x] Deterministic `W0`–`W4`/`WX` warning evaluation preserving official-status distinctions.
+- [x] Technical absence of networking, messages, calls, payments, accounts, device/robot control, and family/public broadcast.
+- [x] Session-only process-memory behavior with no application persistence.
+- [x] Fail-closed enforcement requiring sensitive and warning scenarios to be explicitly synthetic before security and study gates pass.
+- [x] JSON input/output schemas and synthetic fixtures.
+- [x] Automated backend, policy-boundary, warning, and scripted-TUI tests.
+
+Open `DEV-1` gates:
+
+- [ ] Expand the synthetic/adversarial corpus across ambiguity, Unicode deception, malformed input, hazards, languages, accessibility needs, and correlated failures.
+- [ ] Measure precision, recall, calibration, false-alert burden, missed-alert risk, correct safe action, and comprehension against preregistered thresholds.
+- [ ] Complete threat modeling, parser review, fuzzing, dependency/build provenance, and independent security review.
+- [ ] Complete keyboard, screen-reader, text-scaling, language, anxiety, automation-bias, and anti-dependency human-factors studies.
+- [ ] Add tested correction/deletion/disable workflows without adding hidden persistence.
+- [ ] Demonstrate rollback and reproducible builds in two clean supported environments.
+- [ ] Establish research-ethics approval before any real-user study or sensitive personal input.
+- [ ] Compare rule-only output against no-assistance/static-checklist baselines.
+- [ ] Do not add a bounded AI model until deterministic baseline evidence is frozen and reviewed.
+
+## 8. Operating-system implementation roadmap
 
 Operating-system work follows the principles; it does not define them. Each stage requires a recorded gate decision.
 
@@ -238,7 +268,7 @@ Operating-system work follows the principles; it does not define them. Each stag
 
 **Exit:** evidence demonstrates bounded benefit without unacceptable safety, agency, privacy, accessibility, or equity harm.
 
-## 8. Creator-centered ethical compliance matrix
+## 9. Creator-centered ethical compliance matrix
 
 BootX cannot scientifically calculate God's will or assign a divine score. It can translate the founder's stewardship belief into humanly reviewable duties and evidence.
 
@@ -257,7 +287,7 @@ BootX cannot scientifically calculate God's will or assign a divine score. It ca
 
 This matrix is a moral design lens. It must never become a religious conformity test for users, a claim of salvation, or a substitute for evidence, rights, law, and accountable judgment.
 
-## 9. AI DNA development status
+## 10. AI DNA development status
 
 ### Present
 
@@ -281,7 +311,7 @@ This matrix is a moral design lens. It must never become a religious conformity 
 - [ ] Publish failed evaluations and corrective actions.
 - [ ] Demonstrate that Creator-stewardship language preserves freedom of conscience and does not become religious manipulation.
 
-## 10. Safety, privacy, and security work remaining
+## 11. Safety, privacy, and security work remaining
 
 - [ ] Complete the threat model for external attackers, malicious content, insiders, abusive guardians, providers, and the companion itself.
 - [ ] Complete personal-data and companion-memory flow maps.
@@ -293,7 +323,7 @@ This matrix is a moral design lens. It must never become a religious conformity 
 - [ ] Establish secure default settings that do not require users to become experts.
 - [ ] Define environmental/resource budgets for models and hardware.
 
-## 11. Governance and community work remaining
+## 12. Governance and community work remaining
 
 - [ ] Identify and invite qualified stewards rather than appointing loyal supporters only.
 - [ ] Include technical, ethics, security, privacy, education, accessibility, legal, theological, and lived-experience perspectives.
@@ -304,7 +334,7 @@ This matrix is a moral design lens. It must never become a religious conformity 
 - [ ] Define official release signing and separated key custody.
 - [ ] Create a responsible archive and dissolution plan in operational form.
 
-## 12. Inheritance — what future generations should improve
+## 13. Inheritance — what future generations should improve
 
 Future inheritors are not asked to preserve every present conclusion. They are asked to preserve and improve the method of truthful, humble, protective stewardship.
 
@@ -347,7 +377,7 @@ Future inheritors are not asked to preserve every present conclusion. They are a
 - that no reported incident means no harm;
 - that inheritance means ownership of another person's conscience or future.
 
-## 13. Next twelve priority actions
+## 14. Next twelve priority actions
 
 1. **Restore source:** locate the authoritative BootX source, build scripts, and missing blueprint/history.
 2. **Verify ownership:** record authorship, third-party components, and rights for every artifact.
@@ -358,11 +388,11 @@ Future inheritors are not asked to preserve every present conclusion. They are a
 7. **Repair legacy evidence:** add primary citations and correct unsupported or time-sensitive claims.
 8. **Operationalize AI DNA:** create test cases, evaluator guidance, disagreement rules, and adversarial score-gaming tests.
 9. **Complete threat and data models:** cover the OS, companion, memory, tools, providers, family/guardian use, and update chain.
-10. **Build the decision pipeline without AI first:** implement the typed `assist.personal-decision.v1` schemas, deterministic policy, evidence record, output packet, and synthetic tests before adding bounded AI explanation.
+10. **Validate the deterministic MVP:** expand fixtures, threat-model and fuzz the parser/policy boundary, measure comprehension and correct safe action against baselines, and keep bounded AI disconnected until the baseline is frozen and reviewed.
 11. **Establish research ethics:** approve the participant, privacy, harm, stop, and publication processes before human study.
 12. **Run continuity exercises:** simulate founder, key, repository, hosting, and model-provider loss.
 
-## 14. Progress update rules
+## 15. Progress update rules
 
 When updating this file:
 
@@ -375,7 +405,17 @@ When updating this file:
 7. update the current phase and release posture;
 8. add newly discovered risks and inheritance lessons.
 
-## 15. Change log
+## 16. Change log
+
+### Version 1.5 — 2026-07-12
+
+- Implemented the first host-based Go backend and terminal UI for `assist.personal-decision.v1`.
+- Added typed request/output models, strict JSON mode, embedded deterministic policy, warning evaluation, AI DNA runtime checks, and data receipts.
+- Kept networking, remote processing, external actions, persistence, robotics control, and family/community broadcast technically absent.
+- Required real sensitive input and real warning use to fail closed; those scenarios are synthetic-only until security and study gates pass.
+- Added JSON schemas, synthetic personal/scam/disaster fixtures, backend tests, warning-level tests, policy-boundary tests, and a scripted TUI test.
+- Recorded the implementation as `E2 — Prototype`, not deployed or validated companion evidence.
+- Replaced the next implementation priority with deterministic-baseline validation, security review, human-factors research, and comparative evaluation before adding AI.
 
 ### Version 1.4 — 2026-07-12
 

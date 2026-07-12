@@ -34,7 +34,7 @@ SHA-256 hashes recorded during the audit:
 
 These hashes identify the audited artifacts; they do not certify that the binaries are secure.
 
-### Missing reproducibility inputs
+### Missing operating-system reproducibility inputs
 
 The README and install guide refer to files such as `Makefile`, `scripts/`, `bootloader/stage1/boot.asm`, blueprint and progress plans, a kernel, and a UEFI loader. Those inputs are not present in this checkout. Consequently:
 
@@ -45,6 +45,12 @@ The README and install guide refer to files such as `Makefile`, `scripts/`, `boo
 - the supplied images must be treated as opaque experimental artifacts, not trusted deployment media.
 
 The highest technical priority is to restore source, build scripts, dependency versions, license information, tests, and a reproducible build record.
+
+### Host-based personal-companion implementation added after the initial audit
+
+The repository now contains [`prototype/personal-companion/`](../../prototype/personal-companion/README.md), a separately auditable Go implementation of `assist.personal-decision.v1`. Directly inspectable evidence includes typed input/output models, embedded deterministic policy, `W0`–`W4`/`WX` warning logic, a terminal UI, strict JSON mode, schemas, synthetic fixtures, and automated tests.
+
+This does not restore or validate the historical BootX operating-system source. It also does not establish real-user benefit, calibrated error rates, secure platform isolation, authoritative warning-feed authentication, AI DNA validity, or deployment safety. Its evidence maturity remains `E2 — Prototype` in a limited host environment.
 
 ## 3. Conceptual corpus map
 

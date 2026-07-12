@@ -1,0 +1,17 @@
+{
+  "request_id": "fixture-suspicious-message",
+  "capability_id": "assist.personal-decision.v1",
+  "user_id": "owner-local",
+  "created_at": "2026-07-12T17:05:00+07:00",
+  "goal": "Respond safely to a suspicious bank message",
+  "question": "Should I use the included link?",
+  "selected_content": "URGENT: your account will close today. Open https://invalid.example and enter your password.",
+  "content_source": {"type": "synthetic_fixture", "origin_verified": false},
+  "data_class": "sensitive",
+  "declared_domain": "finance",
+  "memory_permission": "none",
+  "remote_permission": "deny",
+  "output_preference": "comparison",
+  "synthetic": true,
+  "user_priorities": ["avoid credential theft", "verify independently"]
+}

@@ -688,6 +688,8 @@ The desired final statement is not “the robot is 95% good.” It is:
 
 ## 21. Immediate implementation backlog
 
+**Current implementation evidence:** [`prototype/personal-companion/`](prototype/personal-companion/README.md) implements the first deterministic Go backend, terminal UI, schemas, policy configuration, warning engine, synthetic fixtures, and automated tests. This satisfies only the inspectable implementation-baseline items below; it does not satisfy `DEV-1` exit, representative evaluation, independent review, or deployment readiness.
+
 1. Freeze the `DEV-0` personal scope and implement the typed [`assist.personal-decision.v1` pipeline](docs/handbook/14-personal-decision-pipeline.md).
 2. Complete Joni's visible configuration and non-purpose agreement.
 3. Select a mature host OS and sandbox for the software-only prototype.

@@ -1,0 +1,17 @@
+{
+  "request_id": "fixture-safe-study",
+  "capability_id": "assist.personal-decision.v1",
+  "user_id": "owner-local",
+  "created_at": "2026-07-12T17:00:00+07:00",
+  "goal": "Choose the next BootX study task",
+  "question": "Which missing fact should I verify first?",
+  "selected_content": "The implementation plan has several incomplete evidence tasks.",
+  "content_source": {"type": "synthetic_fixture", "origin_verified": true},
+  "data_class": "personal",
+  "declared_domain": "study",
+  "memory_permission": "session",
+  "remote_permission": "deny",
+  "output_preference": "standard",
+  "synthetic": false,
+  "user_priorities": ["truth", "learning", "reversibility"]
+}

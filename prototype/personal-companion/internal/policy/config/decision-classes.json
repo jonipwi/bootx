@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "classes": [
+    {"code": "D0", "name": "Informational", "max_effect": "none"},
+    {"code": "D1", "name": "Low-stakes reversible", "max_effect": "draft"},
+    {"code": "D2", "name": "Sensitive or consequential", "max_effect": "draft"},
+    {"code": "D3", "name": "Qualified-domain", "max_effect": "education_only"},
+    {"code": "D4", "name": "Emergency or critical", "max_effect": "user_controlled_guidance"},
+    {"code": "D5", "name": "Prohibited", "max_effect": "none"}
+  ]
+}

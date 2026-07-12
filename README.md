@@ -30,6 +30,8 @@ bootx/
 ├── artifacts/
 │   ├── boot/                 compiled IMG, ISO, and VDI artifacts
 │   └── media/                screenshots and visual evidence
+├── prototype/
+│   └── personal-companion/   host-based Go backend and terminal UI MVP
 └── docs/
     ├── README.md             documentation portal
     ├── guides/               installation and operating guidance
@@ -39,7 +41,19 @@ bootx/
 
 ## Repository State
 
-This checkout contains prebuilt BIOS/ISO/VDI artifacts and research documents. The source code, build scripts, and historical blueprint files referenced below are not present in the current repository, so the supplied binaries cannot presently be reproduced or source-audited from this checkout. Treat them as experimental educational artifacts. See the [repository evidence audit](docs/handbook/01-repository-evidence-audit.md) and [current progress gate](PROGRESS.md) for verified status and restoration priorities.
+This checkout contains prebuilt BIOS/ISO/VDI artifacts, research documents, and a new [host-based Go personal-companion MVP](prototype/personal-companion/README.md). The historical operating-system source, build scripts, and blueprint files are still absent, so the supplied boot binaries cannot presently be reproduced or source-audited. The Go MVP is separately auditable and tested, but it is an unvalidated development prototype—not evidence that the BootX operating system or an AI companion is deployed or safe. See the [repository evidence audit](docs/handbook/01-repository-evidence-audit.md) and [current progress gate](PROGRESS.md).
+
+## Personal Companion MVP
+
+The first `assist.personal-decision.v1` implementation provides a dependency-free Go backend and line-oriented terminal UI on a mature host operating system. It uses deterministic policy and warning rules, strict JSON schemas, synthetic tests, session-only processing, and no network or external-action capability.
+
+```powershell
+cd prototype/personal-companion
+go test ./...
+go run ./cmd/bootx-companion
+```
+
+Read the [MVP documentation](prototype/personal-companion/README.md) before entering any data.
 
 ## Human + AI Research Handbook
 

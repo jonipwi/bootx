@@ -56,6 +56,8 @@ Exit gate:
 
 **Objective:** add deterministic local analysis with no autonomous external action.
 
+**Current evidence:** the [Go personal-companion MVP](../../prototype/personal-companion/README.md) implements a limited deterministic baseline for this phase. It does not close the phase exit gate; representative evaluation, alert-burden study, parser/security review, human deletion/disable study, and rollback evidence remain incomplete.
+
 Build:
 
 - safe parsing of sender, link, urgency, credential, and payment indicators;

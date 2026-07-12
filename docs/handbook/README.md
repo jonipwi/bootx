@@ -33,6 +33,8 @@ The governing mission is:
 
 Read the documents in order for a complete study. Engineers can begin with the system specification and roadmap after reviewing the ethical constitution. Researchers should begin with the evidence audit, logic, and measurement framework.
 
+The current implementation evidence is the [host-based Go personal-companion MVP](../../prototype/personal-companion/README.md). It is a deterministic development baseline and does not close the handbook's research, security, human-factors, or deployment gates.
+
 | Part | Document | Primary question |
 |---:|---|---|
 | 0 | [Foundation and scope](00-foundation-and-scope.md) | What is BootX trying to achieve, and what is it not claiming? |

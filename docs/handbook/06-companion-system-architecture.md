@@ -106,7 +106,7 @@ Before remote processing, minimize, redact, or pseudonymize inputs; show the use
 
 A future BootX platform should provide verified boot, signed components, memory/process isolation, hardware-backed keys where available, encrypted storage, secure time, signed updates, recovery partitions, tamper-evident logging, and a tested factory-reset/export path.
 
-The current repository does not contain auditable source for these controls. They are requirements, not descriptions of the supplied binary.
+The supplied BootX operating-system binaries still have no auditable source for these platform controls. The separate [host-based Go MVP](../../prototype/personal-companion/README.md) implements limited application-level policy, typed data, session-only behavior, and external-action absence; it does not implement or prove the secure platform foundation described here.
 
 ## 4. Trust boundaries and threat actors
 
@@ -191,4 +191,3 @@ The practical engineering order is:
 6. do not place personal users or real credentials on BootX until security assurance is credible.
 
 This order preserves the educational OS vision while avoiding use of an experimental kernel as the security base for sensitive AI companionship.
-

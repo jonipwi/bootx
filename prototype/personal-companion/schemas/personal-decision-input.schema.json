@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bootx:schema:personal-decision-input:v1",
+  "title": "BootX Personal Decision Input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "capability_id",
+    "user_id",
+    "created_at",
+    "goal",
+    "question",
+    "selected_content",
+    "content_source",
+    "data_class",
+    "declared_domain",
+    "memory_permission",
+    "remote_permission",
+    "output_preference",
+    "synthetic"
+  ],
+  "properties": {
+    "request_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "capability_id": {"const": "assist.personal-decision.v1"},
+    "user_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "created_at": {"type": "string", "format": "date-time"},
+    "goal": {"type": "string", "minLength": 1, "maxLength": 2048},
+    "question": {"type": "string", "minLength": 1, "maxLength": 4096},
+    "selected_content": {"type": "string", "maxLength": 65536},
+    "content_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "origin_verified"],
+      "properties": {
+        "type": {"type": "string", "minLength": 1, "maxLength": 128},
+        "origin_verified": {"type": "boolean"}
+      }
+    },
+    "data_class": {"enum": ["public", "personal", "sensitive", "prohibited"]},
+    "declared_domain": {
+      "enum": ["general", "study", "digital_safety", "household", "health", "finance", "legal", "relationship", "faith", "emergency", "unknown"]
+    },
+    "memory_permission": {"enum": ["none", "session"]},
+    "remote_permission": {"const": "deny"},
+    "output_preference": {"enum": ["concise", "standard", "detailed", "checklist", "comparison", "warning_card"]},
+    "synthetic": {"type": "boolean"},
+    "user_priorities": {
+      "type": "array",
+      "maxItems": 32,
+      "items": {"type": "string", "minLength": 1, "maxLength": 256},
+      "uniqueItems": true
+    },
+    "warning": {"$ref": "#/$defs/warning"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"data_class": {"const": "sensitive"}}},
+      "then": {"properties": {"synthetic": {"const": true}}}
+    },
+    {
+      "if": {"required": ["warning"]},
+      "then": {"properties": {"synthetic": {"const": true}}}
+    }
+  ],
+  "$defs": {
+    "warning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id",
+        "hazard_type",
+        "official_status",
+        "issuer",
+        "authority_authenticated",
+        "message_status",
+        "message_type",
+        "area_match",
+        "urgency",
+        "severity",
+        "certainty",
+        "evidence_tier",
+        "integrity_status",
+        "source_conflict",
+        "stale",
+        "direct_danger"
+      ],
+      "properties": {
+        "event_id": {"type": "string", "minLength": 1, "maxLength": 256},
+        "hazard_type": {"type": "string", "minLength": 1, "maxLength": 128},
+        "official_status": {"enum": ["active", "none_found", "unavailable"]},
+        "issuer": {"type": "string", "minLength": 1, "maxLength": 512},
+        "official_url": {"type": "string", "maxLength": 2048},
+        "authority_authenticated": {"type": "boolean"},
+        "message_status": {"enum": ["Actual", "Exercise", "System", "Test", "Draft"]},
+        "message_type": {"enum": ["Alert", "Update", "Cancel", "Ack", "Error"]},
+        "issued_at": {"type": "string", "maxLength": 128},
+        "updated_at": {"type": "string", "maxLength": 128},
+        "expires_at": {"type": "string", "maxLength": 128},
+        "affected_area": {"type": "string", "maxLength": 4096},
+        "area_match": {"enum": ["inside", "near", "outside", "unknown"]},
+        "urgency": {"enum": ["Immediate", "Expected", "Future", "Past", "Unknown"]},
+        "severity": {"enum": ["Extreme", "Severe", "Moderate", "Minor", "Unknown"]},
+        "certainty": {"enum": ["Observed", "Likely", "Possible", "Unlikely", "Unknown"]},
+        "instruction": {"type": "string", "maxLength": 16384},
+        "evidence_tier": {"enum": ["V0", "V1", "V2", "V3", "V4"]},
+        "integrity_status": {"enum": ["pass", "fail", "unknown"]},
+        "source_conflict": {"type": "boolean"},
+        "stale": {"type": "boolean"},
+        "direct_danger": {"type": "boolean"}
+      }
+    }
+  }
+}

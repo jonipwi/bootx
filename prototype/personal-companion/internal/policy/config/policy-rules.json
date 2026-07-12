@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "max_selected_content_bytes": 65536,
+  "prohibited_intent_phrases": [
+    "help me steal",
+    "steal a password",
+    "disable the safety",
+    "bypass the safety",
+    "secretly record",
+    "build a weapon",
+    "claim god commands",
+    "evade the policy"
+  ],
+  "credential_indicators": [
+    "password",
+    "passcode",
+    "pin code",
+    "one-time password",
+    "otp",
+    "recovery code",
+    "private key",
+    "seed phrase",
+    "login credentials"
+  ],
+  "payment_indicators": [
+    "transfer money",
+    "wire transfer",
+    "bank account",
+    "credit card",
+    "payment",
+    "crypto wallet",
+    "gift card"
+  ],
+  "urgency_indicators": [
+    "act now",
+    "immediately",
+    "urgent",
+    "today only",
+    "account will close",
+    "final warning",
+    "do not delay"
+  ],
+  "injection_indicators": [
+    "ignore previous instructions",
+    "ignore all instructions",
+    "system message",
+    "developer message",
+    "grant tools",
+    "change your policy",
+    "reveal memory"
+  ]
+}

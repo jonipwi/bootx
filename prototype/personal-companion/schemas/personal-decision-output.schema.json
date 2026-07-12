@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bootx:schema:personal-decision-output:v1",
+  "title": "BootX Personal Decision Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "capability_id",
+    "generated_at",
+    "runtime_notice",
+    "decision_class",
+    "response_mode",
+    "goal_understood",
+    "observations",
+    "assumptions",
+    "unknowns",
+    "options",
+    "recommendation",
+    "next_safe_step",
+    "blocked_actions",
+    "limitations",
+    "ai_dna_runtime_checks",
+    "data_receipt",
+    "user_decision"
+  ],
+  "properties": {
+    "request_id": {"type": "string"},
+    "capability_id": {"const": "assist.personal-decision.v1"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "runtime_notice": {"type": "string"},
+    "decision_class": {"enum": ["D0", "D1", "D2", "D3", "D4", "D5"]},
+    "response_mode": {"enum": ["INFORM", "COMPARE", "VERIFY", "CLARIFY", "ABSTAIN", "MONITOR", "PREPARE", "PROTECT", "WAIT", "URGENT_GUIDANCE", "BLOCK", "DEGRADED"]},
+    "goal_understood": {"type": "string"},
+    "observations": {"type": "array", "items": {"$ref": "#/$defs/finding"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "unknowns": {"type": "array", "items": {"type": "string"}},
+    "options": {"type": "array", "items": {"$ref": "#/$defs/option"}},
+    "recommendation": {"$ref": "#/$defs/recommendation"},
+    "next_safe_step": {"type": "string"},
+    "blocked_actions": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "warning": {"$ref": "#/$defs/warning_card"},
+    "ai_dna_runtime_checks": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {"$ref": "#/$defs/assurance"}
+    },
+    "data_receipt": {"$ref": "#/$defs/data_receipt"},
+    "user_decision": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim", "source", "status"],
+      "properties": {
+        "claim": {"type": "string"},
+        "source": {"type": "string"},
+        "status": {"type": "string"}
+      }
+    },
+    "option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["option_id", "summary", "reversibility", "external_effect"],
+      "properties": {
+        "option_id": {"type": "string"},
+        "summary": {"type": "string"},
+        "benefits": {"type": "array", "items": {"type": "string"}},
+        "risks": {"type": "array", "items": {"type": "string"}},
+        "reversibility": {"type": "string"},
+        "external_effect": {"type": "string"}
+      }
+    },
+    "recommendation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "basis"],
+      "properties": {
+        "status": {"type": "string"},
+        "option_id": {"type": "string"},
+        "basis": {"type": "string"}
+      }
+    },
+    "assurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "status", "basis"],
+      "properties": {
+        "dimension": {"type": "string"},
+        "status": {"enum": ["PASS", "CONDITIONAL", "FAIL", "NOT ESTABLISHED"]},
+        "basis": {"type": "string"}
+      }
+    },
+    "data_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["memory_used", "remote_processing", "synthetic", "raw_content_retention", "location_use"],
+      "properties": {
+        "memory_used": {"const": false},
+        "remote_processing": {"const": false},
+        "synthetic": {"type": "boolean"},
+        "raw_content_retention": {"type": "string"},
+        "location_use": {"type": "string"}
+      }
+    },
+    "warning_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_id", "hazard_type", "official_status", "issuer", "area_match", "urgency", "severity", "certainty", "level", "level_label", "evidence_tier", "decision_posture", "next_safe_step", "next_review"],
+      "properties": {
+        "event_id": {"type": "string"},
+        "hazard_type": {"type": "string"},
+        "official_status": {"type": "string"},
+        "issuer": {"type": "string"},
+        "official_url": {"type": "string"},
+        "issued_at": {"type": "string"},
+        "updated_at": {"type": "string"},
+        "expires_at": {"type": "string"},
+        "affected_area": {"type": "string"},
+        "area_match": {"enum": ["inside", "near", "outside", "unknown"]},
+        "urgency": {"type": "string"},
+        "severity": {"type": "string"},
+        "certainty": {"type": "string"},
+        "level": {"enum": ["W0", "W1", "W2", "W3", "W4", "WX"]},
+        "level_label": {"type": "string"},
+        "evidence_tier": {"enum": ["V0", "V1", "V2", "V3", "V4"]},
+        "decision_posture": {"type": "string"},
+        "official_instruction": {"type": "string"},
+        "observed": {"type": "array", "items": {"type": "string"}},
+        "forecast": {"type": "array", "items": {"type": "string"}},
+        "unknowns": {"type": "array", "items": {"type": "string"}},
+        "next_safe_step": {"type": "string"},
+        "next_review": {"type": "string"},
+        "limitations": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
