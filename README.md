@@ -48,10 +48,11 @@ This checkout contains prebuilt BIOS/ISO/VDI artifacts, research documents, and 
 The first `assist.personal-decision.v1` implementation provides a dependency-free Go backend and line-oriented terminal UI on a mature host operating system. It uses deterministic policy and warning rules, strict JSON schemas, synthetic tests, session-only processing, and no network or external-action capability.
 
 ```powershell
-cd prototype/personal-companion
-go test ./...
-go run ./cmd/bootx-companion
+.\prototype\build.ps1 -Action verify
+.\prototype\build.ps1 -Action run
 ```
+
+If local execution policy blocks `.ps1` files, use `powershell -NoProfile -ExecutionPolicy Bypass -File .\prototype\build.ps1 -Action verify`; this applies only to that process.
 
 Read the [MVP documentation](prototype/personal-companion/README.md) before entering any data.
 

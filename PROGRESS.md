@@ -1,7 +1,7 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.5<br>
+**Version:** 1.6<br>
 **Last updated:** 2026-07-12<br>
 **Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype implemented for synthetic evaluation<br>
 **Current release posture:** Research documentation, an unvalidated host-based Go MVP, and opaque educational OS artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
@@ -193,6 +193,7 @@ Completed implementation baseline:
 - [x] Fail-closed enforcement requiring sensitive and warning scenarios to be explicitly synthetic before security and study gates pass.
 - [x] JSON input/output schemas and synthetic fixtures.
 - [x] Automated backend, policy-boundary, warning, and scripted-TUI tests.
+- [x] PowerShell build workflow with module-root isolation, formatting/test/vet gates, JSON and fixture verification, SHA-256 output, build manifest, run, and safe clean actions.
 
 Open `DEV-1` gates:
 
@@ -406,6 +407,14 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 16. Change log
+
+### Version 1.6 — 2026-07-12
+
+- Added `prototype/build.ps1` so builds always target the nested `personal-companion` Go module regardless of the caller's working directory.
+- Added `build`, `test`, `verify`, `run`, and safe `clean` actions.
+- Added formatting, unit-test, vet, JSON-asset, executable smoke-test, and synthetic-fixture gates.
+- Added SHA-256 output and a build manifest containing toolchain, platform, version, and safety status.
+- Documented the supported PowerShell workflow in the project and prototype READMEs.
 
 ### Version 1.5 — 2026-07-12
 

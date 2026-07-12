@@ -54,9 +54,29 @@ Schemas:
 
 ## Test and build
 
+From the repository's `prototype` directory, use the supported build script:
+
+```powershell
+.\build.ps1                 # test, vet, JSON validation, and build
+.\build.ps1 -Action verify  # also run all backend fixture smoke tests
+.\build.ps1 -Action test
+.\build.ps1 -Action run     # build and start the TUI
+.\build.ps1 -Action clean
+```
+
+The default output is `personal-companion\dist\` and includes the executable, SHA-256 file, and `build-manifest.json`. The script uses `$PSScriptRoot`, so it finds the correct nested Go module even when launched from another directory.
+
+If Windows reports that script execution is disabled, use a process-scoped bypass that does not change the machine policy:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -Action verify
+```
+
+Direct Go commands remain available from `prototype\personal-companion`:
+
 ```powershell
 go test ./...
-go build -o ./bin/bootx-companion.exe ./cmd/bootx-companion
+go build ./cmd/bootx-companion
 ```
 
 Synthetic fixtures are under [`testdata/`](testdata/). They are exercises, not real events or operational evidence.
