@@ -1,7 +1,7 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.2<br>
+**Version:** 1.4<br>
 **Last updated:** 2026-07-12<br>
 **Current phase:** Phase 0 — foundation, evidence, ownership, reproducibility, and `DEV-0` preparation<br>
 **Current release posture:** Research documentation, synthetic development preparation, and opaque educational artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
@@ -149,7 +149,7 @@ This block does not prevent the requirements, simulation, threat-modeling, synth
 - [x] `LICENSE` — adopted Common Good Ethical Use License 1.0; not yet professionally reviewed for enforceability or compatibility.
 - [x] `LICENSING.md` — plain-language licensing policy and AI DNA condition.
 - [x] `DISCLAIMER.md` — limitations, responsibility, non-advice, and spiritual-authority boundary.
-- [x] `DEVELOPMENT_GUIDELINE.md` — personal-first companion and robotics scope, deterministic safety boundary, prohibited uses, phased development gates, quantitative evidence rules, and inheritance-ready backlog.
+- [x] `DEVELOPMENT_GUIDELINE.md` — personal-first companion and robotics scope, deterministic safety boundary, prohibited uses, forecast/disaster warning-status framework, phased development gates, quantitative evidence rules, and inheritance-ready backlog.
 
 ### Professional research handbook
 
@@ -167,6 +167,7 @@ This block does not prevent the requirements, simulation, threat-modeling, synth
 - [x] Standards and authoritative reading map.
 - [x] Anti-abuse and evidence-integrity chapter with a documented Maysak/Bavi factual self-audit.
 - [x] Documentation verification and corrections register covering facts, formulas, logic, local artifacts, status labels, and remaining review gates.
+- [x] Personal decision-assistance pipeline defining typed input, deterministic policy and evidence processing, human-controlled output, personalization limits, schemas, risk classes, and MVP acceptance tests.
 
 ### Legacy studies preserved as research inputs
 
@@ -357,7 +358,7 @@ Future inheritors are not asked to preserve every present conclusion. They are a
 7. **Repair legacy evidence:** add primary citations and correct unsupported or time-sensitive claims.
 8. **Operationalize AI DNA:** create test cases, evaluator guidance, disagreement rules, and adversarial score-gaming tests.
 9. **Complete threat and data models:** cover the OS, companion, memory, tools, providers, family/guardian use, and update chain.
-10. **Build a non-AI prototype first:** test suspicious-message explanations and comprehension on synthetic data.
+10. **Build the decision pipeline without AI first:** implement the typed `assist.personal-decision.v1` schemas, deterministic policy, evidence record, output packet, and synthetic tests before adding bounded AI explanation.
 11. **Establish research ethics:** approve the participant, privacy, harm, stop, and publication processes before human study.
 12. **Run continuity exercises:** simulate founder, key, repository, hosting, and model-provider loss.
 
@@ -375,6 +376,24 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 15. Change log
+
+### Version 1.4 — 2026-07-12
+
+- Added the `W0`–`W4` plus `WX` personal forecast and disaster warning-status framework.
+- Separated official alert status, BootX personal posture, evidence verification tier, and per-dimension AI DNA output assurance.
+- Added deterministic rules for act, protect, prepare, monitor, verify, wait, abstain, update, cancellation, degraded feeds, and direct immediate danger.
+- Preserved CAP event, authority, status, area, time, urgency, severity, certainty, instruction, and update/cancel fields without model reinterpretation.
+- Added a visible personal warning card, hypothetical example, false-alert and missed-alert gates, and family/community expansion boundaries.
+- Extended the personal decision pipeline with typed disaster inputs, warning outputs, response modes, and comprehension tests.
+
+### Version 1.3 — 2026-07-12
+
+- Added the first implementation specification for personal `Input → Process → Output` decision assistance.
+- Defined a typed request envelope, evidence record, decision/action classes, response modes, output packet, and personal configuration for Joni.
+- Preserved the authority boundary: policy constrains models, Joni makes consequential decisions, and version 1 has no external execution.
+- Added prompt-injection, privacy, degraded-mode, human-factors, correction, deletion, and anti-dependency acceptance tests.
+- Changed the first prototype priority to deterministic schema, policy, evidence, and synthetic testing before bounded AI explanation.
+- Defined a future robotics handoff as a typed proposal that cannot become a natural-language-to-motor command path.
 
 ### Version 1.2 — 2026-07-12
 

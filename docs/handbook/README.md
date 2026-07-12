@@ -14,7 +14,7 @@ The handbook operates under these repository-level documents:
 - [Common Good Ethical Use License](../../LICENSE) — adopted custom royalty-free permissions and ethical-use conditions; enforceability and compatibility remain subject to qualified legal review;
 - [Licensing policy](../../LICENSING.md) — classification, AI DNA conditions, and distribution guidance;
 - [Disclaimer](../../DISCLAIMER.md) — limitations that do not substitute for safety controls;
-- [Development guideline](../../DEVELOPMENT_GUIDELINE.md) — personal-first companion and robotics boundaries, do/don't contract, staged implementation, and quantitative evidence gates;
+- [Development guideline](../../DEVELOPMENT_GUIDELINE.md) — personal-first companion and robotics boundaries, forecast/disaster warning status, do/don't contract, staged implementation, and quantitative evidence gates;
 - [Progress and inheritance plan](../../PROGRESS.md) — evidence-based readiness, incomplete gates, and ordered future work.
 
 When an ordinary handbook provision conflicts with the Charter, the conflict must be resolved through the governance process rather than silently interpreted away.
@@ -49,6 +49,7 @@ Read the documents in order for a complete study. Engineers can begin with the s
 | 11 | [Standards and authoritative reading map](11-standards-and-reading-map.md) | Which external frameworks should future research compare and extend? |
 | 12 | [Anti-abuse and evidence integrity](12-anti-abuse-and-evidence-integrity.md) | How should BootX resist deepfakes, poisoned evidence, correlated sources, and abuse by authorities? |
 | 13 | [Documentation verification and corrections register](13-documentation-verification-register.md) | Which claims were checked, corrected, withdrawn, or remain unverified? |
+| 14 | [Personal decision-assistance pipeline](14-personal-decision-pipeline.md) | How should personal input become evidence-bounded options and a human-controlled decision output? |
 
 ## Foundational commitments
 

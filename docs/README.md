@@ -5,10 +5,11 @@ This directory separates normative project governance, the professional implemen
 ## Start here
 
 - [Project progress and readiness](../PROGRESS.md) — what is complete, blocked, and inherited next
-- [Development guideline](../DEVELOPMENT_GUIDELINE.md) — personal-first companion and robotics scope, prohibited uses, architecture, development phases, and statistical safety/benefit gates
+- [Development guideline](../DEVELOPMENT_GUIDELINE.md) — personal-first companion and robotics scope, forecast/disaster warning status, prohibited uses, architecture, development phases, and statistical safety/benefit gates
 - [Professional Human + AI handbook](handbook/README.md) — ordered logic, mathematics, ethics, AI DNA, architecture, research, curriculum, and safety program
 - [Anti-Abuse and Evidence Integrity](handbook/12-anti-abuse-and-evidence-integrity.md) — fake evidence, deepfakes, source independence, emergency safeguards, and governance abuse
 - [Documentation Verification Register](handbook/13-documentation-verification-register.md) — repository-wide factual, mathematical, logical, and evidence corrections
+- [Personal Decision-Assistance Pipeline](handbook/14-personal-decision-pipeline.md) — typed personal input, evidence and policy processing, human-controlled decision output, and first-prototype acceptance tests
 - [Installation guide](guides/install-guide.md) — experimental BootX image testing and installation guidance
 - [Research library](research/README.md) — original studies organized by subject
 - [Artifact inventory](../artifacts/README.md) — supplied binary images, screenshot, hashes, and limitations

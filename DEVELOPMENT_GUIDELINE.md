@@ -1,8 +1,9 @@
 # BootX Development Guideline
 
 **Status:** Development-preparation baseline; not deployment authorization or safety certification<br>
-**Version:** 1.0<br>
+**Version:** 1.1<br>
 **Adopted:** 2026-07-12<br>
+**Last updated:** 2026-07-12<br>
 **Scope:** personal Human + AI companion development, possible future robotic embodiment, later family support, and strictly bounded community benefit<br>
 **Primary initial user:** the BootX founder (“Joni”), subject to explicit configuration and continuing consent<br>
 **Authority:** subordinate to the [Charter](CHARTER.md), [Governance](GOVERNANCE.md), [License](LICENSE), [AI DNA specification](docs/handbook/05-ai-dna-specification.md), and [Safety Case](docs/handbook/09-safety-case-and-risk-register.md)
@@ -199,7 +200,209 @@ Mode must be continuously visible. An AI cannot enter `MOVE` or `SERVICE` by per
 | Memory | store purpose-bound user-approved items | remember everything, infer intimate traits, or train on memory by default |
 | Updates | accept authenticated, reviewed, rollback-capable releases | self-modify policy or install unsigned components |
 
-## 9. Quantitative truth: current percentages are unknown
+## 9. Personal forecast and disaster warning-status framework
+
+### Purpose and authority boundary
+
+BootX may help Joni understand an existing forecast or warning, relate it to his configured circumstances, compare protective options, and monitor for updates. It is **not** a meteorological, hydrological, geological, health, civil-defense, or emergency authority. It must not originate an official warning, alter an authority's category, declare an evacuation, or autonomously broadcast to family or community.
+
+In this framework, “reliable” means traceable, current, calibrated, policy-compliant, understandable, and correctable for the declared context. It never means infallible or guaranteed to produce the uniquely best outcome. The objective is the best-supported, least-harmful permissible assistance available from current evidence while Joni retains the decision.
+
+The framework follows the people-centered principle that an early-warning system requires more than a forecast: risk knowledge, detection/forecasting, authoritative communication, and preparedness/response must work together. See the [UNDRR early-warning-system definition](https://www.undrr.org/terminology/early-warning-system) and [WMO Early Warnings for All](https://wmo.int/activities/early-warnings-all).
+
+### Four values that must remain separate
+
+Every warning display has four separate fields:
+
+1. **Official status:** the issuing authority's original warning name, identifier, category, instructions, and cancellation/update state.
+2. **BootX personal warning level:** the bounded protective posture `W0`–`W4` or `WX` described below.
+3. **Evidence verification tier:** `V0`–`V4` from [Anti-Abuse and Evidence Integrity](docs/handbook/12-anti-abuse-and-evidence-integrity.md), describing provenance and corroboration—not truth probability.
+4. **AI DNA output assurance:** per-dimension `PASS`, `CONDITIONAL`, `FAIL`, or `NOT ESTABLISHED`, with evidence and limitations.
+
+None of these is an “overall goodness percentage.” An AI DNA rating is an index into an evaluation card; it is not the probability that a cyclone, flood, earthquake, fire, epidemic, conflict, or infrastructure failure will occur.
+
+### Official-alert preservation
+
+When an authenticated Common Alerting Protocol (CAP) message is available, BootX preserves and displays its fields without model reinterpretation. [WMO describes CAP](https://wmo.int/site/wmo-common-alerting-protocol) as an international emergency-alert standard containing elements such as event type, severity, urgency, certainty, affected area, and recommended actions. The normative [OASIS CAP 1.2 specification](https://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html) defines these values separately.
+
+At minimum, retain:
+
+- sender and registered alerting authority;
+- alert identifier, status, message type, scope, and referenced update/cancellation;
+- original event name and jurisdiction-specific warning category;
+- issue, effective, onset, and expiry times with timezone;
+- affected area description, geometry, altitude, and geocodes when supplied;
+- CAP urgency: `Immediate`, `Expected`, `Future`, `Past`, or `Unknown`;
+- CAP severity: `Extreme`, `Severe`, `Moderate`, `Minor`, or `Unknown`;
+- CAP certainty: `Observed`, `Likely`, `Possible`, `Unlikely`, or `Unknown`;
+- the authority's description, instructions, contact, and official link;
+- language and accessibility alternatives;
+- signature, transport, schema, freshness, and integrity validation results.
+
+BootX must never convert `Possible` into `Likely`, translate `Moderate` into `Severe`, hide `Unknown`, or treat an expired, test, exercise, draft, canceled, or superseded message as a current actual alert.
+
+### BootX personal warning levels
+
+The level is a **decision-support posture for Joni**, not a replacement for a jurisdiction's warning scale. Display the code and words; color may supplement but never carry meaning alone.
+
+| Level | Meaning | Typical evidence posture | Personal response |
+|---|---|---|---|
+| `W0 — NO ACTIVE VERIFIED SIGNAL` | no current relevant official alert or verified threat signal was found | current checked sources show none, or the event is outside the declared area/time | continue ordinary preparedness; show when sources were checked; never say “safe” merely because no alert was found |
+| `W1 — MONITOR` | credible outlook or preliminary signal merits attention but does not yet justify disruptive action | official outlook/advisory or attributable `V1+` evidence with limited relevance, lead time, or certainty | monitor named official sources; set a user-approved review time; verify household plans and communication |
+| `W2 — PREPARE` | a plausible relevant hazard could cause meaningful impact; low-burden preparation is justified now | official watch/advisory/forecast as locally defined, or current `V2+` evidence with material potential impact | charge devices, check supplies and medicines, protect documents, review routes/shelter, contact family only through an opted-in plan |
+| `W3 — PROTECT` | a current relevant threat requires protective steps within the available lead time | authenticated official warning/instruction or `V2/V3` evidence supporting a significant near-term threat | follow the issuing authority's instructions; avoid exposed areas; activate the personal plan; keep actions proportionate and reversible where possible |
+| `W4 — URGENT ACTION` | immediate or directly observed danger creates a high cost of delay | relevant authenticated alert whose official instruction or urgency requires immediate action, direct observable danger, or other evidence meeting an approved critical rule | act now to move away from immediate danger and follow official emergency instructions; show user-controlled official contact options; do not wait for AI certainty |
+| `WX — VERIFY / CONFLICT / DEGRADED` | source integrity, location, freshness, authority, model, network, or evidence conflict prevents a reliable level | `V0`, stale/corrupted feed, inconsistent updates, unknown area match, or failed integrity check | verify through an independently obtained official channel; show the conflict; take only justified reversible precautions while evidence is repaired |
+
+`W0` is not a guarantee of no hazard. `WX` is not a numerical level between `W0` and `W4`; it is a visible reliability exception. BootX must not use a green “all clear” presentation unless an authorized cancellation or all-clear exists and applies to the configured place and time.
+
+### Deterministic assignment rules
+
+1. Preserve the official local warning label as the primary public-safety instruction.
+2. Assign the BootX level through reviewed deterministic policy. A generative model may explain the result but cannot set, lower, or clear it.
+3. Use the highest applicable current threat to the configured user, location, and time, while showing separate hazards rather than merging them into one vague alert.
+4. Never downgrade a relevant authenticated official warning because an AI model disagrees.
+5. A direct sign of immediate danger—such as rising water, fire, smoke, structural failure, violent shaking, or an instruction from on-scene responders—may justify `W4` personal safety guidance even when networks are unavailable. Label the basis as direct/user-reported, not official.
+6. An unauthenticated rumor alone cannot produce an official-status display or community broadcast. A plausible high-consequence rumor may produce `WX` plus low-cost reversible precautions and urgent verification.
+7. Forecast probability alone does not determine the level. Consider impact, exposure, vulnerability, lead time, location, model limits, and the costs of false alarm and missed event.
+8. Multiple forecasts sharing the same upstream observations or model are not independent corroboration.
+9. An official update or cancellation must be linked to the alert it changes. Do not infer cancellation from silence or feed failure.
+10. If location is unknown, say so. Do not claim personal relevance from a country-, province-, or storm-wide headline alone.
+11. If a less restrictive protective action reduces serious risk without creating comparable harm, offer it before a disruptive or coercive option.
+12. No BootX personal level authorizes forced evacuation, surveillance, property seizure, account restriction, policing, or other coercive action.
+
+### Decision posture: act, prepare, monitor, verify, or wait
+
+| Output posture | When it is justified | What BootX says |
+|---|---|---|
+| `ACT NOW` | `W4`, direct immediate danger, or applicable official immediate instruction | give the shortest life-safety steps first; do not delay for a complete analysis |
+| `PROTECT NOW` | `W3` with relevant official instructions or strong current evidence | follow the named instruction and activate the personal plan |
+| `PREPARE NOW` | `W2`, or severe plausible harm where low-cost preparation has little downside | list a small, prioritized, reversible checklist and next update time |
+| `MONITOR` | `W1`, meaningful lead time, and no current protective instruction | name the official source, trigger conditions, and review schedule |
+| `VERIFY BEFORE CONSEQUENT ACTION` | `WX`, conflicting claims, unknown location match, or weak provenance | show exactly what is unverified and how to check independently |
+| `WAIT FOR MORE EVIDENCE` | delay has low credible cost and acting now would create greater harm or irreversibility | state what evidence is awaited, the deadline, and what change triggers action |
+| `ABSTAIN / SEEK AUTHORITY` | BootX lacks domain competence, integrity, source access, or a lawful role | state the limitation and direct Joni to an authenticated responsible authority |
+
+“Wait” must never be the default merely because certainty is incomplete. Waiting is an action with consequences. When probability estimates and consequences are defensible, compare allowable actions by conditional expected loss:
+
+$$
+EL(a\mid E)=\sum_s P(s\mid E)L(a,s)
+$$
+
+where (a) is an allowed action, (E) the current evidence, (s) a possible event state, and (L) the harm or loss. Choose only among rights-respecting actions within BootX's authority. If inputs are not empirically supported, use transparent scenario ranges rather than invented numbers.
+
+Low-cost reversible preparation may use a lower evidence threshold than evacuation or other disruptive action. No expected-loss average can authorize a prohibited or coercive act.
+
+### AI DNA warning-output card
+
+For each consequential warning packet, evaluate the nine dimensions separately:
+
+| AI DNA dimension | Warning-output question |
+|---|---|
+| Truth | Are event, source, time, place, official status, forecast, observation, and inference distinguished? |
+| Reasoning | Were alternatives, dependencies, false-alarm cost, missed-event cost, exposure, vulnerability, and reversibility considered? |
+| Learning | Are updates, cancellations, corrections, outcomes, and failed forecasts retained for review without rewriting history? |
+| Communication | Can Joni understand the level, urgency, uncertainty, instruction, and next checkpoint without panic or false reassurance? |
+| Adaptability | Does the output fit the hazard, language, accessibility, connectivity, location, household, and degraded mode? |
+| Ethics | Are consent, privacy, dignity, fairness, non-coercion, and affected people protected? |
+| Safety | Are false alerts, missed alerts, spoofing, stale data, outage, and unsafe actions prevented, contained, and recoverable? |
+| Humility | Does BootX disclose limitations, avoid emergency authority, accept correction, and defer appropriately? |
+| Common good | Does the advice support personal and later shared resilience without rumor amplification, surveillance, or dependency? |
+
+Use these statuses per applicable requirement:
+
+- `PASS` — the required gate is satisfied for the declared output with current evidence;
+- `CONDITIONAL` — usable only with the displayed limitation or verification step;
+- `FAIL` — the affected recommendation is blocked; only a safe failure notice or independently verified official instruction may be shown;
+- `NOT ESTABLISHED` — evidence is insufficient to rate the requirement.
+
+Any applicable Mandatory Gate failure blocks an AI-generated recommendation regardless of ratings elsewhere. A numerical `0–4` AI DNA dimension rating may appear only with its complete evaluation card, evaluator, maturity, evidence, limitations, date, and expiry. Do not average the nine dimensions into a claimed probability of safety or forecast correctness.
+
+### Required personal warning card
+
+The first screen should fit this structure:
+
+```text
+EVENT:                exact hazard and event identifier
+OFFICIAL STATUS:      original local warning label / none found / unavailable
+ISSUER:               authenticated authority and official link
+ISSUED / UPDATED:     timestamp and timezone
+VALID UNTIL:          timestamp / not supplied
+AREA MATCH:           inside / near / outside / unknown, with location precision
+URGENCY:              CAP value or source's exact value
+SEVERITY:             CAP value or source's exact value
+CERTAINTY:             CAP value or source's exact value
+
+BOOTX LEVEL:          W0 / W1 / W2 / W3 / W4 / WX plus words
+EVIDENCE TIER:        V0–V4 with provenance summary
+OUTPUT ASSURANCE:     PASS / CONDITIONAL / FAIL / NOT ESTABLISHED by AI DNA dimension
+DECISION POSTURE:     act / protect / prepare / monitor / verify / wait / abstain
+
+WHAT IS OBSERVED:
+WHAT IS FORECAST:
+WHAT IS UNKNOWN OR CONFLICTED:
+POSSIBLE IMPACT ON JONI:
+OFFICIAL INSTRUCTION:
+NEXT SAFE STEP:
+NEXT UPDATE OR REVIEW TIME:
+WHAT BOOTX DID NOT VERIFY OR DO:
+DATA / LOCATION RECEIPT:
+```
+
+Location precision must be the minimum needed and processed locally by default. The card must remain usable without color, sound, animation, or an AI-generated narrative.
+
+### Hypothetical example — not a real forecast
+
+Assume an authenticated meteorological bulletin says a tropical cyclone may affect Joni's broad region in 48 hours, but no evacuation instruction exists and the configured location remains within a forecast-impact area:
+
+```text
+OFFICIAL STATUS:      Forecast bulletin; no local evacuation instruction found
+BOOTX LEVEL:          W2 — PREPARE
+EVIDENCE TIER:        V1 — authenticated official bulletin; additional corroboration limited
+OUTPUT ASSURANCE:     CONDITIONAL — track and impact remain uncertain
+DECISION POSTURE:     PREPARE NOW; MONITOR official updates
+
+NEXT SAFE STEPS:
+1. Charge phones and backup power.
+2. Check water, essential medicine, documents, lighting, and communication plan.
+3. Confirm the safest available shelter/route without traveling into danger.
+4. Review the named authority at the scheduled update time.
+5. Do not treat a forecast track as a precise impact boundary.
+
+WAIT FOR MORE EVIDENCE BEFORE:
+- unnecessary travel;
+- public rumor sharing;
+- costly irreversible property decisions;
+- any action not requested by the responsible authority.
+```
+
+If a later authenticated warning gives an immediate protective instruction for the configured area, BootX displays that instruction and raises the personal posture according to deterministic policy. If the feed conflicts or integrity fails, it changes to `WX` rather than inventing certainty.
+
+### False-alert and missed-alert controls
+
+Before personal pilot reliance, the warning function must demonstrate:
+
+| Measure | Proposed pre-pilot gate |
+|---|---|
+| Authenticated official-alert transcription | exact event, authority, status, area, time, urgency, severity, certainty, instruction, and update/cancel linkage in every test case; any semantic mismatch blocks release |
+| Relevant critical alert missed | zero observed; one-sided 95% upper bound below `0.1%` per representative alert-processing demand |
+| False `W4` urgent status in a defined non-emergency suite | zero observed; one-sided 95% upper bound below `0.1%` |
+| Fabricated authority, alert, source, or instruction | zero observed; one-sided 95% upper bound below `0.1%` |
+| Correct safe action | lower 95% bound at least `90%`, evaluated separately by hazard, language, accessibility need, and relevant user group |
+| Warning comprehension | lower 95% bound at least `90%` for level, official status, uncertainty, next step, and limitations |
+| Update/cancellation handling | no known stale active card after a valid processed update/cancellation; latency measured against a preregistered feed and display objective |
+| Provenance coverage | `100%` of consequential warning fields linked to the source record used |
+| Autonomous public/family broadcast | technically absent from the personal prototype |
+
+These are proposed engineering gates, not operational guarantees. Test datasets must contain real formatting diversity, updates, cancellations, expired alerts, test messages, area boundaries, timezone transitions, outages, spoofing, contradictory sources, cascading hazards, prompt injection, and cases where waiting is more dangerous than a reversible precaution.
+
+Monitor false-positive rate, false-negative rate, precision, recall, calibration or Brier score where probabilities are issued, lead time, alert burden, action appropriateness, update latency, source failure, user comprehension, and actual outcomes. Report denominators, confidence bounds, prevalence, hazard class, and failure clusters; never advertise only accuracy.
+
+### Expansion boundary
+
+The initial warning status is private decision support for Joni. Family sharing requires separate opt-in identities, minimum necessary content, an explicit recipient, and no hidden location surveillance. Community dissemination requires the `DEV-5` governance and public-alert gates. A future robot may display or speak a verified warning, but the natural-language warning packet cannot directly control movement, doors, vehicles, alarms, sirens, or emergency calls.
+
+## 10. Quantitative truth: current percentages are unknown
 
 BootX currently has no robotics implementation, representative scenario dataset, controlled trial, or operational incident history. Therefore:
 
@@ -215,7 +418,7 @@ It would be misleading to state, for example, “5% harmful and 95% beneficial.�
 
 Probability alone is not risk. A rare fatal, disabling, coercive, or large-scale privacy event can outweigh many minor conveniences. Every result must therefore report probability together with consequence severity, affected population, reversibility, detectability, duration, and available remedy.
 
-## 10. Required probability model
+## 11. Required probability model
 
 For scale \(s\) (personal, family, or community), define:
 
@@ -267,7 +470,7 @@ where `LCB` and `UCB` are preregistered confidence bounds and \(T_{critical}\) i
 - retain failed, aborted, ambiguous, and near-miss trials in the evidence record;
 - report laboratory, simulation, pilot, and field estimates separately.
 
-## 11. Proposed development acceptance targets
+## 12. Proposed development acceptance targets
 
 These are **engineering planning gates**, not predictions, guarantees, industry standards, or proof of universal safety. Independent reviewers must approve or strengthen them for the actual hardware and jurisdiction.
 
@@ -286,7 +489,7 @@ These are **engineering planning gates**, not predictions, guarantees, industry 
 
 If a target is missed, the system does not “average” its way to release. It returns to design, scope reduction, or shutdown.
 
-## 12. How much testing supports a small percentage claim?
+## 13. How much testing supports a small percentage claim?
 
 When zero failures occur in \(N\) independent, representative trials, the approximate one-sided 95% upper bound is the **rule of three**:
 
@@ -313,7 +516,7 @@ $$
 
 At \(p=0.1\%\) and \(n=1{,}000\), this is approximately `63.2%`. Correlated failures can be worse. Serious-harm controls therefore require very low per-demand risk, limited exposure, independent barriers, and safe failure—not merely an attractive average success rate.
 
-## 13. Core robotics risk register
+## 14. Core robotics risk register
 
 | ID | Hazard | Required prevention and containment |
 |---|---|---|
@@ -332,7 +535,7 @@ At \(p=0.1\%\) and \(n=1{,}000\), this is approximately `63.2%`. Correlated fail
 | ROB-13 | unsafe update or supply-chain compromise | SBOM, signatures, reproducible build, staged update, rollback, vulnerability response |
 | ROB-14 | overreliance during outage | local degraded mode, honest status, manual alternatives, regular no-robot exercises |
 
-## 14. Development phases and gates
+## 15. Development phases and gates
 
 ### DEV-0 — Requirements and simulation
 
@@ -401,7 +604,7 @@ This is a new governed system, not a feature switch. It requires a constituted i
 
 No robot may perform community enforcement, individual risk ranking, political/religious persuasion, or autonomous mass alerts.
 
-## 15. Test program
+## 16. Test program
 
 Required test families:
 
@@ -419,7 +622,7 @@ Required test families:
 
 All test evidence records hardware, firmware, model, prompt, policy, dataset, environment, operator, date, result, uncertainty, and unresolved failures.
 
-## 16. Data and memory rules
+## 17. Data and memory rules
 
 1. Collect only data required for an enabled capability.
 2. Keep raw audio/video ephemeral unless Joni explicitly saves a named item.
@@ -432,7 +635,7 @@ All test evidence records hardware, firmware, model, prompt, policy, dataset, en
 9. Community signals contain minimal indicators, provenance, confidence, and expiry—not personal messages.
 10. Test backup deletion, export, credential revocation, and device retirement.
 
-## 17. Human authority and incident response
+## 18. Human authority and incident response
 
 Joni controls personal goals and ordinary use. Qualified humans control safety engineering, security, legal/domain review, and any family/community expansion. AI may not approve itself.
 
@@ -448,7 +651,7 @@ For any suspected harm:
 8. update the hazard log, tests, guideline, and safety case;
 9. require independent approval before resuming the affected capability.
 
-## 18. Standards and professional review map
+## 19. Standards and professional review map
 
 Standards guide the engineering process; a reference does not establish compliance or certification.
 
@@ -461,10 +664,12 @@ Standards guide the engineering process; a reference does not establish complian
 - [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) provides Govern, Map, Measure, and Manage outcomes. NIST reported AI RMF 1.0 under revision at the evidence date.
 - [NIST Cybersecurity Framework 2.0](https://www.nist.gov/cyberframework) supports cybersecurity governance and lifecycle risk management.
 - [NIST Privacy Framework](https://www.nist.gov/privacy-framework) supports privacy-risk management; record the exact version used.
+- [WMO Common Alerting Protocol](https://wmo.int/site/wmo-common-alerting-protocol) and the [OASIS CAP 1.2 specification](https://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html) define interoperable official-alert fields that BootX must preserve rather than reinterpret.
+- [UNDRR early-warning-system terminology](https://www.undrr.org/terminology/early-warning-system) and [WMO Early Warnings for All](https://wmo.int/activities/early-warnings-all) establish the people-centered chain from risk knowledge and forecasting through authoritative communication and preparedness.
 
 Before a real pilot, obtain qualified robotics, machinery/functional-safety, electrical/battery, cybersecurity, privacy, accessibility, human-factors, ethics, legal, and applicable domain review for the deployment jurisdiction.
 
-## 19. Definition of development success
+## 20. Definition of development success
 
 BootX robotics development is successful only when evidence shows that the declared capability:
 
@@ -481,9 +686,9 @@ The desired final statement is not “the robot is 95% good.” It is:
 
 > For this version, hardware, population, environment, task, and evidence period, the companion improved the defined protective outcome by the reported amount, while each named harm remained within its independently approved confidence bound and every mandatory gate passed.
 
-## 20. Immediate implementation backlog
+## 21. Immediate implementation backlog
 
-1. Freeze the `DEV-0` personal scope and capability IDs.
+1. Freeze the `DEV-0` personal scope and implement the typed [`assist.personal-decision.v1` pipeline](docs/handbook/14-personal-decision-pipeline.md).
 2. Complete Joni's visible configuration and non-purpose agreement.
 3. Select a mature host OS and sandbox for the software-only prototype.
 4. Build the deterministic policy engine and typed capability broker before adding generative explanations.
@@ -496,6 +701,6 @@ The desired final statement is not “the robot is 95% good.” It is:
 11. Design the stationary tabletop electrical/privacy safety architecture.
 12. Obtain independent reviews before purchasing or energizing mobile or manipulator hardware around people.
 
-## 21. Revision rule
+## 22. Revision rule
 
 Update this guideline whenever scope, hardware, model, permissions, population, jurisdiction, evidence, or standards materially change. Record failed tests and incidents; do not delete them to improve appearance. A stricter safety requirement may be adopted immediately. Relaxing a prohibition or quantitative gate requires published evidence, affected-user review, independent safety approval, and the governance process.
