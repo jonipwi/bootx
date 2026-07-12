@@ -11,6 +11,7 @@ This directory separates normative project governance, the professional implemen
 - [Documentation Verification Register](handbook/13-documentation-verification-register.md) — repository-wide factual, mathematical, logical, and evidence corrections
 - [Personal Decision-Assistance Pipeline](handbook/14-personal-decision-pipeline.md) — typed personal input, evidence and policy processing, human-controlled decision output, and first-prototype acceptance tests
 - [Go Personal Companion MVP](../prototype/personal-companion/README.md) — auditable host-based deterministic backend, terminal UI, schemas, fixtures, tests, and current limitations
+- [Personal Companion Usage Guide](../prototype/personal-companion/USAGE.md) — complete build, TUI, JSON backend, warning, verification, privacy, cleanup, and troubleshooting instructions
 - [Installation guide](guides/install-guide.md) — experimental BootX image testing and installation guidance
 - [Research library](research/README.md) — original studies organized by subject
 - [Artifact inventory](../artifacts/README.md) — supplied binary images, screenshot, hashes, and limitations

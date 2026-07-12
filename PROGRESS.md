@@ -1,7 +1,7 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.6<br>
+**Version:** 1.8<br>
 **Last updated:** 2026-07-12<br>
 **Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype implemented for synthetic evaluation<br>
 **Current release posture:** Research documentation, an unvalidated host-based Go MVP, and opaque educational OS artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
@@ -194,6 +194,8 @@ Completed implementation baseline:
 - [x] JSON input/output schemas and synthetic fixtures.
 - [x] Automated backend, policy-boundary, warning, and scripted-TUI tests.
 - [x] PowerShell build workflow with module-root isolation, formatting/test/vet gates, JSON and fixture verification, SHA-256 output, build manifest, run, and safe clean actions.
+- [x] Complete operator `USAGE.md` covering build, TUI, JSON contracts, classifications, warning levels, AI DNA interpretation, privacy, integrity verification, troubleshooting, and safe cleanup.
+- [x] Synthetic Typhoon Bavi end-to-end regression with a complete test case, dedicated runner, typed fixture, mandatory assertions, and input/process/output evidence log.
 
 Open `DEV-1` gates:
 
@@ -407,6 +409,23 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 16. Change log
+
+### Version 1.8 — 2026-07-12
+
+- Added `TC-BAVI-001`, a fully synthetic Typhoon Bavi preparedness regression case.
+- Added a typed test fixture expecting `D2 / PREPARE / W2` without official-warning or real-event claims.
+- Added a PowerShell runner that performs a verified temporary build and records complete input, observable deterministic processing, mandatory assertions, complete output, result, and cleanup.
+- Added twenty mandatory behavior assertions plus executable-manifest SHA-256 verification.
+- Linked the test case from the project, prototype README, and complete usage guide.
+
+### Version 1.7 — 2026-07-12
+
+- Added the complete Personal Companion MVP operator usage guide.
+- Documented correct module paths, build actions, execution-policy handling, outputs, manifests, and SHA-256 verification.
+- Added step-by-step personal and synthetic-warning TUI workflows.
+- Documented decision classes, response modes, warning levels, AI DNA runtime status, JSON input/output contracts, fixtures, and limitations.
+- Added privacy boundaries, troubleshooting, cleanup, and before-use/before-action operator checklists.
+- Linked the guide from the project, documentation portal, and prototype README.
 
 ### Version 1.6 — 2026-07-12
 

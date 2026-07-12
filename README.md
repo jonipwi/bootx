@@ -54,7 +54,9 @@ The first `assist.personal-decision.v1` implementation provides a dependency-fre
 
 If local execution policy blocks `.ps1` files, use `powershell -NoProfile -ExecutionPolicy Bypass -File .\prototype\build.ps1 -Action verify`; this applies only to that process.
 
-Read the [MVP documentation](prototype/personal-companion/README.md) before entering any data.
+Read the [MVP documentation](prototype/personal-companion/README.md) and [complete usage guide](prototype/personal-companion/USAGE.md) before entering any data.
+
+The first full end-to-end scenario is the [synthetic Typhoon Bavi test case](prototype/TEST_CASE.md), with input/process/output evidence captured by its PowerShell runner.
 
 ## Human + AI Research Handbook
 
