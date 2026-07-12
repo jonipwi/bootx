@@ -46,6 +46,7 @@ Integrity](../handbook/12-anti-abuse-and-evidence-integrity.md) and the
 ## Space research
 
 - [Water–Magnetic Space Civilization Feasibility](space/water-magnetic-feasibility.md)
+- [Civilization Governance Before Space Expansion](space/civilization-governance-before-space-expansion.md)
 
 ## Research-use rule
 

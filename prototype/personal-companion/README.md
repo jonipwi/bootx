@@ -85,6 +85,8 @@ Synthetic fixtures are under [`testdata/`](testdata/). They are exercises, not r
 
 The complete synthetic Typhoon Bavi end-to-end regression, runner, and captured evidence are documented in [`../TEST_CASE.md`](../TEST_CASE.md).
 
+The synthetic space-governance abstention test, documentation assertions, runner, and captured evidence are documented in [`../TEST_CASE_SPACE_GOVERNANCE.md`](../TEST_CASE_SPACE_GOVERNANCE.md).
+
 ## Package structure
 
 ```text

@@ -8,6 +8,8 @@
 **Input fixture:** [`personal-companion/testdata/typhoon-bavi-exercise.json`](personal-companion/testdata/typhoon-bavi-exercise.json)<br>
 **Evidence log:** [`typhoon-bavi.log`](typhoon-bavi.log)
 
+For a short non-technical interpretation, see [`TYPHOON_BAVI_SUMMARY.md`](TYPHOON_BAVI_SUMMARY.md).
+
 ## 1. Purpose
 
 Verify that the BootX Personal Companion MVP converts a synthetic Typhoon Bavi scenario into a conservative personal preparedness decision packet without claiming official authority, executing an external action, using remote processing, or escalating a preliminary scenario into an urgent warning.

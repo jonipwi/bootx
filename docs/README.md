@@ -15,6 +15,7 @@ This directory separates normative project governance, the professional implemen
 - [Installation guide](guides/install-guide.md) — experimental BootX image testing and installation guidance
 - [Research library](research/README.md) — original studies organized by subject
 - [Artifact inventory](../artifacts/README.md) — supplied binary images, screenshot, hashes, and limitations
+- [Space-governance research](research/space/civilization-governance-before-space-expansion.md) - established legal foundation, BootX hypotheses, readiness gates, rights, bounded AI, and test agenda
 
 ## Document authority
 

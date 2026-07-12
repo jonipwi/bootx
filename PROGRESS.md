@@ -1,7 +1,7 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.8<br>
+**Version:** 1.9<br>
 **Last updated:** 2026-07-12<br>
 **Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype implemented for synthetic evaluation<br>
 **Current release posture:** Research documentation, an unvalidated host-based Go MVP, and opaque educational OS artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
@@ -168,6 +168,7 @@ This block does not prevent the requirements, simulation, threat-modeling, synth
 - [x] Anti-abuse and evidence-integrity chapter with a documented Maysak/Bavi factual self-audit.
 - [x] Documentation verification and corrections register covering facts, formulas, logic, local artifacts, status labels, and remaining review gates.
 - [x] Personal decision-assistance pipeline defining typed input, deterministic policy and evidence processing, human-controlled output, personalization limits, schemas, risk classes, and MVP acceptance tests.
+- [x] Space-governance research chapter separating established primary legal sources from `E1` hypotheses, with six mandatory non-compensable readiness gates, a non-certifying readiness profile, AI limits, pluralistic rights safeguards, and an inheritance research agenda.
 
 ### Legacy studies preserved as research inputs
 
@@ -196,6 +197,8 @@ Completed implementation baseline:
 - [x] PowerShell build workflow with module-root isolation, formatting/test/vet gates, JSON and fixture verification, SHA-256 output, build manifest, run, and safe clean actions.
 - [x] Complete operator `USAGE.md` covering build, TUI, JSON contracts, classifications, warning levels, AI DNA interpretation, privacy, integrity verification, troubleshooting, and safe cleanup.
 - [x] Synthetic Typhoon Bavi end-to-end regression with a complete test case, dedicated runner, typed fixture, mandatory assertions, and input/process/output evidence log.
+- [x] Plain-language Typhoon Bavi test summary distinguishing a software pass from forecast or field validation.
+- [x] Synthetic space-governance regression checking sixteen documentation boundaries and eighteen MVP safety assertions, with `D3 / ABSTAIN`, complete evidence log, and no certification authority.
 
 Open `DEV-1` gates:
 
@@ -409,6 +412,16 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 16. Change log
+
+### Version 1.9 - 2026-07-12
+
+- Added the revised Civilization Governance Before Space Expansion research chapter.
+- Corrected the central governance claim from `E2-E3` to `E1 - Hypothesis` while separately citing established UNOOSA and NASA primary sources.
+- Added correction `C-013` and the verified legal-source boundaries to the documentation verification register.
+- Replaced unvalidated risk-likelihood labels and the proposed 0-to-36 readiness certification thresholds with six mandatory gates and a non-summed research profile.
+- Added bounded-AI, rights, freedom-of-conscience, Creator-centered humility, resource-justice, transparency, peace, and independent-review requirements.
+- Added `TC-SPACE-GOV-001`, its typed fixture, dedicated PowerShell runner, and complete `space-governance.log`; all 34 mandatory assertions passed.
+- Added a plain-language summary of the synthetic Typhoon Bavi test result and limitations.
 
 ### Version 1.8 — 2026-07-12
 

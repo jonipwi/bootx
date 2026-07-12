@@ -575,6 +575,7 @@ Important fields:
 | `warning-prepare.json` | synthetic possible relevant hazard | `D2 / PREPARE / W2` |
 | `warning-urgent.json` | synthetic authenticated immediate warning | `D4 / URGENT_GUIDANCE / W4` |
 | `typhoon-bavi-exercise.json` | full synthetic Typhoon Bavi preparedness case | `D2 / PREPARE / W2` |
+| `space-governance-readiness-exercise.json` | fictional settlement request requiring qualified governance review | `D3 / ABSTAIN` |
 
 Run every fixture and all automated checks:
 
@@ -592,6 +593,8 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 ```
 
 It records the complete synthetic input, observable deterministic processing evidence, assertions, and complete JSON output in `prototype\typhoon-bavi.log`.
+
+The space-governance boundary case is documented at [`../TEST_CASE_SPACE_GOVERNANCE.md`](../TEST_CASE_SPACE_GOVERNANCE.md). It verifies that the MVP abstains from certifying a fictional lunar settlement and that the research chapter preserves mandatory evidence boundaries.
 
 ## 20. Troubleshooting
 

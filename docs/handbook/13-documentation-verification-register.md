@@ -1,7 +1,7 @@
 # Documentation Verification and Corrections Register
 
 **Status:** Internal evidence and consistency audit; not independent peer, legal, or safety certification<br>
-**Version:** 1.0<br>
+**Version:** 1.1<br>
 **Audit date:** 2026-07-12<br>
 **Scope:** repository documentation, formulas, local artifact claims, citations, chronology, and internal links present at the audit date<br>
 **Next review:** after final official reports for the 2026 Maysak and Bavi events, source-code restoration, or any material standards change
@@ -49,6 +49,7 @@ It did not perform independent binary reverse engineering, legal opinion, human-
 | C-010 | Cybersecurity examples | Port 443 and a destination name were presented as enough to infer benign purpose | Corrected: encrypted traffic metadata alone is insufficient; high-volume approval prompts create fatigue, so controls must be risk-tiered |
 | C-011 | Build/install guidance | Commands appeared executable although source/build inputs are absent | Marked historical/planned and blocked; opaque artifacts are limited to isolated educational inspection until provenance and reproducibility are restored |
 | C-012 | Standards status | Version state could become stale | Added dated notes that AI RMF 1.0 is under revision and NIST Privacy Framework 1.1 remained an initial public draft/forthcoming final at the audit date |
+| C-013 | Space governance | The draft labeled its central causal/governance thesis `E2-E3`, assigned unsupported qualitative likelihoods, and proposed unvalidated 0-to-36 readiness thresholds | Corrected: established treaty and institutional claims are cited separately; the central thesis is `E1 - Hypothesis`; risk priorities are not probabilities; mandatory gates override a non-summed research profile that cannot certify readiness |
 
 ## 4. Mathematical verification
 
@@ -92,6 +93,11 @@ Each construct needs operational definitions, a population and context, measurem
 | No Bavi fatalities or dam failures | not established | absence-of-event claims were premature while response and reporting continued |
 | Bavi response succeeded because authorities learned from Maysak | untested causal hypothesis | requires comparable decisions, hazards, exposure, vulnerability, outcomes, and a causal design |
 | Japan adopted a national hydrogen strategy in 2017, revised it in 2023, and enacted hydrogen-promotion legislation in 2024 | supported by METI/ANRE | does not establish the BootX water–magnetic civilization hypothesis |
+| The Outer Space Treaty supplies peaceful-use, non-appropriation, responsibility, liability, and contamination principles | supported by UNOOSA treaty text | does not itself create the complete settlement constitution proposed by BootX |
+| Outer Space Treaty Article VI covers national activities by governmental and non-governmental entities and calls for authorization and continuing supervision | supported by UNOOSA treaty text | national implementation and a specific activity's compliance require qualified legal review |
+| COPUOS adopted 21 voluntary Long-term Sustainability Guidelines in 2019 and the General Assembly welcomed them | supported by UNOOSA | voluntary guidance is not universal mission certification |
+| The Artemis Accords state principles for participating civil space cooperation | supported by NASA | political commitments among participants are not a universal treaty or universal settlement constitution |
+| Humanity must solve named Earth governance failures before any space expansion | normative strategic hypothesis | no causal magnitude, universal consensus, or empirical likelihood has been established |
 
 ## 6. Document-family disposition
 

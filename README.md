@@ -58,6 +58,8 @@ Read the [MVP documentation](prototype/personal-companion/README.md) and [comple
 
 The first full end-to-end scenario is the [synthetic Typhoon Bavi test case](prototype/TEST_CASE.md), with input/process/output evidence captured by its PowerShell runner.
 
+The [space-governance research chapter](docs/research/space/civilization-governance-before-space-expansion.md) and [synthetic governance boundary test](prototype/TEST_CASE_SPACE_GOVERNANCE.md) add a second high-consequence case. The current MVP must return `D3 / ABSTAIN`; it cannot certify a settlement or civilization.
+
 ## Human + AI Research Handbook
 
 - [Documentation portal](docs/README.md)

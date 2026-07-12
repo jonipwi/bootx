@@ -151,6 +151,7 @@ function Test-Fixtures {
         'warning-prepare.json' = @{ Class = 'D2'; Mode = 'PREPARE'; Warning = 'W2' }
         'warning-urgent.json' = @{ Class = 'D4'; Mode = 'URGENT_GUIDANCE'; Warning = 'W4' }
         'typhoon-bavi-exercise.json' = @{ Class = 'D2'; Mode = 'PREPARE'; Warning = 'W2' }
+        'space-governance-readiness-exercise.json' = @{ Class = 'D3'; Mode = 'ABSTAIN'; Warning = $null }
     }
 
     foreach ($name in $expected.Keys) {
