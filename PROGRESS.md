@@ -1,10 +1,10 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.1<br>
+**Version:** 1.2<br>
 **Last updated:** 2026-07-12<br>
-**Current phase:** Phase 0 — foundation, evidence, ownership, and reproducibility<br>
-**Current release posture:** Research documentation and opaque educational artifacts only; no validated Human + AI companion or trusted operating-system release
+**Current phase:** Phase 0 — foundation, evidence, ownership, reproducibility, and `DEV-0` preparation<br>
+**Current release posture:** Research documentation, synthetic development preparation, and opaque educational artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
 
 ## 1. Purpose
 
@@ -136,6 +136,8 @@ The project may preserve artifacts, restore source, conduct documentation resear
 
 The ethical and research documentation baseline is substantial, but governance is not constituted, legal/provenance review is incomplete, source is missing, builds are not reproducible, security controls are not implemented, and AI DNA is not empirically validated.
 
+This block does not prevent the requirements, simulation, threat-modeling, synthetic testing, or tightly bounded software-only work authorized by [`DEVELOPMENT_GUIDELINE.md`](DEVELOPMENT_GUIDELINE.md). Such work must run on a mature supported host system, use non-sensitive data first, and provide no autonomous consequential or physical action.
+
 ## 6. Completed documentation checklist
 
 ### Project constitution and stewardship
@@ -147,6 +149,7 @@ The ethical and research documentation baseline is substantial, but governance i
 - [x] `LICENSE` — adopted Common Good Ethical Use License 1.0; not yet professionally reviewed for enforceability or compatibility.
 - [x] `LICENSING.md` — plain-language licensing policy and AI DNA condition.
 - [x] `DISCLAIMER.md` — limitations, responsibility, non-advice, and spiritual-authority boundary.
+- [x] `DEVELOPMENT_GUIDELINE.md` — personal-first companion and robotics scope, deterministic safety boundary, prohibited uses, phased development gates, quantitative evidence rules, and inheritance-ready backlog.
 
 ### Professional research handbook
 
@@ -372,6 +375,16 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 15. Change log
+
+### Version 1.2 — 2026-07-12
+
+- Added the personal-first companion and future robotics development guideline.
+- Defined what BootX may and must not do for personal, family, and community use.
+- Recorded that present harm and protective-benefit percentages are not established because no representative prototype trials exist.
+- Added outcome-specific protection/harm metrics, confidence-bound release gates, and the test volumes needed to support small failure-rate claims.
+- Limited immediate work to `DEV-0` preparation and a later bounded software-only prototype on a mature host operating system.
+- Added staged gates for a stationary tabletop device, indoor mobility, family pilots, and independently governed community advisory functions.
+- Mapped personal/service-robot, machinery-risk, safety-control, AI-risk, cybersecurity, and privacy standards without claiming compliance or certification.
 
 ### Version 1.1 — 2026-07-12
 

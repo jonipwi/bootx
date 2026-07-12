@@ -14,6 +14,7 @@ BootX also contains a Human + AI companion research program centered on truth, s
 - [LICENSE](LICENSE) — BootX Common Good Ethical Use License 1.0
 - [LICENSING.md](LICENSING.md) — plain-language licensing policy, AI DNA conditions, and distribution guidance
 - [DISCLAIMER.md](DISCLAIMER.md) — research limitations, responsibility, and non-advice boundaries
+- [DEVELOPMENT_GUIDELINE.md](DEVELOPMENT_GUIDELINE.md) — personal-first companion and robotics scope, do/don't contract, phased gates, and measurable protection/harm criteria
 - [PROGRESS.md](PROGRESS.md) — completed work, open gates, OS readiness, and future inheritance priorities
 
 BootX supports **any conforming AI agent**, not unrestricted use of any agent. Compatibility requires published capability, security, privacy, safety, provenance, and human-control requirements.
@@ -25,7 +26,7 @@ BootX is royalty-free for permitted common-good uses under a custom ethical sour
 ```text
 bootx/
 ├── README.md, CHARTER.md, GOVERNANCE.md, SUCCESSION.md
-├── LICENSE, LICENSING.md, DISCLAIMER.md, PROGRESS.md
+├── LICENSE, LICENSING.md, DISCLAIMER.md, DEVELOPMENT_GUIDELINE.md, PROGRESS.md
 ├── artifacts/
 │   ├── boot/                 compiled IMG, ISO, and VDI artifacts
 │   └── media/                screenshots and visual evidence

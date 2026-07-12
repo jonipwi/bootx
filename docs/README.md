@@ -5,6 +5,7 @@ This directory separates normative project governance, the professional implemen
 ## Start here
 
 - [Project progress and readiness](../PROGRESS.md) — what is complete, blocked, and inherited next
+- [Development guideline](../DEVELOPMENT_GUIDELINE.md) — personal-first companion and robotics scope, prohibited uses, architecture, development phases, and statistical safety/benefit gates
 - [Professional Human + AI handbook](handbook/README.md) — ordered logic, mathematics, ethics, AI DNA, architecture, research, curriculum, and safety program
 - [Anti-Abuse and Evidence Integrity](handbook/12-anti-abuse-and-evidence-integrity.md) — fake evidence, deepfakes, source independence, emergency safeguards, and governance abuse
 - [Documentation Verification Register](handbook/13-documentation-verification-register.md) — repository-wide factual, mathematical, logical, and evidence corrections
@@ -22,6 +23,7 @@ Repository-level documents remain at the project root because they govern everyt
 - [License](../LICENSE)
 - [Licensing policy](../LICENSING.md)
 - [Disclaimer](../DISCLAIMER.md)
+- [Development guideline](../DEVELOPMENT_GUIDELINE.md)
 - [Progress and inheritance plan](../PROGRESS.md)
 
 The `handbook/` converts those commitments into professional requirements. The `research/` directory preserves original ideas as research inputs; placement there does not imply that every empirical claim has been verified.
