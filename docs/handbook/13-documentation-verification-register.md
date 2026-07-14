@@ -1,10 +1,10 @@
 # Documentation Verification and Corrections Register
 
 **Status:** Internal evidence and consistency audit; not independent peer, legal, or safety certification<br>
-**Version:** 1.2<br>
+**Version:** 1.3<br>
 **Audit date:** 2026-07-12<br>
 **Last updated:** 2026-07-14<br>
-**Scope:** repository documentation, formulas, local artifact claims, citations, chronology, and internal links present at the audit date<br>
+**Scope:** repository documentation, formulas, local artifact claims, citations, chronology, implementation status, generated evidence logs, and internal links<br>
 **Next review:** after final official reports for the 2026 Maysak and Bavi events, source-code restoration, or any material standards change
 
 ## 1. Verification conclusion
@@ -34,13 +34,27 @@ The internal audit:
 
 It did not perform independent binary reverse engineering, legal opinion, human-subject research, systematic literature review, or external peer review.
 
+### 2.1 Freshness pass — 2026-07-14
+
+The follow-up pass:
+
+- inventoried all 59 Markdown documents and compared implementation claims with Personal Companion `0.2.0-dev` source, schemas, fixtures, and build behavior;
+- resolved all 230 local Markdown link targets;
+- rechecked the identity and SHA-256 of all four supplied boot/media artifacts;
+- confirmed that the historical OS source, `Makefile`, `scripts/`, `bootloader/`, and kernel source remain absent;
+- checked evolving NIST version notes against NIST pages and added final NIST SP 800-18 Revision 2 to the reading map;
+- refreshed the preliminary Bavi record with dated reports available through 14 July without treating local or preliminary totals as final;
+- reran the version-sensitive generated synthetic test evidence so its application version matches the current prototype.
+
+This is an internal freshness and consistency pass, not a claim that every legacy research sentence has received an independent line-by-line domain review. Static documents were not given new dates merely to make them appear current.
+
 ## 3. Corrections made in this audit
 
 | ID | Area | Prior problem | Correction and current status |
 |---|---|---|---|
 | C-001 | 2026 Maysak | The initial audit treated the Guangxi claim as a mistaken reference to the 2020 storm | Corrected: the July 2026 Guangxi flooding and Liulan/Yunbiao reservoir overtopping and breaches are supported by dated reports; preliminary casualty and relocation counts are tied to reporting cut-offs |
 | C-002 | 2020/2026 name reuse | A name was treated as a unique storm identifier | Corrected: event records now require year, basin/number, dates, and location; 2020 and 2026 Bavi/Maysak events are separated |
-| C-003 | 2026 Bavi aftermath | Legacy drafts asserted final outcomes, nearly two million evacuations, no Taiwan fatalities, and no dam failure while the event was incomplete and without direct sources | Withdrawn as established fact; replaced by a preliminary dated event record and explicit unknowns |
+| C-003 | 2026 Bavi aftermath | Legacy drafts asserted final outcomes, nearly two million evacuations, no Taiwan fatalities, and no dam failure while the event was incomplete and without direct sources | Withdrawn as final fact; the record now supports Bavi's landfalls, 1.716 million Zhejiang transfers by a defined 11 July cut-off, preliminary Yuhuan impacts, and continuing inland alerts, while final regional and causal conclusions remain open |
 | C-004 | AI DNA disaster score | A 93.3% value looked like measured government performance although it came from subjective illustrative ratings | Withdrawn as an evaluation result; retained only as a measurement-failure lesson |
 | C-005 | Prevention mathematics | The simplified equation omitted outcomes in the non-severe state | Replaced with a two-state expected-loss form; the old inequality is retained only as a stated special case |
 | C-006 | “Prevention paradox” | The term was used for invisible counterfactual benefit, which is not the standard epidemiological meaning | Renamed the preparedness counterfactual-visibility problem and distinguished it from the population prevention paradox |
@@ -49,9 +63,10 @@ It did not perform independent binary reverse engineering, legal opinion, human-
 | C-009 | ACGI and human capability formulas | Conceptual profiles were formatted as validated scalar laws | Marked non-operational; additive/multiplicative scores and thresholds are not validated and cannot authorize decisions |
 | C-010 | Cybersecurity examples | Port 443 and a destination name were presented as enough to infer benign purpose | Corrected: encrypted traffic metadata alone is insufficient; high-volume approval prompts create fatigue, so controls must be risk-tiered |
 | C-011 | Build/install guidance | Commands appeared executable although source/build inputs are absent | Marked historical/planned and blocked; opaque artifacts are limited to isolated educational inspection until provenance and reproducibility are restored |
-| C-012 | Standards status | Version state could become stale | Added dated notes that AI RMF 1.0 is under revision and NIST Privacy Framework 1.1 remained an initial public draft/forthcoming final at the audit date |
+| C-012 | Standards status | Version state could become stale | Rechecked on 14 July 2026: AI RMF 1.0 remains under revision and NIST Privacy Framework 1.1 remains an initial public draft/forthcoming final; added final NIST SP 800-18 Revision 2 |
 | C-013 | Space governance | The draft labeled its central causal/governance thesis `E2-E3`, assigned unsupported qualitative likelihoods, and proposed unvalidated 0-to-36 readiness thresholds | Corrected: established treaty and institutional claims are cited separately; the central thesis is `E1 - Hypothesis`; risk priorities are not probabilities; mandatory gates override a non-summed research profile that cannot certify readiness |
 | C-014 | Religion and ideology | The source conversation risked conflating Islam, Muslims, Muslim-majority governments, communism, and diplomatic cooperation; it also requested unsupported religion-similarity percentages and reused the withdrawn `93.3%` disaster score | Corrected: categories and claim types are separated; comparison requires a defined corpus and validated method; profiling and human-worth uses are prohibited; the disaster score remains withdrawn; claims are tied to limited sources and `E1` status |
+| C-015 | Prototype documentation | Several high-level summaries omitted the contained public-document workflow, the development backlog still listed completed work as future, and two generated evidence logs reported `0.1.0-dev` | Updated current documents to `0.2.0-dev`, preserved its authentication and deployment limits, reclassified only directly inspectable backlog items, and regenerated the logs |
 
 ## 4. Mathematical verification
 
@@ -81,7 +96,7 @@ Each construct needs operational definitions, a population and context, measurem
 
 ## 5. Factual evidence register
 
-| Claim | Status at audit date | Evidence boundary |
+| Claim | Status at latest internal review | Evidence boundary |
 |---|---|---|
 | Local boot artifact sizes and SHA-256 hashes | directly rechecked | identifies current files only; does not establish provenance, security, ownership, or function |
 | `bootx.img` bytes 510–511 are `55 AA` | directly rechecked | supports a BIOS boot-signature observation, not successful or safe booting |
@@ -90,8 +105,10 @@ Each construct needs operational definitions, a population and context, measurem
 | Liulan and Yunbiao reservoirs overtopped and developed breaches on 6 July 2026 | supported | “breach” is accurate; do not generalize to complete collapse of every reservoir |
 | 130,000 emergency relocations in Guangxi by the 7 July reporting cut-off | supported as preliminary | not a final total and not evidence by itself of response quality |
 | 39 deaths and 9 missing across Guangxi by the 9 July reporting cut-off | supported as preliminary | not all were attributed to one reservoir; later revisions may occur |
-| 2026 Bavi made landfall at Yuhuan, Zhejiang, at about 23:20 local time on 11 July | supported | inland impacts and final outcomes were still developing on 12 July |
-| Nearly two million Bavi evacuations | not established | no directly supporting responsible source was identified during this audit |
+| 2026 Bavi made landfall at Yuhuan, Zhejiang, at about 23:20 local time on 11 July and made a second landfall at Yueqing around midnight | supported | later inland movement and impacts are dated separately; final regional outcomes remain incomplete |
+| 1.716 million people transferred in Zhejiang by 08:00 on 11 July | supported as a dated provincial count | not a final national evacuation total and not evidence by itself of response quality |
+| Preliminary Yuhuan impact: 155,000 affected people, 35 houses reported collapsed or damaged, and 840 million yuan direct loss at the 12 July 09:00 cut-off | supported as a preliminary local report | do not generalize to Zhejiang, China, or a final event total |
+| “Nearly two million” as an exact final Bavi evacuation total | withdrawn as stated | replaced by the directly sourced 1.716 million Zhejiang count with its time and scope |
 | No Bavi fatalities or dam failures | not established | absence-of-event claims were premature while response and reporting continued |
 | Bavi response succeeded because authorities learned from Maysak | untested causal hypothesis | requires comparable decisions, hazards, exposure, vulnerability, outcomes, and a causal design |
 | Japan adopted a national hydrogen strategy in 2017, revised it in 2023, and enacted hydrogen-promotion legislation in 2024 | supported by METI/ANRE | does not establish the BootX water–magnetic civilization hypothesis |
@@ -107,7 +124,7 @@ Each construct needs operational definitions, a population and context, measurem
 |---|---|---|
 | Charter/governance/succession | adopted normative baseline | project governance, subject to professional legal/rights review |
 | License/licensing policy | operative project intent, legally unreviewed | distribution decisions only with explicit acknowledgement of custom-license and ownership limits |
-| Handbook 00–13 | internal professional research baseline | education, design review, protocol development; not certification |
+| Handbook 00–14 | internal professional research baseline plus an implemented deterministic pipeline specification | education, design review, protocol development; not certification |
 | Legacy companion/foundation/civilization essays | historical vision or hypothesis | idea generation and ethical discussion, not empirical authority |
 | Disaster case files | corrected preliminary case and analytical lessons | dated study only; update after final agency reports |
 | Space feasibility study | sourced engineering hypothesis | research planning, not mission design or energy claim |
@@ -146,8 +163,12 @@ Until these gates close, BootX remains a research and educational project and is
 - [Xinhua: Guangxi disaster briefing with 7 July reporting cut-off](https://www.gx.news.cn/20260708/9be922b8de8e446ba44bd6c85f7b8b38/c.html)
 - [Xinhua: Nanning briefing with 9 July reporting cut-off](https://www.gx.news.cn/20260709/acc9673028f44188afd8df576a49bb23/c.html)
 - [China Weather Network: Bavi landfall at Yuhuan, 11 July 2026](https://news.weather.com.cn/2026/07/4711229.shtml)
+- [Xinhua: Zhejiang preparedness and 1.716 million transfers, 11 July 2026](https://www.news.cn/20260711/36c781341f824fd88303d391023fb54e/c.html)
+- [China News Service: preliminary Yuhuan impact, 12 July 2026](https://www.chinanews.com/m/sh/2026/07-12/10657864.shtml)
+- [China government/Xinhua: Bavi inland and alerts renewed, 13 July 2026](https://english.www.gov.cn/news/202607/13/content_WS6a548da6c6d00ca5f9a0c275.html)
 - [NIST AI Resource Center](https://airc.nist.gov/)
 - [NIST Privacy Framework 1.1 project status](https://www.nist.gov/privacy-framework/new-projects/privacy-framework-version-11)
+- [NIST SP 800-18 Revision 2 release](https://csrc.nist.gov/news/2026/nist-releases-sp-800-18r2)
 - [UNICEF Guidance on AI and Children 3.0](https://www.unicef.org/innocenti/reports/policy-guidance-ai-children)
 - [U.S. Department of Energy: hydrogen production by electrolysis](https://www.energy.gov/cmei/fuels/hydrogen-production-electrolysis)
 - [NASA: in-situ resource utilization](https://www.nasa.gov/mission/in-situ-resource-utilization-isru/)

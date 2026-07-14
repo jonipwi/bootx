@@ -1,7 +1,7 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.11<br>
+**Version:** 1.12<br>
 **Last updated:** 2026-07-14<br>
 **Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype supports limited public read-only local work and synthetic evaluation<br>
 **Current release posture:** Research documentation, an unvalidated host-based Go MVP, and opaque educational OS artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
@@ -55,12 +55,12 @@ This theological foundation is a disclosed founder commitment, not a scientific 
 | AI DNA | Specification present; unvalidated | `docs/handbook/05-ai-dna-specification.md` | dimensions and gates exist; empirical validity is not established |
 | Boot artifacts | Present but opaque | `artifacts/boot/` and `artifacts/media/` | limited binary evidence exists; source-level assurance is impossible |
 | Reproducible OS source | Missing | repository audit | build, source, tests, provenance, and dependency records are absent |
-| AI companion implementation | Deterministic host MVP present; unvalidated | `prototype/personal-companion/` | typed policy/warning/TUI baseline exists; no model, network, real-user evidence, deployment, or safety claim |
+| AI companion implementation | Deterministic host MVP present; unvalidated | `prototype/personal-companion/` | typed policy/warning/TUI and contained public-document baseline exists; no model, network, representative user evidence, deployment, or safety claim |
 | Public/high-impact readiness | BLOCKED | multiple open gates | no public or High-Impact deployment is authorized |
 
 ## 5. Foundation Gate — required before sensitive OS or AI implementation
 
-The project may preserve artifacts, restore source, conduct documentation research, and build isolated synthetic demonstrations while this gate is open. It must not place real users, personal data, credentials, money, essential services, or safety-critical decisions on BootX until all applicable gate items are complete.
+The project may preserve artifacts, restore source, conduct documentation research, build isolated synthetic demonstrations, and perform the explicitly bounded public/non-sensitive read-only local-document workflow while this gate is open. It must not process sensitive personal data, credentials, money, essential services, or safety-critical decisions, or expose research participants to BootX, until all applicable gate items are complete.
 
 ### 5.1 Mission, faith, and moral boundaries
 
@@ -420,6 +420,16 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 16. Change log
+
+### Version 1.12 - 2026-07-14
+
+- Audited all 59 Markdown documents, current implementation claims, local navigation, generated evidence logs, artifact identities, and time-sensitive standards/event notes.
+- Updated root, portal, handbook, evidence-audit, architecture, roadmap, pipeline, development, installation, artifact, disaster, and research-index documentation to match Personal Companion `0.2.0-dev`.
+- Reclassified completed development-backlog work and retained authentication, sandboxing, measurement, memory, security, independent review, and robotics work as open gates.
+- Rechecked all 230 relative Markdown link targets and the four supplied artifact hashes.
+- Refreshed the preliminary Bavi record through 2026-07-14 without converting preliminary local impacts into a final regional or causal conclusion.
+- Reverified that NIST AI RMF 1.0 remains under revision and Privacy Framework 1.1 remains an initial public draft with the final forthcoming; added the final NIST SP 800-18 Revision 2 system-planning reference.
+- Regenerated the version-sensitive synthetic evidence logs with Personal Companion `0.2.0-dev` and reran repository verification.
 
 ### Version 1.11 - 2026-07-14
 

@@ -1,8 +1,9 @@
 # Withdrawn AI DNA Evaluation — Typhoon Bavi (2026)
 
 **Status:** Withdrawn as an empirical evaluation; retained as a measurement-integrity lesson<br>
-**Version:** 2.0<br>
+**Version:** 2.1<br>
 **Correction date:** 2026-07-12<br>
+**Event-status review:** 2026-07-14; later preliminary facts do not validate the withdrawn score<br>
 **Applies to:** the former `93.3%` Taiwan-government response score in this path
 
 ## Decision

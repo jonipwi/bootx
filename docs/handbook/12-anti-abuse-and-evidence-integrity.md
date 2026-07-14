@@ -1,8 +1,8 @@
 # Anti-Abuse and Evidence Integrity
 
 **Status:** Supported design proposition with a documented factual self-audit<br>
-**Version:** 1.1<br>
-**Evidence reviewed through:** 2026-07-12<br>
+**Version:** 1.2<br>
+**Evidence reviewed through:** 2026-07-14<br>
 **Purpose:** prevent false, manipulated, correlated, or politically abused evidence from turning AI assistance into harmful action
 
 ## 1. Executive summary
@@ -57,7 +57,7 @@ Authoritative reports support the core Guangxi claim:
 
 The 2026 disaster does **not** by itself prove that the later Bavi response was successful because authorities learned from Maysak. That causal claim requires comparable hazard, exposure, vulnerability, decisions, timing, and outcome evidence. Likewise, an evacuation count does not by itself establish preparedness quality, and a lower casualty count cannot be converted directly into “lives saved.”
 
-As of 12 July 2026, Bavi had made landfall at Yuhuan, Zhejiang, at approximately 23:20 local time on 11 July with reported maximum winds of 40 m/s at landfall. The event and its inland rainfall consequences were still developing, so final Bavi casualty, evacuation, infrastructure, dam, and comparative-success claims were not yet available. See [China Weather Network's landfall report](https://news.weather.com.cn/2026/07/4711229.shtml).
+As of the 14 July 2026 evidence cut-off, Bavi had made landfall at Yuhuan, Zhejiang, at approximately 23:20 local time on 11 July with reported maximum winds of 40 m/s, made a second landfall at Yueqing around midnight, and continued inland while weakening. Xinhua directly reported 1.716 million people transferred in Zhejiang by 08:00 on 11 July. A preliminary local report for Yuhuan recorded affected population, damaged structures, and direct economic loss, but final Bavi casualty, evacuation, infrastructure, dam, and comparative-success findings were still unavailable. See the [Xinhua preparedness report](https://www.news.cn/20260711/36c781341f824fd88303d391023fb54e/c.html), [China News Service local-impact report](https://www.chinanews.com/m/sh/2026/07-12/10657864.shtml), and [13 July inland-alert report](https://english.www.gov.cn/news/202607/13/content_WS6a548da6c6d00ca5f9a0c275.html).
 
 This correction is not incidental. It demonstrates the chapter's central lesson:
 
@@ -410,6 +410,9 @@ No system reaches zero risk. The objective is to make manipulation harder, detec
 - [Xinhua — Guangxi disaster briefing, 7 July 2026 reporting cut-off](https://www.gx.news.cn/20260708/9be922b8de8e446ba44bd6c85f7b8b38/c.html)
 - [Xinhua — Nanning disaster briefing, 9 July 2026 reporting cut-off](https://www.gx.news.cn/20260709/acc9673028f44188afd8df576a49bb23/c.html)
 - [China Weather Network — Bavi landfall, 11 July 2026](https://news.weather.com.cn/2026/07/4711229.shtml)
+- [Xinhua — Zhejiang preparedness and 1.716 million transfers by 11 July 2026 08:00](https://www.news.cn/20260711/36c781341f824fd88303d391023fb54e/c.html)
+- [China News Service — preliminary Yuhuan impact, 12 July 2026](https://www.chinanews.com/m/sh/2026/07-12/10657864.shtml)
+- [China government/Xinhua — Bavi inland and alerts renewed, 13 July 2026](https://english.www.gov.cn/news/202607/13/content_WS6a548da6c6d00ca5f9a0c275.html)
 
 ## 17. Limitations
 

@@ -1,12 +1,12 @@
 # Humanity + AI During Typhoon Bavi
 ## A Research Perspective on Trustworthy AI, Disaster Preparedness, and the Common Good
 
-**Version:** 1.0<br>
+**Version:** 1.1<br>
 **Date:** July 2026<br>
 **Author:** Human + AI Collaborative Study
 
 **Status:** Values-led research essay, not an official agency report or completed event evaluation<br>
-**Evidence cut-off:** 2026-07-12<br>
+**Evidence cut-off:** 2026-07-14<br>
 **Event facts:** use the corrected [preliminary Bavi record](typhoon-bavi-aftermath-summary.md) and [documentation verification register](../../handbook/13-documentation-verification-register.md)<br>
 **Limitation:** general preparedness principles in this essay must not be read as proof that AI caused any 2026 outcome
 

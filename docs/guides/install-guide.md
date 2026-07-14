@@ -1,12 +1,13 @@
 # BootX Image Testing and Historical USB Install Guide
 
 **Status:** Blocked for source builds and trusted physical installation<br>
-**Verified through:** 2026-07-12<br>
+**Verified through:** 2026-07-14<br>
 **Reason:** source code, build scripts, dependency provenance, and reproducible
 build evidence are absent from this checkout
 
-This guide explains how to build a BootX image and write it to a USB flash
-drive with Rufus on Windows.
+This guide preserves the historically described BootX build and USB-writing
+workflow. It does not provide a currently reproducible source build or
+authorization to install the supplied opaque artifacts on physical hardware.
 
 > **Repository-state notice:** The supplied prebuilt images are organized under
 > [`artifacts/boot/`](../../artifacts/README.md). The source and build system
@@ -31,9 +32,10 @@ build/bootx.vdi                    BIOS / legacy VirtualBox disk image
 build/uefi/EFI/BOOT/BOOTX64.EFI    early UEFI app only
 ```
 
-Use `build/bootx.img` with Rufus if you want to boot the current BootX kernel
-and shell. The UEFI app currently only prints UEFI status text and does not
-handoff to the kernel yet.
+If the missing source and build system are recovered and independently
+verified, the historical design intended `build/bootx.img` for the BIOS kernel
+and shell. It described the UEFI app as printing status text without handing
+off to the kernel. Neither behavior is source-verified in this checkout.
 
 ---
 
@@ -169,7 +171,8 @@ Do not choose ISO mode. BootX is a raw disk image, not an ISO installer.
 
 ## Historical Step 5: Boot the USB Drive
 
-BootX currently requires BIOS or legacy CSM boot for the kernel path.
+The historical design described the kernel path as requiring BIOS or legacy
+CSM boot.
 
 In firmware settings:
 
@@ -178,15 +181,16 @@ In firmware settings:
 - Open the one-time boot menu.
 - Choose the USB entry that is not marked `UEFI`, if your firmware shows both.
 
-If the computer is UEFI-only and has no CSM/legacy mode, `build/bootx.img` will
-not boot the current kernel on that machine.
+Under that unverified design, an image would not boot the kernel on a UEFI-only
+computer without CSM/legacy mode.
 
 ---
 
-## Optional: Build the Current UEFI App
+## Historical Optional Step: Build the UEFI App
 
-The UEFI artifact is useful for testing that firmware can launch BootX's UEFI
-entry point, but it does not boot the protected-mode kernel yet.
+The historical description treated the UEFI artifact as a firmware entry-point
+test that did not boot the protected-mode kernel. The required script and
+source are absent, so the following command is a preserved reference only.
 
 Build it:
 
@@ -221,10 +225,11 @@ Expected behavior: it prints BootX UEFI status text and returns to firmware.
 
 ---
 
-## Linux Direct Write Alternative
+## Historical Linux Direct-Write Alternative
 
-Rufus is recommended on Windows. On native Linux, you can write the raw image
-directly with `dd`.
+The historical procedure used Rufus on Windows or `dd` on native Linux. Do not
+apply the following destructive write procedure to the supplied opaque image;
+retain it only for a future source-reproduced and approved artifact.
 
 List disks:
 
@@ -260,17 +265,17 @@ BootX is experimental. The limitations below were carried forward from the
 historical build description and screenshot; they have not been independently
 confirmed against source in this checkout.
 
-Known limitations:
+Historically reported limitations:
 
-- Current kernel boot path is BIOS/legacy only.
-- The UEFI app does not hand off to the kernel yet.
-- Disk access uses early ATA PIO assumptions.
-- FAT support is FAT12, root directory only, DOS 8.3 names only.
-- Keyboard support is basic PS/2-style polling.
-- Networking is tested in QEMU NE2000 mode and VirtualBox Intel PRO/1000 mode.
+- The kernel boot path was described as BIOS/legacy only.
+- The UEFI app was described as not handing off to the kernel.
+- Disk access was described as using early ATA PIO assumptions.
+- FAT support was described as FAT12, root directory only, DOS 8.3 names only.
+- Keyboard support was described as basic PS/2-style polling.
+- Networking was reported in QEMU NE2000 mode and VirtualBox Intel PRO/1000 mode.
 - Many modern laptops do not expose legacy BIOS/CSM or PS/2-compatible keyboard behavior.
 
-QEMU remains the recommended test environment:
+The historical workflow recommended QEMU:
 
 ```bash
 make run
@@ -279,10 +284,10 @@ make run-net
 
 ---
 
-## Optional: Build a VirtualBox Disk
+## Historical Optional Step: Build a VirtualBox Disk
 
-Use a VirtualBox hard-disk image for the full BootX shell, FAT C: volume, and
-network tests.
+The historical workflow used a VirtualBox hard-disk image for the reported
+BootX shell, FAT C: volume, and network tests.
 
 Build the raw image first:
 
@@ -302,9 +307,9 @@ Attach this file to an IDE storage controller as a hard disk:
 C:\Job\bootx\build\bootx.vdi
 ```
 
-BootX's protected-mode FAT code currently reads sectors with ATA PIO from the
-legacy primary IDE port. If the VDI is attached to VirtualBox SATA/AHCI, the BIOS
-can still boot it, but BootX will print `FAT: unable to mount C:` after startup.
+The protected-mode FAT code was described as reading sectors with ATA PIO from
+the legacy primary IDE port. The historical record reported that SATA/AHCI
+attachment could boot through BIOS but then print `FAT: unable to mount C:`.
 
 Use legacy BIOS boot mode in VirtualBox, not EFI mode.
 
@@ -314,14 +319,15 @@ For networking in VirtualBox, set the adapter type to:
 Intel PRO/1000 MT Desktop (82540EM)
 ```
 
-Do not use `PCnet-FAST III`; BootX does not include an AMD PCnet driver.
+The historical description says not to use `PCnet-FAST III` because no AMD
+PCnet driver was included.
 
-## Optional: Build a Boot-Only VirtualBox ISO
+## Historical Optional Step: Build a Boot-Only VirtualBox ISO
 
-VirtualBox can also boot BootX from an El Torito ISO, but the current protected
-mode kernel cannot mount C: from that ISO path. The kernel reads C: with ATA PIO
-from LBA 69, which works when BootX is attached as a hard disk, not when BIOS has
-booted a CD/floppy-emulated El Torito image.
+The historical description says VirtualBox could boot an El Torito ISO, while
+the protected-mode kernel could not mount C: from that path. It attributed this
+to ATA PIO reads from LBA 69 working for a hard-disk attachment but not the
+CD/floppy-emulated El Torito path. This has not been source-verified.
 
 Install an ISO builder in WSL:
 

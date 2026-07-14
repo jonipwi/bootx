@@ -5,7 +5,7 @@ TEST METADATA
 Test ID: TC-SPACE-GOV-001
 Scenario: Fictional permanent lunar settlement governance review
 Status: SYNTHETIC ONLY - NOT LEGAL ADVICE OR MISSION APPROVAL
-Started UTC: 2026-07-12T14:04:00.3161628Z
+Started UTC: 2026-07-14T13:20:44.8008396Z
 Document: D:\Job\Human+AI+DNA\bootx\docs\research\space\civilization-governance-before-space-expansion.md
 Fixture: D:\Job\Human+AI+DNA\bootx\prototype\personal-companion\testdata\space-governance-readiness-exercise.json
 Log: D:\Job\Human+AI+DNA\bootx\prototype\space-governance.log
@@ -13,13 +13,14 @@ Log: D:\Job\Human+AI+DNA\bootx\prototype\space-governance.log
 ==============================================================================
 BUILD AND VERIFICATION
 ==============================================================================
-Temporary build directory: C:\Users\User\AppData\Local\Temp\bootx-space-governance-test-bb902b712b334d5e8825271fccaca10e
+Temporary build directory: C:\Users\User\AppData\Local\Temp\bootx-space-governance-test-fb365ce77a154dc89c062ecbde8d56da
 BUILD> BootX prototype module: D:\Job\Human+AI+DNA\bootx\prototype\personal-companion
 BUILD> go version go1.26.3 windows/amd64
 BUILD> Checking Go formatting...
 BUILD> > go test ./...
 BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/cmd/bootx-companion	(cached)
 BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/engine	(cached)
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/evidence	(cached)
 BUILD> ?   	github.com/jonipwi/bootx/prototype/personal-companion/internal/model	[no test files]
 BUILD> ?   	github.com/jonipwi/bootx/prototype/personal-companion/internal/policy	[no test files]
 BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/tui	(cached)
@@ -27,16 +28,16 @@ BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/warni
 BUILD> > go vet ./...
 BUILD> Validating JSON schemas, policy, and fixtures...
 BUILD> Validated 10 JSON assets.
-BUILD> > go build -trimpath -buildvcs=false -o C:\Users\User\AppData\Local\Temp\bootx-space-governance-test-bb902b712b334d5e8825271fccaca10e\bootx-companion-windows-amd64.exe ./cmd/bootx-companion
+BUILD> > go build -trimpath -buildvcs=false -o C:\Users\User\AppData\Local\Temp\bootx-space-governance-test-fb365ce77a154dc89c062ecbde8d56da\bootx-companion-windows-amd64.exe ./cmd/bootx-companion
 BUILD> 
 BUILD> Build completed.
-BUILD>   Binary:   C:\Users\User\AppData\Local\Temp\bootx-space-governance-test-bb902b712b334d5e8825271fccaca10e\bootx-companion-windows-amd64.exe
-BUILD>   Version:  0.1.0-dev
-BUILD>   SHA-256:  a3596cda2ca679c02eecbec386e27b1a5c3daa83f3ef919cae835c59fdf22e21
-BUILD>   Manifest: C:\Users\User\AppData\Local\Temp\bootx-space-governance-test-bb902b712b334d5e8825271fccaca10e\build-manifest.json
-Application version: 0.1.0-dev
-Manifest SHA-256: a3596cda2ca679c02eecbec386e27b1a5c3daa83f3ef919cae835c59fdf22e21
-Actual SHA-256:   a3596cda2ca679c02eecbec386e27b1a5c3daa83f3ef919cae835c59fdf22e21
+BUILD>   Binary:   C:\Users\User\AppData\Local\Temp\bootx-space-governance-test-fb365ce77a154dc89c062ecbde8d56da\bootx-companion-windows-amd64.exe
+BUILD>   Version:  0.2.0-dev
+BUILD>   SHA-256:  a26321313ff2cb528272348c6603e666e7ad419cdbd9788c37c9ed13d9762836
+BUILD>   Manifest: C:\Users\User\AppData\Local\Temp\bootx-space-governance-test-fb365ce77a154dc89c062ecbde8d56da\build-manifest.json
+Application version: 0.2.0-dev
+Manifest SHA-256: a26321313ff2cb528272348c6603e666e7ad419cdbd9788c37c9ed13d9762836
+Actual SHA-256:   a26321313ff2cb528272348c6603e666e7ad419cdbd9788c37c9ed13d9762836
 
 ==============================================================================
 DOCUMENT PROCESS - VISIBLE POLICY EVIDENCE
@@ -140,12 +141,17 @@ OUTPUT - COMPLETE JSON DECISION PACKET
 {
   "request_id": "tc-space-governance-001",
   "capability_id": "assist.personal-decision.v1",
-  "generated_at": "2026-07-12T14:04:03.6203417Z",
-  "runtime_notice": "Deterministic DEV-1 prototype; no AI model, network lookup, external action, or safety certification.",
+  "generated_at": "2026-07-14T13:20:47.9664879Z",
+  "runtime_notice": "Deterministic DEV-1 prototype with contained read-only local-document ingestion; no AI model, network lookup, external action, or safety certification.",
   "decision_class": "D3",
   "response_mode": "ABSTAIN",
   "goal_understood": "Decide whether a fictional permanent lunar settlement proposal is ready for approval",
   "observations": [
+    {
+      "claim": "The input declares the content origin verified, but this offline prototype did not authenticate that origin.",
+      "source": "synthetic_governance_exercise",
+      "status": "user_claim_not_independently_verified"
+    },
     {
       "claim": "No configured scam, credential, payment, urgency, or prompt-injection text indicator was detected.",
       "source": "deterministic_local_rules",
@@ -153,7 +159,7 @@ OUTPUT - COMPLETE JSON DECISION PACKET
     }
   ],
   "assumptions": [
-    "The declared goal, domain, and priorities were supplied by the authenticated local user."
+    "The goal, domain, user identifier, and priorities were declared locally; this prototype has no user-authentication system."
   ],
   "unknowns": [
     "The offline MVP has no retrieved evidence beyond the deliberately selected input."
@@ -214,6 +220,7 @@ OUTPUT - COMPLETE JSON DECISION PACKET
   ],
   "limitations": [
     "No external source, identity, account, location, forecast, or event was independently verified by this offline build.",
+    "A matching content hash proves which bytes were processed, not who authored them or whether their claims are true.",
     "Recommendations are advisory; Joni remains the decision-maker."
   ],
   "ai_dna_runtime_checks": [
@@ -263,6 +270,12 @@ OUTPUT - COMPLETE JSON DECISION PACKET
       "basis": "Personal protection is in scope; family and community dissemination remain blocked."
     }
   ],
+  "evidence_receipt": {
+    "source_type": "synthetic_governance_exercise",
+    "integrity_verified": false,
+    "byte_length": 511,
+    "origin_status": "user_claimed_verified_not_authenticated"
+  },
   "data_receipt": {
     "memory_used": false,
     "remote_processing": false,
@@ -284,5 +297,5 @@ Interpretation: the prototype abstained; this is not legal validation, mission a
 CLEANUP
 ==============================================================================
 Temporary build removed: True
-Finished UTC: 2026-07-12T14:04:03.7411944Z
+Finished UTC: 2026-07-14T13:20:48.1135217Z
 Final exit code: 0

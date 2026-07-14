@@ -1,6 +1,7 @@
 # BootX Human + AI Companion Research Handbook
 
-**Document status:** Research baseline 1.0<br>
+**Document status:** Research baseline 1.1<br>
+**Last implementation review:** 2026-07-14<br>
 **Audience:** learners, researchers, engineers, educators, reviewers, and future maintainers<br>
 **Purpose:** turn the ideas in the BootX repository into a testable, teachable, and implementable Human + AI companion program
 
@@ -33,7 +34,7 @@ The governing mission is:
 
 Read the documents in order for a complete study. Engineers can begin with the system specification and roadmap after reviewing the ethical constitution. Researchers should begin with the evidence audit, logic, and measurement framework.
 
-The current implementation evidence is the [host-based Go personal-companion MVP](../../prototype/personal-companion/README.md). It is a deterministic development baseline and does not close the handbook's research, security, human-factors, or deployment gates.
+The current implementation evidence is the [host-based Go Personal Companion `0.2.0-dev`](../../prototype/personal-companion/README.md). It is a deterministic development baseline with synthetic fixtures and one contained, read-only public local-document workflow. Its integrity receipt authenticates bytes, not people, publishers, authorities, or claims. It does not close the handbook's research, security, identity, human-factors, or deployment gates.
 
 | Part | Document | Primary question |
 |---:|---|---|

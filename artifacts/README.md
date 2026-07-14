@@ -1,6 +1,6 @@
 # BootX Artifact Inventory
 
-**Identity rechecked:** 2026-07-12<br>
+**Identity rechecked:** 2026-07-14<br>
 **Execution posture:** opaque experimental artifacts; isolated inspection only
 
 This directory contains supplied compiled artifacts and visual evidence. It intentionally separates opaque binaries from source, governance, and research documentation.

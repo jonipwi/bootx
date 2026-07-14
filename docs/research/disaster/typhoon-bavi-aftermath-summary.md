@@ -1,14 +1,14 @@
 # Preliminary Event Record — Typhoon Bavi (2026)
 
-**Status:** Preliminary factual record; event consequences still developing<br>
-**Version:** 3.0<br>
-**Evidence cut-off:** 2026-07-12, Asia/Bangkok<br>
+**Status:** Preliminary factual record; recovery and final cross-jurisdiction consequences remain incomplete<br>
+**Version:** 3.1<br>
+**Evidence cut-off:** 2026-07-14, Asia/Bangkok<br>
 **Evidence maturity:** E1 — sourced observation and live-event hypothesis, not a completed aftermath study<br>
 **Supersedes:** the unsourced “Summary Aftermath — Typhoon Bavi” draft previously in this path
 
 ## 1. Reliable conclusion at this cut-off
 
-Typhoon Bavi (`202609`) was a real and powerful 2026 western North Pacific cyclone. It affected waters and weather around Taiwan and made landfall at Yuhuan, Zhejiang, at approximately 23:20 local time on 11 July 2026. At the audit cut-off, inland rainfall and response were continuing. A final aftermath, casualty total, evacuation total, dam-failure finding, economic-loss estimate, or preparedness-success comparison was therefore not available.
+Typhoon Bavi (`202609`) was a real and powerful 2026 western North Pacific cyclone. It affected waters and weather around Taiwan, made landfall at Yuhuan, Zhejiang, at approximately 23:20 local time on 11 July 2026, and made a second landfall at Yueqing around midnight. By 13 July it was weakening inland, while alerts and rainfall effects continued across several provinces. Preliminary local impact figures are now available for Yuhuan, but a final regional aftermath, casualty total, evacuation total, dam-failure finding, economic-loss estimate, or preparedness-success comparison is still not available.
 
 The previous draft presented several unsupported claims as settled facts. Those claims are withdrawn below rather than repeated as conclusions.
 
@@ -19,15 +19,16 @@ The previous draft presented several unsupported claims as settled facts. Those 
 | Event identity | Supported | Taiwan's Central Weather Administration records Bavi as `202609`. [CWA storm record](https://rdc28.cwa.gov.tw/TDB/public/typhoon_detail?typhoon_id=202609) |
 | Formation | Supported | China Weather Network reports that Bavi formed on 2 July 2026 and later intensified substantially. [Landfall report](https://news.weather.com.cn/2026/07/4711229.shtml) |
 | Taiwan warning and disruption | Supported as dated observations | Taiwan's weather authority issued a sea warning on 9 July; flight, ferry, and road precautions were reported. This does not establish final island-wide damage or response quality. [Xinhua report, 9 July](https://www.news.cn/20260709/84dbbfd7151841e1b7c3385cd97fd675/c.html) |
-| Zhejiang preparedness | Supported as a partial early count | Zhejiang reported 17,110 people transferred by 15:00 on 9 July. This is neither a national total nor a final evacuation count. [Xinhua report, 9 July](https://www.news.cn/20260709/8646cd570c16414b8bfa79977683520b/c.html) |
-| China landfall | Supported | Bavi made landfall at Yuhuan, Zhejiang, at about 23:20 on 11 July, with reported maximum winds of 40 m/s and central pressure of 955 hPa at landfall. [China Weather Network](https://news.weather.com.cn/2026/07/4711229.shtml) |
-| Continuing hazard | Supported | The landfall report forecast continuing wide-area rainfall and inland effects after landfall. Outcome totals remained provisional. [China Weather Network](https://news.weather.com.cn/2026/07/4711229.shtml) |
+| Zhejiang preparedness | Supported as a dated partial count | Zhejiang reported 1.716 million people transferred by 08:00 on 11 July, together with closures and transport cancellations. This is a provincial pre-landfall count, not a final national total or proof of response quality. [Xinhua report, 11 July](https://www.news.cn/20260711/36c781341f824fd88303d391023fb54e/c.html) |
+| China landfalls | Supported | Bavi made landfall at Yuhuan, Zhejiang, at about 23:20 on 11 July, with reported maximum winds of 40 m/s and central pressure of 955 hPa, then made a second landfall at Yueqing around midnight. [Xinhua first-landfall report](https://www.news.cn/20260712/6fb5a8996d67436a97a0b6a40af952d5/c.html), [China News Service local report](https://www.chinanews.com/m/sh/2026/07-12/10657864.shtml) |
+| Preliminary Yuhuan impact | Supported as a local preliminary report | At 09:00 on 12 July, China News Service reported a preliminary Yuhuan count of 155,000 affected people, 35 houses collapsed or damaged, and 840 million yuan in direct economic loss. These figures concern Yuhuan, are preliminary, and are not regional totals. [China News Service](https://www.chinanews.com/m/sh/2026/07-12/10657864.shtml) |
+| Continuing inland hazard | Supported as a dated observation | On 13 July, the National Meteorological Center renewed rainstorm and typhoon alerts while Bavi was weakening over Anhui and forecast further rain and wind. This supports continued hazard, not a final impact total. [China government/Xinhua report, 13 July](https://english.www.gov.cn/news/202607/13/content_WS6a548da6c6d00ca5f9a0c275.html) |
 
 ## 3. Withdrawn or not-established claims
 
 The following statements from the prior draft are **not established** at this evidence cut-off:
 
-- “Nearly two million precautionary evacuations” for Bavi in China.
+- A final national evacuation total. The earlier unsourced “nearly two million” wording is withdrawn; the directly supported replacement is the dated Zhejiang count of 1.716 million people transferred by 08:00 on 11 July.
 - “No confirmed fatalities in Taiwan during the main impact” as a final outcome.
 - “No confirmed Bavi-related dam failure” as a final absence claim.
 - A final regional casualty or infrastructure-loss comparison.
@@ -35,7 +36,7 @@ The following statements from the prior draft are **not established** at this ev
 - That authorities performed better specifically because they learned from Maysak.
 - AI DNA scores of `96/100` for prevention and `45/100` for reactive response.
 
-An absence claim needs a defined jurisdiction, reporting body, time window, and sufficiently complete reporting. A live-event search that finds no report is not proof that no event occurred.
+An absence claim needs a defined jurisdiction, reporting body, time window, and sufficiently complete reporting. A live-event search that finds no report is not proof that no event occurred. Preliminary local reports must not be added together as though their definitions and reporting windows were identical.
 
 ## 4. Relationship to Maysak (2026)
 

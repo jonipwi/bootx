@@ -2,12 +2,12 @@
 
 ## Preparedness vs. False Alarm: What Should Society Learn?
 
-**Version:** 1.0\
+**Version:** 1.1<br>
 **Topic:** Disaster Preparedness, AI Forecasting, Leadership, and Public
 Trust
 
 **Status:** Conceptual decision lesson; not a verified Bavi outcome study<br>
-**Correction date:** 2026-07-12<br>
+**Correction date:** 2026-07-12; event-status review refreshed 2026-07-14<br>
 **Event record:** [Preliminary Typhoon Bavi (2026) facts](typhoon-bavi-aftermath-summary.md)
 
 ------------------------------------------------------------------------
@@ -186,10 +186,11 @@ The objective is to balance these risks wisely.
 
 # Applying the lesson to Bavi
 
-The 2026 Bavi record supports that warnings and precautions occurred, but a
-final Taiwan outcome and a causal preparedness evaluation were not available
-at this document's 12 July evidence cut-off. Therefore, the case may be used
-to formulate questions—not to declare preparedness a success or failure.
+The 2026 Bavi record supports that warnings, large-scale precautions,
+landfalls, and material local impacts occurred. As of the 14 July evidence
+cut-off, final cross-jurisdiction outcomes and a causal preparedness evaluation
+were still unavailable. Therefore, the case may be used to formulate
+questions—not to declare preparedness a success or failure.
 
 People often compare a warning with what happened where they live, while
 emergency managers plan across a probability distribution and a wider region.

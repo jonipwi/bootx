@@ -2,6 +2,7 @@
 
 **Audit date:** 2026-07-12  
 **Scope:** all repository files present at the audit date; paths updated after the documentation reorganization
+**Implementation follow-up:** 2026-07-14; Personal Companion `0.2.0-dev` and artifact identity rechecked
 
 **Correction follow-up:** the later repository-wide [Documentation Verification
 and Corrections Register](13-documentation-verification-register.md) supersedes
@@ -48,9 +49,11 @@ The highest technical priority is to restore source, build scripts, dependency v
 
 ### Host-based personal-companion implementation added after the initial audit
 
-The repository now contains [`prototype/personal-companion/`](../../prototype/personal-companion/README.md), a separately auditable Go implementation of `assist.personal-decision.v1`. Directly inspectable evidence includes typed input/output models, embedded deterministic policy, `W0`–`W4`/`WX` warning logic, a terminal UI, strict JSON mode, schemas, synthetic fixtures, and automated tests.
+The repository now contains [`prototype/personal-companion/`](../../prototype/personal-companion/README.md), a separately auditable Go implementation of `assist.personal-decision.v1`. Directly inspectable evidence in version `0.2.0-dev` includes typed input/output models, embedded deterministic policy, `W0`–`W4`/`WX` warning logic, a terminal UI, strict JSON mode, schemas, synthetic fixtures, automated tests, and contained read-only loading of one explicitly confirmed public local workspace document.
 
-This does not restore or validate the historical BootX operating-system source. It also does not establish real-user benefit, calibrated error rates, secure platform isolation, authoritative warning-feed authentication, AI DNA validity, or deployment safety. Its evidence maturity remains `E2 — Prototype` in a limited host environment.
+The document loader enforces a relative contained path after link resolution, a regular-file and extension allowlist, a 65,536-byte limit, UTF-8/NUL validation, and an evidence receipt with byte length, modification time, and SHA-256 recomputation. Its structural scan is deterministic keyword analysis, not semantic understanding. The receipt proves which bytes were processed; it does not authenticate the user, author, publisher, source authority, or truth of any claim.
+
+This does not restore or validate the historical BootX operating-system source. It also does not establish representative real-user benefit, calibrated error rates, secure platform isolation, identity or authoritative-source authentication, AI DNA validity, or deployment safety. Its evidence maturity remains `E2 — Prototype` in a limited host environment.
 
 ## 3. Conceptual corpus map
 

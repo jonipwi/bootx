@@ -36,11 +36,14 @@ They are not automatically peer-reviewed, independently verified, or operational
 - [AI DNA Evaluation](disaster/ai-dna-evaluation-typhoon-bavi-taiwan.md)
 - [Aftermath Summary](disaster/typhoon-bavi-aftermath-summary.md)
 
-The disaster files were corrected on 2026-07-12. The 2026 Maysak Guangxi
-flooding and Liulan/Yunbiao reservoir breaches are supported by dated reports;
-the Bavi aftermath and any claim that learning from Maysak caused better Bavi
-outcomes remain preliminary or untested. The earlier `93.3%` AI DNA evaluation
-has been withdrawn as an empirical result. See [Anti-Abuse and Evidence
+The disaster files were corrected on 2026-07-12 and their live-event boundary
+was refreshed through 2026-07-14. The 2026 Maysak Guangxi flooding and
+Liulan/Yunbiao reservoir breaches are supported by dated reports. Bavi's
+landfalls, a directly reported pre-landfall Zhejiang transfer count, and
+preliminary Yuhuan impacts are now recorded, but final regional outcomes and
+any claim that learning from Maysak caused better Bavi outcomes remain
+incomplete or untested. The earlier `93.3%` AI DNA evaluation has been
+withdrawn as an empirical result. See [Anti-Abuse and Evidence
 Integrity](../handbook/12-anti-abuse-and-evidence-integrity.md) and the
 [Documentation Verification Register](../handbook/13-documentation-verification-register.md).
 

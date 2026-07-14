@@ -1,6 +1,6 @@
 # Standards and Authoritative Reading Map
 
-**Links verified:** 2026-07-12  
+**Links and version notes verified:** 2026-07-14<br>
 **Status:** starting map, not a complete systematic literature review or legal compliance analysis
 
 ## 1. Purpose
@@ -13,7 +13,7 @@ Before a real deployment, add applicable law, sector regulation, national guidan
 
 ### AI risk management
 
-- [NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10) — voluntary lifecycle-oriented framework for managing AI risks. Use its Govern, Map, Measure, and Manage structure to cross-check BootX governance and assurance. At the 2026-07-12 check, NIST's AI Resource Center stated that AI RMF 1.0 was under revision; record the exact version used.
+- [NIST Artificial Intelligence Risk Management Framework (AI RMF 1.0)](https://www.nist.gov/itl/ai-risk-management-framework) — voluntary lifecycle-oriented framework for managing AI risks. Use its Govern, Map, Measure, and Manage structure to cross-check BootX governance and assurance. At the 2026-07-14 check, NIST stated that AI RMF 1.0 was under revision; record the exact version used rather than assuming the latest page is still version 1.0.
 - [NIST Generative AI Profile (NIST AI 600-1)](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf) — generative-AI risk profile. Use it when the companion includes a generative model; do not assume a general AI risk register covers model-specific hazards.
 - [NIST AI 100-4, Reducing Risks Posed by Synthetic Content](https://www.nist.gov/publications/reducing-risks-posed-synthetic-content-overview-technical-approaches-digital-content) — provenance, watermarking, detection, labeling, testing, and research limits for synthetic-content transparency.
 - [NIST AI Resource Center](https://airc.nist.gov/) — implementation resources and playbook material. Check for revisions before each formal review because risk guidance evolves.
@@ -30,7 +30,11 @@ Before a real deployment, add applicable law, sector regulation, national guidan
 
 ### Privacy engineering
 
-- [NIST Privacy Framework](https://www.nist.gov/privacy-framework) — voluntary enterprise privacy-risk framework. At the 2026-07-12 check, version 1.0 remained the completed framework and [Privacy Framework 1.1](https://www.nist.gov/privacy-framework/new-projects/privacy-framework-version-11) was an initial public draft with the final marked “coming soon”; record the exact version and publication state used in every assessment.
+- [NIST Privacy Framework](https://www.nist.gov/privacy-framework) — voluntary enterprise privacy-risk framework. At the 2026-07-14 check, version 1.0 remained the completed framework and [Privacy Framework 1.1](https://www.nist.gov/privacy-framework/new-projects/privacy-framework-version-11) remained an initial public draft with the final marked “coming soon”; record the exact version and publication state used in every assessment.
+
+### System security, privacy, and supply-chain planning
+
+- [NIST SP 800-18 Revision 2](https://csrc.nist.gov/news/2026/nist-releases-sp-800-18r2) — final June 2026 guidance for coordinated system security, privacy, and cybersecurity supply-chain risk-management plans. It is relevant to BootX authorization boundaries, data flows, control ownership, machine-readable evidence, and future reproducible system plans; listing it does not establish compliance.
 
 ### Disaster evidence and early warning
 
@@ -53,7 +57,7 @@ Before a real deployment, add applicable law, sector regulation, national guidan
 | Mathematics | NIST AI RMF; peer-reviewed statistics and human-factors work | Do measures reflect real constructs and unequal error costs? |
 | Ethics and governance | UNESCO Recommendation and Ethical Impact Assessment | Are dignity, oversight, participation, sustainability, and remedy operational? |
 | AI DNA | all sources above | Which requirements overlap, conflict, or remain uniquely hypothetical? |
-| Architecture and security | NIST GenAI Profile; current security standards for the platform | Are model, tool, data, supply-chain, and recovery risks controlled? |
+| Architecture and security | NIST GenAI Profile; NIST SP 800-18r2; current security standards for the platform | Are boundaries, model, tool, data, supply-chain, recovery, and system-plan risks controlled and documented? |
 | Companion memory | NIST Privacy Framework; applicable data-protection law | Can collection be minimized and user rights work technically? |
 | Child or family use | UNICEF Guidance | Are best interests, development, inclusion, privacy, and safeguarding demonstrated? |
 | Field evaluation | domain ethics, accessibility, and research guidance | Is participation legitimate and is evidence transferable? |

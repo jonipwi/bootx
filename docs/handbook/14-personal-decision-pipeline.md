@@ -1,7 +1,7 @@
 # Personal Decision-Assistance Pipeline
 
-**Status:** `DEV-0` implementation specification; no deployment authorization<br>
-**Version:** 1.2<br>
+**Status:** `DEV-1` implemented baseline specification; no deployment authorization<br>
+**Version:** 1.3<br>
 **Adopted:** 2026-07-12<br>
 **Last updated:** 2026-07-14<br>
 **Primary user:** Joni, with continuing consent and editable preferences<br>

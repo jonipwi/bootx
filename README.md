@@ -41,11 +41,11 @@ bootx/
 
 ## Repository State
 
-This checkout contains prebuilt BIOS/ISO/VDI artifacts, research documents, and a new [host-based Go personal-companion MVP](prototype/personal-companion/README.md). The historical operating-system source, build scripts, and blueprint files are still absent, so the supplied boot binaries cannot presently be reproduced or source-audited. The Go MVP is separately auditable and tested, but it is an unvalidated development prototype—not evidence that the BootX operating system or an AI companion is deployed or safe. See the [repository evidence audit](docs/handbook/01-repository-evidence-audit.md) and [current progress gate](PROGRESS.md).
+This checkout contains prebuilt BIOS/ISO/VDI artifacts, research documents, and the [host-based Go personal-companion MVP](prototype/personal-companion/README.md). The historical operating-system source, build scripts, and blueprint files are still absent, so the supplied boot binaries cannot presently be reproduced or source-audited. The Go MVP is separately auditable and tested, but it is an unvalidated development prototype—not evidence that the BootX operating system or an AI companion is deployed or safe. See the [repository evidence audit](docs/handbook/01-repository-evidence-audit.md) and [current progress gate](PROGRESS.md).
 
 ## Personal Companion MVP
 
-The first `assist.personal-decision.v1` implementation provides a dependency-free Go backend and line-oriented terminal UI on a mature host operating system. It uses deterministic policy and warning rules, strict JSON schemas, synthetic tests, session-only processing, and no network or external-action capability.
+Personal Companion `0.2.0-dev` provides a dependency-free Go backend and line-oriented terminal UI on a mature host operating system. It uses deterministic policy and warning rules, strict JSON schemas, synthetic tests, session-only processing, and no network or external-action capability. It may also read one operator-confirmed public, non-sensitive `.md`, `.txt`, or `.json` file inside a selected workspace, issue a SHA-256 evidence receipt, and report bounded structural review candidates. File integrity does not authenticate the author, publisher, or factual claims.
 
 ```powershell
 .\prototype\build.ps1 -Action verify
@@ -55,6 +55,8 @@ The first `assist.personal-decision.v1` implementation provides a dependency-fre
 If local execution policy blocks `.ps1` files, use `powershell -NoProfile -ExecutionPolicy Bypass -File .\prototype\build.ps1 -Action verify`; this applies only to that process.
 
 Read the [MVP documentation](prototype/personal-companion/README.md) and [complete usage guide](prototype/personal-companion/USAGE.md) before entering any data.
+
+For the first bounded real-work workflow, choose menu option `3`. Sensitive information, real warning reliance, source authentication, network retrieval, persistent memory, generative AI, external actions, operating-system integration, and robotics remain blocked.
 
 The first full end-to-end scenario is the [synthetic Typhoon Bavi test case](prototype/TEST_CASE.md), with input/process/output evidence captured by its PowerShell runner.
 
