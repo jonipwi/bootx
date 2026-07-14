@@ -12,6 +12,7 @@ import (
 	"time"
 
 	"github.com/jonipwi/bootx/prototype/personal-companion/internal/engine"
+	"github.com/jonipwi/bootx/prototype/personal-companion/internal/evidence"
 	"github.com/jonipwi/bootx/prototype/personal-companion/internal/model"
 )
 
@@ -33,7 +34,8 @@ func (ui *UI) run() error {
 		fmt.Fprintln(ui.out, "\nMain menu")
 		fmt.Fprintln(ui.out, "  1  Personal decision assistance")
 		fmt.Fprintln(ui.out, "  2  Forecast/disaster warning assessment")
-		fmt.Fprintln(ui.out, "  3  Safety boundaries")
+		fmt.Fprintln(ui.out, "  3  Read-only local workspace document")
+		fmt.Fprintln(ui.out, "  4  Safety boundaries")
 		fmt.Fprintln(ui.out, "  q  Quit and discard session data")
 		choice, err := ui.prompt("Choose", false)
 		if err != nil {
@@ -52,14 +54,102 @@ func (ui *UI) run() error {
 				return err
 			}
 		case "3":
+			if err := ui.localDocumentWorkflow(); err != nil {
+				return err
+			}
+		case "4":
 			ui.boundaries()
 		case "q", "quit", "exit":
 			fmt.Fprintln(ui.out, "Session closed. No raw input was written by BootX Companion.")
 			return nil
 		default:
-			fmt.Fprintln(ui.out, "Please choose 1, 2, 3, or q.")
+			fmt.Fprintln(ui.out, "Please choose 1, 2, 3, 4, or q.")
 		}
 	}
+}
+
+func (ui *UI) localDocumentWorkflow() error {
+	fmt.Fprintln(ui.out, "\n=== Read-only local workspace document ===")
+	fmt.Fprintln(ui.out, "This mode reads one user-selected public UTF-8 .md, .txt, or .json file. It does not authenticate the author or truth of its claims.")
+	workspaceRoot, err := ui.prompt("Workspace root", true)
+	if err != nil {
+		return err
+	}
+	relativePath, err := ui.prompt("Document path relative to workspace", true)
+	if err != nil {
+		return err
+	}
+	publicConfirmed, err := ui.confirm("Have you reviewed this file as public and non-sensitive")
+	if err != nil {
+		return err
+	}
+	if !publicConfirmed {
+		fmt.Fprintln(ui.out, "Canceled before reading the file. Sensitive or uncertain local documents are not authorized in this mode.")
+		return nil
+	}
+	document, err := evidence.LoadLocalDocument(workspaceRoot, relativePath)
+	if err != nil {
+		fmt.Fprintf(ui.out, "Document rejected safely: %v\n", err)
+		return nil
+	}
+
+	fmt.Fprintln(ui.out, "\nRead-only integrity receipt")
+	fmt.Fprintf(ui.out, "  Reference: %s\n  Bytes: %d\n  SHA-256: %s\n  Modified UTC: %s\n", document.Reference, document.ByteLength, document.SHA256, document.ModifiedAt.Format(time.RFC3339Nano))
+	fmt.Fprintln(ui.out, "  Integrity: selected bytes hashed | Origin/claims: not authenticated")
+	goal, err := ui.prompt("Goal", true)
+	if err != nil {
+		return err
+	}
+	question, err := ui.prompt("Direct question", true)
+	if err != nil {
+		return err
+	}
+	prioritiesText, err := ui.prompt("Priorities, comma-separated (optional)", false)
+	if err != nil {
+		return err
+	}
+	fmt.Fprintln(ui.out, "\nVisible processing scope")
+	fmt.Fprintf(ui.out, "  Public document: %s | %d bytes\n", document.Reference, document.ByteLength)
+	fmt.Fprintln(ui.out, "  Read-only: yes | Memory: none | Remote processing: denied | External action: absent")
+	confirmed, err := ui.confirm("Process this document scope")
+	if err != nil {
+		return err
+	}
+	if !confirmed {
+		fmt.Fprintln(ui.out, "Canceled. The selected document was not processed further.")
+		return nil
+	}
+
+	request := model.Request{
+		RequestID:       newRequestID(),
+		CapabilityID:    model.CapabilityID,
+		UserID:          "declared-local-operator",
+		CreatedAt:       time.Now(),
+		Goal:            goal,
+		Question:        question,
+		SelectedContent: document.Content,
+		ContentSource: model.ContentSource{
+			Type:              "local_workspace_file",
+			Reference:         document.Reference,
+			IntegrityVerified: true,
+			SHA256:            document.SHA256,
+			ByteLength:        document.ByteLength,
+			ModifiedAt:        document.ModifiedAt.Format(time.RFC3339Nano),
+		},
+		DataClass:        model.DataPublic,
+		DeclaredDomain:   model.DomainStudy,
+		MemoryPermission: "none",
+		RemotePermission: "deny",
+		OutputPreference: "standard",
+		UserPriorities:   splitComma(prioritiesText),
+		Synthetic:        false,
+	}
+	packet, err := ui.engine.Process(request)
+	if err != nil {
+		fmt.Fprintf(ui.out, "Document request rejected safely: %v\n", err)
+		return nil
+	}
+	return ui.showPacket(packet)
 }
 
 func (ui *UI) personalWorkflow() error {
@@ -166,7 +256,7 @@ func (ui *UI) warningWorkflow() error {
 	if err != nil {
 		return err
 	}
-	authenticated, err := ui.confirm("Was the authority authenticated through a known official source")
+	authenticated, err := ui.confirm("For this synthetic exercise, do you declare that the authority was authenticated through a known official source")
 	if err != nil {
 		return err
 	}
@@ -233,7 +323,7 @@ func (ui *UI) warningWorkflow() error {
 
 	fmt.Fprintln(ui.out, "\nVisible processing scope")
 	fmt.Fprintf(ui.out, "  Event: %s | Hazard: %s | Official status: %s\n", eventID, hazard, officialStatus)
-	fmt.Fprintf(ui.out, "  Issuer authenticated: %t | Area match: %s | Evidence: %s | Integrity: %s\n", authenticated, areaMatch, evidenceTier, integrity)
+	fmt.Fprintf(ui.out, "  Issuer authentication declared in exercise: %t | Area match: %s | Evidence: %s | Integrity: %s\n", authenticated, areaMatch, evidenceTier, integrity)
 	fmt.Fprintln(ui.out, "  Location: manually declared match only; not persisted | Network lookup: absent | Broadcasting: absent")
 	confirmed, err := ui.confirm("Process this warning scope")
 	if err != nil {
@@ -340,6 +430,12 @@ func (ui *UI) showPacket(packet model.Packet) error {
 	}
 	printStrings(ui.out, "BLOCKED EXTERNAL ACTIONS", packet.BlockedActions)
 	printStrings(ui.out, "LIMITATIONS", packet.Limitations)
+	fmt.Fprintln(ui.out, "\nEVIDENCE RECEIPT")
+	fmt.Fprintf(ui.out, "  Source: %s | Reference: %s\n", packet.EvidenceReceipt.SourceType, fallback(packet.EvidenceReceipt.Reference, "not supplied"))
+	fmt.Fprintf(ui.out, "  Integrity verified: %t | Bytes: %d | Origin: %s\n", packet.EvidenceReceipt.IntegrityVerified, packet.EvidenceReceipt.ByteLength, packet.EvidenceReceipt.OriginStatus)
+	if packet.EvidenceReceipt.SHA256 != "" {
+		fmt.Fprintf(ui.out, "  SHA-256: %s\n", packet.EvidenceReceipt.SHA256)
+	}
 	fmt.Fprintln(ui.out, "\nDATA RECEIPT")
 	fmt.Fprintf(ui.out, "  Memory used: %t | Remote processing: %t | Synthetic input: %t\n", packet.DataReceipt.MemoryUsed, packet.DataReceipt.RemoteProcessing, packet.DataReceipt.Synthetic)
 	fmt.Fprintf(ui.out, "  Raw retention: %s\n", packet.DataReceipt.RawRetention)

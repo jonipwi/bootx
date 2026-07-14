@@ -37,6 +37,46 @@ func TestReadRequestRejectsMultipleObjects(t *testing.T) {
 	}
 }
 
+func TestBuildDocumentRequestUsesRealContainedFile(t *testing.T) {
+	root := t.TempDir()
+	content := "# Real work\n\nReview this public project note.\n"
+	if err := os.WriteFile(filepath.Join(root, "work.md"), []byte(content), 0o600); err != nil {
+		t.Fatal(err)
+	}
+	request, err := buildDocumentRequest(documentRequestOptions{
+		WorkspaceRoot:   root,
+		DocumentPath:    "work.md",
+		PublicConfirmed: true,
+		Goal:            "Choose the next study task",
+		Question:        "Which missing fact should be checked first?",
+		Priorities:      "truth, reversibility, truth",
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if request.SelectedContent != content || request.Synthetic || request.DataClass != "public" {
+		t.Fatalf("unexpected real-document request: %+v", request)
+	}
+	if !request.ContentSource.IntegrityVerified || request.ContentSource.Reference != "work.md" {
+		t.Fatal("contained document integrity metadata missing")
+	}
+	if len(request.UserPriorities) != 2 {
+		t.Fatalf("priorities = %#v", request.UserPriorities)
+	}
+}
+
+func TestBuildDocumentRequestRequiresPublicConfirmation(t *testing.T) {
+	_, err := buildDocumentRequest(documentRequestOptions{
+		WorkspaceRoot: t.TempDir(),
+		DocumentPath:  "work.md",
+		Goal:          "test",
+		Question:      "test?",
+	})
+	if err == nil || !strings.Contains(err.Error(), "public and non-sensitive") {
+		t.Fatalf("expected public-data confirmation rejection, got %v", err)
+	}
+}
+
 func writeTempRequest(t *testing.T, content string) string {
 	t.Helper()
 	path := filepath.Join(t.TempDir(), "request.json")

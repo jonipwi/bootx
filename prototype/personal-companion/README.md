@@ -1,7 +1,7 @@
 # BootX Personal Companion MVP
 
 **Status:** `DEV-1` software-only development prototype; not a deployed AI companion, emergency service, or safety-certified system<br>
-**Version:** `0.1.0-dev`<br>
+**Version:** `0.2.0-dev`<br>
 **Runtime:** Go 1.22 or later on a mature supported host operating system<br>
 **Capability:** `assist.personal-decision.v1`
 
@@ -12,6 +12,7 @@ For complete operator instructions, field definitions, examples, build verificat
 ## Safety boundary
 
 - deterministic rules only; no AI model is connected;
+- one explicitly confirmed public, non-sensitive `.md`, `.txt`, or `.json` document can be read from inside a user-selected workspace with a SHA-256 integrity receipt;
 - no network, browser, message, call, payment, account, device, robot, siren, or broadcast capability;
 - remote processing must be `deny`;
 - sensitive and forecast/disaster scenarios must be explicitly synthetic in this unvalidated MVP;
@@ -20,6 +21,8 @@ For complete operator instructions, field definitions, examples, build verificat
 - health and legal questions defer to qualified professionals;
 - disaster output preserves official-status distinctions and is not an official alert;
 - AI DNA runtime checks are not certification or forecast probability;
+- file integrity does not authenticate authorship or establish that the document's claims are true;
+- `user_id`, `origin_verified`, and warning-authority fields are declarations, not authenticated identities;
 - the human user remains the decision-maker.
 
 Shell redirection, terminal history, screen capture, crash dumps, or the surrounding operating system can still persist output. Do not enter passwords, PINs, recovery codes, private keys, or unnecessary personal data.
@@ -36,7 +39,8 @@ The UI supports:
 
 1. personal decision assistance;
 2. forecast/disaster warning assessment using manually selected information;
-3. a visible safety-boundary screen.
+3. contained read-only processing of one confirmed public workspace document;
+4. a visible safety-boundary screen.
 
 The TUI is deliberately line-oriented so it remains inspectable, keyboard-accessible, and dependency-free. It is not a background agent.
 
@@ -54,13 +58,31 @@ Schemas:
 - [`schemas/personal-decision-input.schema.json`](schemas/personal-decision-input.schema.json)
 - [`schemas/personal-decision-output.schema.json`](schemas/personal-decision-output.schema.json)
 
+## Read-only real workspace mode
+
+From the repository root, process one deliberately reviewed public document without copying it into a synthetic fixture:
+
+```powershell
+.\prototype\personal-companion\dist\bootx-companion-windows-amd64.exe `
+  -workspace . `
+  -document docs\research\civilization\religion-ideology-and-decision-integrity.md `
+  -document-public `
+  -goal "Choose the next evidence-improvement task" `
+  -question "Which missing fact should be verified first?" `
+  -priorities "truth, reversibility, common good"
+```
+
+The document path must be relative and remain inside the workspace after link resolution. Only regular UTF-8 `.md`, `.txt`, and `.json` files up to 65,536 bytes are accepted. The result records the relative reference, byte length, modification time, and SHA-256. It also states `origin_status: not_authenticated` because a hash identifies bytes, not an author or truthful claim.
+
+A deterministic scan reports heading count, external-link strings, open Markdown checklist items, lines containing configured evidence-gap markers, and the first review candidate. These are structural keyword observations, not semantic understanding or proof that a candidate is truly the highest priority.
+
 ## Test and build
 
 From the repository's `prototype` directory, use the supported build script:
 
 ```powershell
 .\build.ps1                 # test, vet, JSON validation, and build
-.\build.ps1 -Action verify  # also run all backend fixture smoke tests
+.\build.ps1 -Action verify  # also run all fixtures and the contained real-document smoke test
 .\build.ps1 -Action test
 .\build.ps1 -Action run     # build and start the TUI
 .\build.ps1 -Action clean
@@ -92,6 +114,7 @@ The synthetic space-governance abstention test, documentation assertions, runner
 ```text
 cmd/bootx-companion/   CLI and strict JSON entry point
 internal/engine/       input validation and decision-packet composition
+internal/evidence/     contained read-only local-file loading and integrity receipts
 internal/model/        typed request, warning, option, assurance, and output models
 internal/policy/       embedded deterministic policy and indicator rules
 internal/tui/          interactive terminal workflow and rendering
@@ -105,6 +128,8 @@ testdata/              synthetic personal, scam, and disaster cases
 - rule indicators are an auditable baseline, not a validated fraud detector;
 - no authoritative source retrieval or cryptographic alert-authority registry exists;
 - timestamps and URLs are preserved but not independently fetched or authenticated;
+- local document authorship, publisher identity, and factual claims are not authenticated;
+- no user-login or operating-system identity authentication exists;
 - no persistent encrypted memory exists;
 - no multilingual or completed accessibility study exists;
 - no calibrated benefit/harm percentages or representative field results exist;

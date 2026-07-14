@@ -1,8 +1,9 @@
 # Personal Decision-Assistance Pipeline
 
 **Status:** `DEV-0` implementation specification; no deployment authorization<br>
-**Version:** 1.1<br>
+**Version:** 1.2<br>
 **Adopted:** 2026-07-12<br>
+**Last updated:** 2026-07-14<br>
 **Primary user:** Joni, with continuing consent and editable preferences<br>
 **Initial platform:** software-only prototype on a mature, supported host operating system<br>
 **Authority:** subordinate to the [Charter](../../CHARTER.md), [Development Guideline](../../DEVELOPMENT_GUIDELINE.md), [AI DNA specification](05-ai-dna-specification.md), [Companion architecture](06-companion-system-architecture.md), and [Safety Case](09-safety-case-and-risk-register.md)
@@ -109,7 +110,7 @@ Every request uses a typed envelope. Free-form content cannot change the envelop
 |---|---|
 | `request_id` | random local identifier; contains no personal meaning |
 | `capability_id` | exactly `assist.personal-decision.v1` |
-| `user_id` | authenticated local owner identifier |
+| `user_id` | declared local identifier in the current prototype; authentication remains a future gate |
 | `created_at` | trustworthy local timestamp and timezone |
 | `goal` | what Joni wants help deciding or understanding |
 | `question` | the direct question to answer |
@@ -593,7 +594,9 @@ The platform-neutral schema and policy package is implemented at [`prototype/per
 - `personal-decision-output.schema.json`;
 - `decision-classes.json`;
 - `policy-rules.json`;
+- contained read-only `.md`, `.txt`, and `.json` workspace-document ingestion with path, type, size, UTF-8, and link-resolution controls;
+- SHA-256/byte-length recomputation and an evidence receipt separating content integrity from author/origin authentication;
 - synthetic safe, ambiguous, high-stakes, emergency, prohibited, and adversarial fixtures;
 - a schema and policy test runner.
 
-The first Go backend and terminal UI consume these contracts on a mature supported host environment. The current fixture corpus is only a baseline and must be expanded before the exit gate. No integration into the opaque BootX operating-system artifacts is authorized.
+The Go backend and terminal UI consume these contracts on a mature supported host environment. Version `0.2.0-dev` may process one operator-confirmed public, non-sensitive local document without treating it as synthetic. It still has no user authentication, network retrieval, external-source authentication, persistent memory, or external action. The current fixture corpus is only a baseline and must be expanded before the exit gate. No integration into the opaque BootX operating-system artifacts is authorized.

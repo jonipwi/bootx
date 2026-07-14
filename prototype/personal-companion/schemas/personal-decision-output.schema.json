@@ -21,6 +21,7 @@
     "blocked_actions",
     "limitations",
     "ai_dna_runtime_checks",
+    "evidence_receipt",
     "data_receipt",
     "user_decision"
   ],
@@ -47,6 +48,7 @@
       "maxItems": 9,
       "items": {"$ref": "#/$defs/assurance"}
     },
+    "evidence_receipt": {"$ref": "#/$defs/evidence_receipt"},
     "data_receipt": {"$ref": "#/$defs/data_receipt"},
     "user_decision": {"type": ["string", "null"]}
   },
@@ -104,6 +106,20 @@
         "synthetic": {"type": "boolean"},
         "raw_content_retention": {"type": "string"},
         "location_use": {"type": "string"}
+      }
+    },
+    "evidence_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_type", "integrity_verified", "byte_length", "origin_status"],
+      "properties": {
+        "source_type": {"type": "string"},
+        "reference": {"type": "string"},
+        "integrity_verified": {"type": "boolean"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "byte_length": {"type": "integer", "minimum": 0},
+        "modified_at": {"type": "string"},
+        "origin_status": {"enum": ["not_authenticated", "user_claimed_verified_not_authenticated"]}
       }
     },
     "warning_card": {

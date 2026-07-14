@@ -34,7 +34,12 @@
       "required": ["type", "origin_verified"],
       "properties": {
         "type": {"type": "string", "minLength": 1, "maxLength": 128},
-        "origin_verified": {"type": "boolean"}
+        "origin_verified": {"type": "boolean"},
+        "reference": {"type": "string", "minLength": 1, "maxLength": 2048},
+        "integrity_verified": {"type": "boolean"},
+        "sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+        "byte_length": {"type": "integer", "minimum": 0, "maximum": 65536},
+        "modified_at": {"type": "string", "format": "date-time"}
       }
     },
     "data_class": {"enum": ["public", "personal", "sensitive", "prohibited"]},
@@ -61,6 +66,23 @@
     {
       "if": {"required": ["warning"]},
       "then": {"properties": {"synthetic": {"const": true}}}
+    },
+    {
+      "if": {
+        "properties": {
+          "content_source": {
+            "properties": {"integrity_verified": {"const": true}},
+            "required": ["integrity_verified"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "content_source": {
+            "required": ["reference", "sha256", "byte_length"]
+          }
+        }
+      }
     }
   ],
   "$defs": {

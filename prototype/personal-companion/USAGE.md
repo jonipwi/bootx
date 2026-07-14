@@ -1,9 +1,9 @@
 # BootX Personal Companion MVP — Complete Usage Guide
 
-**Application version:** `0.1.0-dev`<br>
+**Application version:** `0.2.0-dev`<br>
 **Capability:** `assist.personal-decision.v1`<br>
 **Evidence maturity:** `E2 — Prototype` in a limited host environment<br>
-**Intended operator:** Joni or a developer running approved synthetic tests<br>
+**Intended operator:** Joni or a developer processing approved public local documents and synthetic tests<br>
 **Status:** software-only development prototype; not deployed, safety-certified, or authorized for real emergency reliance
 
 ## 1. What this prototype does
@@ -24,6 +24,7 @@ The prototype includes:
 
 - an interactive line-oriented terminal UI;
 - a strict JSON backend mode;
+- contained read-only ingestion of one explicitly confirmed public local workspace document;
 - personal decision classes `D0`–`D5`;
 - forecast/disaster levels `W0`–`W4` and `WX` for synthetic exercises;
 - nine AI DNA runtime checks;
@@ -31,7 +32,7 @@ The prototype includes:
 - synthetic scam, study, and warning fixtures;
 - no third-party Go modules.
 
-It does **not** include a generative AI model, network lookup, browser, persistent memory, message sending, phone calls, payment, account access, device/robot control, family/public broadcast, or emergency dispatch.
+It does **not** include a generative AI model, network lookup, browser, persistent memory, user authentication, external source or author authentication, message sending, phone calls, payment, account access, device/robot control, family/public broadcast, or emergency dispatch.
 
 ## 2. Safety rules before use
 
@@ -39,6 +40,7 @@ Use the MVP only for:
 
 - low-stakes, reversible, non-sensitive personal decisions;
 - public or deliberately minimized information;
+- one deliberately reviewed public and non-sensitive `.md`, `.txt`, or `.json` file inside a user-selected workspace;
 - explicitly synthetic sensitive scenarios;
 - explicitly synthetic forecast/disaster exercises;
 - software and policy testing.
@@ -124,7 +126,7 @@ Syntax:
 |---|---|
 | `build` | formatting check, tests, vet, JSON validation, executable build, version smoke test, SHA-256, and manifest |
 | `test` | formatting check, `go test ./...`, and `go vet ./...`; no executable |
-| `verify` | full build plus all backend fixture smoke tests |
+| `verify` | full build plus all backend fixtures and a contained non-synthetic read-only BootX research-document smoke test |
 | `run` | full build, then launches the terminal UI |
 | `clean` | removes only the default `personal-companion\dist` directory |
 
@@ -216,7 +218,8 @@ The main menu is:
 ```text
 1  Personal decision assistance
 2  Forecast/disaster warning assessment
-3  Safety boundaries
+3  Read-only local workspace document
+4  Safety boundaries
 q  Quit and discard session data
 ```
 
@@ -327,9 +330,57 @@ Review:
 
 Choose `y` only if the scope is correct. Choosing `n` cancels processing.
 
-## 10. Synthetic forecast/disaster workflow
+## 10. Read-only local workspace document
 
-Choose menu option `2`. This workflow is **synthetic-only** in version `0.1.0-dev`.
+This is the first real, non-synthetic integration. It reads a file the operator deliberately selects; it does not retrieve information from a network or claim the document is true.
+
+### TUI workflow
+
+Choose menu option `3`, then provide:
+
+1. a workspace root;
+2. a document path relative to that root;
+3. explicit confirmation that the file was reviewed as public and non-sensitive;
+4. a narrow goal and direct question;
+5. optional decision priorities;
+6. final confirmation of the visible processing scope.
+
+The file is not opened until after the public/non-sensitive confirmation. BootX accepts only a regular UTF-8 `.md`, `.txt`, or `.json` file of at most 65,536 bytes. The resolved file must remain inside the resolved workspace root, including after symbolic-link or junction resolution.
+
+### Command-line workflow
+
+Build first, then run from the repository root:
+
+```powershell
+.\prototype\personal-companion\dist\bootx-companion-windows-amd64.exe `
+  -workspace . `
+  -document docs\research\civilization\religion-ideology-and-decision-integrity.md `
+  -document-public `
+  -goal "Choose the next evidence-improvement task" `
+  -question "Which missing fact should be verified first?" `
+  -priorities "truth, reversibility, common good"
+```
+
+`-document-public` is an explicit operator assertion. Do not use it for a file containing passwords, private correspondence, identity records, financial information, health information, precise private location, or other sensitive material.
+
+### Evidence receipt meaning
+
+The output records:
+
+- workspace-relative reference;
+- exact UTF-8 byte length;
+- modification time observed during reading;
+- SHA-256 of the processed bytes;
+- `integrity_verified: true` when the engine independently recomputes and matches the receipt;
+- `origin_status: not_authenticated`.
+
+SHA-256 establishes which bytes were processed. It does not establish authorship, publisher identity, factual truth, completeness, freshness, safety, or approval. BootX does not authenticate the local user; `user_id` is a declared identifier only.
+
+The deterministic document scan also reports heading count, external-link strings, open Markdown checklist items, evidence-gap-marker lines, and the first candidate for human review. A marker can be missed or taken out of context; it is a navigation aid, not semantic understanding, source verification, or a priority certificate.
+
+## 11. Synthetic forecast/disaster workflow
+
+Choose menu option `2`. This workflow is **synthetic-only** in version `0.2.0-dev`.
 
 The UI requests:
 
@@ -350,7 +401,7 @@ The prototype does not retrieve, authenticate, or refresh a real warning feed. M
 
 For an actual immediate danger, do not spend time operating this prototype. Move away from the danger when safe and use a known responsible authority or emergency channel.
 
-## 11. Reading decision classes
+## 12. Reading decision classes
 
 | Class | Meaning | System behavior |
 |---|---|---|
@@ -363,7 +414,7 @@ For an actual immediate danger, do not spend time operating this prototype. Move
 
 A higher number is not a danger probability or moral score. It identifies the authority and control boundary.
 
-## 12. Reading response modes
+## 13. Reading response modes
 
 | Mode | Interpretation |
 |---|---|
@@ -380,7 +431,7 @@ A higher number is not a danger probability or moral score. It identifies the au
 | `BLOCK` | request or data is prohibited |
 | `DEGRADED` | a dependency or integrity condition prevents normal output |
 
-## 13. Reading warning levels
+## 14. Reading warning levels
 
 | Level | Meaning | Personal posture |
 |---|---|---|
@@ -393,7 +444,7 @@ A higher number is not a danger probability or moral score. It identifies the au
 
 BootX warning level, official status, evidence tier, and AI DNA runtime checks are separate fields. None is an overall probability that an event will occur.
 
-## 14. Reading the decision packet
+## 15. Reading the decision packet
 
 The TUI displays:
 
@@ -412,9 +463,11 @@ The TUI displays:
 - `Limitations` — what was not verified, decided, or performed;
 - `Data receipt` — memory, remote processing, synthetic status, retention, and location use.
 
+For contained local documents, the packet also shows an evidence receipt containing exact selected-byte integrity and an explicit origin-authentication status.
+
 After viewing the packet, the UI can print structured JSON. Selecting this option does not save a file by itself, but terminal capture or redirection can persist it.
 
-## 15. AI DNA runtime checks
+## 16. AI DNA runtime checks
 
 The output reports nine dimensions:
 
@@ -437,7 +490,7 @@ Statuses are:
 
 These checks are produced by the prototype itself and are not independent assurance. They must not be interpreted as a forecast probability, accuracy score, moral rating, or safety certification.
 
-## 16. Strict JSON backend mode
+## 17. Strict JSON backend mode
 
 Change to the real module:
 
@@ -487,10 +540,16 @@ CLI flags:
 | `-input -` | read one strict request object from standard input |
 | `-compact` | emit compact JSON in backend mode |
 | `-version` | print application version and exit |
+| `-workspace <path>` | workspace boundary for read-only document mode |
+| `-document <relative-path>` | contained `.md`, `.txt`, or `.json` file to read |
+| `-document-public` | required confirmation that the document is public and non-sensitive |
+| `-goal <text>` | decision goal for document mode |
+| `-question <text>` | direct question for document mode |
+| `-priorities <csv>` | optional comma-separated priorities for document mode |
 
 Unknown fields, unsupported enum values, non-denied remote permission, multiple JSON objects, oversized selected content, non-synthetic sensitive data, and non-synthetic warning input fail closed.
 
-## 17. JSON input contract
+## 18. JSON input contract
 
 Primary schema: [`schemas/personal-decision-input.schema.json`](schemas/personal-decision-input.schema.json)
 
@@ -498,12 +557,12 @@ Primary schema: [`schemas/personal-decision-input.schema.json`](schemas/personal
 |---|---|
 | `request_id` | non-empty local identifier |
 | `capability_id` | exactly `assist.personal-decision.v1` |
-| `user_id` | authenticated local identifier |
+| `user_id` | locally declared identifier; this prototype does not authenticate it |
 | `created_at` | RFC 3339 date-time |
 | `goal` | non-empty decision purpose |
 | `question` | non-empty direct question |
 | `selected_content` | maximum 65,536 bytes at runtime |
-| `content_source` | typed source and origin-verification assertion |
+| `content_source` | typed source; optional contained-file reference, byte length, modification time, and SHA-256 integrity fields; origin claims are not authenticated |
 | `data_class` | `public`, `personal`, `sensitive`, or `prohibited` |
 | `declared_domain` | one supported domain |
 | `memory_permission` | `none` or `session` |
@@ -540,7 +599,7 @@ Minimal low-stakes request:
 
 The warning extension is fully specified in the schema and demonstrated by [`testdata/warning-prepare.json`](testdata/warning-prepare.json).
 
-## 18. JSON output contract
+## 19. JSON output contract
 
 Primary schema: [`schemas/personal-decision-output.schema.json`](schemas/personal-decision-output.schema.json)
 
@@ -563,10 +622,11 @@ Important fields:
 | `limitations` | explicit non-claims |
 | `warning` | optional `W0`–`W4`/`WX` card |
 | `ai_dna_runtime_checks` | nine dimension records |
+| `evidence_receipt` | source type, relative reference, integrity result, hash, bytes, observed modification time, and explicit origin-authentication status |
 | `data_receipt` | memory, remote, synthetic, retention, and location record |
 | `user_decision` | `null` in this MVP; BootX does not choose for the user |
 
-## 19. Synthetic fixtures and expected outputs
+## 20. Synthetic fixtures and expected outputs
 
 | Fixture | Purpose | Expected result |
 |---|---|---|
@@ -596,7 +656,7 @@ It records the complete synthetic input, observable deterministic processing evi
 
 The space-governance boundary case is documented at [`../TEST_CASE_SPACE_GOVERNANCE.md`](../TEST_CASE_SPACE_GOVERNANCE.md). It verifies that the MVP abstains from certifying a fictional lunar settlement and that the research chapter preserves mandatory evidence boundaries.
 
-## 20. Troubleshooting
+## 21. Troubleshooting
 
 ### `go.mod file not found`
 
@@ -657,13 +717,13 @@ The input contains trailing data or multiple objects. Submit one object per proc
 
 ### The output does not sound like a generative AI
 
-That is expected. Version `0.1.0-dev` is a deterministic baseline. A bounded model is intentionally disconnected until the baseline is frozen, measured, and reviewed.
+That is expected. Version `0.2.0-dev` is a deterministic baseline with contained read-only local-document ingestion. A bounded model is intentionally disconnected until the baseline is frozen, measured, and reviewed.
 
 ### Build succeeds but there is no `dist` directory where expected
 
 Check whether `-OutputDirectory` was supplied. The build summary prints the absolute binary and manifest paths.
 
-## 21. Safe cleanup
+## 22. Safe cleanup
 
 Remove only the default generated build output:
 
@@ -675,7 +735,7 @@ The script refuses to clean a custom output path.
 
 The application creates no installed service, registry entry, scheduled task, persistent memory database, or background process. To stop the TUI, choose `q` or press `Ctrl+C`. To remove the source, use normal repository/version-control procedures only after preserving any work you intend to keep.
 
-## 22. Operator checklist
+## 23. Operator checklist
 
 Before processing:
 
@@ -694,7 +754,7 @@ Before acting on output:
 - [ ] I understand that BootX did not execute an external action.
 - [ ] The final decision remains mine.
 
-## 23. Governing documentation
+## 24. Governing documentation
 
 - [Personal Decision-Assistance Pipeline](../../docs/handbook/14-personal-decision-pipeline.md)
 - [Development Guideline](../../DEVELOPMENT_GUIDELINE.md)

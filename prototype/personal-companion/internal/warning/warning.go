@@ -103,7 +103,7 @@ func Evaluate(in model.WarningInput) (Result, error) {
 		card.Limitations = append(card.Limitations, "Immediate guidance is based on direct/user-reported danger, not an independently verified official alert.")
 	}
 	if in.OfficialStatus == "active" && in.AuthorityAuthenticated {
-		card.Observed = append(card.Observed, "An active alert was supplied with an authenticated issuing authority.")
+		card.Observed = append(card.Observed, "The synthetic input declares an active alert and an authenticated issuing authority; BootX did not authenticate either claim.")
 	}
 	if in.Certainty != "" && !strings.EqualFold(in.Certainty, "Observed") {
 		card.Forecast = append(card.Forecast, "The source characterizes event certainty as "+in.Certainty+".")
@@ -138,12 +138,12 @@ func assignLevel(in model.WarningInput) (string, string) {
 		}
 		instruction := strings.ToLower(in.Instruction)
 		if strings.EqualFold(in.Urgency, "Immediate") || containsAny(instruction, []string{"evacuate now", "take shelter now", "move to higher ground", "leave immediately"}) {
-			return W4, "An authenticated relevant alert requires immediate responsive action."
+			return W4, "The synthetic input declares an authenticated relevant alert requiring immediate responsive action."
 		}
 		if strings.EqualFold(in.Severity, "Extreme") || strings.EqualFold(in.Severity, "Severe") || strings.EqualFold(in.Urgency, "Expected") {
-			return W3, "An authenticated relevant alert supports protective action within the available lead time."
+			return W3, "The synthetic input declares an authenticated relevant alert supporting protective action within the exercise lead time."
 		}
-		return W2, "An authenticated relevant alert supports low-burden preparation while conditions are monitored."
+		return W2, "The synthetic input declares an authenticated relevant alert supporting low-burden preparation while the exercise is monitored."
 	}
 
 	switch strings.ToUpper(in.EvidenceTier) {
@@ -174,7 +174,7 @@ func describe(level string) (label string, mode model.ResponseMode, posture stri
 			"Take low-burden reversible preparation steps and preserve access to official updates.", "Review at the next official bulletin or earlier if conditions change."
 	case W3:
 		return "PROTECT", model.ModeProtect, "PROTECT NOW", model.D4Emergency,
-			"Follow the authenticated issuing authority's instruction and activate the personal safety plan.", "Continuously monitor official updates until the alert is canceled or expires."
+			"In the synthetic exercise, follow the supplied instruction and activate the test safety plan; real use requires an independently authenticated authority.", "Review the next exercise update until the supplied alert is canceled or expires."
 	case W4:
 		return "URGENT ACTION", model.ModeUrgentGuidance, "ACT NOW", model.D4Emergency,
 			"Move away from immediate danger and follow official or on-scene responder instructions now.", "Do not delay immediate safety action for another AI update."

@@ -1,6 +1,8 @@
 package engine
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
 	"strings"
 	"testing"
 	"time"
@@ -107,6 +109,77 @@ func TestRuntimeAssuranceHasNineDimensions(t *testing.T) {
 	}
 	if len(packet.Assurance) != 9 {
 		t.Fatalf("assurance checks = %d, want 9", len(packet.Assurance))
+	}
+}
+
+func TestIntegrityVerifiedContentProducesEvidenceReceipt(t *testing.T) {
+	e := mustEngine(t)
+	r := request()
+	r.SelectedContent = "A real public workspace study document."
+	digest := sha256.Sum256([]byte(r.SelectedContent))
+	r.ContentSource = model.ContentSource{
+		Type:              "local_workspace_file",
+		Reference:         "docs/study.md",
+		IntegrityVerified: true,
+		SHA256:            hex.EncodeToString(digest[:]),
+		ByteLength:        len([]byte(r.SelectedContent)),
+		ModifiedAt:        "2026-07-14T10:00:00Z",
+	}
+	packet, err := e.Process(r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !packet.EvidenceReceipt.IntegrityVerified || packet.EvidenceReceipt.SHA256 != r.ContentSource.SHA256 {
+		t.Fatal("integrity evidence receipt missing or incorrect")
+	}
+	if packet.EvidenceReceipt.OriginStatus != "not_authenticated" {
+		t.Fatalf("origin status = %q", packet.EvidenceReceipt.OriginStatus)
+	}
+	if !findingContains(packet.Observations, "match the declared SHA-256") {
+		t.Fatal("verified-byte observation missing")
+	}
+}
+
+func TestIntegrityMetadataRejectsTampering(t *testing.T) {
+	e := mustEngine(t)
+	r := request()
+	r.ContentSource = model.ContentSource{
+		Type:              "local_workspace_file",
+		Reference:         "docs/study.md",
+		IntegrityVerified: true,
+		SHA256:            strings.Repeat("0", 64),
+		ByteLength:        len([]byte(r.SelectedContent)),
+	}
+	if _, err := e.Process(r); err == nil || !strings.Contains(err.Error(), "does not match") {
+		t.Fatalf("expected hash mismatch, got %v", err)
+	}
+}
+
+func TestOriginVerifiedRemainsUnauthenticatedClaim(t *testing.T) {
+	e := mustEngine(t)
+	r := request()
+	r.ContentSource.OriginVerified = true
+	packet, err := e.Process(r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if packet.EvidenceReceipt.OriginStatus != "user_claimed_verified_not_authenticated" {
+		t.Fatalf("origin status = %q", packet.EvidenceReceipt.OriginStatus)
+	}
+	if !findingContains(packet.Observations, "did not authenticate") {
+		t.Fatal("origin authentication limitation missing")
+	}
+}
+
+func TestPacketDoesNotClaimUserAuthentication(t *testing.T) {
+	e := mustEngine(t)
+	packet, err := e.Process(request())
+	if err != nil {
+		t.Fatal(err)
+	}
+	assumptions := strings.Join(packet.Assumptions, " ")
+	if strings.Contains(assumptions, "authenticated local user") || !strings.Contains(assumptions, "no user-authentication system") {
+		t.Fatalf("authentication boundary is misleading: %s", assumptions)
 	}
 }
 

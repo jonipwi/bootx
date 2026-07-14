@@ -16,6 +16,7 @@ This directory separates normative project governance, the professional implemen
 - [Research library](research/README.md) — original studies organized by subject
 - [Artifact inventory](../artifacts/README.md) — supplied binary images, screenshot, hashes, and limitations
 - [Space-governance research](research/space/civilization-governance-before-space-expansion.md) - established legal foundation, BootX hypotheses, readiness gates, rights, bounded AI, and test agenda
+- [Religion, ideology, and decision integrity](research/civilization/religion-ideology-and-decision-integrity.md) - careful comparison, non-discrimination gates, decision formulas, and inheritance controls
 
 ## Document authority
 

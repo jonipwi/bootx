@@ -1,9 +1,9 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.9<br>
-**Last updated:** 2026-07-12<br>
-**Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype implemented for synthetic evaluation<br>
+**Version:** 1.11<br>
+**Last updated:** 2026-07-14<br>
+**Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype supports limited public read-only local work and synthetic evaluation<br>
 **Current release posture:** Research documentation, an unvalidated host-based Go MVP, and opaque educational OS artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
 
 ## 1. Purpose
@@ -169,6 +169,7 @@ This block does not prevent the requirements, simulation, threat-modeling, synth
 - [x] Documentation verification and corrections register covering facts, formulas, logic, local artifacts, status labels, and remaining review gates.
 - [x] Personal decision-assistance pipeline defining typed input, deterministic policy and evidence processing, human-controlled output, personalization limits, schemas, risk classes, and MVP acceptance tests.
 - [x] Space-governance research chapter separating established primary legal sources from `E1` hypotheses, with six mandatory non-compensable readiness gates, a non-certifying readiness profile, AI limits, pluralistic rights safeguards, and an inheritance research agenda.
+- [x] Religion-and-ideology decision-integrity chapter separating theology, ideology, states, institutions, and individuals; rejecting unsupported similarity percentages and profiling; and defining rights-gated common-good decision formulas.
 
 ### Legacy studies preserved as research inputs
 
@@ -199,9 +200,16 @@ Completed implementation baseline:
 - [x] Synthetic Typhoon Bavi end-to-end regression with a complete test case, dedicated runner, typed fixture, mandatory assertions, and input/process/output evidence log.
 - [x] Plain-language Typhoon Bavi test summary distinguishing a software pass from forecast or field validation.
 - [x] Synthetic space-governance regression checking sixteen documentation boundaries and eighteen MVP safety assertions, with `D3 / ABSTAIN`, complete evidence log, and no certification authority.
+- [x] Contained read-only real-work integration for one explicitly confirmed public `.md`, `.txt`, or `.json` workspace document, available through CLI and TUI.
+- [x] Local evidence receipt with resolved relative reference, exact byte length, observed modification time, SHA-256 verification, and explicit `origin_status: not_authenticated`.
+- [x] Deterministic real-document scan for headings, external-link strings, open checklist items, evidence-gap markers, and a bounded first human-review candidate.
+- [x] Workspace traversal, absolute-path, symlink/junction escape, unsupported-type, oversize, invalid-text, hash-tampering, and missing-public-confirmation boundaries covered by implementation or tests.
+- [x] Removed the false authenticated-user assumption from output; user and origin fields are now described as declarations unless independently authenticated.
 
 Open `DEV-1` gates:
 
+- [ ] Add real user authentication only after a reviewed local identity and recovery design; current `user_id` remains declarative.
+- [ ] Add external evidence connectors only after source allowlisting, authentication, freshness, conflict, outage, privacy, and degraded-mode controls exist.
 - [ ] Expand the synthetic/adversarial corpus across ambiguity, Unicode deception, malformed input, hazards, languages, accessibility needs, and correlated failures.
 - [ ] Measure precision, recall, calibration, false-alert burden, missed-alert risk, correct safe action, and comprehension against preregistered thresholds.
 - [ ] Complete threat modeling, parser review, fuzzing, dependency/build provenance, and independent security review.
@@ -412,6 +420,26 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 16. Change log
+
+### Version 1.11 - 2026-07-14
+
+- Implemented the first bounded real-work path in Personal Companion `0.2.0-dev`: read-only processing of one operator-selected public workspace document.
+- Added workspace containment after link resolution, regular-file and extension allowlists, a 65,536-byte limit, UTF-8/NUL validation, and no-write behavior.
+- Added SHA-256 and byte-length recomputation in the engine plus a structured evidence receipt that distinguishes byte integrity from unauthenticated authorship and truth.
+- Added bounded structural document insight so real local work receives an auditable review candidate instead of only generic options.
+- Added CLI flags and a terminal workflow with explicit public/non-sensitive confirmation before file access.
+- Corrected misleading authenticated-user and synthetic warning-authentication wording.
+- Added evidence, engine, CLI, and TUI tests while keeping networking, sensitive data, real warnings, persistence, external actions, and robotics blocked.
+
+### Version 1.10 - 2026-07-14
+
+- Added `Religion, Ideology, and Common-Good Decision Integrity` as an inherited research chapter.
+- Preserved the useful distinction between limited shared social concerns and identity of theology, worldview, or political system.
+- Added safeguards against collective-intent inference, religious and ideological profiling, dehumanization, false equivalence, and claims of AI or divine political authority.
+- Added an experimental similarity formula with strict validity requirements and prohibited high-impact uses; no similarity percentages are asserted.
+- Added hard-gate admissibility, expected-loss, early-action, and non-summed common-good profile formulas.
+- Preserved the preventive-decision insight while rejecting the withdrawn `93.3%` Bavi/Taiwan score and unsupported country-level causal comparison.
+- Added Qur'anic, Marx/Engels, UN human-rights, and comparative-religion methodology sources plus inheritance requirements.
 
 ### Version 1.9 - 2026-07-12
 

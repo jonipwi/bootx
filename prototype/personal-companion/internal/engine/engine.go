@@ -1,6 +1,8 @@
 package engine
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
 	"fmt"
 	"strings"
 	"time"
@@ -61,6 +63,9 @@ func (e *Engine) validate(request model.Request) error {
 	if strings.TrimSpace(request.ContentSource.Type) == "" {
 		return fmt.Errorf("content_source.type is required")
 	}
+	if err := validateContentIntegrity(request); err != nil {
+		return err
+	}
 	if len([]byte(request.SelectedContent)) > e.policy.Rules.MaxSelectedContentBytes {
 		return fmt.Errorf("selected_content exceeds %d bytes", e.policy.Rules.MaxSelectedContentBytes)
 	}
@@ -93,11 +98,11 @@ func (e *Engine) basePacket(request model.Request) model.Packet {
 		RequestID:      request.RequestID,
 		CapabilityID:   model.CapabilityID,
 		GeneratedAt:    e.now().UTC(),
-		RuntimeNotice:  "Deterministic DEV-1 prototype; no AI model, network lookup, external action, or safety certification.",
+		RuntimeNotice:  "Deterministic DEV-1 prototype with contained read-only local-document ingestion; no AI model, network lookup, external action, or safety certification.",
 		GoalUnderstood: strings.TrimSpace(request.Goal),
 		Observations:   []model.Finding{},
 		Assumptions: []string{
-			"The declared goal, domain, and priorities were supplied by the authenticated local user.",
+			"The goal, domain, user identifier, and priorities were declared locally; this prototype has no user-authentication system.",
 		},
 		Unknowns: []string{},
 		Options:  []model.Option{},
@@ -113,8 +118,10 @@ func (e *Engine) basePacket(request model.Request) model.Packet {
 		},
 		Limitations: []string{
 			"No external source, identity, account, location, forecast, or event was independently verified by this offline build.",
+			"A matching content hash proves which bytes were processed, not who authored them or whether their claims are true.",
 			"Recommendations are advisory; Joni remains the decision-maker.",
 		},
+		EvidenceReceipt: evidenceReceipt(request.ContentSource, len([]byte(request.SelectedContent))),
 		DataReceipt: model.DataReceipt{
 			MemoryUsed:       false,
 			RemoteProcessing: false,
@@ -140,6 +147,12 @@ func (e *Engine) processGeneral(packet model.Packet, request model.Request, anal
 	packet.DecisionClass = class
 	packet.ResponseMode = mode
 	packet.Unknowns = append(packet.Unknowns, "The offline MVP has no retrieved evidence beyond the deliberately selected input.")
+	isLocalDocument := request.ContentSource.Type == "local_workspace_file" && request.ContentSource.IntegrityVerified
+	localSummary := localDocumentSummary{}
+	if isLocalDocument {
+		localSummary = analyzeLocalDocument(request.SelectedContent)
+		appendLocalDocumentFindings(&packet, localSummary)
+	}
 
 	switch {
 	case analysis.HasCredential || analysis.HasPayment || (analysis.HasURL && analysis.HasUrgency):
@@ -169,6 +182,18 @@ func (e *Engine) processGeneral(packet model.Packet, request model.Request, anal
 		}
 		packet.NextSafeStep = "If danger is immediate, move away from it and use an independently known local emergency channel; otherwise verify the responsible authority."
 		packet.ResponseMode = model.ModeUrgentGuidance
+	case isLocalDocument:
+		packet.Options = localDocumentOptions(localSummary)
+		packet.Recommendation = model.Recommendation{
+			Status:   "advisory",
+			OptionID: "review-evidence-gap",
+			Basis:    "A contained deterministic scan can identify structural review candidates, but a human must interpret context and verify sources.",
+		}
+		if localSummary.FirstGap != "" {
+			packet.NextSafeStep = "Review this candidate in context and verify its most material supporting source: " + localSummary.FirstGap
+		} else {
+			packet.NextSafeStep = "Choose one material claim and record the exact source, evidence maturity, uncertainty, and correction condition."
+		}
 	default:
 		packet.Options = generalOptions(request.UserPriorities)
 		packet.Recommendation = model.Recommendation{
@@ -214,6 +239,19 @@ func (e *Engine) processWarning(packet model.Packet, request model.Request, anal
 }
 
 func appendAnalysisFindings(packet *model.Packet, request model.Request, analysis policy.Analysis) {
+	if request.ContentSource.IntegrityVerified {
+		packet.Observations = append(packet.Observations, model.Finding{
+			Claim:  "Selected content bytes match the declared SHA-256 and byte length.",
+			Source: fallbackReference(request.ContentSource.Reference, request.ContentSource.Type),
+			Status: "integrity_verified_origin_not_authenticated",
+		})
+	} else if request.ContentSource.OriginVerified {
+		packet.Observations = append(packet.Observations, model.Finding{
+			Claim:  "The input declares the content origin verified, but this offline prototype did not authenticate that origin.",
+			Source: request.ContentSource.Type,
+			Status: "user_claim_not_independently_verified",
+		})
+	}
 	if len(analysis.MatchedSignals) == 0 {
 		packet.Observations = append(packet.Observations, model.Finding{
 			Claim:  "No configured scam, credential, payment, urgency, or prompt-injection text indicator was detected.",
@@ -229,6 +267,60 @@ func appendAnalysisFindings(packet *model.Packet, request model.Request, analysi
 			Status: "observed_indicator_not_verdict",
 		})
 	}
+}
+
+func validateContentIntegrity(request model.Request) error {
+	source := request.ContentSource
+	if !source.IntegrityVerified {
+		if source.SHA256 != "" || source.ByteLength != 0 || source.Reference != "" || source.ModifiedAt != "" {
+			return fmt.Errorf("content-source integrity metadata requires integrity_verified=true")
+		}
+		return nil
+	}
+	if strings.TrimSpace(source.Reference) == "" {
+		return fmt.Errorf("content_source.reference is required for integrity-verified content")
+	}
+	digest, err := hex.DecodeString(source.SHA256)
+	if err != nil || len(digest) != sha256.Size {
+		return fmt.Errorf("content_source.sha256 must be a 64-character hexadecimal SHA-256 digest")
+	}
+	contentBytes := []byte(request.SelectedContent)
+	if source.ByteLength != len(contentBytes) {
+		return fmt.Errorf("content_source.byte_length does not match selected_content bytes")
+	}
+	actual := sha256.Sum256(contentBytes)
+	if !strings.EqualFold(source.SHA256, hex.EncodeToString(actual[:])) {
+		return fmt.Errorf("content_source.sha256 does not match selected_content bytes")
+	}
+	if source.ModifiedAt != "" {
+		if _, err := time.Parse(time.RFC3339Nano, source.ModifiedAt); err != nil {
+			return fmt.Errorf("content_source.modified_at must be RFC 3339: %w", err)
+		}
+	}
+	return nil
+}
+
+func evidenceReceipt(source model.ContentSource, selectedBytes int) model.EvidenceReceipt {
+	originStatus := "not_authenticated"
+	if source.OriginVerified {
+		originStatus = "user_claimed_verified_not_authenticated"
+	}
+	return model.EvidenceReceipt{
+		SourceType:        source.Type,
+		Reference:         source.Reference,
+		IntegrityVerified: source.IntegrityVerified,
+		SHA256:            strings.ToLower(source.SHA256),
+		ByteLength:        selectedBytes,
+		ModifiedAt:        source.ModifiedAt,
+		OriginStatus:      originStatus,
+	}
+}
+
+func fallbackReference(reference, sourceType string) string {
+	if strings.TrimSpace(reference) != "" {
+		return reference
+	}
+	return sourceType
 }
 
 func classifyGeneral(request model.Request, analysis policy.Analysis) (model.DecisionClass, model.ResponseMode) {
@@ -289,7 +381,7 @@ func emergencyOptions() []model.Option {
 
 func warningOptions(level string) []model.Option {
 	base := []model.Option{
-		{OptionID: "official-instruction", Summary: "Read and follow the authenticated authority's instruction when it applies.", Benefits: []string{"preserves accountable source guidance"}, Risks: []string{"area and freshness must be verified"}, Reversibility: "varies", ExternalEffect: "user_controlled"},
+		{OptionID: "official-instruction", Summary: "In this exercise, review the instruction attributed to the authority; real use requires independent authentication outside BootX.", Benefits: []string{"preserves the source wording for review"}, Risks: []string{"issuer, area, and freshness are not authenticated by this prototype"}, Reversibility: "varies", ExternalEffect: "user_controlled"},
 		{OptionID: "verify-source", Summary: "Verify issuer, status, area, time, and update/cancellation through an independently obtained official channel.", Benefits: []string{"reduces spoofing and stale-alert risk"}, Risks: []string{"verification takes time"}, Reversibility: "easy", ExternalEffect: "none"},
 	}
 	switch level {

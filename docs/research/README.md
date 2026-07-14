@@ -26,6 +26,7 @@ They are not automatically peer-reviewed, independently verified, or operational
 - [AI Companion Gravitation Index](civilization/acgi-case-formula.md)
 - [Civilization AI Survival](civilization/civilization-ai-survival.md)
 - [Disaster Human + AI: Three Governance Dilemmas sample test case](civilization/disaster-human-ai-three-dilemmas-test-case.md)
+- [Religion, Ideology, and Common-Good Decision Integrity](civilization/religion-ideology-and-decision-integrity.md)
 
 ## Disaster preparedness case material
 

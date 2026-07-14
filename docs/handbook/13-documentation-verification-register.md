@@ -1,8 +1,9 @@
 # Documentation Verification and Corrections Register
 
 **Status:** Internal evidence and consistency audit; not independent peer, legal, or safety certification<br>
-**Version:** 1.1<br>
+**Version:** 1.2<br>
 **Audit date:** 2026-07-12<br>
+**Last updated:** 2026-07-14<br>
 **Scope:** repository documentation, formulas, local artifact claims, citations, chronology, and internal links present at the audit date<br>
 **Next review:** after final official reports for the 2026 Maysak and Bavi events, source-code restoration, or any material standards change
 
@@ -50,6 +51,7 @@ It did not perform independent binary reverse engineering, legal opinion, human-
 | C-011 | Build/install guidance | Commands appeared executable although source/build inputs are absent | Marked historical/planned and blocked; opaque artifacts are limited to isolated educational inspection until provenance and reproducibility are restored |
 | C-012 | Standards status | Version state could become stale | Added dated notes that AI RMF 1.0 is under revision and NIST Privacy Framework 1.1 remained an initial public draft/forthcoming final at the audit date |
 | C-013 | Space governance | The draft labeled its central causal/governance thesis `E2-E3`, assigned unsupported qualitative likelihoods, and proposed unvalidated 0-to-36 readiness thresholds | Corrected: established treaty and institutional claims are cited separately; the central thesis is `E1 - Hypothesis`; risk priorities are not probabilities; mandatory gates override a non-summed research profile that cannot certify readiness |
+| C-014 | Religion and ideology | The source conversation risked conflating Islam, Muslims, Muslim-majority governments, communism, and diplomatic cooperation; it also requested unsupported religion-similarity percentages and reused the withdrawn `93.3%` disaster score | Corrected: categories and claim types are separated; comparison requires a defined corpus and validated method; profiling and human-worth uses are prohibited; the disaster score remains withdrawn; claims are tied to limited sources and `E1` status |
 
 ## 4. Mathematical verification
 

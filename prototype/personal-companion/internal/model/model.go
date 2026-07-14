@@ -4,7 +4,7 @@ import "time"
 
 const (
 	CapabilityID = "assist.personal-decision.v1"
-	Version      = "0.1.0-dev"
+	Version      = "0.2.0-dev"
 )
 
 type DataClass string
@@ -61,8 +61,13 @@ const (
 )
 
 type ContentSource struct {
-	Type           string `json:"type"`
-	OriginVerified bool   `json:"origin_verified"`
+	Type              string `json:"type"`
+	OriginVerified    bool   `json:"origin_verified"`
+	Reference         string `json:"reference,omitempty"`
+	IntegrityVerified bool   `json:"integrity_verified,omitempty"`
+	SHA256            string `json:"sha256,omitempty"`
+	ByteLength        int    `json:"byte_length,omitempty"`
+	ModifiedAt        string `json:"modified_at,omitempty"`
 }
 
 type WarningInput struct {
@@ -144,6 +149,16 @@ type DataReceipt struct {
 	LocationUse      string `json:"location_use"`
 }
 
+type EvidenceReceipt struct {
+	SourceType        string `json:"source_type"`
+	Reference         string `json:"reference,omitempty"`
+	IntegrityVerified bool   `json:"integrity_verified"`
+	SHA256            string `json:"sha256,omitempty"`
+	ByteLength        int    `json:"byte_length"`
+	ModifiedAt        string `json:"modified_at,omitempty"`
+	OriginStatus      string `json:"origin_status"`
+}
+
 type WarningCard struct {
 	EventID             string   `json:"event_id"`
 	HazardType          string   `json:"hazard_type"`
@@ -172,23 +187,24 @@ type WarningCard struct {
 }
 
 type Packet struct {
-	RequestID      string           `json:"request_id"`
-	CapabilityID   string           `json:"capability_id"`
-	GeneratedAt    time.Time        `json:"generated_at"`
-	RuntimeNotice  string           `json:"runtime_notice"`
-	DecisionClass  DecisionClass    `json:"decision_class"`
-	ResponseMode   ResponseMode     `json:"response_mode"`
-	GoalUnderstood string           `json:"goal_understood"`
-	Observations   []Finding        `json:"observations"`
-	Assumptions    []string         `json:"assumptions"`
-	Unknowns       []string         `json:"unknowns"`
-	Options        []Option         `json:"options"`
-	Recommendation Recommendation   `json:"recommendation"`
-	NextSafeStep   string           `json:"next_safe_step"`
-	BlockedActions []string         `json:"blocked_actions"`
-	Limitations    []string         `json:"limitations"`
-	Warning        *WarningCard     `json:"warning,omitempty"`
-	Assurance      []AssuranceCheck `json:"ai_dna_runtime_checks"`
-	DataReceipt    DataReceipt      `json:"data_receipt"`
-	UserDecision   *string          `json:"user_decision"`
+	RequestID       string           `json:"request_id"`
+	CapabilityID    string           `json:"capability_id"`
+	GeneratedAt     time.Time        `json:"generated_at"`
+	RuntimeNotice   string           `json:"runtime_notice"`
+	DecisionClass   DecisionClass    `json:"decision_class"`
+	ResponseMode    ResponseMode     `json:"response_mode"`
+	GoalUnderstood  string           `json:"goal_understood"`
+	Observations    []Finding        `json:"observations"`
+	Assumptions     []string         `json:"assumptions"`
+	Unknowns        []string         `json:"unknowns"`
+	Options         []Option         `json:"options"`
+	Recommendation  Recommendation   `json:"recommendation"`
+	NextSafeStep    string           `json:"next_safe_step"`
+	BlockedActions  []string         `json:"blocked_actions"`
+	Limitations     []string         `json:"limitations"`
+	Warning         *WarningCard     `json:"warning,omitempty"`
+	Assurance       []AssuranceCheck `json:"ai_dna_runtime_checks"`
+	EvidenceReceipt EvidenceReceipt  `json:"evidence_receipt"`
+	DataReceipt     DataReceipt      `json:"data_receipt"`
+	UserDecision    *string          `json:"user_decision"`
 }

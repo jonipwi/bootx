@@ -12,6 +12,7 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $moduleRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot 'personal-companion'))
+$repositoryRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 if (-not (Test-Path -LiteralPath (Join-Path $moduleRoot 'go.mod'))) {
     throw "BootX companion module not found at: $moduleRoot"
 }
@@ -173,6 +174,36 @@ function Test-Fixtures {
     }
 }
 
+function Test-RealDocumentMode {
+    param([Parameter(Mandatory = $true)][string]$BinaryPath)
+
+    Write-Host 'Running contained real-document smoke test...' -ForegroundColor Cyan
+    $packet = (& $BinaryPath `
+        -workspace $repositoryRoot `
+        -document 'docs\research\civilization\religion-ideology-and-decision-integrity.md' `
+        -document-public `
+        -goal 'Choose the next evidence-improvement task' `
+        -question 'Which missing fact should be verified first?' `
+        -priorities 'truth,reversibility') | ConvertFrom-Json
+    if ($LASTEXITCODE -ne 0) {
+        throw 'Contained real-document execution failed.'
+    }
+    if ($packet.decision_class -ne 'D0' -or $packet.response_mode -ne 'INFORM') {
+        throw "Real-document mode returned $($packet.decision_class)/$($packet.response_mode); expected D0/INFORM."
+    }
+    if (-not [bool]$packet.evidence_receipt.integrity_verified -or $packet.evidence_receipt.reference -ne 'docs/research/civilization/religion-ideology-and-decision-integrity.md') {
+        throw 'Real-document evidence receipt is missing or incorrect.'
+    }
+    if ($packet.evidence_receipt.origin_status -ne 'not_authenticated' -or [bool]$packet.data_receipt.synthetic) {
+        throw 'Real-document origin or synthetic status is incorrect.'
+    }
+    $documentScan = @($packet.observations | Where-Object { $_.source -eq 'deterministic_local_document_scan' })
+    if ($documentScan.Count -lt 1) {
+        throw 'Real-document structural scan observation is missing.'
+    }
+    Write-Host "  PASS real research document -> D0/INFORM; SHA-256 $($packet.evidence_receipt.sha256); origin not authenticated" -ForegroundColor Green
+}
+
 if (-not (Get-Command go -ErrorAction SilentlyContinue)) {
     throw 'Go was not found on PATH. Install Go 1.22 or later.'
 }
@@ -212,6 +243,7 @@ try {
         'verify' {
             $binary = New-BootXBuild
             Test-Fixtures -BinaryPath $binary
+            Test-RealDocumentMode -BinaryPath $binary
             Write-Host 'Full prototype verification passed.' -ForegroundColor Green
         }
         'run' {
