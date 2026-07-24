@@ -116,6 +116,10 @@ function New-BootXBuild {
     $manifest = [ordered]@{
         project = 'BootX Personal Companion MVP'
         capability = 'assist.personal-decision.v1'
+        capabilities = @(
+            'assist.personal-decision.v1'
+            'assist.law-clarity.v1'
+        )
         application_version = $appVersion
         build_utc = [DateTime]::UtcNow.ToString('o')
         go_version = $goVersion
@@ -125,7 +129,7 @@ function New-BootXBuild {
         sha256 = $hash
         tests_skipped = [bool]$SkipTests
         external_modules = $externalModuleCount
-        safety_status = 'DEV-1 deterministic prototype; not deployed or safety certified'
+        safety_status = 'DEV-1 deterministic prototype; no deployment, safety certification, legal authority, or enforcement capability'
     }
 
     $manifestPath = Join-Path $outputRoot 'build-manifest.json'
@@ -204,6 +208,33 @@ function Test-RealDocumentMode {
     Write-Host "  PASS real research document -> D0/INFORM; SHA-256 $($packet.evidence_receipt.sha256); origin not authenticated" -ForegroundColor Green
 }
 
+function Test-LawClarityMode {
+    param([Parameter(Mandatory = $true)][string]$BinaryPath)
+
+    Write-Host 'Running Law Clarity Logic smoke test...' -ForegroundColor Cyan
+    $fixturePath = Join-Path (Join-Path $moduleRoot 'testdata') 'law-clarity-gray-zone.json'
+    $report = (& $BinaryPath -law-input $fixturePath) | ConvertFrom-Json
+    if ($LASTEXITCODE -ne 0) {
+        throw 'Law Clarity Logic fixture execution failed.'
+    }
+    if ($report.capability_id -ne 'assist.law-clarity.v1') {
+        throw "Law Clarity Logic returned capability $($report.capability_id)."
+    }
+    if ([double]$report.law_quality_score -ne 35.75 -or [double]$report.gray_zone_risk_score -ne 74.25 -or [double]$report.manipulation_risk_index -ne 48.11) {
+        throw "Law Clarity formula mismatch: Q=$($report.law_quality_score), Z=$($report.gray_zone_risk_score), M=$($report.manipulation_risk_index)."
+    }
+    if ($report.strict_good_law_gate.status -ne 'FAIL' -or $report.human_rights_gate.status -ne 'FAIL') {
+        throw 'Law Clarity non-compensable gates did not fail as expected.'
+    }
+    if (-not [bool]$report.high_manipulation_trigger -or $report.disposition -ne 'FUNDAMENTAL_REVISION_REQUIRED') {
+        throw 'Law Clarity disposition or high-manipulation trigger is incorrect.'
+    }
+    if ($null -ne $report.user_decision -or [bool]$report.input_receipt.remote_processing -or [bool]$report.input_receipt.persistent_memory) {
+        throw 'Law Clarity human-authority or data-boundary invariant failed.'
+    }
+    Write-Host '  PASS law-clarity-gray-zone.json -> Q=35.75, Z=74.25, M=48.11; rights gate FAIL; no legal verdict' -ForegroundColor Green
+}
+
 if (-not (Get-Command go -ErrorAction SilentlyContinue)) {
     throw 'Go was not found on PATH. Install Go 1.22 or later.'
 }
@@ -244,6 +275,7 @@ try {
             $binary = New-BootXBuild
             Test-Fixtures -BinaryPath $binary
             Test-RealDocumentMode -BinaryPath $binary
+            Test-LawClarityMode -BinaryPath $binary
             Write-Host 'Full prototype verification passed.' -ForegroundColor Green
         }
         'run' {

@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bootx:schema:law-clarity-output:v1",
+  "title": "BootX Law Clarity Logic Screening Report",
+  "description": "A deterministic, non-binding screening report. It is not legal advice, a validity judgment, a court decision, or enforcement authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "capability_id",
+    "generated_at",
+    "runtime_notice",
+    "title",
+    "jurisdiction",
+    "instrument_type",
+    "formulae",
+    "quality_dimensions",
+    "law_quality_score",
+    "quality_band",
+    "strict_good_law_gate",
+    "human_rights_gate",
+    "gray_zone_dimensions",
+    "gray_zone_risk_score",
+    "manipulation_risk_index",
+    "high_manipulation_trigger",
+    "visible_phrase_hits",
+    "findings",
+    "review_workflow",
+    "rewrite_requirements",
+    "rewrite_template",
+    "disposition",
+    "blocked_conclusions",
+    "limitations",
+    "ai_dna_runtime_checks",
+    "input_receipt",
+    "user_decision"
+  ],
+  "properties": {
+    "request_id": {"type": "string", "minLength": 1},
+    "capability_id": {"const": "assist.law-clarity.v1"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "runtime_notice": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "jurisdiction": {"type": "string", "minLength": 1},
+    "instrument_type": {
+      "enum": ["law", "regulation", "company_policy", "court_procedure", "contract", "other"]
+    },
+    "formulae": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "quality_dimensions": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/scored_criterion"}
+    },
+    "law_quality_score": {"type": "number", "minimum": 0, "maximum": 100},
+    "quality_band": {"type": "string", "minLength": 1},
+    "strict_good_law_gate": {"$ref": "#/$defs/gate"},
+    "human_rights_gate": {"$ref": "#/$defs/gate"},
+    "gray_zone_dimensions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/scored_criterion"}
+    },
+    "gray_zone_risk_score": {"type": "number", "minimum": 0, "maximum": 100},
+    "manipulation_risk_index": {"type": "number", "minimum": 0, "maximum": 100},
+    "high_manipulation_trigger": {"type": "boolean"},
+    "visible_phrase_hits": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/phrase_hit"}
+    },
+    "findings": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "review_workflow": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"$ref": "#/$defs/review_section"}
+    },
+    "rewrite_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "rewrite_template": {"type": "string", "minLength": 1},
+    "disposition": {
+      "enum": [
+        "FUNDAMENTAL_REVISION_REQUIRED",
+        "MAJOR_REVISION_REQUIRED",
+        "REVISION_REQUIRED",
+        "QUALIFIED_REVIEW_REQUIRED"
+      ]
+    },
+    "blocked_conclusions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "ai_dna_runtime_checks": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {"$ref": "#/$defs/assurance"}
+    },
+    "input_receipt": {"$ref": "#/$defs/input_receipt"},
+    "user_decision": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "scored_criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "score",
+        "weight",
+        "weighted_contribution",
+        "direction",
+        "rationale",
+        "threshold_status"
+      ],
+      "properties": {
+        "id": {"type": "string", "minLength": 1, "maxLength": 1},
+        "label": {"type": "string", "minLength": 1},
+        "score": {"type": "integer", "minimum": 0, "maximum": 100},
+        "weight": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "weighted_contribution": {"type": "number", "minimum": 0, "maximum": 100},
+        "direction": {"enum": ["higher_is_better", "higher_is_more_risk"]},
+        "rationale": {"type": "string", "minLength": 1},
+        "threshold_status": {"enum": ["PASS", "FAIL", "REVIEW"]}
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "threshold", "basis"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "status": {"enum": ["PASS", "FAIL"]},
+        "threshold": {"type": "string", "minLength": 1},
+        "basis": {"type": "string", "minLength": 1}
+      }
+    },
+    "phrase_hit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["phrase", "count"],
+      "properties": {
+        "phrase": {"type": "string", "minLength": 1},
+        "count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "review_section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "questions"],
+      "properties": {
+        "stage": {"type": "string", "minLength": 1},
+        "questions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "assurance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dimension", "status", "basis"],
+      "properties": {
+        "dimension": {"type": "string", "minLength": 1},
+        "status": {"enum": ["PASS", "CONDITIONAL", "FAIL", "NOT ESTABLISHED"]},
+        "basis": {"type": "string", "minLength": 1}
+      }
+    },
+    "input_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_reference",
+        "clause_bytes",
+        "public_non_sensitive_confirmed",
+        "remote_processing",
+        "persistent_memory",
+        "raw_content_retention",
+        "source_status"
+      ],
+      "properties": {
+        "source_reference": {"type": "string", "minLength": 1},
+        "clause_bytes": {"type": "integer", "minimum": 1, "maximum": 32768},
+        "public_non_sensitive_confirmed": {"const": true},
+        "remote_processing": {"const": false},
+        "persistent_memory": {"const": false},
+        "raw_content_retention": {"type": "string", "minLength": 1},
+        "source_status": {"const": "user_supplied_reference_not_authenticated"}
+      }
+    }
+  }
+}

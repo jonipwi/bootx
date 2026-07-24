@@ -56,7 +56,7 @@ Exit gate:
 
 **Objective:** add deterministic local analysis with no autonomous external action.
 
-**Current evidence:** the [Go Personal Companion `0.2.0-dev`](../../prototype/personal-companion/README.md) implements a limited deterministic baseline for this phase, including synthetic fixtures and contained read-only processing of one confirmed public local document with an integrity receipt. It does not authenticate users or sources and does not close the phase exit gate; representative evaluation, alert-burden study, parser/security review, human deletion/disable study, and rollback evidence remain incomplete.
+**Current evidence:** the [Go Personal Companion `0.3.0-dev`](../../prototype/personal-companion/README.md) implements a limited deterministic baseline for this phase, including synthetic fixtures, contained read-only processing of one confirmed public local document with an integrity receipt, and bounded [Law Clarity Logic](15-law-clarity-logic.md) screening from reviewer-supplied public input. It does not authenticate users or sources, provide legal authority, or close the phase exit gate; representative evaluation, alert-burden study, legal-rubric validation, parser/security review, human deletion/disable study, and rollback evidence remain incomplete.
 
 Build:
 

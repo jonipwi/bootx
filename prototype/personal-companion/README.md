@@ -1,9 +1,9 @@
 # BootX Personal Companion MVP
 
 **Status:** `DEV-1` software-only development prototype; not a deployed AI companion, emergency service, or safety-certified system<br>
-**Version:** `0.2.0-dev`<br>
+**Version:** `0.3.0-dev`<br>
 **Runtime:** Go 1.22 or later on a mature supported host operating system<br>
-**Capability:** `assist.personal-decision.v1`
+**Capabilities:** `assist.personal-decision.v1`, `assist.law-clarity.v1`
 
 This module implements the first BootX `Input → Process → Output` decision-assistance pipeline as a dependency-free Go backend and terminal UI.
 
@@ -13,6 +13,7 @@ For complete operator instructions, field definitions, examples, build verificat
 
 - deterministic rules only; no AI model is connected;
 - one explicitly confirmed public, non-sensitive `.md`, `.txt`, or `.json` document can be read from inside a user-selected workspace with a SHA-256 integrity receipt;
+- public, non-sensitive legal text may be screened from reviewer-supplied scores and rationales; the result is not legal advice, validity, constitutionality, guilt, liability, or enforcement authority;
 - no network, browser, message, call, payment, account, device, robot, siren, or broadcast capability;
 - remote processing must be `deny`;
 - sensitive and forecast/disaster scenarios must be explicitly synthetic in this unvalidated MVP;
@@ -40,7 +41,8 @@ The UI supports:
 1. personal decision assistance;
 2. forecast/disaster warning assessment using manually selected information;
 3. contained read-only processing of one confirmed public workspace document;
-4. a visible safety-boundary screen.
+4. Law Clarity Logic deterministic screening;
+5. a visible safety-boundary screen.
 
 The TUI is deliberately line-oriented so it remains inspectable, keyboard-accessible, and dependency-free. It is not a background agent.
 
@@ -49,6 +51,7 @@ The TUI is deliberately line-oriented so it remains inspectable, keyboard-access
 ```powershell
 go run ./cmd/bootx-companion -input ./testdata/suspicious-message.json
 go run ./cmd/bootx-companion -input ./testdata/warning-prepare.json
+go run ./cmd/bootx-companion -law-input ./testdata/law-clarity-gray-zone.json
 ```
 
 Use `-input -` to read exactly one strict JSON request from standard input. Unknown JSON fields, unsupported permissions, malformed warning values, and multiple JSON objects fail closed.
@@ -57,6 +60,10 @@ Schemas:
 
 - [`schemas/personal-decision-input.schema.json`](schemas/personal-decision-input.schema.json)
 - [`schemas/personal-decision-output.schema.json`](schemas/personal-decision-output.schema.json)
+- [`schemas/law-clarity-input.schema.json`](schemas/law-clarity-input.schema.json)
+- [`schemas/law-clarity-output.schema.json`](schemas/law-clarity-output.schema.json)
+
+The complete formulas, gates, workflow, safeguards, worked example, limitations, and inheritance requirements are recorded in the canonical [Law Clarity Logic reference](../../docs/handbook/15-law-clarity-logic.md).
 
 ## Read-only real workspace mode
 
@@ -82,7 +89,7 @@ From the repository's `prototype` directory, use the supported build script:
 
 ```powershell
 .\build.ps1                 # test, vet, JSON validation, and build
-.\build.ps1 -Action verify  # also run all fixtures and the contained real-document smoke test
+.\build.ps1 -Action verify  # also run fixtures, real-document, and Law Clarity smoke tests
 .\build.ps1 -Action test
 .\build.ps1 -Action run     # build and start the TUI
 .\build.ps1 -Action clean
@@ -115,12 +122,13 @@ The synthetic space-governance abstention test, documentation assertions, runner
 cmd/bootx-companion/   CLI and strict JSON entry point
 internal/engine/       input validation and decision-packet composition
 internal/evidence/     contained read-only local-file loading and integrity receipts
+internal/lawclarity/   deterministic legal-clarity formulas, gates, review prompts, and tests
 internal/model/        typed request, warning, option, assurance, and output models
 internal/policy/       embedded deterministic policy and indicator rules
 internal/tui/          interactive terminal workflow and rendering
 internal/warning/      deterministic W0-W4/WX warning evaluation
 schemas/               machine-readable input and output contracts
-testdata/              synthetic personal, scam, and disaster cases
+testdata/              synthetic personal, scam, disaster, governance, and legal-clarity cases
 ```
 
 ## Current limitations
@@ -129,6 +137,7 @@ testdata/              synthetic personal, scam, and disaster cases
 - no authoritative source retrieval or cryptographic alert-authority registry exists;
 - timestamps and URLs are preserved but not independently fetched or authenticated;
 - local document authorship, publisher identity, and factual claims are not authenticated;
+- Law Clarity ratings, thresholds, weights, bands, phrase scan, and risk index are unvalidated research aids, not legal findings or probabilities;
 - no user-login or operating-system identity authentication exists;
 - no persistent encrypted memory exists;
 - no multilingual or completed accessibility study exists;

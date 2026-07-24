@@ -45,7 +45,7 @@ This checkout contains prebuilt BIOS/ISO/VDI artifacts, research documents, and 
 
 ## Personal Companion MVP
 
-Personal Companion `0.2.0-dev` provides a dependency-free Go backend and line-oriented terminal UI on a mature host operating system. It uses deterministic policy and warning rules, strict JSON schemas, synthetic tests, session-only processing, and no network or external-action capability. It may also read one operator-confirmed public, non-sensitive `.md`, `.txt`, or `.json` file inside a selected workspace, issue a SHA-256 evidence receipt, and report bounded structural review candidates. File integrity does not authenticate the author, publisher, or factual claims.
+Personal Companion `0.3.0-dev` provides a dependency-free Go backend and line-oriented terminal UI on a mature host operating system. It uses deterministic policy and warning rules, strict JSON schemas, synthetic tests, session-only processing, and no network or external-action capability. It may read one operator-confirmed public, non-sensitive `.md`, `.txt`, or `.json` file inside a selected workspace, issue a SHA-256 evidence receipt, and report bounded structural review candidates. It also provides reviewer-supplied [Law Clarity Logic](docs/handbook/15-law-clarity-logic.md) screening of public, non-sensitive rules. File integrity does not authenticate the author, publisher, or factual claims, and a Law Clarity score is not legal advice, a validity judgment, or a probability.
 
 ```powershell
 .\prototype\build.ps1 -Action verify
@@ -56,7 +56,7 @@ If local execution policy blocks `.ps1` files, use `powershell -NoProfile -Execu
 
 Read the [MVP documentation](prototype/personal-companion/README.md) and [complete usage guide](prototype/personal-companion/USAGE.md) before entering any data.
 
-For the first bounded real-work workflow, choose menu option `3`. Sensitive information, real warning reliance, source authentication, network retrieval, persistent memory, generative AI, external actions, operating-system integration, and robotics remain blocked.
+For contained public-document work, choose menu option `3`; for bounded Law Clarity screening, choose option `4`. Sensitive information, real warning reliance, source authentication, network retrieval, persistent memory, generative AI, external actions, operating-system integration, and robotics remain blocked.
 
 The first full end-to-end scenario is the [synthetic Typhoon Bavi test case](prototype/TEST_CASE.md), with input/process/output evidence captured by its PowerShell runner.
 
@@ -80,6 +80,7 @@ The [space-governance research chapter](docs/research/space/civilization-governa
 - [Anti-abuse and evidence integrity](docs/handbook/12-anti-abuse-and-evidence-integrity.md)
 - [Documentation verification register](docs/handbook/13-documentation-verification-register.md)
 - [Personal decision-assistance pipeline](docs/handbook/14-personal-decision-pipeline.md)
+- [Law Clarity Logic complete reference](docs/handbook/15-law-clarity-logic.md)
 
 Additional collections:
 

@@ -75,3 +75,56 @@ func TestScriptedLocalDocumentWorkflow(t *testing.T) {
 		}
 	}
 }
+
+func TestScriptedLawClarityWorkflow(t *testing.T) {
+	e, err := engine.New()
+	if err != nil {
+		t.Fatal(err)
+	}
+	input := strings.Join([]string{
+		"4",
+		"y",
+		"Public-order clause example",
+		"fictional educational jurisdiction",
+		"2",
+		"synthetic://law-clarity-example",
+		"Identify ambiguity and rights-review questions",
+		"Authorities may take appropriate action against persons whose conduct may disturb public interest.",
+		".",
+		"45", "The operative terms are not defined.",
+		"25", "Actors, conduct, evidence, and boundaries are incomplete.",
+		"50", "Notice, appeal, and remedy are not stated.",
+		"35", "Different authorities could reach different results.",
+		"30", "Written reasons and independent review are absent.",
+		"20", "Open wording permits broad exceptions.",
+		"80", "Appropriate and public interest are materially vague here.",
+		"85", "Material terms have no definitions.",
+		"40", "No direct contradiction is visible in this excerpt.",
+		"90", "The authority receives broad unexplained discretion.",
+		"75", "No exception boundary or expiry is stated.",
+		"90", "One authority appears able to interpret and enforce.",
+		"20", "No independent oversight is stated.",
+		"y",
+		"n",
+		"q",
+		"",
+	}, "\n")
+	var output bytes.Buffer
+	if err := Run(strings.NewReader(input), &output, e); err != nil {
+		t.Fatal(err)
+	}
+	text := output.String()
+	for _, required := range []string{
+		"BOOTX LAW CLARITY LOGIC SCREENING REPORT",
+		"LAW QUALITY: 35.75/100",
+		"GRAY-ZONE RISK: 74.25/100",
+		"STRICT GATE: FAIL | RIGHTS GATE: FAIL",
+		"FUNDAMENTAL_REVISION_REQUIRED",
+		"No legal decision was made",
+		"Session closed",
+	} {
+		if !strings.Contains(text, required) {
+			t.Fatalf("output missing %q\n%s", required, text)
+		}
+	}
+}

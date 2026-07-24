@@ -1,9 +1,9 @@
 # Documentation Verification and Corrections Register
 
 **Status:** Internal evidence and consistency audit; not independent peer, legal, or safety certification<br>
-**Version:** 1.3<br>
+**Version:** 1.4<br>
 **Audit date:** 2026-07-12<br>
-**Last updated:** 2026-07-14<br>
+**Last updated:** 2026-07-24<br>
 **Scope:** repository documentation, formulas, local artifact claims, citations, chronology, implementation status, generated evidence logs, and internal links<br>
 **Next review:** after final official reports for the 2026 Maysak and Bavi events, source-code restoration, or any material standards change
 
@@ -48,6 +48,21 @@ The follow-up pass:
 
 This is an internal freshness and consistency pass, not a claim that every legacy research sentence has received an independent line-by-line domain review. Static documents were not given new dates merely to make them appear current.
 
+### 2.2 Law Clarity follow-up — 2026-07-24
+
+The follow-up:
+
+- inventoried all 60 Markdown documents and resolved all 250 relative Markdown link references;
+- compared the canonical Law Clarity specification with its Go types, formulas, gates, CLI/TUI behavior, schemas, fixture, tests, and build smoke assertions;
+- recalculated the worked example and corrected `Q=36.25` to `Q=35.75`;
+- verified the fixture calculations `Z=74.25` and `M=48.11`;
+- separated reviewer-supplied scores from authenticated facts and empirical probabilities;
+- retained fairness as a non-compensable gate and removed any legal-approval disposition;
+- checked the safeguard mapping against official UN, OHCHR, Venice Commission, and OECD primary institutional references; and
+- retained qualified jurisdiction-specific legal review as an open gate.
+
+This confirms internal formula and implementation consistency only. It is not legal advice, rubric validation, representative testing, or independent certification.
+
 ## 3. Corrections made in this audit
 
 | ID | Area | Prior problem | Correction and current status |
@@ -67,6 +82,7 @@ This is an internal freshness and consistency pass, not a claim that every legac
 | C-013 | Space governance | The draft labeled its central causal/governance thesis `E2-E3`, assigned unsupported qualitative likelihoods, and proposed unvalidated 0-to-36 readiness thresholds | Corrected: established treaty and institutional claims are cited separately; the central thesis is `E1 - Hypothesis`; risk priorities are not probabilities; mandatory gates override a non-summed research profile that cannot certify readiness |
 | C-014 | Religion and ideology | The source conversation risked conflating Islam, Muslims, Muslim-majority governments, communism, and diplomatic cooperation; it also requested unsupported religion-similarity percentages and reused the withdrawn `93.3%` disaster score | Corrected: categories and claim types are separated; comparison requires a defined corpus and validated method; profiling and human-worth uses are prohibited; the disaster score remains withdrawn; claims are tied to limited sources and `E1` status |
 | C-015 | Prototype documentation | Several high-level summaries omitted the contained public-document workflow, the development backlog still listed completed work as future, and two generated evidence logs reported `0.1.0-dev` | Updated current documents to `0.2.0-dev`, preserved its authentication and deployment limits, reclassified only directly inspectable backlog items, and regenerated the logs |
+| C-016 | Law Clarity Logic | The source conversation’s worked example reported `Q=36.25`; the proposed score bands, thresholds, phrase list, and manipulation formula could also be misread as validated legal standards or probabilities | Corrected the weighted sum to `Q=35.75`; defined domains and gates; labeled all thresholds and `M` as unvalidated research constructs; required rationales; blocked legal verdicts; and added a canonical specification, strict schemas, fixture, and executable checks |
 
 ## 4. Mathematical verification
 
@@ -79,6 +95,7 @@ The following handbook formulas are algebraically correct when their variables a
 - precision and recall definitions;
 - normalized weighted AI DNA summary \(M=100\sum_i w_i d_i/(4\sum_i w_i)\), provided \(w_i\ge 0\), \(\sum_iw_i>0\), dimensions use the same 0–4 scale, and mandatory gates pass;
 - Bayesian proportionality and likelihood factorization only when the stated conditional-independence assumption is justified.
+- Law Clarity weighted scores `Q` and `Z`, whose non-negative weights each sum to one, and the normalized experimental index `M`; these are arithmetically bounded when inputs remain in `[0,100]`, but their legal and empirical validity is not established.
 
 These equations organize evidence; they do not validate inputs, construct definitions, causal claims, or moral legitimacy.
 

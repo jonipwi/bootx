@@ -1,7 +1,7 @@
 # BootX Human + AI Companion Research Handbook
 
-**Document status:** Research baseline 1.1<br>
-**Last implementation review:** 2026-07-14<br>
+**Document status:** Research baseline 1.2<br>
+**Last implementation review:** 2026-07-24<br>
 **Audience:** learners, researchers, engineers, educators, reviewers, and future maintainers<br>
 **Purpose:** turn the ideas in the BootX repository into a testable, teachable, and implementable Human + AI companion program
 
@@ -34,7 +34,7 @@ The governing mission is:
 
 Read the documents in order for a complete study. Engineers can begin with the system specification and roadmap after reviewing the ethical constitution. Researchers should begin with the evidence audit, logic, and measurement framework.
 
-The current implementation evidence is the [host-based Go Personal Companion `0.2.0-dev`](../../prototype/personal-companion/README.md). It is a deterministic development baseline with synthetic fixtures and one contained, read-only public local-document workflow. Its integrity receipt authenticates bytes, not people, publishers, authorities, or claims. It does not close the handbook's research, security, identity, human-factors, or deployment gates.
+The current implementation evidence is the [host-based Go Personal Companion `0.3.0-dev`](../../prototype/personal-companion/README.md). It is a deterministic development baseline with synthetic fixtures, one contained read-only public local-document workflow, and a reviewer-supplied Law Clarity Logic screening workflow. Its integrity receipt authenticates bytes, not people, publishers, authorities, or claims; its law scores are not legal findings or probabilities. It does not close the handbook's research, security, identity, human-factors, legal, or deployment gates.
 
 | Part | Document | Primary question |
 |---:|---|---|
@@ -53,6 +53,7 @@ The current implementation evidence is the [host-based Go Personal Companion `0.
 | 12 | [Anti-abuse and evidence integrity](12-anti-abuse-and-evidence-integrity.md) | How should BootX resist deepfakes, poisoned evidence, correlated sources, and abuse by authorities? |
 | 13 | [Documentation verification and corrections register](13-documentation-verification-register.md) | Which claims were checked, corrected, withdrawn, or remain unverified? |
 | 14 | [Personal decision-assistance pipeline](14-personal-decision-pipeline.md) | How should personal input become evidence-bounded options and a human-controlled decision output? |
+| 15 | [Law Clarity Logic](15-law-clarity-logic.md) | How can a public rule be screened for clarity, fairness, consistent enforcement, accountability, loopholes, ambiguity, and unchecked power without manufacturing legal authority? |
 
 ## Foundational commitments
 

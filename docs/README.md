@@ -10,7 +10,8 @@ This directory separates normative project governance, the professional implemen
 - [Anti-Abuse and Evidence Integrity](handbook/12-anti-abuse-and-evidence-integrity.md) — fake evidence, deepfakes, source independence, emergency safeguards, and governance abuse
 - [Documentation Verification Register](handbook/13-documentation-verification-register.md) — repository-wide factual, mathematical, logical, and evidence corrections
 - [Personal Decision-Assistance Pipeline](handbook/14-personal-decision-pipeline.md) — typed personal input, evidence and policy processing, human-controlled decision output, and first-prototype acceptance tests
-- [Go Personal Companion MVP](../prototype/personal-companion/README.md) — auditable `0.2.0-dev` deterministic backend, terminal UI, schemas, fixtures, tests, and contained public-document workflow
+- [Law Clarity Logic](handbook/15-law-clarity-logic.md) — complete formulas, truth logic, fairness gate, gray-zone and manipulation-risk screening, workflow, safeguards, implementation contract, limitations, and inheritance plan
+- [Go Personal Companion MVP](../prototype/personal-companion/README.md) — auditable `0.3.0-dev` deterministic backend, terminal UI, schemas, fixtures, tests, contained public-document workflow, and bounded Law Clarity screening
 - [Personal Companion Usage Guide](../prototype/personal-companion/USAGE.md) — complete build, TUI, JSON backend, read-only local-document, warning, verification, privacy, cleanup, and troubleshooting instructions
 - [Installation guide](guides/install-guide.md) — experimental BootX image testing and installation guidance
 - [Research library](research/README.md) — original studies organized by subject
@@ -33,7 +34,7 @@ Repository-level documents remain at the project root because they govern everyt
 
 The `handbook/` converts those commitments into professional requirements. The `research/` directory preserves original ideas as research inputs; placement there does not imply that every empirical claim has been verified.
 
-The only current non-synthetic application workflow is deliberately narrow: one operator-confirmed public, non-sensitive local document may be read without modification. Its hash proves byte identity only. It does not authenticate origin or truth, and it does not authorize reliance for sensitive or high-impact decisions.
+Current non-synthetic inputs remain deliberately narrow: one operator-confirmed public, non-sensitive local document may be read without modification, and public non-sensitive legal text may be screened from reviewer-supplied ratings. A hash proves byte identity only; it does not authenticate origin or truth. Law Clarity output is not legal advice or a validity judgment. Neither workflow authorizes reliance for sensitive or high-impact decisions.
 
 ## Directory map
 

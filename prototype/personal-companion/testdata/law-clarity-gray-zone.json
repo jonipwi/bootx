@@ -1,0 +1,71 @@
+{
+  "request_id": "law-clarity-gray-zone-001",
+  "capability_id": "assist.law-clarity.v1",
+  "user_id": "declared-local-reviewer",
+  "created_at": "2026-07-24T12:00:00Z",
+  "title": "Public-order clause example",
+  "jurisdiction": "fictional educational jurisdiction",
+  "instrument_type": "regulation",
+  "source_reference": "synthetic://law-clarity-example",
+  "purpose": "Identify ambiguity, power, accountability, and rights-review questions.",
+  "clause_text": "Authorities may take appropriate action against persons whose conduct may disturb public interest.",
+  "public_non_sensitive_confirmed": true,
+  "quality": {
+    "clarity": {
+      "score": 45,
+      "rationale": "The operative terms are not defined."
+    },
+    "specificity": {
+      "score": 25,
+      "rationale": "Actors, conduct, evidence, scope, and boundaries are incomplete."
+    },
+    "fairness": {
+      "score": 50,
+      "rationale": "Notice, an opportunity to respond, appeal, and remedy are not stated."
+    },
+    "consistency": {
+      "score": 35,
+      "rationale": "Different authorities could reach materially different results."
+    },
+    "accountability": {
+      "score": 30,
+      "rationale": "Written reasons, audit records, and independent review are absent."
+    },
+    "low_loophole_risk": {
+      "score": 20,
+      "rationale": "Open wording permits broad interpretation and exceptions."
+    }
+  },
+  "gray_zone": {
+    "vague_language_risk": {
+      "score": 80,
+      "rationale": "Appropriate and public interest are materially vague in this excerpt."
+    },
+    "definition_risk": {
+      "score": 85,
+      "rationale": "Material terms have no definitions."
+    },
+    "contradiction_risk": {
+      "score": 40,
+      "rationale": "No direct contradiction is visible in this excerpt, but the full instrument is unavailable."
+    },
+    "enforcement_discretion_risk": {
+      "score": 90,
+      "rationale": "The authority receives broad, unexplained discretion."
+    },
+    "exception_boundary_risk": {
+      "score": 75,
+      "rationale": "No exception boundary, duration, expiry, or review condition is stated."
+    }
+  },
+  "power": {
+    "power_concentration_risk": {
+      "score": 90,
+      "rationale": "One authority appears able to interpret and enforce the clause."
+    },
+    "oversight_strength": {
+      "score": 20,
+      "rationale": "No independent oversight or effective remedy is stated."
+    }
+  }
+}

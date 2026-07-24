@@ -106,7 +106,7 @@ Before remote processing, minimize, redact, or pseudonymize inputs; show the use
 
 A future BootX platform should provide verified boot, signed components, memory/process isolation, hardware-backed keys where available, encrypted storage, secure time, signed updates, recovery partitions, tamper-evident logging, and a tested factory-reset/export path.
 
-The supplied BootX operating-system binaries still have no auditable source for these platform controls. The separate [host-based Go MVP](../../prototype/personal-companion/README.md) implements limited application-level policy, typed data, session-only behavior, external-action absence, and contained read-only processing of one public local document with a SHA-256 evidence receipt. These application controls do not authenticate identity or source claims and do not implement or prove the secure platform foundation described here.
+The supplied BootX operating-system binaries still have no auditable source for these platform controls. The separate [host-based Go MVP](../../prototype/personal-companion/README.md) implements limited application-level policy, typed data, session-only behavior, external-action absence, contained read-only processing of one public local document with a SHA-256 evidence receipt, and bounded [Law Clarity Logic](15-law-clarity-logic.md) screening from reviewer-supplied ratings. These application controls do not authenticate identity, source claims, or legal conclusions and do not implement or prove the secure platform foundation described here.
 
 ## 4. Trust boundaries and threat actors
 

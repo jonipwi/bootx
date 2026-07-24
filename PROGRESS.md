@@ -1,9 +1,9 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.12<br>
-**Last updated:** 2026-07-14<br>
-**Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype supports limited public read-only local work and synthetic evaluation<br>
+**Version:** 1.13<br>
+**Last updated:** 2026-07-24<br>
+**Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype supports limited public read-only local work, reviewer-supplied Law Clarity screening, and synthetic evaluation<br>
 **Current release posture:** Research documentation, an unvalidated host-based Go MVP, and opaque educational OS artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
 
 ## 1. Purpose
@@ -55,7 +55,7 @@ This theological foundation is a disclosed founder commitment, not a scientific 
 | AI DNA | Specification present; unvalidated | `docs/handbook/05-ai-dna-specification.md` | dimensions and gates exist; empirical validity is not established |
 | Boot artifacts | Present but opaque | `artifacts/boot/` and `artifacts/media/` | limited binary evidence exists; source-level assurance is impossible |
 | Reproducible OS source | Missing | repository audit | build, source, tests, provenance, and dependency records are absent |
-| AI companion implementation | Deterministic host MVP present; unvalidated | `prototype/personal-companion/` | typed policy/warning/TUI and contained public-document baseline exists; no model, network, representative user evidence, deployment, or safety claim |
+| AI companion implementation | Deterministic host MVP `0.3.0-dev` present; unvalidated | `prototype/personal-companion/` | typed policy/warning/TUI, contained public-document, and bounded Law Clarity baselines exist; no model, network, representative user evidence, legal authority, deployment, or safety claim |
 | Public/high-impact readiness | BLOCKED | multiple open gates | no public or High-Impact deployment is authorized |
 
 ## 5. Foundation Gate — required before sensitive OS or AI implementation
@@ -168,6 +168,7 @@ This block does not prevent the requirements, simulation, threat-modeling, synth
 - [x] Anti-abuse and evidence-integrity chapter with a documented Maysak/Bavi factual self-audit.
 - [x] Documentation verification and corrections register covering facts, formulas, logic, local artifacts, status labels, and remaining review gates.
 - [x] Personal decision-assistance pipeline defining typed input, deterministic policy and evidence processing, human-controlled output, personalization limits, schemas, risk classes, and MVP acceptance tests.
+- [x] Law Clarity Logic complete reference defining strict truth logic, corrected quality arithmetic, a non-compensable fairness gate, gray-zone and experimental manipulation-risk formulas, review workflow, legal-authority safeguards, prototype contract, limitations, and inheritance priorities.
 - [x] Space-governance research chapter separating established primary legal sources from `E1` hypotheses, with six mandatory non-compensable readiness gates, a non-certifying readiness profile, AI limits, pluralistic rights safeguards, and an inheritance research agenda.
 - [x] Religion-and-ideology decision-integrity chapter separating theology, ideology, states, institutions, and individuals; rejecting unsupported similarity percentages and profiling; and defining rights-gated common-good decision formulas.
 
@@ -205,6 +206,9 @@ Completed implementation baseline:
 - [x] Deterministic real-document scan for headings, external-link strings, open checklist items, evidence-gap markers, and a bounded first human-review candidate.
 - [x] Workspace traversal, absolute-path, symlink/junction escape, unsupported-type, oversize, invalid-text, hash-tampering, and missing-public-confirmation boundaries covered by implementation or tests.
 - [x] Removed the false authenticated-user assumption from output; user and origin fields are now described as declarations unless independently authenticated.
+- [x] Typed `assist.law-clarity.v1` request/report models with strict validation, transparent formula contributions, non-compensable fairness and strict gates, conservative dispositions, and blocked legal conclusions.
+- [x] Law Clarity terminal and strict JSON modes for public, non-sensitive material, with no remote processing, persistence, external action, or legal verdict.
+- [x] Law Clarity input/output schemas, synthetic gray-zone fixture, unit/CLI/TUI tests, and build-level smoke verification of `Q=35.75`, `Z=74.25`, and `M=48.11`.
 
 Open `DEV-1` gates:
 
@@ -218,6 +222,7 @@ Open `DEV-1` gates:
 - [ ] Demonstrate rollback and reproducible builds in two clean supported environments.
 - [ ] Establish research-ethics approval before any real-user study or sensitive personal input.
 - [ ] Compare rule-only output against no-assistance/static-checklist baselines.
+- [ ] Obtain qualified multi-jurisdiction legal and affected-community review of the Law Clarity rubric; validate rating anchors, inter-rater reliability, weights, thresholds, false reassurance, disparate impact, and manipulation-index behavior.
 - [ ] Do not add a bounded AI model until deterministic baseline evidence is frozen and reviewed.
 
 ## 8. Operating-system implementation roadmap
@@ -420,6 +425,14 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 16. Change log
+
+### Version 1.13 - 2026-07-24
+
+- Recorded the complete canonical Law Clarity Logic reference with strict Boolean logic, weighted quality and gray-zone scores, a non-compensable fairness gate, manipulation-risk screening, complete review questions, ethical safeguards, implementation contract, limitations, and inheritance priorities.
+- Corrected the original worked-example arithmetic from `Q=36.25` to `Q=35.75` and documented the calculation.
+- Implemented `assist.law-clarity.v1` in Personal Companion `0.3.0-dev` with typed Go models, strict validation, CLI/TUI workflows, conservative non-approval dispositions, blocked legal conclusions, schemas, fixture, and automated tests.
+- Added build verification for `Q=35.75`, `Z=74.25`, `M=48.11`, failed strict and fairness gates, no human-decision substitution, and no remote or persistent processing.
+- Updated project navigation, development guidance, usage instructions, and implementation status while retaining independent legal, empirical, security, human-factors, and deployment gates.
 
 ### Version 1.12 - 2026-07-14
 

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bootx:schema:law-clarity-input:v1",
+  "title": "BootX Law Clarity Logic Screening Input",
+  "description": "Reviewer-supplied public, non-sensitive input for deterministic educational screening. This contract cannot request a legal verdict or enforcement action.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "capability_id",
+    "user_id",
+    "created_at",
+    "title",
+    "jurisdiction",
+    "instrument_type",
+    "source_reference",
+    "purpose",
+    "clause_text",
+    "public_non_sensitive_confirmed",
+    "quality",
+    "gray_zone",
+    "power"
+  ],
+  "properties": {
+    "request_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "capability_id": {"const": "assist.law-clarity.v1"},
+    "user_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "created_at": {"type": "string", "format": "date-time"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 512},
+    "jurisdiction": {"type": "string", "minLength": 1, "maxLength": 256},
+    "instrument_type": {
+      "enum": ["law", "regulation", "company_policy", "court_procedure", "contract", "other"]
+    },
+    "source_reference": {"type": "string", "minLength": 1, "maxLength": 2048},
+    "purpose": {"type": "string", "minLength": 1, "maxLength": 2048},
+    "clause_text": {"type": "string", "minLength": 1, "maxLength": 32768},
+    "public_non_sensitive_confirmed": {"const": true},
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "clarity",
+        "specificity",
+        "fairness",
+        "consistency",
+        "accountability",
+        "low_loophole_risk"
+      ],
+      "properties": {
+        "clarity": {"$ref": "#/$defs/rating"},
+        "specificity": {"$ref": "#/$defs/rating"},
+        "fairness": {"$ref": "#/$defs/rating"},
+        "consistency": {"$ref": "#/$defs/rating"},
+        "accountability": {"$ref": "#/$defs/rating"},
+        "low_loophole_risk": {"$ref": "#/$defs/rating"}
+      }
+    },
+    "gray_zone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "vague_language_risk",
+        "definition_risk",
+        "contradiction_risk",
+        "enforcement_discretion_risk",
+        "exception_boundary_risk"
+      ],
+      "properties": {
+        "vague_language_risk": {"$ref": "#/$defs/rating"},
+        "definition_risk": {"$ref": "#/$defs/rating"},
+        "contradiction_risk": {"$ref": "#/$defs/rating"},
+        "enforcement_discretion_risk": {"$ref": "#/$defs/rating"},
+        "exception_boundary_risk": {"$ref": "#/$defs/rating"}
+      }
+    },
+    "power": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["power_concentration_risk", "oversight_strength"],
+      "properties": {
+        "power_concentration_risk": {"$ref": "#/$defs/rating"},
+        "oversight_strength": {"$ref": "#/$defs/rating"}
+      }
+    }
+  },
+  "$defs": {
+    "rating": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "rationale"],
+      "properties": {
+        "score": {"type": "integer", "minimum": 0, "maximum": 100},
+        "rationale": {"type": "string", "minLength": 1, "maxLength": 2048}
+      }
+    }
+  }
+}

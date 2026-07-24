@@ -1,6 +1,6 @@
 # BootX Personal Companion MVP — Complete Usage Guide
 
-**Application version:** `0.2.0-dev`<br>
+**Application version:** `0.3.0-dev`<br>
 **Capability:** `assist.personal-decision.v1`<br>
 **Evidence maturity:** `E2 — Prototype` in a limited host environment<br>
 **Intended operator:** Joni or a developer processing approved public local documents and synthetic tests<br>
@@ -219,7 +219,8 @@ The main menu is:
 1  Personal decision assistance
 2  Forecast/disaster warning assessment
 3  Read-only local workspace document
-4  Safety boundaries
+4  Law Clarity Logic screening
+5  Safety boundaries
 q  Quit and discard session data
 ```
 
@@ -378,9 +379,48 @@ SHA-256 establishes which bytes were processed. It does not establish authorship
 
 The deterministic document scan also reports heading count, external-link strings, open Markdown checklist items, evidence-gap-marker lines, and the first candidate for human review. A marker can be missed or taken out of context; it is a navigation aid, not semantic understanding, source verification, or a priority certificate.
 
-## 11. Synthetic forecast/disaster workflow
+## 11. Law Clarity Logic workflow
 
-Choose menu option `2`. This workflow is **synthetic-only** in version `0.2.0-dev`.
+Choose menu option `4`. This deterministic workflow screens a public, non-sensitive law, regulation, company policy, court procedure, contract clause, or other rule. It calculates only from ratings and rationales supplied by the reviewer.
+
+Before clause entry, confirm that the material is public and non-sensitive. Do not enter privileged, sealed, classified, personal, or uncertain legal material.
+
+The UI collects:
+
+1. title, jurisdiction or organizational context, instrument type, source reference, purpose, and clause text;
+2. six quality ratings and rationales: clarity `C`, specificity `S`, fairness `F`, consistency `I`, accountability `A`, and low loophole risk `L`;
+3. five gray-zone ratings and rationales: vague language `V`, definition risk `D`, contradiction risk `X`, enforcement discretion `E`, and unclear exceptions `U`;
+4. power-concentration risk `P` and oversight strength `O`; and
+5. final confirmation of the visible processing scope.
+
+The output includes:
+
+- `Q = 0.20C + 0.20S + 0.20F + 0.15I + 0.15A + 0.10L`;
+- a strict gate requiring every quality dimension to be at least `60`;
+- a non-compensable fairness gate requiring `F ≥ 60`;
+- `Z = 0.30V + 0.25D + 0.20X + 0.15E + 0.10U`;
+- an experimental manipulation index `M`, explicitly not a probability;
+- literal phrase-review prompts;
+- review questions, rewrite requirements, blocked conclusions, limitations, and an input receipt; and
+- a revision or qualified-review disposition, never legal approval.
+
+Run the strict JSON fixture from the module:
+
+```powershell
+go run ./cmd/bootx-companion `
+  -law-input .\testdata\law-clarity-gray-zone.json
+```
+
+The law input and output contracts are:
+
+- [`schemas/law-clarity-input.schema.json`](schemas/law-clarity-input.schema.json)
+- [`schemas/law-clarity-output.schema.json`](schemas/law-clarity-output.schema.json)
+
+Read the canonical [Law Clarity Logic reference](../../docs/handbook/15-law-clarity-logic.md) before interpreting a report. The score bands and thresholds are unvalidated research choices. The system does not determine legal validity, constitutionality, guilt, liability, eligibility, entitlement, or enforcement authority.
+
+## 12. Synthetic forecast/disaster workflow
+
+Choose menu option `2`. This workflow is **synthetic-only** in version `0.3.0-dev`.
 
 The UI requests:
 
@@ -401,7 +441,7 @@ The prototype does not retrieve, authenticate, or refresh a real warning feed. M
 
 For an actual immediate danger, do not spend time operating this prototype. Move away from the danger when safe and use a known responsible authority or emergency channel.
 
-## 12. Reading decision classes
+## 13. Reading decision classes
 
 | Class | Meaning | System behavior |
 |---|---|---|
@@ -414,7 +454,7 @@ For an actual immediate danger, do not spend time operating this prototype. Move
 
 A higher number is not a danger probability or moral score. It identifies the authority and control boundary.
 
-## 13. Reading response modes
+## 14. Reading response modes
 
 | Mode | Interpretation |
 |---|---|
@@ -431,7 +471,7 @@ A higher number is not a danger probability or moral score. It identifies the au
 | `BLOCK` | request or data is prohibited |
 | `DEGRADED` | a dependency or integrity condition prevents normal output |
 
-## 14. Reading warning levels
+## 15. Reading warning levels
 
 | Level | Meaning | Personal posture |
 |---|---|---|
@@ -444,7 +484,7 @@ A higher number is not a danger probability or moral score. It identifies the au
 
 BootX warning level, official status, evidence tier, and AI DNA runtime checks are separate fields. None is an overall probability that an event will occur.
 
-## 15. Reading the decision packet
+## 16. Reading the decision packet
 
 The TUI displays:
 
@@ -467,7 +507,7 @@ For contained local documents, the packet also shows an evidence receipt contain
 
 After viewing the packet, the UI can print structured JSON. Selecting this option does not save a file by itself, but terminal capture or redirection can persist it.
 
-## 16. AI DNA runtime checks
+## 17. AI DNA runtime checks
 
 The output reports nine dimensions:
 
@@ -490,7 +530,7 @@ Statuses are:
 
 These checks are produced by the prototype itself and are not independent assurance. They must not be interpreted as a forecast probability, accuracy score, moral rating, or safety certification.
 
-## 17. Strict JSON backend mode
+## 18. Strict JSON backend mode
 
 Change to the real module:
 
@@ -538,6 +578,7 @@ CLI flags:
 |---|---|
 | `-input <path>` | read one strict request object from a file |
 | `-input -` | read one strict request object from standard input |
+| `-law-input <path-or->` | read one strict `assist.law-clarity.v1` request; mutually exclusive with personal and document modes |
 | `-compact` | emit compact JSON in backend mode |
 | `-version` | print application version and exit |
 | `-workspace <path>` | workspace boundary for read-only document mode |
@@ -549,7 +590,7 @@ CLI flags:
 
 Unknown fields, unsupported enum values, non-denied remote permission, multiple JSON objects, oversized selected content, non-synthetic sensitive data, and non-synthetic warning input fail closed.
 
-## 18. JSON input contract
+## 19. JSON input contract
 
 Primary schema: [`schemas/personal-decision-input.schema.json`](schemas/personal-decision-input.schema.json)
 
@@ -599,7 +640,7 @@ Minimal low-stakes request:
 
 The warning extension is fully specified in the schema and demonstrated by [`testdata/warning-prepare.json`](testdata/warning-prepare.json).
 
-## 19. JSON output contract
+## 20. JSON output contract
 
 Primary schema: [`schemas/personal-decision-output.schema.json`](schemas/personal-decision-output.schema.json)
 
@@ -626,7 +667,7 @@ Important fields:
 | `data_receipt` | memory, remote, synthetic, retention, and location record |
 | `user_decision` | `null` in this MVP; BootX does not choose for the user |
 
-## 20. Synthetic fixtures and expected outputs
+## 21. Synthetic fixtures and expected outputs
 
 | Fixture | Purpose | Expected result |
 |---|---|---|
@@ -636,6 +677,7 @@ Important fields:
 | `warning-urgent.json` | synthetic authenticated immediate warning | `D4 / URGENT_GUIDANCE / W4` |
 | `typhoon-bavi-exercise.json` | full synthetic Typhoon Bavi preparedness case | `D2 / PREPARE / W2` |
 | `space-governance-readiness-exercise.json` | fictional settlement request requiring qualified governance review | `D3 / ABSTAIN` |
+| `law-clarity-gray-zone.json` | fictional public rule with weak fairness, high ambiguity, concentrated power, and weak oversight | `Q=35.75 / Z=74.25 / M=48.11 / FUNDAMENTAL_REVISION_REQUIRED` |
 
 Run every fixture and all automated checks:
 
@@ -656,7 +698,7 @@ It records the complete synthetic input, observable deterministic processing evi
 
 The space-governance boundary case is documented at [`../TEST_CASE_SPACE_GOVERNANCE.md`](../TEST_CASE_SPACE_GOVERNANCE.md). It verifies that the MVP abstains from certifying a fictional lunar settlement and that the research chapter preserves mandatory evidence boundaries.
 
-## 21. Troubleshooting
+## 22. Troubleshooting
 
 ### `go.mod file not found`
 
@@ -717,13 +759,13 @@ The input contains trailing data or multiple objects. Submit one object per proc
 
 ### The output does not sound like a generative AI
 
-That is expected. Version `0.2.0-dev` is a deterministic baseline with contained read-only local-document ingestion. A bounded model is intentionally disconnected until the baseline is frozen, measured, and reviewed.
+That is expected. Version `0.3.0-dev` is a deterministic baseline with contained read-only local-document ingestion and reviewer-supplied Law Clarity screening. A bounded model is intentionally disconnected until the baseline is frozen, measured, and reviewed.
 
 ### Build succeeds but there is no `dist` directory where expected
 
 Check whether `-OutputDirectory` was supplied. The build summary prints the absolute binary and manifest paths.
 
-## 22. Safe cleanup
+## 23. Safe cleanup
 
 Remove only the default generated build output:
 
@@ -735,7 +777,7 @@ The script refuses to clean a custom output path.
 
 The application creates no installed service, registry entry, scheduled task, persistent memory database, or background process. To stop the TUI, choose `q` or press `Ctrl+C`. To remove the source, use normal repository/version-control procedures only after preserving any work you intend to keep.
 
-## 23. Operator checklist
+## 24. Operator checklist
 
 Before processing:
 
@@ -751,12 +793,14 @@ Before acting on output:
 - [ ] I understand the `D` class, response mode, and any `W` level.
 - [ ] I did not interpret AI DNA runtime checks as certification or probability.
 - [ ] I verified consequential facts through an appropriate independent source.
+- [ ] I did not interpret a Law Clarity score as legal advice, validity, constitutionality, or probability.
 - [ ] I understand that BootX did not execute an external action.
 - [ ] The final decision remains mine.
 
-## 24. Governing documentation
+## 25. Governing documentation
 
 - [Personal Decision-Assistance Pipeline](../../docs/handbook/14-personal-decision-pipeline.md)
+- [Law Clarity Logic](../../docs/handbook/15-law-clarity-logic.md)
 - [Development Guideline](../../DEVELOPMENT_GUIDELINE.md)
 - [AI DNA Operational Specification](../../docs/handbook/05-ai-dna-specification.md)
 - [Companion System Architecture](../../docs/handbook/06-companion-system-architecture.md)

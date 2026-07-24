@@ -37,6 +37,29 @@ func TestReadRequestRejectsMultipleObjects(t *testing.T) {
 	}
 }
 
+func TestReadLawRequestRejectsUnknownField(t *testing.T) {
+	path := writeTempRequest(t, `{
+  "request_id":"law-test",
+  "capability_id":"assist.law-clarity.v1",
+  "user_id":"declared-local-reviewer",
+  "created_at":"2026-07-24T12:00:00Z",
+  "title":"Example",
+  "jurisdiction":"fictional educational jurisdiction",
+  "instrument_type":"regulation",
+  "source_reference":"synthetic://law-example",
+  "purpose":"Test strict decoding.",
+  "clause_text":"A public synthetic clause.",
+  "public_non_sensitive_confirmed":true,
+  "quality":{},
+  "gray_zone":{},
+  "power":{},
+  "legal_verdict":true
+}`)
+	if _, err := readLawRequest(path); err == nil || !strings.Contains(err.Error(), "unknown field") {
+		t.Fatalf("expected unknown field error, got %v", err)
+	}
+}
+
 func TestBuildDocumentRequestUsesRealContainedFile(t *testing.T) {
 	root := t.TempDir()
 	content := "# Real work\n\nReview this public project note.\n"

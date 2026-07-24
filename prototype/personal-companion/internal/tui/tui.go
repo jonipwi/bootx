@@ -8,11 +8,13 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"strconv"
 	"strings"
 	"time"
 
 	"github.com/jonipwi/bootx/prototype/personal-companion/internal/engine"
 	"github.com/jonipwi/bootx/prototype/personal-companion/internal/evidence"
+	"github.com/jonipwi/bootx/prototype/personal-companion/internal/lawclarity"
 	"github.com/jonipwi/bootx/prototype/personal-companion/internal/model"
 )
 
@@ -35,7 +37,8 @@ func (ui *UI) run() error {
 		fmt.Fprintln(ui.out, "  1  Personal decision assistance")
 		fmt.Fprintln(ui.out, "  2  Forecast/disaster warning assessment")
 		fmt.Fprintln(ui.out, "  3  Read-only local workspace document")
-		fmt.Fprintln(ui.out, "  4  Safety boundaries")
+		fmt.Fprintln(ui.out, "  4  Law Clarity Logic screening")
+		fmt.Fprintln(ui.out, "  5  Safety boundaries")
 		fmt.Fprintln(ui.out, "  q  Quit and discard session data")
 		choice, err := ui.prompt("Choose", false)
 		if err != nil {
@@ -58,14 +61,232 @@ func (ui *UI) run() error {
 				return err
 			}
 		case "4":
+			if err := ui.lawClarityWorkflow(); err != nil {
+				return err
+			}
+		case "5":
 			ui.boundaries()
 		case "q", "quit", "exit":
 			fmt.Fprintln(ui.out, "Session closed. No raw input was written by BootX Companion.")
 			return nil
 		default:
-			fmt.Fprintln(ui.out, "Please choose 1, 2, 3, 4, or q.")
+			fmt.Fprintln(ui.out, "Please choose 1, 2, 3, 4, 5, or q.")
 		}
 	}
+}
+
+func (ui *UI) lawClarityWorkflow() error {
+	fmt.Fprintln(ui.out, "\n=== Law Clarity Logic screening ===")
+	fmt.Fprintln(ui.out, "This feature calculates a transparent screening report from your ratings and rationales.")
+	fmt.Fprintln(ui.out, "It does not decide legal validity, constitutionality, guilt, liability, or enforcement authority.")
+	publicConfirmed, err := ui.confirm("Is the clause public, non-sensitive, and appropriate for educational screening")
+	if err != nil {
+		return err
+	}
+	if !publicConfirmed {
+		fmt.Fprintln(ui.out, "Canceled before clause entry. Sensitive, privileged, sealed, or uncertain legal material is not authorized.")
+		return nil
+	}
+	title, err := ui.prompt("Law, rule, policy, or procedure title", true)
+	if err != nil {
+		return err
+	}
+	jurisdiction, err := ui.prompt("Jurisdiction or organizational context", true)
+	if err != nil {
+		return err
+	}
+	instrumentType, err := ui.choose("Instrument type", []string{"law", "regulation", "company_policy", "court_procedure", "contract", "other"})
+	if err != nil {
+		return err
+	}
+	sourceReference, err := ui.prompt("Public source reference or citation", true)
+	if err != nil {
+		return err
+	}
+	purpose, err := ui.prompt("Screening purpose", true)
+	if err != nil {
+		return err
+	}
+	clause, err := ui.multiline("Public clause text (finish with a single period on its own line)")
+	if err != nil {
+		return err
+	}
+
+	fmt.Fprintln(ui.out, "\nQuality ratings: 0 means the condition fails; 100 means strong support.")
+	clarity, err := ui.lawRating("Clarity (C)")
+	if err != nil {
+		return err
+	}
+	specificity, err := ui.lawRating("Specificity and boundaries (S)")
+	if err != nil {
+		return err
+	}
+	fairness, err := ui.lawRating("Fairness and rights protection (F)")
+	if err != nil {
+		return err
+	}
+	consistency, err := ui.lawRating("Consistent enforceability (I)")
+	if err != nil {
+		return err
+	}
+	accountability, err := ui.lawRating("Accountability and auditability (A)")
+	if err != nil {
+		return err
+	}
+	lowLoophole, err := ui.lawRating("Low loophole risk (L)")
+	if err != nil {
+		return err
+	}
+
+	fmt.Fprintln(ui.out, "\nGray-zone ratings: 0 means low observed risk; 100 means high observed risk.")
+	vagueRisk, err := ui.lawRating("Vague-language risk (V)")
+	if err != nil {
+		return err
+	}
+	definitionRisk, err := ui.lawRating("Undefined/circular-definition risk (D)")
+	if err != nil {
+		return err
+	}
+	contradictionRisk, err := ui.lawRating("Contradictory-clause risk (X)")
+	if err != nil {
+		return err
+	}
+	discretionRisk, err := ui.lawRating("Enforcement-discretion risk (E)")
+	if err != nil {
+		return err
+	}
+	exceptionRisk, err := ui.lawRating("Unclear-exception-boundary risk (U)")
+	if err != nil {
+		return err
+	}
+
+	fmt.Fprintln(ui.out, "\nPower context: power concentration is risk; oversight strength is protection.")
+	powerRisk, err := ui.lawRating("Power-concentration risk (P)")
+	if err != nil {
+		return err
+	}
+	oversightStrength, err := ui.lawRating("Oversight strength (O)")
+	if err != nil {
+		return err
+	}
+
+	fmt.Fprintln(ui.out, "\nVisible processing scope")
+	fmt.Fprintf(ui.out, "  Instrument: %s | Jurisdiction/context: %s | Clause: %d bytes\n", instrumentType, jurisdiction, len([]byte(clause)))
+	fmt.Fprintln(ui.out, "  Input: public/non-sensitive | Memory: process only | Remote: denied | Legal authority: none")
+	confirmed, err := ui.confirm("Calculate the screening report from these reviewer-supplied ratings")
+	if err != nil {
+		return err
+	}
+	if !confirmed {
+		fmt.Fprintln(ui.out, "Canceled. No Law Clarity report was produced.")
+		return nil
+	}
+
+	report, err := lawclarity.Evaluate(lawclarity.Request{
+		RequestID:                   newRequestID(),
+		CapabilityID:                lawclarity.CapabilityID,
+		UserID:                      "declared-local-reviewer",
+		CreatedAt:                   time.Now(),
+		Title:                       title,
+		Jurisdiction:                jurisdiction,
+		InstrumentType:              instrumentType,
+		SourceReference:             sourceReference,
+		Purpose:                     purpose,
+		ClauseText:                  clause,
+		PublicNonSensitiveConfirmed: true,
+		Quality: lawclarity.QualityRatings{
+			Clarity:         clarity,
+			Specificity:     specificity,
+			Fairness:        fairness,
+			Consistency:     consistency,
+			Accountability:  accountability,
+			LowLoopholeRisk: lowLoophole,
+		},
+		GrayZone: lawclarity.GrayZoneRatings{
+			VagueLanguageRisk:     vagueRisk,
+			DefinitionRisk:        definitionRisk,
+			ContradictionRisk:     contradictionRisk,
+			EnforcementDiscretion: discretionRisk,
+			ExceptionBoundaryRisk: exceptionRisk,
+		},
+		Power: lawclarity.PowerContext{
+			PowerConcentrationRisk: powerRisk,
+			OversightStrength:      oversightStrength,
+		},
+	})
+	if err != nil {
+		fmt.Fprintf(ui.out, "Law Clarity request rejected safely: %v\n", err)
+		return nil
+	}
+	return ui.showLawClarityReport(report)
+}
+
+func (ui *UI) lawRating(label string) (lawclarity.Rating, error) {
+	var score int
+	for {
+		value, err := ui.prompt(label+" score [0-100]", true)
+		if err != nil {
+			return lawclarity.Rating{}, err
+		}
+		score, err = strconv.Atoi(value)
+		if err == nil && score >= 0 && score <= 100 {
+			break
+		}
+		fmt.Fprintln(ui.out, "Enter a whole number from 0 through 100.")
+	}
+	rationale, err := ui.prompt(label+" rationale/evidence note", true)
+	if err != nil {
+		return lawclarity.Rating{}, err
+	}
+	return lawclarity.Rating{Score: score, Rationale: rationale}, nil
+}
+
+func (ui *UI) showLawClarityReport(report lawclarity.Report) error {
+	fmt.Fprintln(ui.out, "\n============================================================")
+	fmt.Fprintln(ui.out, "BOOTX LAW CLARITY LOGIC SCREENING REPORT")
+	fmt.Fprintln(ui.out, "============================================================")
+	fmt.Fprintf(ui.out, "Request: %s\nInstrument: %s | Context: %s\n", report.RequestID, report.InstrumentType, report.Jurisdiction)
+	fmt.Fprintf(ui.out, "Notice: %s\n", report.RuntimeNotice)
+	fmt.Fprintf(ui.out, "\nLAW QUALITY: %.2f/100\n", report.LawQualityScore)
+	fmt.Fprintf(ui.out, "QUALITY BAND: %s\n", report.QualityBand)
+	fmt.Fprintf(ui.out, "GRAY-ZONE RISK: %.2f/100\n", report.GrayZoneRiskScore)
+	fmt.Fprintf(ui.out, "MANIPULATION INDEX: %.2f/100 (experimental; not a probability)\n", report.ManipulationRiskIndex)
+	fmt.Fprintf(ui.out, "STRICT GATE: %s | RIGHTS GATE: %s\n", report.StrictGoodLawGate.Status, report.HumanRightsGate.Status)
+	fmt.Fprintf(ui.out, "DISPOSITION: %s\n", report.Disposition)
+
+	if len(report.VisiblePhraseHits) > 0 {
+		fmt.Fprintln(ui.out, "\nVISIBLE AMBIGUITY PHRASE HITS (context review required)")
+		for _, hit := range report.VisiblePhraseHits {
+			fmt.Fprintf(ui.out, "  • %q: %d\n", hit.Phrase, hit.Count)
+		}
+	}
+	printStrings(ui.out, "FINDINGS", report.Findings)
+	printStrings(ui.out, "REWRITE REQUIREMENTS", report.RewriteRequirements)
+	fmt.Fprintln(ui.out, "\nNON-BINDING REWRITE TEMPLATE")
+	fmt.Fprintln(ui.out, "  "+report.RewriteTemplate)
+	printStrings(ui.out, "BLOCKED CONCLUSIONS", report.BlockedConclusions)
+	printStrings(ui.out, "LIMITATIONS", report.Limitations)
+	fmt.Fprintln(ui.out, "\nAI DNA RUNTIME CHECKS (report process, not legal certification)")
+	for _, check := range report.Assurance {
+		fmt.Fprintf(ui.out, "  %-12s %-15s %s\n", check.Dimension, check.Status, check.Basis)
+	}
+	fmt.Fprintln(ui.out, "\nINPUT RECEIPT")
+	fmt.Fprintf(ui.out, "  Reference: %s | Bytes: %d | Source: %s\n", report.InputReceipt.SourceReference, report.InputReceipt.ClauseBytes, report.InputReceipt.SourceStatus)
+	fmt.Fprintln(ui.out, "  Remote processing: false | Persistent memory: false")
+
+	showJSON, err := ui.confirm("Show the structured JSON report")
+	if err != nil {
+		return err
+	}
+	if showJSON {
+		encoded, err := json.MarshalIndent(report, "", "  ")
+		if err != nil {
+			return err
+		}
+		fmt.Fprintln(ui.out, string(encoded))
+	}
+	fmt.Fprintln(ui.out, "\nNo legal decision was made. Qualified human review remains required.")
+	return nil
 }
 
 func (ui *UI) localDocumentWorkflow() error {
@@ -569,6 +790,7 @@ func (ui *UI) boundaries() {
 	fmt.Fprintln(ui.out, "  • Selected content is treated as untrusted data and cannot change policy.")
 	fmt.Fprintln(ui.out, "  • Health/legal output is educational and defers to qualified professionals.")
 	fmt.Fprintln(ui.out, "  • Disaster output preserves official distinctions and never becomes an official alert.")
+	fmt.Fprintln(ui.out, "  • Law Clarity scores are reviewer-supplied research screening, not legal advice, validity, or authority.")
 	fmt.Fprintln(ui.out, "  • Warning assessment and sensitive scenarios are synthetic-only until security and human-study gates pass.")
 	fmt.Fprintln(ui.out, "  • The process retains no raw content after exit unless the operator redirects output externally.")
 }

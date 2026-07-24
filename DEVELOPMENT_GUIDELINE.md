@@ -1,9 +1,9 @@
 # BootX Development Guideline
 
 **Status:** Development-preparation baseline; not deployment authorization or safety certification<br>
-**Version:** 1.2<br>
+**Version:** 1.3<br>
 **Adopted:** 2026-07-12<br>
-**Last updated:** 2026-07-14<br>
+**Last updated:** 2026-07-24<br>
 **Scope:** personal Human + AI companion development, possible future robotic embodiment, later family support, and strictly bounded community benefit<br>
 **Primary initial user:** the BootX founder (“Joni”), subject to explicit configuration and continuing consent<br>
 **Authority:** subordinate to the [Charter](CHARTER.md), [Governance](GOVERNANCE.md), [License](LICENSE), [AI DNA specification](docs/handbook/05-ai-dna-specification.md), and [Safety Case](docs/handbook/09-safety-case-and-risk-register.md)
@@ -30,7 +30,8 @@ Implementation produces new evidence and new risks. Therefore, development and r
 
 - requirements, architecture, threat modeling, simulations, and synthetic-data testing;
 - a software-only companion with no autonomous external action;
-- operator-selected public, non-sensitive local-document review through the contained read-only `0.2.0-dev` workflow;
+- operator-selected public, non-sensitive local-document review through the contained read-only `0.3.0-dev` workflow;
+- reviewer-supplied Law Clarity Logic screening of public, non-sensitive rules, with no legal verdict, enforcement authority, or probability claim;
 - hardware bench tests isolated from people, pets, property, and trusted networks;
 - a stationary tabletop prototype after its independent power cutoff and privacy controls are verified;
 - personal experiments involving only low-stakes, reversible tasks and no reliance for emergencies.
@@ -689,20 +690,21 @@ The desired final statement is not “the robot is 95% good.” It is:
 
 ## 21. Immediate implementation backlog
 
-**Current implementation evidence:** [`prototype/personal-companion/`](prototype/personal-companion/README.md) implements the deterministic Go backend, terminal UI, schemas, policy configuration, warning engine, synthetic fixtures, automated tests, and a contained read-only path for one explicitly confirmed public local workspace document with SHA-256 integrity evidence. File integrity does not authenticate its author or claims. This satisfies only the inspectable implementation-baseline items below; it does not satisfy `DEV-1` exit, identity authentication, external-source integration, representative evaluation, independent review, or deployment readiness.
+**Current implementation evidence:** [`prototype/personal-companion/`](prototype/personal-companion/README.md) implements the deterministic Go backend, terminal UI, schemas, policy configuration, warning engine, synthetic fixtures, automated tests, a contained read-only path for one explicitly confirmed public local workspace document with SHA-256 integrity evidence, and the bounded [`assist.law-clarity.v1`](docs/handbook/15-law-clarity-logic.md) screening workflow. File integrity does not authenticate its author or claims. Law Clarity ratings and thresholds are reviewer-supplied research aids, not legal findings or probabilities. This satisfies only the inspectable implementation-baseline items below; it does not satisfy `DEV-1` exit, identity authentication, external-source integration, representative evaluation, independent legal review, or deployment readiness.
 
 1. [x] Freeze the first personal scope and implement the typed [`assist.personal-decision.v1` pipeline](docs/handbook/14-personal-decision-pipeline.md) as a deterministic host prototype.
 2. [x] Build the deterministic policy/warning engine, typed capability boundary, CLI/TUI, schemas, and evidence receipt before adding generative explanations.
 3. [x] Establish the first contained read-only public local-document workflow on a mature host operating system.
-4. [ ] Complete Joni's visible configuration and non-purpose agreement.
-5. [ ] Specify and test a formal process/OS sandbox; host execution alone is not a sandbox assurance claim.
-6. [ ] Expand synthetic personal, family, fraud, privacy, outage, malformed-input, Unicode, accessibility, and attack scenarios with provenance.
-7. [ ] Implement the measurement harness for `POR`, `HOR`, confidence intervals, and subgroup results.
-8. [ ] Create the robotics hazard log and system threat/data-flow models.
-9. [ ] Prototype memory inspection, correction, export, expiry, and deletion without silently adding persistence.
-10. [ ] Implement reviewed local authentication, audit, safe stop, and rollback.
-11. [ ] Compare non-AI, rule-based, and bounded-AI assistance after the deterministic baseline is frozen.
-12. [ ] Design the stationary tabletop electrical/privacy safety architecture and obtain independent reviews before purchasing or energizing mobile or manipulator hardware around people.
+4. [x] Record and implement the first deterministic Law Clarity Logic contract, including corrected formulas, a non-compensable fairness gate, strict schemas, a synthetic fixture, and blocked legal conclusions.
+5. [ ] Complete Joni's visible configuration and non-purpose agreement.
+6. [ ] Specify and test a formal process/OS sandbox; host execution alone is not a sandbox assurance claim.
+7. [ ] Expand synthetic personal, family, fraud, privacy, law-clarity, outage, malformed-input, Unicode, accessibility, and attack scenarios with provenance.
+8. [ ] Implement the measurement harness for `POR`, `HOR`, confidence intervals, and subgroup results.
+9. [ ] Create the robotics hazard log and system threat/data-flow models.
+10. [ ] Prototype memory inspection, correction, export, expiry, and deletion without silently adding persistence.
+11. [ ] Implement reviewed local authentication, audit, safe stop, and rollback.
+12. [ ] Compare non-AI, rule-based, and bounded-AI assistance after the deterministic baseline is frozen.
+13. [ ] Design the stationary tabletop electrical/privacy safety architecture and obtain independent reviews before purchasing or energizing mobile or manipulator hardware around people.
 
 ## 22. Revision rule
 
