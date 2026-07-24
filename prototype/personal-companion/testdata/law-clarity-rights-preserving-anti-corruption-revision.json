@@ -1,0 +1,71 @@
+{
+  "request_id": "law-clarity-capital-corruption-revision-001",
+  "capability_id": "assist.law-clarity.v1",
+  "user_id": "declared-local-reviewer",
+  "created_at": "2026-07-24T12:05:00Z",
+  "title": "Rights-preserving anti-corruption model revision",
+  "jurisdiction": "fictional educational jurisdiction",
+  "instrument_type": "law",
+  "source_reference": "synthetic://rights-preserving-anti-corruption-revision",
+  "purpose": "Test a non-capital anti-corruption model based on proven individual conduct, equal application, independent adjudication, proportionate sanctions, asset recovery, review, and rehabilitation.",
+  "clause_text": "Every corruption charge must identify the statutory offense, each element, the accused person's own alleged act or omission, the required mental state, time, place, transaction, benefit, public loss, and evidence source. Position, rank, association, family relationship, supervision, accusation, political affiliation, or predicted conduct does not by itself establish criminal responsibility. The same offense elements and procedures apply to every person regardless of office or rank. An immunity expressly stated in controlling constitutional law may be applied only through a public, reasoned, independently reviewable decision and does not prevent lawful preservation of evidence. Criminal liability may be imposed only after the prosecution proves every element under the controlling criminal proof standard in a public hearing before a competent, independent, and impartial court. Investigators and prosecutors must preserve chain of custody, disclose material inculpatory and exculpatory evidence, document conflicts of interest, and remain institutionally independent from every person implicated by the evidence. The accused receives timely notice, counsel, adequate preparation, an opportunity to examine evidence and witnesses, a presumption of innocence, a reasoned public judgment, and appeal to an independent court. No death penalty may be imposed for a corruption offense. After final conviction, a court selects a sanction within a published statutory range using individualized findings limited to proven conduct, intent, obtained benefit, public loss, leadership, coercion, obstruction, restitution, cooperation, and demonstrated rehabilitation. Available sanctions may include a proportionate determinate prison term, confiscation of criminal proceeds subject to bona fide third-party rights, restitution, fines, and time-limited disqualification from public office. No mandatory life sentence applies. Any exceptionally long custodial sentence must undergo periodic independent review, preserve humane treatment, and provide a realistic opportunity for rehabilitation and reintegration. Rehabilitation or repentance may inform a lawful review but does not erase the conviction, restitution, asset recovery, or protection of the public.",
+  "public_non_sensitive_confirmed": true,
+  "quality": {
+    "clarity": {
+      "score": 90,
+      "rationale": "The model uses direct mandatory language and separates charge, proof, conviction, sentence, and review."
+    },
+    "specificity": {
+      "score": 94,
+      "rationale": "It identifies charge particulars, individual conduct, mental state, evidence, institutions, procedural rights, sanctions, and review conditions."
+    },
+    "fairness": {
+      "score": 96,
+      "rationale": "It prohibits capital punishment for corruption, preserves equal application, presumption of innocence, defense, independent adjudication, appeal, proportionality, humane treatment, and rehabilitation."
+    },
+    "consistency": {
+      "score": 90,
+      "rationale": "The same offense elements, proof process, individualized findings, and published sentencing range apply regardless of rank."
+    },
+    "accountability": {
+      "score": 94,
+      "rationale": "Evidence custody, disclosure, conflicts, institutional independence, reasoned judgments, appeal, asset recovery, and sentence review are auditable."
+    },
+    "low_loophole_risk": {
+      "score": 88,
+      "rationale": "Rank, association, prediction, hidden immunity, and blame transfer are constrained, while the complete jurisdiction-specific statute still requires qualified review."
+    }
+  },
+  "gray_zone": {
+    "vague_language_risk": {
+      "score": 8,
+      "rationale": "Material duties are direct; any controlling proof standard and sentencing ranges must be supplied by the complete jurisdiction-specific law."
+    },
+    "definition_risk": {
+      "score": 8,
+      "rationale": "The model names required definitions and elements but does not replace a complete criminal code."
+    },
+    "contradiction_risk": {
+      "score": 5,
+      "rationale": "No internal contradiction is visible in the model excerpt."
+    },
+    "enforcement_discretion_risk": {
+      "score": 10,
+      "rationale": "Discretion is limited by offense elements, admissible evidence, independent institutions, written reasons, statutory ranges, proportionality, and appeal."
+    },
+    "exception_boundary_risk": {
+      "score": 8,
+      "rationale": "Immunity and long-custody review have explicit authority and review boundaries, subject to completion under controlling law."
+    }
+  },
+  "power": {
+    "power_concentration_risk": {
+      "score": 15,
+      "rationale": "Investigation, prosecution, adjudication, appeal, and sentence review are institutionally separated in the model."
+    },
+    "oversight_strength": {
+      "score": 95,
+      "rationale": "Independent court adjudication, public reasons, appeal, conflict disclosure, evidence access, asset controls, and periodic sentence review provide layered oversight."
+    }
+  }
+}

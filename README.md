@@ -62,6 +62,8 @@ The first full end-to-end scenario is the [synthetic Typhoon Bavi test case](pro
 
 The [space-governance research chapter](docs/research/space/civilization-governance-before-space-expansion.md) and [synthetic governance boundary test](prototype/TEST_CASE_SPACE_GOVERNANCE.md) add a second high-consequence case. The current MVP must return `D3 / ABSTAIN`; it cannot certify a settlement or civilization.
 
+The [paired Law Clarity capital-corruption test](prototype/TEST_CASE_LAW_CLARITY_CAPITAL_CORRUPTION.md) adds a fictional abusive death-penalty proposal and a non-capital evidence-based revision. It checks protection against scapegoating and high-rank impunity while keeping guilt and sentencing outside BootX.
+
 ## Human + AI Research Handbook
 
 - [Documentation portal](docs/README.md)

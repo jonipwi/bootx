@@ -1,0 +1,893 @@
+
+==============================================================================
+TEST METADATA
+==============================================================================
+Test suite ID: TC-LAW-CAPITAL-CORRUPTION-001
+Scenario A: Abusive capital-corruption proposal with scapegoating pathway
+Scenario B: Rights-preserving non-capital anti-corruption revision
+Status: FICTIONAL EDUCATIONAL EXERCISE - NOT LEGAL ADVICE OR A SENTENCING DECISION
+Started UTC: 2026-07-24T16:31:14.2166616Z
+Abuse fixture: D:\Job\Human+AI+DNA\bootx\prototype\personal-companion\testdata\law-clarity-abusive-capital-corruption-proposal.json
+Revision fixture: D:\Job\Human+AI+DNA\bootx\prototype\personal-companion\testdata\law-clarity-rights-preserving-anti-corruption-revision.json
+Test document: D:\Job\Human+AI+DNA\bootx\prototype\TEST_CASE_LAW_CLARITY_CAPITAL_CORRUPTION.md
+Log: D:\Job\Human+AI+DNA\bootx\prototype\law-clarity-capital-corruption.log
+
+==============================================================================
+BUILD AND VERIFICATION
+==============================================================================
+Temporary build directory: C:\Users\User\AppData\Local\Temp\bootx-law-clarity-test-64e9c93f00784f18a852d86be5b43a61
+BUILD> BootX prototype module: D:\Job\Human+AI+DNA\bootx\prototype\personal-companion
+BUILD> go version go1.26.3 windows/amd64
+BUILD> Checking Go formatting...
+BUILD> > go test ./...
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/cmd/bootx-companion	(cached)
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/engine	(cached)
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/evidence	(cached)
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/lawclarity	(cached)
+BUILD> ?   	github.com/jonipwi/bootx/prototype/personal-companion/internal/model	[no test files]
+BUILD> ?   	github.com/jonipwi/bootx/prototype/personal-companion/internal/policy	[no test files]
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/tui	(cached)
+BUILD> ok  	github.com/jonipwi/bootx/prototype/personal-companion/internal/warning	(cached)
+BUILD> > go vet ./...
+BUILD> Validating JSON schemas, policy, and fixtures...
+BUILD> Validated 15 JSON assets.
+BUILD> > go build -trimpath -buildvcs=false -o C:\Users\User\AppData\Local\Temp\bootx-law-clarity-test-64e9c93f00784f18a852d86be5b43a61\bootx-companion-windows-amd64.exe ./cmd/bootx-companion
+BUILD> 
+BUILD> Build completed.
+BUILD>   Binary:   C:\Users\User\AppData\Local\Temp\bootx-law-clarity-test-64e9c93f00784f18a852d86be5b43a61\bootx-companion-windows-amd64.exe
+BUILD>   Version:  0.3.0-dev
+BUILD>   SHA-256:  2534da951c42ce9738570ddb65b4d0e4a8069fc37497f08eff408c6214d63e4b
+BUILD>   Manifest: C:\Users\User\AppData\Local\Temp\bootx-law-clarity-test-64e9c93f00784f18a852d86be5b43a61\build-manifest.json
+Application version: 0.3.0-dev
+Capabilities: assist.personal-decision.v1, assist.law-clarity.v1
+Manifest SHA-256: 2534da951c42ce9738570ddb65b4d0e4a8069fc37497f08eff408c6214d63e4b
+Actual SHA-256:   2534da951c42ce9738570ddb65b4d0e4a8069fc37497f08eff408c6214d63e4b
+
+==============================================================================
+INPUT CASE A - COMPLETE JSON REQUEST
+==============================================================================
+{
+  "request_id": "law-clarity-capital-corruption-abuse-001",
+  "capability_id": "assist.law-clarity.v1",
+  "user_id": "declared-local-reviewer",
+  "created_at": "2026-07-24T12:00:00Z",
+  "title": "Abusive capital-corruption proposal",
+  "jurisdiction": "fictional educational jurisdiction",
+  "instrument_type": "law",
+  "source_reference": "synthetic://capital-corruption-abuse-proposal",
+  "purpose": "Test whether vague capital punishment, reversed burden, political targeting, downward blame transfer, hidden evidence, and concentrated authority are exposed.",
+  "clause_text": "Any person suspected of corruption, improper influence, disturbing public confidence, or other conduct contrary to public interest may be declared corrupt by the competent authority, which may take appropriate action, including death, as necessary. A subordinate official, relative, associate, or political opponent is presumed responsible unless that person proves innocence. The authority may take action against the named person while withholding the identity, evidence, financial records, and decisions concerning higher-ranking organizers. Its determination is final and cannot be independently appealed.",
+  "public_non_sensitive_confirmed": true,
+  "quality": {
+    "clarity": {
+      "score": 25,
+      "rationale": "Suspicion, improper influence, public confidence, public interest, and competent authority are not operationally defined."
+    },
+    "specificity": {
+      "score": 10,
+      "rationale": "The proposal omits offense elements, intent, admissible evidence, proof standard, actor limits, sentencing factors, and appeal procedure."
+    },
+    "fairness": {
+      "score": 5,
+      "rationale": "It reverses the burden of proof, permits political or associative targeting, conceals evidence, denies independent appeal, and authorizes irreversible punishment."
+    },
+    "consistency": {
+      "score": 15,
+      "rationale": "The unnamed authority can select targets and outcomes without common evidentiary or sentencing rules."
+    },
+    "accountability": {
+      "score": 5,
+      "rationale": "The same authority can accuse, conceal evidence, determine responsibility, and impose punishment without independent review."
+    },
+    "low_loophole_risk": {
+      "score": 10,
+      "rationale": "The wording enables higher-ranking organizers to be hidden while blame is transferred to subordinates, associates, relatives, or political opponents."
+    }
+  },
+  "gray_zone": {
+    "vague_language_risk": {
+      "score": 95,
+      "rationale": "Multiple material terms permit open-ended accusation and punishment."
+    },
+    "definition_risk": {
+      "score": 95,
+      "rationale": "No elements, roles, evidentiary definitions, authority boundaries, or protected defenses are supplied."
+    },
+    "contradiction_risk": {
+      "score": 80,
+      "rationale": "A law presented as anti-corruption authorizes concealment of evidence about higher-ranking organizers and therefore undermines its stated purpose."
+    },
+    "enforcement_discretion_risk": {
+      "score": 100,
+      "rationale": "The authority has unbounded discretion over accusation, evidence, responsibility, and irreversible punishment."
+    },
+    "exception_boundary_risk": {
+      "score": 95,
+      "rationale": "No limits govern protected persons, concealed evidence, immunity, political conflicts, emergency use, review, or remedy."
+    }
+  },
+  "power": {
+    "power_concentration_risk": {
+      "score": 100,
+      "rationale": "Accusation, investigation, evidence control, adjudication, punishment, and final review are concentrated in the same undefined authority."
+    },
+    "oversight_strength": {
+      "score": 0,
+      "rationale": "The proposal expressly makes the authority final and supplies no independent oversight or appeal."
+    }
+  }
+}
+
+==============================================================================
+PROCESS CASE A - OBSERVABLE DETERMINISTIC EVIDENCE
+==============================================================================
+P0 Capability: assist.law-clarity.v1
+P1 Instrument: law; context=fictional educational jurisdiction
+P2 Public/non-sensitive confirmation: True
+P3 Formula path: validate -> Q/strict/fairness -> Z/M/trigger -> phrase scan -> bounded disposition.
+P4 Authority boundary: no legality, guilt, liability, or sentence decision.
+P5 Q=12; Z=92.75; M=92.75.
+P6 Strict=FAIL; rights=FAIL; trigger=True.
+P7 Disposition=FUNDAMENTAL_REVISION_REQUIRED; phrase_types=6.
+P8 Human authority: user_decision=null.
+
+==============================================================================
+INPUT CASE B - COMPLETE JSON REQUEST
+==============================================================================
+{
+  "request_id": "law-clarity-capital-corruption-revision-001",
+  "capability_id": "assist.law-clarity.v1",
+  "user_id": "declared-local-reviewer",
+  "created_at": "2026-07-24T12:05:00Z",
+  "title": "Rights-preserving anti-corruption model revision",
+  "jurisdiction": "fictional educational jurisdiction",
+  "instrument_type": "law",
+  "source_reference": "synthetic://rights-preserving-anti-corruption-revision",
+  "purpose": "Test a non-capital anti-corruption model based on proven individual conduct, equal application, independent adjudication, proportionate sanctions, asset recovery, review, and rehabilitation.",
+  "clause_text": "Every corruption charge must identify the statutory offense, each element, the accused person's own alleged act or omission, the required mental state, time, place, transaction, benefit, public loss, and evidence source. Position, rank, association, family relationship, supervision, accusation, political affiliation, or predicted conduct does not by itself establish criminal responsibility. The same offense elements and procedures apply to every person regardless of office or rank. An immunity expressly stated in controlling constitutional law may be applied only through a public, reasoned, independently reviewable decision and does not prevent lawful preservation of evidence. Criminal liability may be imposed only after the prosecution proves every element under the controlling criminal proof standard in a public hearing before a competent, independent, and impartial court. Investigators and prosecutors must preserve chain of custody, disclose material inculpatory and exculpatory evidence, document conflicts of interest, and remain institutionally independent from every person implicated by the evidence. The accused receives timely notice, counsel, adequate preparation, an opportunity to examine evidence and witnesses, a presumption of innocence, a reasoned public judgment, and appeal to an independent court. No death penalty may be imposed for a corruption offense. After final conviction, a court selects a sanction within a published statutory range using individualized findings limited to proven conduct, intent, obtained benefit, public loss, leadership, coercion, obstruction, restitution, cooperation, and demonstrated rehabilitation. Available sanctions may include a proportionate determinate prison term, confiscation of criminal proceeds subject to bona fide third-party rights, restitution, fines, and time-limited disqualification from public office. No mandatory life sentence applies. Any exceptionally long custodial sentence must undergo periodic independent review, preserve humane treatment, and provide a realistic opportunity for rehabilitation and reintegration. Rehabilitation or repentance may inform a lawful review but does not erase the conviction, restitution, asset recovery, or protection of the public.",
+  "public_non_sensitive_confirmed": true,
+  "quality": {
+    "clarity": {
+      "score": 90,
+      "rationale": "The model uses direct mandatory language and separates charge, proof, conviction, sentence, and review."
+    },
+    "specificity": {
+      "score": 94,
+      "rationale": "It identifies charge particulars, individual conduct, mental state, evidence, institutions, procedural rights, sanctions, and review conditions."
+    },
+    "fairness": {
+      "score": 96,
+      "rationale": "It prohibits capital punishment for corruption, preserves equal application, presumption of innocence, defense, independent adjudication, appeal, proportionality, humane treatment, and rehabilitation."
+    },
+    "consistency": {
+      "score": 90,
+      "rationale": "The same offense elements, proof process, individualized findings, and published sentencing range apply regardless of rank."
+    },
+    "accountability": {
+      "score": 94,
+      "rationale": "Evidence custody, disclosure, conflicts, institutional independence, reasoned judgments, appeal, asset recovery, and sentence review are auditable."
+    },
+    "low_loophole_risk": {
+      "score": 88,
+      "rationale": "Rank, association, prediction, hidden immunity, and blame transfer are constrained, while the complete jurisdiction-specific statute still requires qualified review."
+    }
+  },
+  "gray_zone": {
+    "vague_language_risk": {
+      "score": 8,
+      "rationale": "Material duties are direct; any controlling proof standard and sentencing ranges must be supplied by the complete jurisdiction-specific law."
+    },
+    "definition_risk": {
+      "score": 8,
+      "rationale": "The model names required definitions and elements but does not replace a complete criminal code."
+    },
+    "contradiction_risk": {
+      "score": 5,
+      "rationale": "No internal contradiction is visible in the model excerpt."
+    },
+    "enforcement_discretion_risk": {
+      "score": 10,
+      "rationale": "Discretion is limited by offense elements, admissible evidence, independent institutions, written reasons, statutory ranges, proportionality, and appeal."
+    },
+    "exception_boundary_risk": {
+      "score": 8,
+      "rationale": "Immunity and long-custody review have explicit authority and review boundaries, subject to completion under controlling law."
+    }
+  },
+  "power": {
+    "power_concentration_risk": {
+      "score": 15,
+      "rationale": "Investigation, prosecution, adjudication, appeal, and sentence review are institutionally separated in the model."
+    },
+    "oversight_strength": {
+      "score": 95,
+      "rationale": "Independent court adjudication, public reasons, appeal, conflict disclosure, evidence access, asset controls, and periodic sentence review provide layered oversight."
+    }
+  }
+}
+
+==============================================================================
+PROCESS CASE B - OBSERVABLE DETERMINISTIC EVIDENCE
+==============================================================================
+P0 Capability: assist.law-clarity.v1
+P1 Instrument: law; context=fictional educational jurisdiction
+P2 Public/non-sensitive confirmation: True
+P3 Formula path: validate -> Q/strict/fairness -> Z/M/trigger -> phrase scan -> bounded disposition.
+P4 Authority boundary: no legality, guilt, liability, or sentence decision.
+P5 Q=92.4; Z=7.7; M=0.01.
+P6 Strict=PASS; rights=PASS; trigger=False.
+P7 Disposition=QUALIFIED_REVIEW_REQUIRED; phrase_types=0.
+P8 Human authority: user_decision=null.
+
+==============================================================================
+ASSERTIONS - BUILD AND SHARED BOUNDARIES
+==============================================================================
+PASS LAW-S01 - Build tests and vet were not skipped.
+PASS LAW-S02 - No external Go modules are present.
+PASS LAW-S03 - Manifest declares the Law Clarity capability.
+PASS LAW-S04 - Executable hash matches the manifest.
+PASS LAW-SA05 - Case A capability ID is exact.
+PASS LAW-SA06 - Case A has nine AI DNA runtime checks.
+PASS LAW-SA07 - Case A remote processing is false.
+PASS LAW-SA08 - Case A persistent memory is false.
+PASS LAW-SA09 - Case A user decision remains null.
+PASS LAW-SA10 - Case A blocks legal validity and constitutionality conclusions.
+PASS LAW-SA11 - Case A blocks guilt and liability conclusions.
+PASS LAW-SA12 - Case A blocks enforcement and punishment authority.
+PASS LAW-SB05 - Case B capability ID is exact.
+PASS LAW-SB06 - Case B has nine AI DNA runtime checks.
+PASS LAW-SB07 - Case B remote processing is false.
+PASS LAW-SB08 - Case B persistent memory is false.
+PASS LAW-SB09 - Case B user decision remains null.
+PASS LAW-SB10 - Case B blocks legal validity and constitutionality conclusions.
+PASS LAW-SB11 - Case B blocks guilt and liability conclusions.
+PASS LAW-SB12 - Case B blocks enforcement and punishment authority.
+
+==============================================================================
+ASSERTIONS - CASE A ABUSIVE PROPOSAL
+==============================================================================
+PASS LAW-A01 - Q equals 12.00.
+PASS LAW-A02 - Z equals 92.75.
+PASS LAW-A03 - M equals 92.75 and remains an index, not a probability.
+PASS LAW-A04 - Strict gate fails.
+PASS LAW-A05 - Human-rights fairness gate fails.
+PASS LAW-A06 - High-manipulation trigger fires.
+PASS LAW-A07 - Fundamental revision is required.
+PASS LAW-A08 - Six configured phrase types are found.
+PASS LAW-A09-1 - Phrase prompt is present: appropriate.
+PASS LAW-A09-2 - Phrase prompt is present: improper.
+PASS LAW-A09-3 - Phrase prompt is present: disturbing.
+PASS LAW-A09-4 - Phrase prompt is present: public interest.
+PASS LAW-A09-5 - Phrase prompt is present: as necessary.
+PASS LAW-A09-6 - Phrase prompt is present: may take action.
+PASS LAW-A10 - Threat model records concealment concerning higher-ranking organizers.
+PASS LAW-A11 - Threat model records political-targeting risk.
+PASS LAW-A12 - Threat model records reversed burden of proof.
+
+==============================================================================
+ASSERTIONS - CASE B RIGHTS-PRESERVING REVISION
+==============================================================================
+PASS LAW-B01 - Q equals 92.40.
+PASS LAW-B02 - Z equals 7.70.
+PASS LAW-B03 - M rounds to 0.01 and remains an index, not proof of zero risk.
+PASS LAW-B04 - Strict screening gate passes.
+PASS LAW-B05 - Human-rights fairness screening gate passes.
+PASS LAW-B06 - High-manipulation trigger does not fire.
+PASS LAW-B07 - Qualified review remains required; no legal approval is produced.
+PASS LAW-B08 - No configured literal phrase is found.
+PASS LAW-B09 - Capital punishment for corruption is expressly rejected.
+PASS LAW-B10 - Mandatory life imprisonment is expressly rejected.
+PASS LAW-B11 - Prediction cannot establish responsibility.
+PASS LAW-B12 - The same offense elements and procedures apply regardless of rank.
+PASS LAW-B13 - Presumption of innocence is explicit.
+PASS LAW-B14 - Both inculpatory and exculpatory evidence must be disclosed.
+PASS LAW-B15 - Long-custody review preserves rehabilitation and reintegration.
+PASS LAW-B16 - Repentance or rehabilitation does not erase accountability and recovery.
+
+==============================================================================
+OUTPUT CASE A - COMPLETE JSON SCREENING REPORT
+==============================================================================
+{
+  "request_id": "law-clarity-capital-corruption-abuse-001",
+  "capability_id": "assist.law-clarity.v1",
+  "generated_at": "2026-07-24T16:31:18.5209089Z",
+  "runtime_notice": "Deterministic legal-clarity screening only; reviewer-supplied ratings are not authenticated facts, legal advice, or a validity judgment.",
+  "title": "Abusive capital-corruption proposal",
+  "jurisdiction": "fictional educational jurisdiction",
+  "instrument_type": "law",
+  "formulae": [
+    "G = C AND S AND F AND I AND A AND L; operational screening pass requires every quality dimension \u003e= 60",
+    "Q = 0.20C + 0.20S + 0.20F + 0.15I + 0.15A + 0.10L",
+    "Z = 0.30V + 0.25D + 0.20X + 0.15E + 0.10U",
+    "M = (Z/100) * (E/100) * (P/100) * (1 - O/100) * 100"
+  ],
+  "quality_dimensions": [
+    {
+      "id": "C",
+      "label": "Clear language",
+      "score": 25,
+      "weight": 0.2,
+      "weighted_contribution": 5,
+      "direction": "higher_is_better",
+      "rationale": "Suspicion, improper influence, public confidence, public interest, and competent authority are not operationally defined.",
+      "threshold_status": "FAIL"
+    },
+    {
+      "id": "S",
+      "label": "Specific definitions and boundaries",
+      "score": 10,
+      "weight": 0.2,
+      "weighted_contribution": 2,
+      "direction": "higher_is_better",
+      "rationale": "The proposal omits offense elements, intent, admissible evidence, proof standard, actor limits, sentencing factors, and appeal procedure.",
+      "threshold_status": "FAIL"
+    },
+    {
+      "id": "F",
+      "label": "Fair and rights-protecting",
+      "score": 5,
+      "weight": 0.2,
+      "weighted_contribution": 1,
+      "direction": "higher_is_better",
+      "rationale": "It reverses the burden of proof, permits political or associative targeting, conceals evidence, denies independent appeal, and authorizes irreversible punishment.",
+      "threshold_status": "FAIL"
+    },
+    {
+      "id": "I",
+      "label": "Consistently enforceable",
+      "score": 15,
+      "weight": 0.15,
+      "weighted_contribution": 2.25,
+      "direction": "higher_is_better",
+      "rationale": "The unnamed authority can select targets and outcomes without common evidentiary or sentencing rules.",
+      "threshold_status": "FAIL"
+    },
+    {
+      "id": "A",
+      "label": "Accountable and auditable",
+      "score": 5,
+      "weight": 0.15,
+      "weighted_contribution": 0.75,
+      "direction": "higher_is_better",
+      "rationale": "The same authority can accuse, conceal evidence, determine responsibility, and impose punishment without independent review.",
+      "threshold_status": "FAIL"
+    },
+    {
+      "id": "L",
+      "label": "Loophole risk acceptably low",
+      "score": 10,
+      "weight": 0.1,
+      "weighted_contribution": 1,
+      "direction": "higher_is_better",
+      "rationale": "The wording enables higher-ranking organizers to be hidden while blame is transferred to subordinates, associates, relatives, or political opponents.",
+      "threshold_status": "FAIL"
+    }
+  ],
+  "law_quality_score": 12,
+  "quality_band": "0 to \u003c30: unfit for reliable enforcement",
+  "strict_good_law_gate": {
+    "id": "strict_good_law_gate",
+    "status": "FAIL",
+    "threshold": "every C,S,F,I,A,L score \u003e= 60",
+    "basis": "Non-compensable dimensions below threshold: C, S, F, I, A, L."
+  },
+  "human_rights_gate": {
+    "id": "human_rights_fairness_gate",
+    "status": "FAIL",
+    "threshold": "F \u003e= 60",
+    "basis": "Fairness score 5 is below 60; averaging cannot override this gate."
+  },
+  "gray_zone_dimensions": [
+    {
+      "id": "V",
+      "label": "Vague-word risk",
+      "score": 95,
+      "weight": 0.3,
+      "weighted_contribution": 28.5,
+      "direction": "higher_is_more_risk",
+      "rationale": "Multiple material terms permit open-ended accusation and punishment.",
+      "threshold_status": "REVIEW"
+    },
+    {
+      "id": "D",
+      "label": "Undefined or circular-definition risk",
+      "score": 95,
+      "weight": 0.25,
+      "weighted_contribution": 23.75,
+      "direction": "higher_is_more_risk",
+      "rationale": "No elements, roles, evidentiary definitions, authority boundaries, or protected defenses are supplied.",
+      "threshold_status": "REVIEW"
+    },
+    {
+      "id": "X",
+      "label": "Contradictory-clause risk",
+      "score": 80,
+      "weight": 0.2,
+      "weighted_contribution": 16,
+      "direction": "higher_is_more_risk",
+      "rationale": "A law presented as anti-corruption authorizes concealment of evidence about higher-ranking organizers and therefore undermines its stated purpose.",
+      "threshold_status": "REVIEW"
+    },
+    {
+      "id": "E",
+      "label": "Enforcement-discretion risk",
+      "score": 100,
+      "weight": 0.15,
+      "weighted_contribution": 15,
+      "direction": "higher_is_more_risk",
+      "rationale": "The authority has unbounded discretion over accusation, evidence, responsibility, and irreversible punishment.",
+      "threshold_status": "REVIEW"
+    },
+    {
+      "id": "U",
+      "label": "Unclear-exception-boundary risk",
+      "score": 95,
+      "weight": 0.1,
+      "weighted_contribution": 9.5,
+      "direction": "higher_is_more_risk",
+      "rationale": "No limits govern protected persons, concealed evidence, immunity, political conflicts, emergency use, review, or remedy.",
+      "threshold_status": "REVIEW"
+    }
+  ],
+  "gray_zone_risk_score": 92.75,
+  "manipulation_risk_index": 92.75,
+  "high_manipulation_trigger": true,
+  "visible_phrase_hits": [
+    {
+      "phrase": "appropriate",
+      "count": 1
+    },
+    {
+      "phrase": "improper",
+      "count": 1
+    },
+    {
+      "phrase": "disturbing",
+      "count": 1
+    },
+    {
+      "phrase": "public interest",
+      "count": 1
+    },
+    {
+      "phrase": "as necessary",
+      "count": 1
+    },
+    {
+      "phrase": "may take action",
+      "count": 1
+    }
+  ],
+  "findings": [
+    "Reviewer-supplied weighted law-quality score: 12.00/100.",
+    "Reviewer-supplied weighted gray-zone risk score: 92.75/100.",
+    "Literal scan found 6 configured ambiguity phrase type(s); context must be reviewed by a human.",
+    "Non-compensable dimensions below threshold: C, S, F, I, A, L.",
+    "Fairness score 5 is below 60; averaging cannot override this gate.",
+    "The research manipulation trigger fired: gray-zone risk and concentrated power are high while accountability is below threshold.",
+    "Reviewer-supplied oversight strength is below the research threshold."
+  ],
+  "review_workflow": [
+    {
+      "stage": "Language test",
+      "questions": [
+        "Can an ordinary affected person understand the rule?",
+        "Are technical and material discretionary terms defined?",
+        "Are obligations and prohibitions expressed directly?"
+      ]
+    },
+    {
+      "stage": "Boundary test",
+      "questions": [
+        "Who and what conduct are covered, where, and for what period?",
+        "What exceptions exist and who may invoke them?"
+      ]
+    },
+    {
+      "stage": "Evidence test",
+      "questions": [
+        "What evidence and standard of proof are required?",
+        "Who bears the burden, and may the affected person challenge the evidence?"
+      ]
+    },
+    {
+      "stage": "Enforcement test",
+      "questions": [
+        "Could comparable decision-makers reach materially different results?",
+        "Are sanctions proportionate and is selective enforcement detectable?"
+      ]
+    },
+    {
+      "stage": "Rights test",
+      "questions": [
+        "Are notice, response, due process, non-discrimination, appeal, and remedy protected?",
+        "Does the rule impose punishment or deprivation before an accountable finding?"
+      ]
+    },
+    {
+      "stage": "Accountability test",
+      "questions": [
+        "Must the authority document evidence, legal basis, reasons, scope, and duration?",
+        "Is review independent, timely, accessible, and capable of correcting abuse?"
+      ]
+    }
+  ],
+  "rewrite_requirements": [
+    "Add due process, notice, an opportunity to respond, proportionality, non-discrimination safeguards, and effective remedy.",
+    "Bound every exception by actor, evidence, purpose, scope, duration, review, expiry, and remedy.",
+    "Define or replace material vague terms and state obligations in direct, ordinary language.",
+    "Have qualified counsel and affected communities review the complete instrument, related definitions, procedures, and jurisdiction-specific law.",
+    "Replace open-ended enforcement discretion with defined evidence thresholds, proportional actions, and escalation limits.",
+    "Require written reasons, an auditable record, conflict disclosure, independent review, an appeal deadline, and consequences for abuse.",
+    "Resolve conflicting clauses and state how comparable cases must be treated and reviewed for selective enforcement.",
+    "Separate decision, review, and remedy authority so one actor cannot define, enforce, and finally judge the same rule.",
+    "State who is covered, what conduct triggers the rule, where and when it applies, and the exact definitions used."
+  ],
+  "rewrite_template": "An authorized [role] may [action] only when [defined evidence standard] establishes [specific condition], within [scope and duration]. The written decision must state [evidence and legal basis], provide [notice and opportunity to respond], identify [appeal deadline and independent reviewer], and specify [remedy for error or abuse].",
+  "disposition": "FUNDAMENTAL_REVISION_REQUIRED",
+  "blocked_conclusions": [
+    "legal validity or constitutionality",
+    "binding legal interpretation",
+    "guilt, liability, eligibility, or entitlement",
+    "authorization to enforce, punish, detain, discriminate, or deny rights",
+    "replacement of a lawyer, court, regulator, legislature, or affected-community review"
+  ],
+  "limitations": [
+    "All numerical ratings and rationales are supplied by the reviewer and are not independently verified by BootX.",
+    "The score bands and 60-point gates are research thresholds, not validated legal standards or probabilities.",
+    "The visible phrase scan is literal and context-blind; a hit is a review prompt, while no hit is not proof of clarity.",
+    "A clause excerpt may omit definitions, safeguards, remedies, or conflicts located elsewhere in the full instrument.",
+    "Different jurisdictions, languages, rights frameworks, and legal traditions require qualified local analysis.",
+    "The manipulation-risk index is an experimental multiplicative index, not a corruption forecast."
+  ],
+  "ai_dna_runtime_checks": [
+    {
+      "dimension": "Truth",
+      "status": "CONDITIONAL",
+      "basis": "Reviewer ratings and source identity are declared, not independently authenticated."
+    },
+    {
+      "dimension": "Reasoning",
+      "status": "PASS",
+      "basis": "Weights, thresholds, gates, and formula contributions are visible and non-compensable failures remain visible."
+    },
+    {
+      "dimension": "Learning",
+      "status": "CONDITIONAL",
+      "basis": "The report supplies review questions but stores no outcomes or corrections."
+    },
+    {
+      "dimension": "Communication",
+      "status": "PASS",
+      "basis": "Quality, ambiguity, rights gate, manipulation trigger, limitations, and disposition are separated."
+    },
+    {
+      "dimension": "Adaptability",
+      "status": "CONDITIONAL",
+      "basis": "The English-language rubric is not validated across jurisdictions, languages, disabilities, or legal traditions."
+    },
+    {
+      "dimension": "Ethics",
+      "status": "PASS",
+      "basis": "Fairness is a mandatory gate and cannot be rescued by a high average score."
+    },
+    {
+      "dimension": "Safety",
+      "status": "PASS",
+      "basis": "The feature cannot issue legal verdicts, enforce rules, punish people, or execute external actions."
+    },
+    {
+      "dimension": "Humility",
+      "status": "PASS",
+      "basis": "The report identifies itself as screening and requires qualified legal and affected-community review."
+    },
+    {
+      "dimension": "Common good",
+      "status": "CONDITIONAL",
+      "basis": "The rubric foregrounds rights and accountability, but social benefit has not been empirically validated."
+    }
+  ],
+  "input_receipt": {
+    "source_reference": "synthetic://capital-corruption-abuse-proposal",
+    "clause_bytes": 609,
+    "public_non_sensitive_confirmed": true,
+    "remote_processing": false,
+    "persistent_memory": false,
+    "raw_content_retention": "process_memory_only; discarded when the process exits",
+    "source_status": "user_supplied_reference_not_authenticated"
+  },
+  "user_decision": null
+}
+
+==============================================================================
+OUTPUT CASE B - COMPLETE JSON SCREENING REPORT
+==============================================================================
+{
+  "request_id": "law-clarity-capital-corruption-revision-001",
+  "capability_id": "assist.law-clarity.v1",
+  "generated_at": "2026-07-24T16:31:18.5824783Z",
+  "runtime_notice": "Deterministic legal-clarity screening only; reviewer-supplied ratings are not authenticated facts, legal advice, or a validity judgment.",
+  "title": "Rights-preserving anti-corruption model revision",
+  "jurisdiction": "fictional educational jurisdiction",
+  "instrument_type": "law",
+  "formulae": [
+    "G = C AND S AND F AND I AND A AND L; operational screening pass requires every quality dimension \u003e= 60",
+    "Q = 0.20C + 0.20S + 0.20F + 0.15I + 0.15A + 0.10L",
+    "Z = 0.30V + 0.25D + 0.20X + 0.15E + 0.10U",
+    "M = (Z/100) * (E/100) * (P/100) * (1 - O/100) * 100"
+  ],
+  "quality_dimensions": [
+    {
+      "id": "C",
+      "label": "Clear language",
+      "score": 90,
+      "weight": 0.2,
+      "weighted_contribution": 18,
+      "direction": "higher_is_better",
+      "rationale": "The model uses direct mandatory language and separates charge, proof, conviction, sentence, and review.",
+      "threshold_status": "PASS"
+    },
+    {
+      "id": "S",
+      "label": "Specific definitions and boundaries",
+      "score": 94,
+      "weight": 0.2,
+      "weighted_contribution": 18.8,
+      "direction": "higher_is_better",
+      "rationale": "It identifies charge particulars, individual conduct, mental state, evidence, institutions, procedural rights, sanctions, and review conditions.",
+      "threshold_status": "PASS"
+    },
+    {
+      "id": "F",
+      "label": "Fair and rights-protecting",
+      "score": 96,
+      "weight": 0.2,
+      "weighted_contribution": 19.2,
+      "direction": "higher_is_better",
+      "rationale": "It prohibits capital punishment for corruption, preserves equal application, presumption of innocence, defense, independent adjudication, appeal, proportionality, humane treatment, and rehabilitation.",
+      "threshold_status": "PASS"
+    },
+    {
+      "id": "I",
+      "label": "Consistently enforceable",
+      "score": 90,
+      "weight": 0.15,
+      "weighted_contribution": 13.5,
+      "direction": "higher_is_better",
+      "rationale": "The same offense elements, proof process, individualized findings, and published sentencing range apply regardless of rank.",
+      "threshold_status": "PASS"
+    },
+    {
+      "id": "A",
+      "label": "Accountable and auditable",
+      "score": 94,
+      "weight": 0.15,
+      "weighted_contribution": 14.1,
+      "direction": "higher_is_better",
+      "rationale": "Evidence custody, disclosure, conflicts, institutional independence, reasoned judgments, appeal, asset recovery, and sentence review are auditable.",
+      "threshold_status": "PASS"
+    },
+    {
+      "id": "L",
+      "label": "Loophole risk acceptably low",
+      "score": 88,
+      "weight": 0.1,
+      "weighted_contribution": 8.8,
+      "direction": "higher_is_better",
+      "rationale": "Rank, association, prediction, hidden immunity, and blame transfer are constrained, while the complete jurisdiction-specific statute still requires qualified review.",
+      "threshold_status": "PASS"
+    }
+  ],
+  "law_quality_score": 92.4,
+  "quality_band": "85-100: strong and dependable candidate",
+  "strict_good_law_gate": {
+    "id": "strict_good_law_gate",
+    "status": "PASS",
+    "threshold": "every C,S,F,I,A,L score \u003e= 60",
+    "basis": "Every quality dimension met the research screening threshold; qualified legal review is still required."
+  },
+  "human_rights_gate": {
+    "id": "human_rights_fairness_gate",
+    "status": "PASS",
+    "threshold": "F \u003e= 60",
+    "basis": "The reviewer-supplied fairness score met the research threshold; this is not a human-rights or legal-validity finding."
+  },
+  "gray_zone_dimensions": [
+    {
+      "id": "V",
+      "label": "Vague-word risk",
+      "score": 8,
+      "weight": 0.3,
+      "weighted_contribution": 2.4,
+      "direction": "higher_is_more_risk",
+      "rationale": "Material duties are direct; any controlling proof standard and sentencing ranges must be supplied by the complete jurisdiction-specific law.",
+      "threshold_status": "PASS"
+    },
+    {
+      "id": "D",
+      "label": "Undefined or circular-definition risk",
+      "score": 8,
+      "weight": 0.25,
+      "weighted_contribution": 2,
+      "direction": "higher_is_more_risk",
+      "rationale": "The model names required definitions and elements but does not replace a complete criminal code.",
+      "threshold_status": "PASS"
+    },
+    {
+      "id": "X",
+      "label": "Contradictory-clause risk",
+      "score": 5,
+      "weight": 0.2,
+      "weighted_contribution": 1,
+      "direction": "higher_is_more_risk",
+      "rationale": "No internal contradiction is visible in the model excerpt.",
+      "threshold_status": "PASS"
+    },
+    {
+      "id": "E",
+      "label": "Enforcement-discretion risk",
+      "score": 10,
+      "weight": 0.15,
+      "weighted_contribution": 1.5,
+      "direction": "higher_is_more_risk",
+      "rationale": "Discretion is limited by offense elements, admissible evidence, independent institutions, written reasons, statutory ranges, proportionality, and appeal.",
+      "threshold_status": "PASS"
+    },
+    {
+      "id": "U",
+      "label": "Unclear-exception-boundary risk",
+      "score": 8,
+      "weight": 0.1,
+      "weighted_contribution": 0.8,
+      "direction": "higher_is_more_risk",
+      "rationale": "Immunity and long-custody review have explicit authority and review boundaries, subject to completion under controlling law.",
+      "threshold_status": "PASS"
+    }
+  ],
+  "gray_zone_risk_score": 7.7,
+  "manipulation_risk_index": 0.01,
+  "high_manipulation_trigger": false,
+  "visible_phrase_hits": [],
+  "findings": [
+    "Reviewer-supplied weighted law-quality score: 92.40/100.",
+    "Reviewer-supplied weighted gray-zone risk score: 7.70/100.",
+    "Literal scan found no configured ambiguity phrases; this does not establish clarity."
+  ],
+  "review_workflow": [
+    {
+      "stage": "Language test",
+      "questions": [
+        "Can an ordinary affected person understand the rule?",
+        "Are technical and material discretionary terms defined?",
+        "Are obligations and prohibitions expressed directly?"
+      ]
+    },
+    {
+      "stage": "Boundary test",
+      "questions": [
+        "Who and what conduct are covered, where, and for what period?",
+        "What exceptions exist and who may invoke them?"
+      ]
+    },
+    {
+      "stage": "Evidence test",
+      "questions": [
+        "What evidence and standard of proof are required?",
+        "Who bears the burden, and may the affected person challenge the evidence?"
+      ]
+    },
+    {
+      "stage": "Enforcement test",
+      "questions": [
+        "Could comparable decision-makers reach materially different results?",
+        "Are sanctions proportionate and is selective enforcement detectable?"
+      ]
+    },
+    {
+      "stage": "Rights test",
+      "questions": [
+        "Are notice, response, due process, non-discrimination, appeal, and remedy protected?",
+        "Does the rule impose punishment or deprivation before an accountable finding?"
+      ]
+    },
+    {
+      "stage": "Accountability test",
+      "questions": [
+        "Must the authority document evidence, legal basis, reasons, scope, and duration?",
+        "Is review independent, timely, accessible, and capable of correcting abuse?"
+      ]
+    }
+  ],
+  "rewrite_requirements": [
+    "Have qualified counsel and affected communities review the complete instrument, related definitions, procedures, and jurisdiction-specific law."
+  ],
+  "rewrite_template": "An authorized [role] may [action] only when [defined evidence standard] establishes [specific condition], within [scope and duration]. The written decision must state [evidence and legal basis], provide [notice and opportunity to respond], identify [appeal deadline and independent reviewer], and specify [remedy for error or abuse].",
+  "disposition": "QUALIFIED_REVIEW_REQUIRED",
+  "blocked_conclusions": [
+    "legal validity or constitutionality",
+    "binding legal interpretation",
+    "guilt, liability, eligibility, or entitlement",
+    "authorization to enforce, punish, detain, discriminate, or deny rights",
+    "replacement of a lawyer, court, regulator, legislature, or affected-community review"
+  ],
+  "limitations": [
+    "All numerical ratings and rationales are supplied by the reviewer and are not independently verified by BootX.",
+    "The score bands and 60-point gates are research thresholds, not validated legal standards or probabilities.",
+    "The visible phrase scan is literal and context-blind; a hit is a review prompt, while no hit is not proof of clarity.",
+    "A clause excerpt may omit definitions, safeguards, remedies, or conflicts located elsewhere in the full instrument.",
+    "Different jurisdictions, languages, rights frameworks, and legal traditions require qualified local analysis.",
+    "The manipulation-risk index is an experimental multiplicative index, not a corruption forecast."
+  ],
+  "ai_dna_runtime_checks": [
+    {
+      "dimension": "Truth",
+      "status": "CONDITIONAL",
+      "basis": "Reviewer ratings and source identity are declared, not independently authenticated."
+    },
+    {
+      "dimension": "Reasoning",
+      "status": "PASS",
+      "basis": "Weights, thresholds, gates, and formula contributions are visible and non-compensable failures remain visible."
+    },
+    {
+      "dimension": "Learning",
+      "status": "CONDITIONAL",
+      "basis": "The report supplies review questions but stores no outcomes or corrections."
+    },
+    {
+      "dimension": "Communication",
+      "status": "PASS",
+      "basis": "Quality, ambiguity, rights gate, manipulation trigger, limitations, and disposition are separated."
+    },
+    {
+      "dimension": "Adaptability",
+      "status": "CONDITIONAL",
+      "basis": "The English-language rubric is not validated across jurisdictions, languages, disabilities, or legal traditions."
+    },
+    {
+      "dimension": "Ethics",
+      "status": "PASS",
+      "basis": "Fairness is a mandatory gate and cannot be rescued by a high average score."
+    },
+    {
+      "dimension": "Safety",
+      "status": "PASS",
+      "basis": "The feature cannot issue legal verdicts, enforce rules, punish people, or execute external actions."
+    },
+    {
+      "dimension": "Humility",
+      "status": "PASS",
+      "basis": "The report identifies itself as screening and requires qualified legal and affected-community review."
+    },
+    {
+      "dimension": "Common good",
+      "status": "CONDITIONAL",
+      "basis": "The rubric foregrounds rights and accountability, but social benefit has not been empirically validated."
+    }
+  ],
+  "input_receipt": {
+    "source_reference": "synthetic://rights-preserving-anti-corruption-revision",
+    "clause_bytes": 2257,
+    "public_non_sensitive_confirmed": true,
+    "remote_processing": false,
+    "persistent_memory": false,
+    "raw_content_retention": "process_memory_only; discarded when the process exits",
+    "source_status": "user_supplied_reference_not_authenticated"
+  },
+  "user_decision": null
+}
+
+==============================================================================
+RESULT
+==============================================================================
+RESULT: PASS
+Case A exposed the abusive proposal and required fundamental revision.
+Case B passed the research screening gates but still required qualified review.
+No legality, guilt, death, life-imprisonment, release, or enforcement decision was made.
+
+==============================================================================
+CLEANUP
+==============================================================================
+Temporary build removed: True
+Finished UTC: 2026-07-24T16:31:18.7668156Z
+Final exit code: 0

@@ -678,6 +678,8 @@ Important fields:
 | `typhoon-bavi-exercise.json` | full synthetic Typhoon Bavi preparedness case | `D2 / PREPARE / W2` |
 | `space-governance-readiness-exercise.json` | fictional settlement request requiring qualified governance review | `D3 / ABSTAIN` |
 | `law-clarity-gray-zone.json` | fictional public rule with weak fairness, high ambiguity, concentrated power, and weak oversight | `Q=35.75 / Z=74.25 / M=48.11 / FUNDAMENTAL_REVISION_REQUIRED` |
+| `law-clarity-abusive-capital-corruption-proposal.json` | fictional capital-corruption rule permitting scapegoating, reversed burden, hidden evidence, and unchecked authority | `Q=12.00 / Z=92.75 / M=92.75 / FUNDAMENTAL_REVISION_REQUIRED` |
+| `law-clarity-rights-preserving-anti-corruption-revision.json` | fictional non-capital revision based on proven individual conduct, independent review, proportionality, recovery, and rehabilitation | `Q=92.40 / Z=7.70 / M=0.01 / QUALIFIED_REVIEW_REQUIRED` |
 
 Run every fixture and all automated checks:
 
@@ -697,6 +699,15 @@ powershell -NoProfile -ExecutionPolicy Bypass `
 It records the complete synthetic input, observable deterministic processing evidence, assertions, and complete JSON output in `prototype\typhoon-bavi.log`.
 
 The space-governance boundary case is documented at [`../TEST_CASE_SPACE_GOVERNANCE.md`](../TEST_CASE_SPACE_GOVERNANCE.md). It verifies that the MVP abstains from certifying a fictional lunar settlement and that the research chapter preserves mandatory evidence boundaries.
+
+The paired capital-corruption Law Clarity case is documented at [`../TEST_CASE_LAW_CLARITY_CAPITAL_CORRUPTION.md`](../TEST_CASE_LAW_CLARITY_CAPITAL_CORRUPTION.md). Run it from `prototype` with:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass `
+  -File .\test-case-law-clarity-capital-corruption.ps1
+```
+
+It verifies that the abusive proposal fails decisively, that the revised model prohibits capital punishment for corruption and mandatory life imprisonment, and that even the stronger result remains a non-binding qualified-review output.
 
 ## 22. Troubleshooting
 

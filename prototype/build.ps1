@@ -233,6 +233,53 @@ function Test-LawClarityMode {
         throw 'Law Clarity human-authority or data-boundary invariant failed.'
     }
     Write-Host '  PASS law-clarity-gray-zone.json -> Q=35.75, Z=74.25, M=48.11; rights gate FAIL; no legal verdict' -ForegroundColor Green
+
+    $capitalCorruptionCases = [ordered]@{
+        'law-clarity-abusive-capital-corruption-proposal.json' = @{
+            Q = 12.0
+            Z = 92.75
+            M = 92.75
+            Strict = 'FAIL'
+            Rights = 'FAIL'
+            Trigger = $true
+            Disposition = 'FUNDAMENTAL_REVISION_REQUIRED'
+            PhraseTypes = 6
+        }
+        'law-clarity-rights-preserving-anti-corruption-revision.json' = @{
+            Q = 92.4
+            Z = 7.7
+            M = 0.01
+            Strict = 'PASS'
+            Rights = 'PASS'
+            Trigger = $false
+            Disposition = 'QUALIFIED_REVIEW_REQUIRED'
+            PhraseTypes = 0
+        }
+    }
+    foreach ($name in $capitalCorruptionCases.Keys) {
+        $caseFixture = Join-Path (Join-Path $moduleRoot 'testdata') $name
+        $caseReport = (& $BinaryPath -law-input $caseFixture) | ConvertFrom-Json
+        if ($LASTEXITCODE -ne 0) {
+            throw "Law Clarity capital-corruption fixture execution failed: $name"
+        }
+        $want = $capitalCorruptionCases[$name]
+        if ([double]$caseReport.law_quality_score -ne $want.Q -or [double]$caseReport.gray_zone_risk_score -ne $want.Z -or [double]$caseReport.manipulation_risk_index -ne $want.M) {
+            throw "Law Clarity formula mismatch for ${name}: Q=$($caseReport.law_quality_score), Z=$($caseReport.gray_zone_risk_score), M=$($caseReport.manipulation_risk_index)."
+        }
+        if ($caseReport.strict_good_law_gate.status -ne $want.Strict -or $caseReport.human_rights_gate.status -ne $want.Rights) {
+            throw "Law Clarity gate mismatch for $name."
+        }
+        if ([bool]$caseReport.high_manipulation_trigger -ne [bool]$want.Trigger -or $caseReport.disposition -ne $want.Disposition) {
+            throw "Law Clarity trigger or disposition mismatch for $name."
+        }
+        if (@($caseReport.visible_phrase_hits).Count -ne $want.PhraseTypes) {
+            throw "Law Clarity phrase count mismatch for $name."
+        }
+        if ($null -ne $caseReport.user_decision -or [bool]$caseReport.input_receipt.remote_processing -or [bool]$caseReport.input_receipt.persistent_memory) {
+            throw "Law Clarity authority or data-boundary invariant failed for $name."
+        }
+        Write-Host "  PASS $name -> Q=$($want.Q), Z=$($want.Z), M=$($want.M); $($want.Disposition); no sentence decision" -ForegroundColor Green
+    }
 }
 
 if (-not (Get-Command go -ErrorAction SilentlyContinue)) {

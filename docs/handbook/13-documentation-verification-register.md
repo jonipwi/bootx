@@ -1,7 +1,7 @@
 # Documentation Verification and Corrections Register
 
 **Status:** Internal evidence and consistency audit; not independent peer, legal, or safety certification<br>
-**Version:** 1.4<br>
+**Version:** 1.5<br>
 **Audit date:** 2026-07-12<br>
 **Last updated:** 2026-07-24<br>
 **Scope:** repository documentation, formulas, local artifact claims, citations, chronology, implementation status, generated evidence logs, and internal links<br>
@@ -52,12 +52,13 @@ This is an internal freshness and consistency pass, not a claim that every legac
 
 The follow-up:
 
-- inventoried all 60 Markdown documents and resolved all 250 relative Markdown link references;
+- inventoried all 61 Markdown documents and resolved all 260 relative Markdown link references;
 - compared the canonical Law Clarity specification with its Go types, formulas, gates, CLI/TUI behavior, schemas, fixture, tests, and build smoke assertions;
 - recalculated the worked example and corrected `Q=36.25` to `Q=35.75`;
 - verified the fixture calculations `Z=74.25` and `M=48.11`;
 - separated reviewer-supplied scores from authenticated facts and empirical probabilities;
 - retained fairness as a non-compensable gate and removed any legal-approval disposition;
+- added and executed paired fictional capital-corruption cases covering abusive scapegoating and a rights-preserving non-capital revision;
 - checked the safeguard mapping against official UN, OHCHR, Venice Commission, and OECD primary institutional references; and
 - retained qualified jurisdiction-specific legal review as an open gate.
 
@@ -83,6 +84,7 @@ This confirms internal formula and implementation consistency only. It is not le
 | C-014 | Religion and ideology | The source conversation risked conflating Islam, Muslims, Muslim-majority governments, communism, and diplomatic cooperation; it also requested unsupported religion-similarity percentages and reused the withdrawn `93.3%` disaster score | Corrected: categories and claim types are separated; comparison requires a defined corpus and validated method; profiling and human-worth uses are prohibited; the disaster score remains withdrawn; claims are tied to limited sources and `E1` status |
 | C-015 | Prototype documentation | Several high-level summaries omitted the contained public-document workflow, the development backlog still listed completed work as future, and two generated evidence logs reported `0.1.0-dev` | Updated current documents to `0.2.0-dev`, preserved its authentication and deployment limits, reclassified only directly inspectable backlog items, and regenerated the logs |
 | C-016 | Law Clarity Logic | The source conversation’s worked example reported `Q=36.25`; the proposed score bands, thresholds, phrase list, and manipulation formula could also be misread as validated legal standards or probabilities | Corrected the weighted sum to `Q=35.75`; defined domains and gates; labeled all thresholds and `M` as unvalidated research constructs; required rationales; blocked legal verdicts; and added a canonical specification, strict schemas, fixture, and executable checks |
+| C-017 | Capital-corruption sentencing | A request to test whether death or life imprisonment is “accurate” could cause BootX to manufacture guilt or sentence authority, while a vague anti-corruption law could be used to transfer blame downward and shield powerful organizers | Added a fictional abuse case and a non-capital revision; tied responsibility only to admissible proof of individual conduct; rejected rank, association, politics, or prediction as proof; recorded the Human Rights Committee’s article 6 interpretation excluding corruption from capital punishment; made life imprisonment non-automatic; preserved proportionality, restitution, recovery, review, rehabilitation, and qualified human authority |
 
 ## 4. Mathematical verification
 

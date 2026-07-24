@@ -1,7 +1,7 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.13<br>
+**Version:** 1.14<br>
 **Last updated:** 2026-07-24<br>
 **Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype supports limited public read-only local work, reviewer-supplied Law Clarity screening, and synthetic evaluation<br>
 **Current release posture:** Research documentation, an unvalidated host-based Go MVP, and opaque educational OS artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
@@ -209,6 +209,7 @@ Completed implementation baseline:
 - [x] Typed `assist.law-clarity.v1` request/report models with strict validation, transparent formula contributions, non-compensable fairness and strict gates, conservative dispositions, and blocked legal conclusions.
 - [x] Law Clarity terminal and strict JSON modes for public, non-sensitive material, with no remote processing, persistence, external action, or legal verdict.
 - [x] Law Clarity input/output schemas, synthetic gray-zone fixture, unit/CLI/TUI tests, and build-level smoke verification of `Q=35.75`, `Z=74.25`, and `M=48.11`.
+- [x] Paired capital-corruption Law Clarity regression with a fictional abusive scapegoating proposal and a rights-preserving non-capital revision, exact formula assertions, complete runner/log evidence, and explicit guilt/sentencing boundaries.
 
 Open `DEV-1` gates:
 
@@ -425,6 +426,14 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 16. Change log
+
+### Version 1.14 - 2026-07-24
+
+- Added `TC-LAW-CAPITAL-CORRUPTION-001`, a paired fictional test of an abusive capital-corruption proposal and a rights-preserving non-capital revision.
+- The abuse case tests vague accusation, reversed burden, political targeting, blame transfer to lower levels, concealed evidence about higher-ranking organizers, concentrated authority, no independent appeal, and irreversible punishment.
+- The revision requires individually proven conduct and mental state, equal procedure regardless of rank, evidence disclosure, independent adjudication, appeal, proportionate sanctions, asset recovery, humane treatment, periodic review, rehabilitation, and reintegration.
+- Recorded the UN Human Rights Committee's ICCPR article 6 interpretation that corruption cannot serve as the basis for capital punishment; BootX does not choose execution, life imprisonment, guilt, or release.
+- Added two strict JSON fixtures, build-smoke expectations, an executable PowerShell runner, full input/process/output logging, and links from the canonical reference and operator documentation.
 
 ### Version 1.13 - 2026-07-24
 

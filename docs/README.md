@@ -11,6 +11,7 @@ This directory separates normative project governance, the professional implemen
 - [Documentation Verification Register](handbook/13-documentation-verification-register.md) — repository-wide factual, mathematical, logical, and evidence corrections
 - [Personal Decision-Assistance Pipeline](handbook/14-personal-decision-pipeline.md) — typed personal input, evidence and policy processing, human-controlled decision output, and first-prototype acceptance tests
 - [Law Clarity Logic](handbook/15-law-clarity-logic.md) — complete formulas, truth logic, fairness gate, gray-zone and manipulation-risk screening, workflow, safeguards, implementation contract, limitations, and inheritance plan
+- [Capital-corruption Law Clarity test](../prototype/TEST_CASE_LAW_CLARITY_CAPITAL_CORRUPTION.md) — paired fictional abuse/revision cases testing scapegoating, high-rank impunity, non-capital punishment, actual evidence, proportional sanctions, and rehabilitation
 - [Go Personal Companion MVP](../prototype/personal-companion/README.md) — auditable `0.3.0-dev` deterministic backend, terminal UI, schemas, fixtures, tests, contained public-document workflow, and bounded Law Clarity screening
 - [Personal Companion Usage Guide](../prototype/personal-companion/USAGE.md) — complete build, TUI, JSON backend, read-only local-document, warning, verification, privacy, cleanup, and troubleshooting instructions
 - [Installation guide](guides/install-guide.md) — experimental BootX image testing and installation guidance

@@ -1,0 +1,71 @@
+{
+  "request_id": "law-clarity-capital-corruption-abuse-001",
+  "capability_id": "assist.law-clarity.v1",
+  "user_id": "declared-local-reviewer",
+  "created_at": "2026-07-24T12:00:00Z",
+  "title": "Abusive capital-corruption proposal",
+  "jurisdiction": "fictional educational jurisdiction",
+  "instrument_type": "law",
+  "source_reference": "synthetic://capital-corruption-abuse-proposal",
+  "purpose": "Test whether vague capital punishment, reversed burden, political targeting, downward blame transfer, hidden evidence, and concentrated authority are exposed.",
+  "clause_text": "Any person suspected of corruption, improper influence, disturbing public confidence, or other conduct contrary to public interest may be declared corrupt by the competent authority, which may take appropriate action, including death, as necessary. A subordinate official, relative, associate, or political opponent is presumed responsible unless that person proves innocence. The authority may take action against the named person while withholding the identity, evidence, financial records, and decisions concerning higher-ranking organizers. Its determination is final and cannot be independently appealed.",
+  "public_non_sensitive_confirmed": true,
+  "quality": {
+    "clarity": {
+      "score": 25,
+      "rationale": "Suspicion, improper influence, public confidence, public interest, and competent authority are not operationally defined."
+    },
+    "specificity": {
+      "score": 10,
+      "rationale": "The proposal omits offense elements, intent, admissible evidence, proof standard, actor limits, sentencing factors, and appeal procedure."
+    },
+    "fairness": {
+      "score": 5,
+      "rationale": "It reverses the burden of proof, permits political or associative targeting, conceals evidence, denies independent appeal, and authorizes irreversible punishment."
+    },
+    "consistency": {
+      "score": 15,
+      "rationale": "The unnamed authority can select targets and outcomes without common evidentiary or sentencing rules."
+    },
+    "accountability": {
+      "score": 5,
+      "rationale": "The same authority can accuse, conceal evidence, determine responsibility, and impose punishment without independent review."
+    },
+    "low_loophole_risk": {
+      "score": 10,
+      "rationale": "The wording enables higher-ranking organizers to be hidden while blame is transferred to subordinates, associates, relatives, or political opponents."
+    }
+  },
+  "gray_zone": {
+    "vague_language_risk": {
+      "score": 95,
+      "rationale": "Multiple material terms permit open-ended accusation and punishment."
+    },
+    "definition_risk": {
+      "score": 95,
+      "rationale": "No elements, roles, evidentiary definitions, authority boundaries, or protected defenses are supplied."
+    },
+    "contradiction_risk": {
+      "score": 80,
+      "rationale": "A law presented as anti-corruption authorizes concealment of evidence about higher-ranking organizers and therefore undermines its stated purpose."
+    },
+    "enforcement_discretion_risk": {
+      "score": 100,
+      "rationale": "The authority has unbounded discretion over accusation, evidence, responsibility, and irreversible punishment."
+    },
+    "exception_boundary_risk": {
+      "score": 95,
+      "rationale": "No limits govern protected persons, concealed evidence, immunity, political conflicts, emergency use, review, or remedy."
+    }
+  },
+  "power": {
+    "power_concentration_risk": {
+      "score": 100,
+      "rationale": "Accusation, investigation, evidence control, adjudication, punishment, and final review are concentrated in the same undefined authority."
+    },
+    "oversight_strength": {
+      "score": 0,
+      "rationale": "The proposal expressly makes the authority final and supplies no independent oversight or appeal."
+    }
+  }
+}

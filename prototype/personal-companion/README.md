@@ -116,6 +116,8 @@ The complete synthetic Typhoon Bavi end-to-end regression, runner, and captured 
 
 The synthetic space-governance abstention test, documentation assertions, runner, and captured evidence are documented in [`../TEST_CASE_SPACE_GOVERNANCE.md`](../TEST_CASE_SPACE_GOVERNANCE.md).
 
+The paired synthetic Law Clarity capital-corruption test checks an abusive scapegoating proposal against a non-capital, evidence-based revision. Its complete specification, runner, and captured evidence are documented in [`../TEST_CASE_LAW_CLARITY_CAPITAL_CORRUPTION.md`](../TEST_CASE_LAW_CLARITY_CAPITAL_CORRUPTION.md).
+
 ## Package structure
 
 ```text

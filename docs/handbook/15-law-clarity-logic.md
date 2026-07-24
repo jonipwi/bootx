@@ -548,6 +548,15 @@ A release containing this capability must verify:
 - phrase hits are described as context-review prompts; and
 - Go unit tests, vet, JSON validation, fixture smoke tests, and build identity checks pass.
 
+### 15.1 Capital-corruption abuse and revision regression
+
+The paired [`TC-LAW-CAPITAL-CORRUPTION-001`](../../prototype/TEST_CASE_LAW_CLARITY_CAPITAL_CORRUPTION.md) case tests:
+
+- a fictional death-penalty proposal with vague accusation, reversed burden, political targeting, downward blame transfer, concealed evidence about higher-ranking organizers, concentrated authority, and no independent appeal; and
+- a fictional non-capital revision requiring individually proven conduct, equal treatment regardless of rank, independent institutions, defense rights, proportionate sanctions, asset recovery, periodic review, rehabilitation, and reintegration.
+
+The regression does not decide whether a real person committed corruption or what sentence a real court should impose. Its revised model follows the UN Human Rights Committee's article 6 interpretation that corruption cannot serve as the basis for capital punishment and still returns only `QUALIFIED_REVIEW_REQUIRED`.
+
 ## 16. Known limitations
 
 1. Scores and rationales are supplied by a reviewer and can be mistaken, biased, coordinated, or gamed.
