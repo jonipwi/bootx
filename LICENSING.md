@@ -4,6 +4,8 @@
 **Effective:** 2026-07-12<br>
 **Legal text:** [LICENSE](LICENSE)
 
+**Release boundary:** [RELEASE_BOUNDARY.md](RELEASE_BOUNDARY.md)
+
 ## 1. Licensing decision
 
 BootX is available without a royalty for study, use, modification, and sharing only under the conditions of the **BootX Common Good Ethical Use License 1.0**.
@@ -169,3 +171,11 @@ The license includes cure provisions for ordinary violations and stronger termin
 This is a custom license intended to express BootX's common-good inheritance. Custom ethical-use licenses can create uncertainty in enforceability, compatibility, contribution, distribution, patent, and jurisdictional questions.
 
 Before material public distribution, institutional adoption, or High-Impact deployment, obtain review from a qualified intellectual-property lawyer familiar with software, human-rights conditions, and the relevant jurisdictions.
+
+## 14. Final public baseline and private successor
+
+Personal Companion `0.4.0-dev` and its accompanying repository documentation are the final planned publicly source-available development baseline. Future risk-management and decision-assistance development is intended to use a separately controlled private-source successor namespace, beginning with `0.5.0-private-dev` or later.
+
+This is a prospective development and release-control policy, not an amendment to License 1.0. It does not revoke rights already granted for public material, convert public contributions into proprietary code, or authorize closed-source distribution. Private modification, external deployment, distribution, and relicensing can create different obligations.
+
+Before representing or distributing a successor as closed source, the project must complete a rights-holder and third-party-license audit, determine whether separate relicensing authority exists, follow the applicable D4 governance process, and obtain qualified legal review. The controlling safeguards and designation checklist are in [RELEASE_BOUNDARY.md](RELEASE_BOUNDARY.md).

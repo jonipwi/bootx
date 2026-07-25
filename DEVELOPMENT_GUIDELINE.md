@@ -1,12 +1,14 @@
 # BootX Development Guideline
 
 **Status:** Development-preparation baseline; not deployment authorization or safety certification<br>
-**Version:** 1.4<br>
+**Version:** 1.5<br>
 **Adopted:** 2026-07-12<br>
 **Last updated:** 2026-07-25<br>
 **Scope:** personal Human + AI companion development, possible future robotic embodiment, later family support, and strictly bounded community benefit<br>
 **Primary initial user:** the BootX founder (“Joni”), subject to explicit configuration and continuing consent<br>
 **Authority:** subordinate to the [Charter](CHARTER.md), [Governance](GOVERNANCE.md), [License](LICENSE), [AI DNA specification](docs/handbook/05-ai-dna-specification.md), and [Safety Case](docs/handbook/09-safety-case-and-risk-register.md)
+
+**Release posture:** Personal Companion `0.4.0-dev` is the final planned publicly source-available development baseline. New risk-management and decision-assistance work must use the controlled private-successor process in [RELEASE_BOUNDARY.md](RELEASE_BOUNDARY.md). Private development does not relax any safety, evidence, rights, or human-authority gate in this guideline.
 
 ## 1. Readiness decision
 
@@ -711,3 +713,5 @@ The desired final statement is not “the robot is 95% good.” It is:
 ## 22. Revision rule
 
 Update this guideline whenever scope, hardware, model, permissions, population, jurisdiction, evidence, or standards materially change. Record failed tests and incidents; do not delete them to improve appearance. A stricter safety requirement may be adopted immediately. Relaxing a prohibition or quantitative gate requires published evidence, affected-user review, independent safety approval, and the governance process.
+
+The public-source freeze is such a stricter exposure-control measure, not evidence of readiness. Closed-source successor development must remain separately access-controlled and must not be distributed as proprietary software until ownership, contributor, third-party-license, governance, and legal gates are complete.

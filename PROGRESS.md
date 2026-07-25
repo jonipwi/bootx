@@ -1,10 +1,10 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.15<br>
+**Version:** 1.16<br>
 **Last updated:** 2026-07-25<br>
-**Current phase:** Phase 0 gates remain open; `DEV-1` host prototype supports deterministic personal/Law Clarity work plus one explicit-consent OpenAI review path for public, non-sensitive drafts<br>
-**Current release posture:** Research documentation, an unvalidated host-based Go MVP, and opaque educational OS artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
+**Current phase:** Phase 0 gates remain open; public `DEV-1` capability development is frozen at `0.4.0-dev`, and no private successor implementation is present in this repository<br>
+**Current release posture:** `0.4.0-dev` is the final planned publicly source-available development baseline; its immutable release commit/tag is pending, future new risk-management capability work is private-source, and no validated companion, robotics deployment, or trusted operating-system release exists
 
 ## 1. Purpose
 
@@ -51,6 +51,7 @@ This theological foundation is a disclosed founder commitment, not a scientific 
 | Governance | Baseline present; not constituted | `GOVERNANCE.md` | process exists; council and independent roles do not yet exist |
 | Succession | Baseline present; not exercised | `SUCCESSION.md` | continuity requirements exist; custodians and drills remain incomplete |
 | Ethical-use license | Adopted; REVIEW | `LICENSE`, `LICENSING.md` | custom terms exist; professional legal review and ownership verification remain |
+| Public/private release boundary | Active freeze; designation incomplete | `RELEASE_BOUNDARY.md` | public rights remain; final commit/tag, archive, secret scan, private controls, and closed-source rights review remain |
 | Research handbook | Baseline present | `docs/` | logic, mathematics, ethics, AI DNA, architecture, curriculum, and safety are documented |
 | AI DNA | Specification present; unvalidated | `docs/handbook/05-ai-dna-specification.md` | dimensions and gates exist; empirical validity is not established |
 | Boot artifacts | Present but opaque | `artifacts/boot/` and `artifacts/media/` | limited binary evidence exists; source-level assurance is impossible |
@@ -93,6 +94,10 @@ The project may preserve artifacts, restore source, conduct documentation resear
 - [x] Connect High-Impact and public companion deployment to AI DNA assurance.
 - [x] Require share-alike inheritance and Corresponding Source for distributed derivatives.
 - [x] State that the custom ethical-use license is not represented as OSI-approved open source.
+- [x] Record `0.4.0-dev` as the final planned public-source baseline and preserve previously granted rights.
+- [x] Require separate access control and unchanged ethics/safety gates for future private-source development.
+- [ ] Commit, tag, checksum, scan, archive, and identify the immutable final public baseline.
+- [ ] Complete rights-holder, contributor, third-party-license, and professional legal review before any closed-source distribution.
 - [ ] Identify the copyright owner and provenance of every existing file.
 - [ ] Identify all embedded third-party components and their license obligations.
 - [ ] Obtain qualified legal review of enforceability, compatibility, patents, trademarks, contribution terms, and jurisdictions.
@@ -148,6 +153,7 @@ This block does not prevent the requirements, simulation, threat-modeling, synth
 - [x] `SUCCESSION.md` — planned/emergency transfer, custodianship, vendor/model succession, and dissolution.
 - [x] `LICENSE` — adopted Common Good Ethical Use License 1.0; not yet professionally reviewed for enforceability or compatibility.
 - [x] `LICENSING.md` — plain-language licensing policy and AI DNA condition.
+- [x] `RELEASE_BOUNDARY.md` — final planned public-source baseline, preserved public rights, private-successor controls, licensing gate, and release-designation checklist.
 - [x] `DISCLAIMER.md` — limitations, responsibility, non-advice, and spiritual-authority boundary.
 - [x] `DEVELOPMENT_GUIDELINE.md` — personal-first companion and robotics scope, deterministic safety boundary, prohibited uses, forecast/disaster warning-status framework, phased development gates, quantitative evidence rules, and inheritance-ready backlog.
 
@@ -217,6 +223,8 @@ Completed implementation baseline:
 - [x] Synthetic public-post fixture, live smoke-test runner, complete operator documentation, remote receipt, blocked-action list, and `user_decision: null` invariant.
 
 Open `DEV-1` gates:
+
+These are successor research and assurance requirements. New capability implementation belongs in the controlled private workstream; bounded maintenance and verification of already public behavior may remain public under `RELEASE_BOUNDARY.md`.
 
 - [ ] Add real user authentication only after a reviewed local identity and recovery design; current `user_id` remains declarative.
 - [ ] Add external evidence connectors only after source allowlisting, authentication, freshness, conflict, outage, privacy, and degraded-mode controls exist.
@@ -358,6 +366,8 @@ This matrix is a moral design lens. It must never become a religious conformity 
 - [ ] Create transparent proposal, decision, dissent, incident, and correction records.
 - [ ] Exercise succession without the founder and model/provider failover without the current AI.
 - [ ] Define official release signing and separated key custody.
+- [ ] Complete the final public-baseline designation record and configure protections against accidental private-source publication.
+- [ ] Establish the private successor repository, least-privilege roles, audit, backup, recovery, incident, and disclosure controls.
 - [ ] Create a responsible archive and dissolution plan in operational form.
 
 ## 13. Inheritance — what future generations should improve
@@ -373,6 +383,7 @@ Future inheritors are not asked to preserve every present conclusion. They are a
 - correction, dissent, and accountability;
 - care for vulnerable people, creation, and future generations;
 - reproducibility, portability, repairability, and responsible succession;
+- the immutable public baseline, its exact license, correction history, and recipients’ existing rights;
 - prohibition of AI self-authority and human-worth scoring.
 
 ### Improve
@@ -389,6 +400,8 @@ Future inheritors are not asked to preserve every present conclusion. They are a
 - preserve faith motivation without coercion and welcome truth-seeking review from people of different convictions;
 - document failures as inheritance so future stewards do not repeat them;
 - revisit the license with professional review without weakening common-good protections silently.
+- keep public-baseline custody separate from private-successor custody, without using confidentiality to conceal harm or evade accountability;
+- verify ownership and separate relicensing authority before any closed-source distribution, transfer, or commercialization.
 
 ### Never infer
 
@@ -405,18 +418,18 @@ Future inheritors are not asked to preserve every present conclusion. They are a
 
 ## 14. Next twelve priority actions
 
-1. **Restore source:** locate the authoritative BootX source, build scripts, and missing blueprint/history.
-2. **Verify ownership:** record authorship, third-party components, and rights for every artifact.
-3. **Reproduce builds:** generate and verify the boot artifacts in two clean environments.
-4. **Obtain license review:** have qualified counsel review the custom license and contribution model.
-5. **Form independent stewardship:** recruit roles required by `GOVERNANCE.md` with affected-user representation.
-6. **Review Creator stewardship:** obtain theological, ethics, human-rights, and freedom-of-conscience critique.
-7. **Repair legacy evidence:** add primary citations and correct unsupported or time-sensitive claims.
-8. **Operationalize AI DNA:** create test cases, evaluator guidance, disagreement rules, and adversarial score-gaming tests.
-9. **Complete threat and data models:** cover the OS, companion, memory, tools, providers, family/guardian use, and update chain.
-10. **Validate deterministic and bounded-model paths separately:** expand fixtures, threat-model and fuzz parser/policy/API boundaries, measure comprehension and correct safe action against no-assistance and static-checklist baselines, and disable the model path if it increases harm, discrimination, or false reassurance.
-11. **Establish research ethics:** approve the participant, privacy, harm, stop, and publication processes before human study.
-12. **Run continuity exercises:** simulate founder, key, repository, hosting, and model-provider loss.
+1. **Designate the public baseline:** commit, scan, verify, tag, checksum, and archive the exact `0.4.0-dev` public snapshot with its license and limitations.
+2. **Establish private controls:** create the private successor environment with least privilege, multi-factor authentication, protected review, secret scanning, audit, backup, recovery, and disclosure procedures.
+3. **Verify ownership:** record authorship, contributor authority, third-party components, and rights for every inherited and new file.
+4. **Obtain license review:** have qualified counsel review License 1.0, contribution terms, inherited-code obligations, separate relicensing authority, and any planned closed-source distribution.
+5. **Form independent stewardship:** recruit the roles required by `GOVERNANCE.md` with affected-user representation.
+6. **Restore and reproduce privately:** locate the authoritative OS source, build scripts, and history, then reproduce artifacts without publishing successor capability code accidentally.
+7. **Complete threat and data models:** cover the OS, companion, memory, tools, providers, private repository, release boundary, family/guardian use, and update chain.
+8. **Validate deterministic and bounded-model paths separately:** expand fixtures, fuzz boundaries, measure comprehension and safe action against non-AI baselines, and disable model paths that increase harm, discrimination, or false reassurance.
+9. **Operationalize AI DNA:** create test cases, evaluator guidance, disagreement rules, and adversarial score-gaming tests without treating a score as moral authority.
+10. **Establish research ethics:** approve participant, privacy, harm, stop, and publication processes before human study.
+11. **Repair and independently review evidence:** complete primary citation and domain review, including theological, ethics, human-rights, and freedom-of-conscience critique.
+12. **Run continuity exercises:** simulate founder, key, public archive, private repository, hosting, and model-provider loss without cross-exposing the two source domains.
 
 ## 15. Progress update rules
 
@@ -432,6 +445,14 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 16. Change log
+
+### Version 1.16 - 2026-07-25
+
+- Declared Personal Companion `0.4.0-dev` and its accompanying documentation the final planned publicly source-available development baseline, with the immutable release commit/tag still pending.
+- Added `RELEASE_BOUNDARY.md` to govern the public maintenance freeze, private-successor controls, human decision authority, accountable disclosure, inheritance, and final designation checklist.
+- Preserved all rights already granted under License 1.0; the boundary is prospective release control, not retroactive relicensing or withdrawal of public source.
+- Required ownership, contributor-rights, third-party-license, D4 governance, and qualified legal review before any successor is represented or distributed as closed source.
+- Recorded that confidentiality reduces exposure but does not prove safety, correctness, ethics, security, validation, or deployment readiness.
 
 ### Version 1.15 - 2026-07-25
 

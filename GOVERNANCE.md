@@ -138,6 +138,14 @@ A material release requires named owners, a capability contract, evidence maturi
 
 No average score may compensate for a failed critical security, privacy, consent, human-review, accessibility, correction, or recovery gate.
 
+### Public-source freeze and private successor
+
+The project has adopted an immediate conservative freeze making Personal Companion `0.4.0-dev` and its accompanying documentation the final planned publicly source-available development baseline. The freeze may be applied during transitional governance because it narrows exposure and does not relax a protected requirement or change previously granted license rights.
+
+The public baseline may receive bounded maintenance, corrections, safely publishable security work, and continuity records under [RELEASE_BOUNDARY.md](RELEASE_BOUNDARY.md). New high-consequence decision capabilities belong in a separately controlled private-source environment.
+
+This operational freeze is not authority to relicense public material. Any proprietary distribution, license change, reopening of public successor-source development, or weakening of a protected boundary remains a D4 decision requiring the constitutional process, applicable rights-holder approval, and professional legal and security review.
+
 ## 11. Dissent, appeal, and correction
 
 - Any contributor or affected user may raise a concern without retaliation.

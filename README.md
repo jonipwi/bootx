@@ -13,6 +13,7 @@ BootX also contains a Human + AI companion research program centered on truth, s
 - [SUCCESSION.md](SUCCESSION.md) — how stewardship, security, and operations continue beyond any individual or provider
 - [LICENSE](LICENSE) — BootX Common Good Ethical Use License 1.0
 - [LICENSING.md](LICENSING.md) — plain-language licensing policy, AI DNA conditions, and distribution guidance
+- [RELEASE_BOUNDARY.md](RELEASE_BOUNDARY.md) — final public-source baseline, private-successor controls, and rights-preservation rules
 - [DISCLAIMER.md](DISCLAIMER.md) — research limitations, responsibility, and non-advice boundaries
 - [DEVELOPMENT_GUIDELINE.md](DEVELOPMENT_GUIDELINE.md) — personal-first companion and robotics scope, forecast/disaster warning levels, do/don't contract, phased gates, and measurable protection/harm criteria
 - [PROGRESS.md](PROGRESS.md) — completed work, open gates, OS readiness, and future inheritance priorities
@@ -21,12 +22,15 @@ BootX supports **any conforming AI agent**, not unrestricted use of any agent. C
 
 BootX is royalty-free for permitted common-good uses under a custom ethical source-available license. Harmful uses are prohibited, and public AI companion or High-Impact deployments require documented AI DNA assurance. Because the license restricts fields of use, it is not represented as OSI-approved open source or standard free software.
 
+**Release boundary:** Personal Companion `0.4.0-dev` and its accompanying documentation are the final planned publicly source-available development baseline. Subsequent risk-management and decision-assistance development is intended to continue as `0.5.0-private-dev` or later in a separately controlled private-source environment. This future-development policy does not revoke the public baseline’s existing License 1.0 rights, does not make the unvalidated baseline production-ready, and does not authorize closed-source distribution without governance, ownership, third-party-rights, and legal review. See [RELEASE_BOUNDARY.md](RELEASE_BOUNDARY.md).
+
 ## Repository Layout
 
 ```text
 bootx/
 ├── README.md, CHARTER.md, GOVERNANCE.md, SUCCESSION.md
-├── LICENSE, LICENSING.md, DISCLAIMER.md, DEVELOPMENT_GUIDELINE.md, PROGRESS.md
+├── LICENSE, LICENSING.md, RELEASE_BOUNDARY.md, DISCLAIMER.md
+├── DEVELOPMENT_GUIDELINE.md, PROGRESS.md
 ├── artifacts/
 │   ├── boot/                 compiled IMG, ISO, and VDI artifacts
 │   └── media/                screenshots and visual evidence
@@ -41,7 +45,7 @@ bootx/
 
 ## Repository State
 
-This checkout contains prebuilt BIOS/ISO/VDI artifacts, research documents, and the [host-based Go personal-companion MVP](prototype/personal-companion/README.md). The historical operating-system source, build scripts, and blueprint files are still absent, so the supplied boot binaries cannot presently be reproduced or source-audited. The Go MVP is separately auditable and tested, but it is an unvalidated development prototype—not evidence that the BootX operating system or an AI companion is deployed or safe. See the [repository evidence audit](docs/handbook/01-repository-evidence-audit.md) and [current progress gate](PROGRESS.md).
+This checkout contains prebuilt BIOS/ISO/VDI artifacts, research documents, and the [host-based Go personal-companion MVP](prototype/personal-companion/README.md). It is the final planned publicly source-available development baseline, subject to the incomplete designation checklist in [RELEASE_BOUNDARY.md](RELEASE_BOUNDARY.md). The historical operating-system source, build scripts, and blueprint files are still absent, so the supplied boot binaries cannot presently be reproduced or source-audited. The Go MVP is separately auditable and tested, but it is an unvalidated development prototype—not evidence that the BootX operating system or an AI companion is deployed or safe. See the [repository evidence audit](docs/handbook/01-repository-evidence-audit.md) and [current progress gate](PROGRESS.md).
 
 ## Personal Companion MVP
 

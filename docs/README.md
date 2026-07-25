@@ -5,6 +5,7 @@ This directory separates normative project governance, the professional implemen
 ## Start here
 
 - [Project progress and readiness](../PROGRESS.md) — what is complete, blocked, and inherited next
+- [Public-source release boundary](../RELEASE_BOUNDARY.md) — final public baseline, private-successor safeguards, preserved public rights, and designation checklist
 - [Development guideline](../DEVELOPMENT_GUIDELINE.md) — personal-first companion and robotics scope, forecast/disaster warning status, prohibited uses, architecture, development phases, and statistical safety/benefit gates
 - [Professional Human + AI handbook](handbook/README.md) — ordered logic, mathematics, ethics, AI DNA, architecture, research, curriculum, and safety program
 - [Anti-Abuse and Evidence Integrity](handbook/12-anti-abuse-and-evidence-integrity.md) — fake evidence, deepfakes, source independence, emergency safeguards, and governance abuse
@@ -31,6 +32,7 @@ Repository-level documents remain at the project root because they govern everyt
 - [Succession](../SUCCESSION.md)
 - [License](../LICENSE)
 - [Licensing policy](../LICENSING.md)
+- [Public-source release boundary](../RELEASE_BOUNDARY.md)
 - [Disclaimer](../DISCLAIMER.md)
 - [Development guideline](../DEVELOPMENT_GUIDELINE.md)
 - [Progress and inheritance plan](../PROGRESS.md)

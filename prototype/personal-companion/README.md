@@ -7,6 +7,8 @@
 
 This module implements the first BootX `Input → Process → Output` decision-assistance pipeline as a dependency-free Go backend and terminal UI.
 
+This `0.4.0-dev` module is the final planned publicly source-available development baseline. It remains unvalidated and may receive bounded maintenance, but new risk-management and decision-assistance development is intended for the controlled private successor described in [RELEASE_BOUNDARY.md](../../RELEASE_BOUNDARY.md). Existing public-baseline license rights remain intact.
+
 For complete operator instructions, field definitions, examples, build verification, and troubleshooting, read [USAGE.md](USAGE.md).
 
 ## Safety boundary

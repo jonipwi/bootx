@@ -1,7 +1,7 @@
 # BootX Succession and Continuity Plan
 
 **Status:** Stewardship continuity baseline<br>
-**Version:** 1.0<br>
+**Version:** 1.1<br>
 **Effective:** 2026-07-12
 
 ## 1. Purpose
@@ -147,7 +147,23 @@ The BootX Common Good Ethical Use License may permit compliant forks. A fork may
 
 The official project should not use brand control to suppress truthful criticism or legitimate independent research.
 
-## 13. Responsible dissolution
+## 13. Public-baseline and private-successor custody
+
+The final planned public-source baseline and any later private-source successor are distinct continuity assets.
+
+Future stewards must:
+
+- preserve an immutable, verifiable copy of the public baseline with License 1.0, source, notices, checksums, known limitations, and correction history;
+- preserve recipients’ existing public-baseline rights and never represent a future confidentiality policy as retroactive revocation;
+- restrict private successor access by least privilege with independent key custody, encrypted backups, recovery tests, and attributable audit history;
+- maintain contribution, ownership, third-party-rights, and separate-relicensing records before any closed-source distribution or transfer;
+- prevent private successor code, credentials, prompts, exploit details, participant data, and operational secrets from accidental publication;
+- publish material safety and affected-user information when lawful and safe, without using confidentiality to hide incidents or accountability;
+- shut down or transfer the private successor safely if qualified governance, rights, security, or support cannot continue.
+
+Possession of private source or credentials does not itself confer stewardship authority. The [release boundary](RELEASE_BOUNDARY.md), governance process, rights-holder approvals, and common-good duties continue through succession.
+
+## 14. Responsible dissolution
 
 If safe continuation is impossible or no qualified successor exists:
 
@@ -162,7 +178,7 @@ If safe continuation is impossible or no qualified successor exists:
 
 Continuing unsafely is not preferable to responsible closure.
 
-## 14. Annual continuity exercise
+## 15. Annual continuity exercise
 
 At least annually, simulate loss of a maintainer, signing key, hosting provider, and AI model. Verify that authorized people can:
 
@@ -176,3 +192,5 @@ At least annually, simulate loss of a maintainer, signing key, hosting provider,
 - identify and correct new single points of failure.
 
 Record results, owners, deadlines, and retest evidence.
+
+The exercise must also verify restoration of the immutable public baseline without exposing private successor material, and restoration or safe destruction of private backups according to documented authority.
