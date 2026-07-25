@@ -287,7 +287,7 @@ This expresses a direction, not a validated formula. Direct division is undefine
 J* = (c × f × i × a) / (ε + z × u_d)
 ```
 
-where `u_d` is unchecked-discretion risk. `J*` is not implemented in version `0.3.0-dev` and must not be reported as legal truth.
+where `u_d` is unchecked-discretion risk. `J*` is not implemented in version `0.4.0-dev` and must not be reported as legal truth.
 
 ## 9. Complete human review workflow
 

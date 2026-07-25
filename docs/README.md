@@ -11,8 +11,10 @@ This directory separates normative project governance, the professional implemen
 - [Documentation Verification Register](handbook/13-documentation-verification-register.md) — repository-wide factual, mathematical, logical, and evidence corrections
 - [Personal Decision-Assistance Pipeline](handbook/14-personal-decision-pipeline.md) — typed personal input, evidence and policy processing, human-controlled decision output, and first-prototype acceptance tests
 - [Law Clarity Logic](handbook/15-law-clarity-logic.md) — complete formulas, truth logic, fairness gate, gray-zone and manipulation-risk screening, workflow, safeguards, implementation contract, limitations, and inheritance plan
+- [Ethical Publication and Decision-Rationale Review](handbook/16-ethical-publication-review.md) — explicit-consent OpenAI review, declared-evidence mathematics, warning levels, prompt-injection boundary, no-action contract, and validation agenda
 - [Capital-corruption Law Clarity test](../prototype/TEST_CASE_LAW_CLARITY_CAPITAL_CORRUPTION.md) — paired fictional abuse/revision cases testing scapegoating, high-rank impunity, non-capital punishment, actual evidence, proportional sanctions, and rehabilitation
-- [Go Personal Companion MVP](../prototype/personal-companion/README.md) — auditable `0.3.0-dev` deterministic backend, terminal UI, schemas, fixtures, tests, contained public-document workflow, and bounded Law Clarity screening
+- [OpenAI ethical-review test](../prototype/TEST_CASE_OPENAI_ETHICAL_REVIEW.md) — synthetic live connectivity and boundary test with a sanitized receipt, no retained key, no tools/actions, and no publication authority
+- [Go Personal Companion MVP](../prototype/personal-companion/README.md) — auditable `0.4.0-dev` backend, deterministic core, explicit-consent OpenAI ethical review, terminal UI, schemas, fixtures, tests, contained public-document workflow, and bounded Law Clarity screening
 - [Personal Companion Usage Guide](../prototype/personal-companion/USAGE.md) — complete build, TUI, JSON backend, read-only local-document, warning, verification, privacy, cleanup, and troubleshooting instructions
 - [Installation guide](guides/install-guide.md) — experimental BootX image testing and installation guidance
 - [Research library](research/README.md) — original studies organized by subject
@@ -35,7 +37,7 @@ Repository-level documents remain at the project root because they govern everyt
 
 The `handbook/` converts those commitments into professional requirements. The `research/` directory preserves original ideas as research inputs; placement there does not imply that every empirical claim has been verified.
 
-Current non-synthetic inputs remain deliberately narrow: one operator-confirmed public, non-sensitive local document may be read without modification, and public non-sensitive legal text may be screened from reviewer-supplied ratings. A hash proves byte identity only; it does not authenticate origin or truth. Law Clarity output is not legal advice or a validity judgment. Neither workflow authorizes reliance for sensitive or high-impact decisions.
+Current non-synthetic inputs remain deliberately narrow: one operator-confirmed public, non-sensitive local document may be read without modification; public non-sensitive legal text may be screened from reviewer-supplied ratings; and an explicitly consented public, non-sensitive draft may receive a bounded OpenAI advisory review. A hash proves byte identity only; declared source status does not authenticate evidence; and model output does not establish truth. No workflow authorizes sensitive data, automatic publication, guilt, sentence, enforcement, or high-impact reliance.
 
 ## Directory map
 

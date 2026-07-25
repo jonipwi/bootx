@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bootx.local/schemas/ethical-review-input.schema.json",
+  "title": "BootX Ethical Review Input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "capability_id",
+    "user_id",
+    "created_at",
+    "content_type",
+    "purpose",
+    "audience",
+    "context",
+    "draft_text",
+    "claims",
+    "public_non_sensitive_confirmed",
+    "remote_processing_consent",
+    "human_authority_confirmed"
+  ],
+  "properties": {
+    "request_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "capability_id": {"const": "assist.ethical-review.v1"},
+    "user_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "created_at": {"type": "string", "format": "date-time"},
+    "content_type": {
+      "enum": [
+        "social_post",
+        "speech",
+        "public_statement",
+        "proposal",
+        "decision_rationale",
+        "legal_reasoning_draft",
+        "other"
+      ]
+    },
+    "purpose": {"type": "string", "minLength": 1, "maxLength": 1024},
+    "audience": {"type": "string", "minLength": 1, "maxLength": 512},
+    "context": {"type": "string", "minLength": 1, "maxLength": 4096},
+    "draft_text": {"type": "string", "minLength": 1, "maxLength": 16384},
+    "claims": {
+      "type": "array",
+      "maxItems": 25,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "text", "source_reference", "source_status", "consequence"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1, "maxLength": 64},
+          "text": {"type": "string", "minLength": 1, "maxLength": 1024},
+          "source_reference": {"type": "string", "maxLength": 2048},
+          "source_status": {
+            "enum": [
+              "primary_confirmed",
+              "secondary_confirmed",
+              "disputed",
+              "unverified",
+              "none"
+            ]
+          },
+          "consequence": {"enum": ["low", "moderate", "high", "irreversible"]}
+        }
+      }
+    },
+    "public_non_sensitive_confirmed": {"const": true},
+    "remote_processing_consent": {"const": true},
+    "human_authority_confirmed": {"const": true}
+  }
+}

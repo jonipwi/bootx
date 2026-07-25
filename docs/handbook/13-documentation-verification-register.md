@@ -1,10 +1,10 @@
 # Documentation Verification and Corrections Register
 
 **Status:** Internal evidence and consistency audit; not independent peer, legal, or safety certification<br>
-**Version:** 1.5<br>
+**Version:** 1.6<br>
 **Audit date:** 2026-07-12<br>
-**Last updated:** 2026-07-24<br>
-**Scope:** repository documentation, formulas, local artifact claims, citations, chronology, implementation status, generated evidence logs, and internal links<br>
+**Last updated:** 2026-07-25<br>
+**Scope:** repository documentation, formulas, local artifact claims, citations, chronology, implementation/API status, generated evidence logs, and internal links<br>
 **Next review:** after final official reports for the 2026 Maysak and Bavi events, source-code restoration, or any material standards change
 
 ## 1. Verification conclusion
@@ -54,6 +54,7 @@ The follow-up:
 
 - inventoried all 61 Markdown documents and resolved all 260 relative Markdown link references;
 - compared the canonical Law Clarity specification with its Go types, formulas, gates, CLI/TUI behavior, schemas, fixture, tests, and build smoke assertions;
+
 - recalculated the worked example and corrected `Q=36.25` to `Q=35.75`;
 - verified the fixture calculations `Z=74.25` and `M=48.11`;
 - separated reviewer-supplied scores from authenticated facts and empirical probabilities;
@@ -63,6 +64,16 @@ The follow-up:
 - retained qualified jurisdiction-specific legal review as an open gate.
 
 This confirms internal formula and implementation consistency only. It is not legal advice, rubric validation, representative testing, or independent certification.
+
+### 2.3 OpenAI ethical-review implementation — 2026-07-25
+
+- verified the current model recommendation and Responses API structured-output contract against official OpenAI documentation before implementation;
+- kept the API key in `OPENAI_API_KEY` and out of code, fixtures, command arguments, errors, and repository output;
+- bounded the model to public, non-sensitive draft critique with no tools, conversation state, automatic publication, legal verdict, guilt, or sentence authority;
+- checked that declared-evidence formula weights are non-negative, normalized, and locally bounded in `[0,100]`;
+- labeled `R` as an unvalidated review-priority index rather than a probability or fairness guarantee;
+- added mock-server tests for request shape, `store:false`, privacy-preserving safety identifier, structured decoding, refusals, and secret-safe API errors.
+- inventoried 63 Markdown documents and resolved all 277 parsed relative Markdown link targets with no broken or unparsed target.
 
 ## 3. Corrections made in this audit
 
@@ -85,6 +96,7 @@ This confirms internal formula and implementation consistency only. It is not le
 | C-015 | Prototype documentation | Several high-level summaries omitted the contained public-document workflow, the development backlog still listed completed work as future, and two generated evidence logs reported `0.1.0-dev` | Updated current documents to `0.2.0-dev`, preserved its authentication and deployment limits, reclassified only directly inspectable backlog items, and regenerated the logs |
 | C-016 | Law Clarity Logic | The source conversation’s worked example reported `Q=36.25`; the proposed score bands, thresholds, phrase list, and manipulation formula could also be misread as validated legal standards or probabilities | Corrected the weighted sum to `Q=35.75`; defined domains and gates; labeled all thresholds and `M` as unvalidated research constructs; required rationales; blocked legal verdicts; and added a canonical specification, strict schemas, fixture, and executable checks |
 | C-017 | Capital-corruption sentencing | A request to test whether death or life imprisonment is “accurate” could cause BootX to manufacture guilt or sentence authority, while a vague anti-corruption law could be used to transfer blame downward and shield powerful organizers | Added a fictional abuse case and a non-capital revision; tied responsibility only to admissible proof of individual conduct; rejected rank, association, politics, or prediction as proof; recorded the Human Rights Committee’s article 6 interpretation excluding corruption from capital punishment; made life imprisonment non-automatic; preserved proportionality, restitution, recovery, review, rehabilitation, and qualified human authority |
+| C-018 | OpenAI ethical review | “AI-guided ethics” could be misread as objective morality, verified fairness, censorship authority, or evidence that model use reduces injustice | Limited the capability to voluntary public-draft review; retained human authority; separated declared-evidence mathematics from model critique; prohibited source authentication, approval, guilt, sentence, and external action; and required independent bias, dissent, fairness, and false-reassurance evaluation |
 
 ## 4. Mathematical verification
 

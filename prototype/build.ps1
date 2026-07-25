@@ -119,6 +119,7 @@ function New-BootXBuild {
         capabilities = @(
             'assist.personal-decision.v1'
             'assist.law-clarity.v1'
+            'assist.ethical-review.v1'
         )
         application_version = $appVersion
         build_utc = [DateTime]::UtcNow.ToString('o')
@@ -129,7 +130,7 @@ function New-BootXBuild {
         sha256 = $hash
         tests_skipped = [bool]$SkipTests
         external_modules = $externalModuleCount
-        safety_status = 'DEV-1 deterministic prototype; no deployment, safety certification, legal authority, or enforcement capability'
+        safety_status = 'DEV-1 hybrid prototype; deterministic core plus explicit-consent OpenAI advisory; no deployment, certification, legal authority, automatic publication, or enforcement capability'
     }
 
     $manifestPath = Join-Path $outputRoot 'build-manifest.json'

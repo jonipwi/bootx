@@ -2,7 +2,7 @@
 
 **Audit date:** 2026-07-12  
 **Scope:** all repository files present at the audit date; paths updated after the documentation reorganization
-**Implementation follow-up:** 2026-07-24; Personal Companion `0.3.0-dev` and Law Clarity contract rechecked
+**Implementation follow-up:** 2026-07-25; Personal Companion `0.4.0-dev`, Law Clarity, and OpenAI ethical-review contracts rechecked
 
 **Correction follow-up:** the later repository-wide [Documentation Verification
 and Corrections Register](13-documentation-verification-register.md) supersedes
@@ -49,7 +49,9 @@ The highest technical priority is to restore source, build scripts, dependency v
 
 ### Host-based personal-companion implementation added after the initial audit
 
-The repository now contains [`prototype/personal-companion/`](../../prototype/personal-companion/README.md), a separately auditable Go implementation of `assist.personal-decision.v1` and `assist.law-clarity.v1`. Directly inspectable evidence in version `0.3.0-dev` includes typed input/output models, embedded deterministic policy, `W0`–`W4`/`WX` warning logic, a terminal UI, strict JSON modes, schemas, synthetic fixtures, automated tests, contained read-only loading of one explicitly confirmed public local workspace document, and reviewer-supplied legal-clarity formulas and gates.
+The repository now contains [`prototype/personal-companion/`](../../prototype/personal-companion/README.md), a separately auditable Go implementation of `assist.personal-decision.v1`, `assist.law-clarity.v1`, and `assist.ethical-review.v1`. Directly inspectable evidence in version `0.4.0-dev` includes typed models, embedded deterministic policy, `W0`–`W4`/`WX` warning logic, a terminal UI, strict JSON modes, schemas, synthetic fixtures, automated tests, contained read-only loading of one confirmed public local workspace document, reviewer-supplied legal-clarity formulas and gates, and an explicit-consent no-tools OpenAI review path for public non-sensitive drafts.
+
+The OpenAI path is implementation evidence only. It does not authenticate claims, prove fairness, reduce injustice by a measured percentage, approve publication, or authorize guilt, sentence, enforcement, or external action.
 
 The Law Clarity implementation calculates declared research scores and review prompts; it does not authenticate the text or ratings and cannot determine legality, constitutionality, guilt, liability, or enforcement authority.
 

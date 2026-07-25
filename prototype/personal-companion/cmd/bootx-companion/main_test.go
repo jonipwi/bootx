@@ -60,6 +60,28 @@ func TestReadLawRequestRejectsUnknownField(t *testing.T) {
 	}
 }
 
+func TestReadReviewRequestRejectsUnknownField(t *testing.T) {
+	path := writeTempRequest(t, `{
+  "request_id":"review-test",
+  "capability_id":"assist.ethical-review.v1",
+  "user_id":"declared-local-reviewer",
+  "created_at":"2026-07-25T12:00:00Z",
+  "content_type":"social_post",
+  "purpose":"Test strict decoding.",
+  "audience":"Public",
+  "context":"Synthetic.",
+  "draft_text":"A synthetic draft.",
+  "claims":[],
+  "public_non_sensitive_confirmed":true,
+  "remote_processing_consent":true,
+  "human_authority_confirmed":true,
+  "automatic_publish":true
+}`)
+	if _, err := readReviewRequest(path); err == nil || !strings.Contains(err.Error(), "unknown field") {
+		t.Fatalf("expected unknown field error, got %v", err)
+	}
+}
+
 func TestBuildDocumentRequestUsesRealContainedFile(t *testing.T) {
 	root := t.TempDir()
 	content := "# Real work\n\nReview this public project note.\n"

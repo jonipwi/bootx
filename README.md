@@ -45,7 +45,7 @@ This checkout contains prebuilt BIOS/ISO/VDI artifacts, research documents, and 
 
 ## Personal Companion MVP
 
-Personal Companion `0.3.0-dev` provides a dependency-free Go backend and line-oriented terminal UI on a mature host operating system. It uses deterministic policy and warning rules, strict JSON schemas, synthetic tests, session-only processing, and no network or external-action capability. It may read one operator-confirmed public, non-sensitive `.md`, `.txt`, or `.json` file inside a selected workspace, issue a SHA-256 evidence receipt, and report bounded structural review candidates. It also provides reviewer-supplied [Law Clarity Logic](docs/handbook/15-law-clarity-logic.md) screening of public, non-sensitive rules. File integrity does not authenticate the author, publisher, or factual claims, and a Law Clarity score is not legal advice, a validity judgment, or a probability.
+Personal Companion `0.4.0-dev` provides a dependency-free Go backend and line-oriented terminal UI on a mature host operating system. Its personal, warning, local-document, and [Law Clarity Logic](docs/handbook/15-law-clarity-logic.md) paths remain deterministic. A separate explicit-consent [`assist.ethical-review.v1`](docs/handbook/16-ethical-publication-review.md) CLI path sends a confirmed public, non-sensitive draft to the fixed OpenAI Responses API for schema-constrained critique with `store:false`, no tools, no conversation state, and no external actions. The local review index is not a probability; model output is not source verification, publication approval, legal advice, guilt, or sentence authority.
 
 ```powershell
 .\prototype\build.ps1 -Action verify
@@ -56,13 +56,15 @@ If local execution policy blocks `.ps1` files, use `powershell -NoProfile -Execu
 
 Read the [MVP documentation](prototype/personal-companion/README.md) and [complete usage guide](prototype/personal-companion/USAGE.md) before entering any data.
 
-For contained public-document work, choose menu option `3`; for bounded Law Clarity screening, choose option `4`. Sensitive information, real warning reliance, source authentication, network retrieval, persistent memory, generative AI, external actions, operating-system integration, and robotics remain blocked.
+For contained public-document work, choose menu option `3`; for bounded Law Clarity screening, choose option `4`. OpenAI ethical review is CLI-only and requires explicit public-data, remote-processing, and human-authority confirmations. Sensitive information, real warning reliance, source authentication, network retrieval, persistent memory, automatic publication, external actions, operating-system integration, and robotics remain blocked.
 
 The first full end-to-end scenario is the [synthetic Typhoon Bavi test case](prototype/TEST_CASE.md), with input/process/output evidence captured by its PowerShell runner.
 
 The [space-governance research chapter](docs/research/space/civilization-governance-before-space-expansion.md) and [synthetic governance boundary test](prototype/TEST_CASE_SPACE_GOVERNANCE.md) add a second high-consequence case. The current MVP must return `D3 / ABSTAIN`; it cannot certify a settlement or civilization.
 
 The [paired Law Clarity capital-corruption test](prototype/TEST_CASE_LAW_CLARITY_CAPITAL_CORRUPTION.md) adds a fictional abusive death-penalty proposal and a non-capital evidence-based revision. It checks protection against scapegoating and high-rank impunity while keeping guilt and sentencing outside BootX.
+
+The [OpenAI ethical-review test](prototype/TEST_CASE_OPENAI_ETHICAL_REVIEW.md) uses only a synthetic public post and records a sanitized live receipt confirming `store:false`, no tools, no actions, a retained deterministic stop, and no human-decision substitution.
 
 ## Human + AI Research Handbook
 
@@ -83,6 +85,7 @@ The [paired Law Clarity capital-corruption test](prototype/TEST_CASE_LAW_CLARITY
 - [Documentation verification register](docs/handbook/13-documentation-verification-register.md)
 - [Personal decision-assistance pipeline](docs/handbook/14-personal-decision-pipeline.md)
 - [Law Clarity Logic complete reference](docs/handbook/15-law-clarity-logic.md)
+- [Ethical publication and decision-rationale review](docs/handbook/16-ethical-publication-review.md)
 
 Additional collections:
 

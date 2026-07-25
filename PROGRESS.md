@@ -1,9 +1,9 @@
 # BootX Progress, Readiness, and Inheritance Plan
 
 **Status:** Living project control document<br>
-**Version:** 1.14<br>
-**Last updated:** 2026-07-24<br>
-**Current phase:** Phase 0 gates remain open; `DEV-1` deterministic host prototype supports limited public read-only local work, reviewer-supplied Law Clarity screening, and synthetic evaluation<br>
+**Version:** 1.15<br>
+**Last updated:** 2026-07-25<br>
+**Current phase:** Phase 0 gates remain open; `DEV-1` host prototype supports deterministic personal/Law Clarity work plus one explicit-consent OpenAI review path for public, non-sensitive drafts<br>
 **Current release posture:** Research documentation, an unvalidated host-based Go MVP, and opaque educational OS artifacts only; no validated Human + AI companion, robotics deployment, or trusted operating-system release
 
 ## 1. Purpose
@@ -55,7 +55,7 @@ This theological foundation is a disclosed founder commitment, not a scientific 
 | AI DNA | Specification present; unvalidated | `docs/handbook/05-ai-dna-specification.md` | dimensions and gates exist; empirical validity is not established |
 | Boot artifacts | Present but opaque | `artifacts/boot/` and `artifacts/media/` | limited binary evidence exists; source-level assurance is impossible |
 | Reproducible OS source | Missing | repository audit | build, source, tests, provenance, and dependency records are absent |
-| AI companion implementation | Deterministic host MVP `0.3.0-dev` present; unvalidated | `prototype/personal-companion/` | typed policy/warning/TUI, contained public-document, and bounded Law Clarity baselines exist; no model, network, representative user evidence, legal authority, deployment, or safety claim |
+| AI companion implementation | Hybrid host MVP `0.4.0-dev` present; unvalidated | `prototype/personal-companion/` | deterministic policy/warning/document/Law Clarity baselines plus explicit-consent no-tools OpenAI ethical review exist; no source authentication, representative user evidence, legal authority, automatic publication, deployment, or safety claim |
 | Public/high-impact readiness | BLOCKED | multiple open gates | no public or High-Impact deployment is authorized |
 
 ## 5. Foundation Gate — required before sensitive OS or AI implementation
@@ -191,7 +191,7 @@ Completed implementation baseline:
 - [x] Dependency-free line-oriented terminal UI with visible scope confirmation and data receipt.
 - [x] Embedded deterministic decision classes and policy indicators.
 - [x] Deterministic `W0`–`W4`/`WX` warning evaluation preserving official-status distinctions.
-- [x] Technical absence of networking, messages, calls, payments, accounts, device/robot control, and family/public broadcast.
+- [x] Networking limited to the fixed OpenAI Responses API in explicit-consent ethical-review mode; messages, calls, payments, accounts, device/robot control, automatic publication, and family/public broadcast remain technically absent.
 - [x] Session-only process-memory behavior with no application persistence.
 - [x] Fail-closed enforcement requiring sensitive and warning scenarios to be explicitly synthetic before security and study gates pass.
 - [x] JSON input/output schemas and synthetic fixtures.
@@ -210,6 +210,11 @@ Completed implementation baseline:
 - [x] Law Clarity terminal and strict JSON modes for public, non-sensitive material, with no remote processing, persistence, external action, or legal verdict.
 - [x] Law Clarity input/output schemas, synthetic gray-zone fixture, unit/CLI/TUI tests, and build-level smoke verification of `Q=35.75`, `Z=74.25`, and `M=48.11`.
 - [x] Paired capital-corruption Law Clarity regression with a fictional abusive scapegoating proposal and a rights-preserving non-capital revision, exact formula assertions, complete runner/log evidence, and explicit guilt/sentencing boundaries.
+- [x] Typed `assist.ethical-review.v1` public-draft request, deterministic declared-evidence mathematics, non-compensable high-impact/legal gates, and strict input/output schemas.
+- [x] Bounded OpenAI Responses API client using `OPENAI_API_KEY`, current documented model default, `store:false`, no tools, no conversation state, no application persistence, no external actions, a privacy-preserving safety identifier, and sanitized API errors.
+- [x] Structured model output for statement classification, evidence/logic/fairness/compassion/uncertainty/harm/privacy/due-process findings, counterarguments, human questions, and optional rewrite; model output cannot approve publication or change local warning levels.
+- [x] Unit and mock-server tests for formulas, consent, legal stop, strict decoding, authentication header, storage/tool/action boundaries, refusal handling, safety-identifier hashing, and secret-safe errors.
+- [x] Synthetic public-post fixture, live smoke-test runner, complete operator documentation, remote receipt, blocked-action list, and `user_decision: null` invariant.
 
 Open `DEV-1` gates:
 
@@ -224,7 +229,8 @@ Open `DEV-1` gates:
 - [ ] Establish research-ethics approval before any real-user study or sensitive personal input.
 - [ ] Compare rule-only output against no-assistance/static-checklist baselines.
 - [ ] Obtain qualified multi-jurisdiction legal and affected-community review of the Law Clarity rubric; validate rating anchors, inter-rater reliability, weights, thresholds, false reassurance, disparate impact, and manipulation-index behavior.
-- [ ] Do not add a bounded AI model until deterministic baseline evidence is frozen and reviewed.
+- [ ] Independently evaluate the bounded model path against deterministic-only and static-checklist baselines before any claim that it improves fairness, reliability, compassion, or decision quality.
+- [ ] Measure viewpoint discrimination, disparate impact, false reassurance, over-censorship, automation bias, multilingual behavior, provider drift, and prompt-injection resistance before wider use.
 
 ## 8. Operating-system implementation roadmap
 
@@ -408,7 +414,7 @@ Future inheritors are not asked to preserve every present conclusion. They are a
 7. **Repair legacy evidence:** add primary citations and correct unsupported or time-sensitive claims.
 8. **Operationalize AI DNA:** create test cases, evaluator guidance, disagreement rules, and adversarial score-gaming tests.
 9. **Complete threat and data models:** cover the OS, companion, memory, tools, providers, family/guardian use, and update chain.
-10. **Validate the deterministic MVP:** expand fixtures, threat-model and fuzz the parser/policy boundary, measure comprehension and correct safe action against baselines, and keep bounded AI disconnected until the baseline is frozen and reviewed.
+10. **Validate deterministic and bounded-model paths separately:** expand fixtures, threat-model and fuzz parser/policy/API boundaries, measure comprehension and correct safe action against no-assistance and static-checklist baselines, and disable the model path if it increases harm, discrimination, or false reassurance.
 11. **Establish research ethics:** approve the participant, privacy, harm, stop, and publication processes before human study.
 12. **Run continuity exercises:** simulate founder, key, repository, hosting, and model-provider loss.
 
@@ -426,6 +432,15 @@ When updating this file:
 8. add newly discovered risks and inheritance lessons.
 
 ## 16. Change log
+
+### Version 1.15 - 2026-07-25
+
+- Implemented Personal Companion `0.4.0-dev` capability `assist.ethical-review.v1` for voluntary review of public, non-sensitive social posts, speeches, statements, proposals, and decision rationales.
+- Added transparent declared-evidence formulas `E`, `H`, `U`, `C`, `I`, and review-priority index `R`, with non-compensable weak-evidence and legal-review stops. The values are indices, not truth, justice, reliability, or harm probabilities.
+- Connected the OpenAI Responses API through `OPENAI_API_KEY` using the current documented `gpt-5.6-sol` default, strict JSON Schema output, `store:false`, no tools, no stateful conversation, no application persistence, and no external actions.
+- Kept personal, warning, document, and Law Clarity decisions deterministic. OpenAI cannot lower warnings, authenticate sources, approve publication, determine guilt or sentence, or make the human decision.
+- Added a minimized typed payload, privacy-preserving safety identifier, refusal/incomplete/error handling, secret-safe errors, remote receipt, synthetic high-risk publication fixture, mock HTTP tests, live smoke runner, schemas, operator documentation, and inheritance guidance.
+- Recorded that the model layer remains unvalidated and may reproduce bias, suppress legitimate dissent, over-censor, or falsely reassure; representative independent evaluation remains required.
 
 ### Version 1.14 - 2026-07-24
 

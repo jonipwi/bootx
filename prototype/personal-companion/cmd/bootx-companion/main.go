@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"crypto/rand"
 	"encoding/hex"
 	"encoding/json"
@@ -12,9 +13,11 @@ import (
 	"time"
 
 	"github.com/jonipwi/bootx/prototype/personal-companion/internal/engine"
+	"github.com/jonipwi/bootx/prototype/personal-companion/internal/ethicalreview"
 	"github.com/jonipwi/bootx/prototype/personal-companion/internal/evidence"
 	"github.com/jonipwi/bootx/prototype/personal-companion/internal/lawclarity"
 	"github.com/jonipwi/bootx/prototype/personal-companion/internal/model"
+	"github.com/jonipwi/bootx/prototype/personal-companion/internal/openaiadvisory"
 	"github.com/jonipwi/bootx/prototype/personal-companion/internal/tui"
 )
 
@@ -23,6 +26,8 @@ const maxJSONInput = 1 << 20
 func main() {
 	inputPath := flag.String("input", "", "strict JSON request path, or - for stdin; omit for TUI")
 	lawInputPath := flag.String("law-input", "", "strict Law Clarity JSON request path, or - for stdin")
+	reviewInputPath := flag.String("review-input", "", "strict public ethical-review JSON request path, or - for stdin; calls OpenAI after explicit consent")
+	openAIModel := flag.String("openai-model", "", "OpenAI model override for -review-input; defaults to BOOTX_OPENAI_MODEL or the documented current default")
 	compact := flag.Bool("compact", false, "emit compact JSON in backend mode")
 	showVersion := flag.Bool("version", false, "print version and exit")
 	workspaceRoot := flag.String("workspace", "", "workspace root for contained read-only document mode")
@@ -44,11 +49,14 @@ func main() {
 	if *lawInputPath != "" {
 		modeCount++
 	}
+	if *reviewInputPath != "" {
+		modeCount++
+	}
 	if *documentPath != "" {
 		modeCount++
 	}
 	if modeCount > 1 {
-		fatal(fmt.Errorf("-input, -law-input, and -document are mutually exclusive"))
+		fatal(fmt.Errorf("-input, -law-input, -review-input, and -document are mutually exclusive"))
 	}
 	if *lawInputPath != "" {
 		if *workspaceRoot != "" || *documentPublic || *goal != "" || *question != "" || *priorities != "" {
@@ -63,6 +71,48 @@ func main() {
 			fatal(err)
 		}
 		encodeJSON(report, *compact)
+		return
+	}
+	if *reviewInputPath != "" {
+		if *workspaceRoot != "" || *documentPublic || *goal != "" || *question != "" || *priorities != "" {
+			fatal(fmt.Errorf("document-mode flags cannot be combined with -review-input"))
+		}
+		request, err := readReviewRequest(*reviewInputPath)
+		if err != nil {
+			fatal(err)
+		}
+		preflight, err := ethicalreview.Evaluate(request)
+		if err != nil {
+			fatal(err)
+		}
+		client, err := openaiadvisory.NewFromEnvironment(*openAIModel)
+		if err != nil {
+			fatal(err)
+		}
+		ctx, cancel := context.WithTimeout(context.Background(), 65*time.Second)
+		defer cancel()
+		advisory, receipt, err := client.Review(ctx, request, preflight)
+		if err != nil {
+			fatal(err)
+		}
+		envelope := ethicalreview.Envelope{
+			RequestID:              request.RequestID,
+			CapabilityID:           ethicalreview.CapabilityID,
+			GeneratedAt:            time.Now().UTC(),
+			RuntimeNotice:          "Decision support only: declared-evidence mathematics plus bounded OpenAI review. This output is not fact verification, approval, legal advice, guilt, sentence, or authority to act.",
+			DeterministicPreflight: preflight,
+			OpenAIAdvisory:         advisory,
+			RemoteReceipt:          receipt,
+			BlockedActions: []string{
+				"automatic publication, broadcast, messaging, or account action",
+				"guilt, punishment, detention, legal sentence, or denial-of-rights decision",
+				"scoring a person's worth or protected identity",
+				"claiming that a source, statement, rewrite, or recommendation is verified true",
+				"external execution without a separate informed human decision",
+			},
+			UserDecision: nil,
+		}
+		encodeJSON(envelope, *compact)
 		return
 	}
 	decisionEngine, err := engine.New()
@@ -195,6 +245,10 @@ func readRequest(path string) (model.Request, error) {
 
 func readLawRequest(path string) (lawclarity.Request, error) {
 	return readStrictJSON[lawclarity.Request](path, "law-clarity request")
+}
+
+func readReviewRequest(path string) (ethicalreview.Request, error) {
+	return readStrictJSON[ethicalreview.Request](path, "ethical-review request")
 }
 
 func readStrictJSON[T any](path, label string) (T, error) {

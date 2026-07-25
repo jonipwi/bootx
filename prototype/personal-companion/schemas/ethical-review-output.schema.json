@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bootx.local/schemas/ethical-review-output.schema.json",
+  "title": "BootX Ethical Review Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "capability_id",
+    "generated_at",
+    "runtime_notice",
+    "deterministic_preflight",
+    "openai_advisory",
+    "remote_receipt",
+    "blocked_actions",
+    "user_decision"
+  ],
+  "properties": {
+    "request_id": {"type": "string"},
+    "capability_id": {"const": "assist.ethical-review.v1"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "runtime_notice": {"type": "string"},
+    "deterministic_preflight": {
+      "type": "object",
+      "required": [
+        "formulae",
+        "claim_count",
+        "high_consequence_claim_count",
+        "metrics",
+        "evidence_coverage",
+        "high_consequence_coverage",
+        "uncertainty_gap",
+        "contested_rate",
+        "consequence_exposure",
+        "review_risk_index",
+        "warning_level",
+        "decision_posture",
+        "hard_stops",
+        "limitations"
+      ]
+    },
+    "openai_advisory": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["completed", "refused"]},
+        "advice": {"type": "object"},
+        "refusal": {"type": "string"}
+      }
+    },
+    "remote_receipt": {
+      "type": "object",
+      "required": [
+        "provider",
+        "api",
+        "model_requested",
+        "store_requested",
+        "application_persistence",
+        "conversation_state_used",
+        "tools_enabled",
+        "external_actions_enabled",
+        "raw_draft_sent",
+        "sent_fields",
+        "provider_retention_notice"
+      ],
+      "properties": {
+        "provider": {"const": "OpenAI"},
+        "api": {"const": "Responses API"},
+        "model_requested": {"type": "string"},
+        "model_returned": {"type": "string"},
+        "response_id": {"type": "string"},
+        "provider_request_id": {"type": "string"},
+        "store_requested": {"const": false},
+        "application_persistence": {"const": false},
+        "conversation_state_used": {"const": false},
+        "tools_enabled": {"const": false},
+        "external_actions_enabled": {"const": false},
+        "raw_draft_sent": {"const": true},
+        "sent_fields": {"type": "array", "items": {"type": "string"}},
+        "provider_retention_notice": {"type": "string"}
+      }
+    },
+    "blocked_actions": {"type": "array", "items": {"type": "string"}},
+    "user_decision": {"type": "null"}
+  }
+}

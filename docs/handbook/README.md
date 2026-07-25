@@ -34,7 +34,7 @@ The governing mission is:
 
 Read the documents in order for a complete study. Engineers can begin with the system specification and roadmap after reviewing the ethical constitution. Researchers should begin with the evidence audit, logic, and measurement framework.
 
-The current implementation evidence is the [host-based Go Personal Companion `0.3.0-dev`](../../prototype/personal-companion/README.md). It is a deterministic development baseline with synthetic fixtures, one contained read-only public local-document workflow, and a reviewer-supplied Law Clarity Logic screening workflow. Its integrity receipt authenticates bytes, not people, publishers, authorities, or claims; its law scores are not legal findings or probabilities. It does not close the handbook's research, security, identity, human-factors, legal, or deployment gates.
+The current implementation evidence is the [host-based Go Personal Companion `0.4.0-dev`](../../prototype/personal-companion/README.md). Its personal, warning, local-document, and Law Clarity paths remain deterministic. A separate public/non-sensitive ethical-review path uses OpenAI only after explicit consent, with a fixed no-tools structured-output contract and visible remote receipt. Its integrity and declared-source records do not authenticate people, publishers, authorities, sources, or claims; its law and review indices are not legal findings or probabilities. It does not close the handbook's research, security, identity, human-factors, legal, fairness, or deployment gates.
 
 | Part | Document | Primary question |
 |---:|---|---|
@@ -54,6 +54,7 @@ The current implementation evidence is the [host-based Go Personal Companion `0.
 | 13 | [Documentation verification and corrections register](13-documentation-verification-register.md) | Which claims were checked, corrected, withdrawn, or remain unverified? |
 | 14 | [Personal decision-assistance pipeline](14-personal-decision-pipeline.md) | How should personal input become evidence-bounded options and a human-controlled decision output? |
 | 15 | [Law Clarity Logic](15-law-clarity-logic.md) | How can a public rule be screened for clarity, fairness, consistent enforcement, accountability, loopholes, ambiguity, and unchecked power without manufacturing legal authority? |
+| 16 | [Ethical Publication and Decision-Rationale Review](16-ethical-publication-review.md) | How can declared-evidence mathematics and bounded OpenAI critique help a human pause before publication without producing censorship, truth authority, or automated action? |
 
 ## Foundational commitments
 

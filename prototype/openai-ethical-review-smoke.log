@@ -1,0 +1,20 @@
+BootX sanitized live smoke receipt
+Test: TC-OPENAI-ETHICAL-REVIEW-001
+Date: 2026-07-25
+Application: 0.4.0-dev
+Capability: assist.ethical-review.v1
+Input: synthetic public/non-sensitive fixture
+
+API status: completed
+Model requested: gpt-5.6-sol
+Model returned: gpt-5.6-sol
+Store requested: false
+Tools enabled: false
+External actions enabled: false
+Warning level: W4_STOP
+Review-priority index: 76.25
+AI advisory posture: seek_qualified_review
+User decision is null: true
+
+No API key, complete model prose, raw provider response, or provider identifier is retained here.
+This is a connectivity and boundary test, not evidence of truth, fairness, legal validity, safety, or field benefit.

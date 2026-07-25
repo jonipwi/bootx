@@ -4,7 +4,7 @@ import "time"
 
 const (
 	CapabilityID = "assist.personal-decision.v1"
-	Version      = "0.3.0-dev"
+	Version      = "0.4.0-dev"
 )
 
 type DataClass string

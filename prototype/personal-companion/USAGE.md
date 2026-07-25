@@ -1,14 +1,14 @@
 # BootX Personal Companion MVP — Complete Usage Guide
 
-**Application version:** `0.3.0-dev`<br>
-**Capability:** `assist.personal-decision.v1`<br>
+**Application version:** `0.4.0-dev`<br>
+**Capabilities:** `assist.personal-decision.v1`, `assist.law-clarity.v1`, `assist.ethical-review.v1`<br>
 **Evidence maturity:** `E2 — Prototype` in a limited host environment<br>
 **Intended operator:** Joni or a developer processing approved public local documents and synthetic tests<br>
 **Status:** software-only development prototype; not deployed, safety-certified, or authorized for real emergency reliance
 
 ## 1. What this prototype does
 
-BootX Personal Companion receives a deliberately selected question or scenario, processes it through deterministic evidence and policy rules, and produces an advisory decision packet.
+BootX Personal Companion receives a deliberately selected question, scenario, public draft, or public rule. Deterministic evidence and policy rules remain authoritative. A separate explicit-consent workflow may send a public, non-sensitive draft to OpenAI for structured comparison and revision support.
 
 ```text
 Selected input
@@ -29,10 +29,11 @@ The prototype includes:
 - forecast/disaster levels `W0`–`W4` and `WX` for synthetic exercises;
 - nine AI DNA runtime checks;
 - visible blocked actions, limitations, and data receipts;
+- an opt-in OpenAI Responses API review for public, non-sensitive drafts;
 - synthetic scam, study, and warning fixtures;
 - no third-party Go modules.
 
-It does **not** include a generative AI model, network lookup, browser, persistent memory, user authentication, external source or author authentication, message sending, phone calls, payment, account access, device/robot control, family/public broadcast, or emergency dispatch.
+It does **not** include network lookup, browsing, persistent memory, user authentication, external source or author authentication, message sending, phone calls, payment, account access, device/robot control, automatic publication, family/public broadcast, or emergency dispatch. OpenAI ethical review is advisory only and cannot verify sources or act.
 
 ## 2. Safety rules before use
 
@@ -44,6 +45,7 @@ Use the MVP only for:
 - explicitly synthetic sensitive scenarios;
 - explicitly synthetic forecast/disaster exercises;
 - software and policy testing.
+- public, non-sensitive draft review only after explicit OpenAI remote-processing consent.
 
 Do not enter:
 
@@ -53,6 +55,7 @@ Do not enter:
 - real sensitive scenarios before independent security review;
 - real disaster data for operational reliance;
 - information whose disclosure in terminal history, redirected output, crash dumps, or screen capture would create harm.
+- private drafts, personal allegations, doxxing data, confidential legal material, or identifiable case records in OpenAI review mode.
 
 The application does not intentionally write raw input. The surrounding terminal, operating system, shell redirection, screen recorder, antivirus, debugger, or crash-reporting service may still retain data.
 
@@ -420,7 +423,7 @@ Read the canonical [Law Clarity Logic reference](../../docs/handbook/15-law-clar
 
 ## 12. Synthetic forecast/disaster workflow
 
-Choose menu option `2`. This workflow is **synthetic-only** in version `0.3.0-dev`.
+Choose menu option `2`. This workflow is **synthetic-only** in version `0.4.0-dev`.
 
 The UI requests:
 
@@ -532,6 +535,62 @@ These checks are produced by the prototype itself and are not independent assura
 
 ## 18. Strict JSON backend mode
 
+### OpenAI ethical-review automation
+
+Set the key as an environment secret named `OPENAI_API_KEY`; never place it in JSON, source code, a command-line argument, or Git:
+
+```powershell
+-not [string]::IsNullOrWhiteSpace($env:OPENAI_API_KEY)
+```
+
+The result must be `True`. Build and run the supplied synthetic case:
+
+```powershell
+cd D:\Job\Human+AI+DNA\bootx
+.\prototype\build.ps1 -Action build
+.\prototype\personal-companion\dist\bootx-companion-windows-amd64.exe `
+  -review-input .\prototype\personal-companion\testdata\ethical-review-synthetic-publication.json
+```
+
+Or run the boundary-checking live smoke script:
+
+```powershell
+.\prototype\test-openai-ethical-review.ps1
+```
+
+The sanitized test specification and observed boundary receipt are recorded in [`../TEST_CASE_OPENAI_ETHICAL_REVIEW.md`](../TEST_CASE_OPENAI_ETHICAL_REVIEW.md) and [`../openai-ethical-review-smoke.log`](../openai-ethical-review-smoke.log).
+
+Add `-ShowFullOutput` only when displaying the complete synthetic advisory is appropriate. Use `-Model <model-id>` on the smoke script or `-openai-model <model-id>` on the executable to override the default. `BOOTX_OPENAI_MODEL` is also supported. The documented default for this implementation is `gpt-5.6-sol`.
+
+The review input must contain:
+
+- one public, non-sensitive draft;
+- its purpose, audience, and context;
+- zero or more individually identified factual claims;
+- a declared source status and consequence level for every claim;
+- `public_non_sensitive_confirmed: true`;
+- `remote_processing_consent: true`;
+- `human_authority_confirmed: true`.
+
+BootX calculates `E` declared evidence coverage, `H` high-consequence coverage, `U` uncertainty gap, `C` contested rate, `I` consequence exposure, and:
+
+```text
+R = 0.35(100-E) + 0.25(100-H) + 0.20U + 0.10C + 0.10I
+```
+
+`R` is a review-priority index, not a truth, justice, reliability, or harm probability. A high/irreversible weakly supported claim or any legal-reasoning draft creates a non-compensable `W4_STOP`. OpenAI cannot lower this level.
+
+The API request:
+
+- uses the OpenAI Responses API and strict JSON Schema output;
+- requests `store:false`;
+- enables no tools or conversation state;
+- sends no API key or local `user_id` in the model input;
+- sends the raw confirmed-public draft and declared claim record;
+- cannot post, punish, report, message, browse, or execute.
+
+The output records the model, provider response identifiers, sent-field list, storage request, tool/action state, limitations, blocked actions, and `user_decision: null`. Read [Ethical Publication and Decision-Rationale Review](../../docs/handbook/16-ethical-publication-review.md) before interpreting it.
+
 Change to the real module:
 
 ```powershell
@@ -579,6 +638,8 @@ CLI flags:
 | `-input <path>` | read one strict request object from a file |
 | `-input -` | read one strict request object from standard input |
 | `-law-input <path-or->` | read one strict `assist.law-clarity.v1` request; mutually exclusive with personal and document modes |
+| `-review-input <path-or->` | read one strict `assist.ethical-review.v1` request and call OpenAI after required confirmations |
+| `-openai-model <model-id>` | optional model override for `-review-input`; otherwise use `BOOTX_OPENAI_MODEL` or the documented default |
 | `-compact` | emit compact JSON in backend mode |
 | `-version` | print application version and exit |
 | `-workspace <path>` | workspace boundary for read-only document mode |
@@ -588,7 +649,7 @@ CLI flags:
 | `-question <text>` | direct question for document mode |
 | `-priorities <csv>` | optional comma-separated priorities for document mode |
 
-Unknown fields, unsupported enum values, non-denied remote permission, multiple JSON objects, oversized selected content, non-synthetic sensitive data, and non-synthetic warning input fail closed.
+Unknown fields, unsupported enum values, non-denied personal-mode remote permission, missing ethical-review consent, multiple JSON objects, oversized content, non-public ethical-review content, non-synthetic sensitive personal input, and non-synthetic warning input fail closed.
 
 ## 19. JSON input contract
 
@@ -770,7 +831,11 @@ The input contains trailing data or multiple objects. Submit one object per proc
 
 ### The output does not sound like a generative AI
 
-That is expected. Version `0.3.0-dev` is a deterministic baseline with contained read-only local-document ingestion and reviewer-supplied Law Clarity screening. A bounded model is intentionally disconnected until the baseline is frozen, measured, and reviewed.
+That is expected for personal-decision, warning, local-document, and Law Clarity modes: their output remains deterministic. OpenAI is used only by `-review-input`, after the three explicit confirmations in its strict input contract.
+
+### `OPENAI_API_KEY is required`
+
+The ethical-review process cannot see the environment variable. Confirm that it is named exactly `OPENAI_API_KEY`, restart the terminal or Codex process after changing persistent Windows environment variables, and verify presence without displaying the value. Never paste the key into a fixture, log, issue, chat, or command-line argument.
 
 ### Build succeeds but there is no `dist` directory where expected
 
@@ -805,6 +870,9 @@ Before acting on output:
 - [ ] I did not interpret AI DNA runtime checks as certification or probability.
 - [ ] I verified consequential facts through an appropriate independent source.
 - [ ] I did not interpret a Law Clarity score as legal advice, validity, constitutionality, or probability.
+- [ ] For OpenAI review, the draft is genuinely public and non-sensitive and I understand the raw draft leaves this computer.
+- [ ] I treated the local `R` value as a review-priority index and the model response as fallible advice, not approval or truth.
+- [ ] I will make the decision separately and will obtain qualified review for legal or other high-impact material.
 - [ ] I understand that BootX did not execute an external action.
 - [ ] The final decision remains mine.
 
@@ -812,6 +880,7 @@ Before acting on output:
 
 - [Personal Decision-Assistance Pipeline](../../docs/handbook/14-personal-decision-pipeline.md)
 - [Law Clarity Logic](../../docs/handbook/15-law-clarity-logic.md)
+- [Ethical Publication and Decision-Rationale Review](../../docs/handbook/16-ethical-publication-review.md)
 - [Development Guideline](../../DEVELOPMENT_GUIDELINE.md)
 - [AI DNA Operational Specification](../../docs/handbook/05-ai-dna-specification.md)
 - [Companion System Architecture](../../docs/handbook/06-companion-system-architecture.md)
